@@ -5,21 +5,23 @@
   font-weight: normal;
   font-style: normal;
 }
-p {
+p,
+footer {
   opacity: 0;
   transition: opacity 200ms easing();
 }
 
-.default-fonts p {
+.default-fonts p,
+.default-fonts footer {
   opacity: 1;
 }
 
-.Merriweather700 p {
+.Merriweather700 p, .Merriweather700 footer {
   font-family: "Merriweather", serif;
   opacity: 1;
 }
 
-p {
+p, footer {
   font-size: 1rem;
   line-height: 2rem;
 }
@@ -39,13 +41,13 @@ body, h1, p {
 }
 
 h1, h2, h3 {
-  color: #c6f3c7;
   font-family: "leagueSpartanRegular", sans-serif;
   font-weight: 400;
 }
 
 #title {
   background: #5fa4ff;
+  color: #12454b;
 }
 
 #epipelagic {
@@ -65,4 +67,14 @@ h1, h2, h3 {
 #abyssal {
   background: linear-gradient(to bottom, #002351 0%, #000c1c 100%);
   color: #c6f3c7;
+}
+
+footer {
+  background: #000c1c;
+  color: #c6f3c7;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 2em;
 }

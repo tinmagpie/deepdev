@@ -10,7 +10,6 @@ body, h1, p {
 }
 
 h1, h2, h3 {
-  color: color(copy);
   font-family: $fontSpartan;
   font-weight: fontWeight(normal);
 }
@@ -22,6 +21,7 @@ p {
 
 #title {
   background: #5fa4ff;
+  color: color(altCopy);
 }
 
 #epipelagic {
@@ -36,6 +36,17 @@ p {
   color: color(copy);
 }
 #abyssal {
-  background: linear-gradient(to bottom, #002351 0%, #000c1c 100%);
+  background: linear-gradient(to bottom, #002351 0%, $abyss 100%);
   color: color(copy);
+}
+
+footer {
+  background: $abyss;
+  @extend %fontMerriweather;
+  @extend %t-medium;
+  color: color(copy);
+  position: fixed;
+  bottom: 0; left: 0;
+  width: 100%;
+  line-height: 2em;
 }
