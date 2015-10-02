@@ -1,0 +1,34 @@
+$heightScreen: 100vh; // 100vh = height of screen = 200 meters of ocean
+
+.segment { min-height: $heightScreen; }
+
+body, h1 {
+  margin: 0; padding: 0;
+}
+
+#title {
+  background: #5fa4ff;
+}
+
+#epipelagic {
+  background: linear-gradient(to bottom, #39dbb3 0%, #007e84 100%);
+}
+#mesopelagic {
+  background: linear-gradient(to bottom, #007e84 0%, #0b4960 100%);
+}
+#bathypelagic {
+  background: linear-gradient(to bottom, #0b4960 0%, #002351 100%);
+}
+#abyssal {
+  background: linear-gradient(to bottom, #002351 0%, #000c1c 100%);
+}
+
+p {
+  color: #c6f3c7;
+  text-align: center;
+  font-family: sans-serif;
+  padding: 1.5em 1em;
+  line-height: 1.5em;
+  max-width: 40em;
+  margin: 0 auto;
+}

@@ -1,0 +1,14 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Rachel Nabors -- Front end lead, Art direction -- @rachelnabors
+
+# THANKS
+
+    Our loving families and friends and the people at NOAA and the Census of Marine Life for all their research.
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3

@@ -1,0 +1,46 @@
+/* line 3, ../scss/main.scss */
+.segment {
+  min-height: 100vh;
+}
+
+/* line 5, ../scss/main.scss */
+body, h1 {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 9, ../scss/main.scss */
+#title {
+  background: #5fa4ff;
+}
+
+/* line 13, ../scss/main.scss */
+#epipelagic {
+  background: linear-gradient(to bottom, #39dbb3 0%, #007e84 100%);
+}
+
+/* line 16, ../scss/main.scss */
+#mesopelagic {
+  background: linear-gradient(to bottom, #007e84 0%, #0b4960 100%);
+}
+
+/* line 19, ../scss/main.scss */
+#bathypelagic {
+  background: linear-gradient(to bottom, #0b4960 0%, #002351 100%);
+}
+
+/* line 22, ../scss/main.scss */
+#abyssal {
+  background: linear-gradient(to bottom, #002351 0%, #000c1c 100%);
+}
+
+/* line 26, ../scss/main.scss */
+p {
+  color: #c6f3c7;
+  text-align: center;
+  font-family: sans-serif;
+  padding: 1.5em 1em;
+  line-height: 1.5em;
+  max-width: 40em;
+  margin: 0 auto;
+}
