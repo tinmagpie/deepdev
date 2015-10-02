@@ -6,24 +6,50 @@
   font-style: normal;
 }
 p,
-footer {
+footer,
+.tagline,
+em {
   opacity: 0;
-  transition: opacity 200ms easing();
+  transition: opacity 200ms easing(out);
 }
 
 .default-fonts p,
-.default-fonts footer {
+.default-fonts footer,
+.default-fonts .tagline,
+.default-fonts em {
   opacity: 1;
 }
 
-.Merriweather700 p, .Merriweather700 footer {
+.Merriweather400 p, .Merriweather400 footer {
   font-family: "Merriweather", serif;
+  opacity: 1;
+}
+
+.Merriweather700 .tagline, .Merriweather700 em {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-style: italic;
   opacity: 1;
 }
 
 p, footer {
   font-size: 1rem;
   line-height: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 2.66667rem;
+}
+
+h2 {
+  font-size: 3rem;
+  line-height: 3.33333rem;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 4rem;
 }
 
 html {
@@ -35,7 +61,7 @@ html {
   min-height: 100vh;
 }
 
-body, h1, p {
+body, h1, h2, h3, p {
   margin: 0;
   padding: 0;
 }
@@ -52,6 +78,7 @@ h1, h2, h3 {
 
 #epipelagic {
   background: linear-gradient(to bottom, #39dbb3 0%, #007e84 100%);
+  color: #12454b;
 }
 
 #mesopelagic {

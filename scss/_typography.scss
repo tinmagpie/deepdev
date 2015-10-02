@@ -13,8 +13,7 @@ $fontMerriweather: 'Merriweather', serif;
 //font-weight: weight(thin);
 $fontWeights: (
   normal: 400,
-  bold: 700,
-  ultra-bold: 900
+  bold: 700
 );
 
 @font-face {
@@ -33,7 +32,7 @@ $fontWeights: (
 %fontMerriweather,
 %fontMerriweatherItalic {
   opacity: 0;
-  transition: opacity 200ms easing();
+  transition: opacity 200ms easing(out);
 }
 
 .default-fonts %fontSpartan,
@@ -47,15 +46,15 @@ $fontWeights: (
   opacity: 1;
 }
 
-.Merriweather700 %fontMerriweather {
+.Merriweather400 %fontMerriweather {
   font-family: $fontMerriweather;
-  font-weight: fontWeight(700);
   opacity: 1;
 }
 
-.Merriweather900 %fontMerriweatherItalic {
+.Merriweather700 %fontMerriweatherItalic {
   font-family: $fontMerriweather;
-  font-weight: fontWeight(900);
+  font-weight: fontWeight(bold);
+  font-style: italic;
   opacity: 1;
 }
 

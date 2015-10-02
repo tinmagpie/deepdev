@@ -1,4 +1,5 @@
 (function(){
+    "use strict";
 
     function checkFont(fontName, fontWeight) {
         new FontFaceObserver(fontName, {
@@ -10,7 +11,7 @@
         });
     }
 
+    checkFont('Merriweather', 400);
     checkFont('Merriweather', 700);
-    checkFont('Merriweather', 900);
     checkFont('leagueSpartanRegular', 400);
 })();

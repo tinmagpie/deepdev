@@ -20,7 +20,7 @@ $sky: #4ed9f2;
 
 $base-font-color: color(copy);
 
-$color: (
+$colors: (
     copy: $greyLight,
     altCopy: $greyDark,
     link: $biolumination,
@@ -29,8 +29,8 @@ $color: (
 
 // Now, getting colors...
 @function color($key) {
-  @if map-has-key($color, $key) {
-    @return map-get($color, $key);
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
   }
 
   @warn "Unknown `#{$key}` in $color.";
@@ -39,7 +39,7 @@ $color: (
 
 // Easings
 $easings: (
-    in: cubic-bezier(0.55, 0.055, 0.675, 0.19),
+    // in: cubic-bezier(0.55, 0.055, 0.675, 0.19),
     out: cubic-bezier(0.215, 0.61, 0.355, 1),
     inOut: cubic-bezier(0.645, 0.045, 0.355, 1),
     bounceIn: cubic-bezier(0.6, -0.28, 0.735, 0.045),
@@ -48,11 +48,11 @@ $easings: (
 );
 
 @function easing($key) {
-  @if map-has-key($easing, $key) {
-    @return map-get($easing, $key);
+  @if map-has-key($easings, $key) {
+    @return map-get($easings, $key);
   }
 
-  @warn "Unknown `#{$key}` in $easing.";
+  @warn "Unknown `#{$key}` in $easings.";
   @return null;
 }
 
@@ -64,10 +64,10 @@ $durations: (
 );
 
 @function duration($key) {
-  @if map-has-key($duration, $key) {
-    @return map-get($duration, $key);
+  @if map-has-key($durations, $key) {
+    @return map-get($durations, $key);
   }
 
-  @warn "Unknown `#{$key}` in $duration.";
+  @warn "Unknown `#{$key}` in $durations.";
   @return null;
 }
