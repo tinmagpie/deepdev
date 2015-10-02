@@ -1,46 +1,68 @@
-/* line 3, ../scss/main.scss */
+@font-face {
+  font-family: 'leagueSpartanRegular';
+  src: url("../fonts/leaguespartan-bold-webfont.eot");
+  src: url("../fonts/leaguespartan-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/leaguespartan-bold-webfont.woff2") format("woff2"), url("../fonts/leaguespartan-bold-webfont.woff") format("woff"), url("../fonts/leaguespartan-bold-webfont.ttf") format("truetype"), url("../fonts/leaguespartan-bold-webfont.svg#league_spartanregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+p {
+  opacity: 0;
+  transition: opacity 200ms easing();
+}
+
+.default-fonts p {
+  opacity: 1;
+}
+
+.Merriweather700 p {
+  font-family: "Merriweather", serif;
+  opacity: 1;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+html {
+  font-size: 112.5%;
+  line-height: 0.33333em;
+}
+
 .segment {
   min-height: 100vh;
 }
 
-/* line 5, ../scss/main.scss */
-body, h1 {
+body, h1, p {
   margin: 0;
   padding: 0;
 }
 
-/* line 9, ../scss/main.scss */
+h1, h2, h3 {
+  color: #c6f3c7;
+  font-family: "leagueSpartanRegular", sans-serif;
+  font-weight: 400;
+}
+
 #title {
   background: #5fa4ff;
 }
 
-/* line 13, ../scss/main.scss */
 #epipelagic {
   background: linear-gradient(to bottom, #39dbb3 0%, #007e84 100%);
 }
 
-/* line 16, ../scss/main.scss */
 #mesopelagic {
   background: linear-gradient(to bottom, #007e84 0%, #0b4960 100%);
+  color: #c6f3c7;
 }
 
-/* line 19, ../scss/main.scss */
 #bathypelagic {
   background: linear-gradient(to bottom, #0b4960 0%, #002351 100%);
+  color: #c6f3c7;
 }
 
-/* line 22, ../scss/main.scss */
 #abyssal {
   background: linear-gradient(to bottom, #002351 0%, #000c1c 100%);
-}
-
-/* line 26, ../scss/main.scss */
-p {
   color: #c6f3c7;
-  text-align: center;
-  font-family: sans-serif;
-  padding: 1.5em 1em;
-  line-height: 1.5em;
-  max-width: 40em;
-  margin: 0 auto;
 }

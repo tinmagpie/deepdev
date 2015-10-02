@@ -1,0 +1,126 @@
+@import "compass/typography/vertical_rhythm";
+$fontSpartan: 'leagueSpartanRegular', sans-serif;
+$fontMerriweather: 'Merriweather', serif;
+
+@function fontWeight($key) {
+  @if map-has-key($fontWeights, $key) {
+    @return map-get($fontWeights, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $fontWeights.";
+  @return null;
+}
+//font-weight: weight(thin);
+$fontWeights: (
+  normal: 400,
+  bold: 700,
+  ultra-bold: 900
+);
+
+@font-face {
+    font-family: 'leagueSpartanRegular';
+    src: url('../fonts/leaguespartan-bold-webfont.eot');
+    src: url('../fonts/leaguespartan-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/leaguespartan-bold-webfont.woff2') format('woff2'),
+         url('../fonts/leaguespartan-bold-webfont.woff') format('woff'),
+         url('../fonts/leaguespartan-bold-webfont.ttf') format('truetype'),
+         url('../fonts/leaguespartan-bold-webfont.svg#league_spartanregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+%fontSpartan,
+%fontMerriweather,
+%fontMerriweatherItalic {
+  opacity: 0;
+  transition: opacity 200ms easing();
+}
+
+.default-fonts %fontSpartan,
+.default-fonts %fontMerriweather,
+.default-fonts %fontMerriweatherItalic {
+  opacity: 1;
+}
+
+.leagueSpartanRegular400 %fontSpartan {
+  font-family: $fontSpartan;
+  opacity: 1;
+}
+
+.Merriweather700 %fontMerriweather {
+  font-family: $fontMerriweather;
+  font-weight: fontWeight(700);
+  opacity: 1;
+}
+
+.Merriweather900 %fontMerriweatherItalic {
+  font-family: $fontMerriweather;
+  font-weight: fontWeight(900);
+  opacity: 1;
+}
+
+// Vertical Rhythm
+$browser-default-font-size: 16px;
+$relative-font-sizing: true;
+$rhythm-unit: "rem";
+$rem-with-px-fallback: false;
+$base-font-family: $fontMerriweather, Helvetica, Arial, sans-serif;
+$base-font-weight: fontWeights(normal);
+
+// Golden ratio inspired;
+// (9) 18, 36, 54, 72
+
+// Base Font Sizes
+$base-line-height: 6px;
+
+// Modular Scale
+$ms-base: 18px;
+$base-font-size: $ms-base;
+
+$small-font-size: $ms-base/2;
+$small-font-leading: 2;
+$medium-font-size: $ms-base;
+$medium-font-leading: 6;
+$large-font-size: $ms-base * 2;
+$large-font-leading: 8;
+$xlarge-font-size: $ms-base * 3;
+$xlarge-font-leading: 10;
+$xxlarge-font-size: $ms-base * 4;
+$xxlarge-font-leading: 12;
+
+@mixin typeSize($size) {
+ @if $size == "small" {
+  @include adjust-font-size-to($small-font-size, $small-font-leading);
+ }
+ @if $size == "medium" {
+  @include adjust-font-size-to($medium-font-size, $medium-font-leading);
+ }
+ @if $size == "large" {
+  @include adjust-font-size-to($large-font-size, $large-font-leading);
+ }
+ @if $size == "xlarge" {
+  @include adjust-font-size-to($xlarge-font-size, $xlarge-font-leading);
+ }
+ @if $size == "xxlarge" {
+  @include adjust-font-size-to($xxlarge-font-size, $xxlarge-font-leading);
+ }
+}
+
+// Type size variants
+%t-small {
+ @include typeSize(small);
+}
+%t-medium {
+ @include typeSize(medium);
+}
+%t-large {
+ @include typeSize(large);
+}
+%t-xlarge {
+ @include typeSize(xlarge);
+}
+%t-xxlarge {
+ @include typeSize(xxlarge);
+}
+
+@include establish-baseline;

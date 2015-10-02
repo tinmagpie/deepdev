@@ -1,9 +1,23 @@
+@import "typography";
+@import "config";
+
 $heightScreen: 100vh; // 100vh = height of screen = 200 meters of ocean
 
 .segment { min-height: $heightScreen; }
 
-body, h1 {
+body, h1, p {
   margin: 0; padding: 0;
+}
+
+h1, h2, h3 {
+  color: color(copy);
+  font-family: $fontSpartan;
+  font-weight: fontWeight(normal);
+}
+
+p {
+  @extend %fontMerriweather;
+  @extend %t-medium;
 }
 
 #title {
@@ -15,20 +29,13 @@ body, h1 {
 }
 #mesopelagic {
   background: linear-gradient(to bottom, #007e84 0%, #0b4960 100%);
+  color: color(copy);
 }
 #bathypelagic {
   background: linear-gradient(to bottom, #0b4960 0%, #002351 100%);
+  color: color(copy);
 }
 #abyssal {
   background: linear-gradient(to bottom, #002351 0%, #000c1c 100%);
-}
-
-p {
-  color: #c6f3c7;
-  text-align: center;
-  font-family: sans-serif;
-  padding: 1.5em 1em;
-  line-height: 1.5em;
-  max-width: 40em;
-  margin: 0 auto;
+  color: color(copy);
 }
