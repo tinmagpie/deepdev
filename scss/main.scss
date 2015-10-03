@@ -1,9 +1,30 @@
-@import "typography";
 @import "config";
+@import "typography";
 
 $heightScreen: 100vh; // 100vh = height of screen = 200 meters of ocean
 
-.segment { min-height: $heightScreen; }
+.wrapper {
+  overflow: hidden;
+}
+.segment {
+  min-height: $heightScreen;
+  position: relative;
+  h1, h2, h3, p {
+    opacity: 0;
+    transition: opacity duration(slow) easing(out);
+  }
+  * {
+    animation-play-state: paused;
+  }
+  &.in-view {
+    h1, h2, h3, p {
+      opacity: 1;
+    }
+    * {
+      animation-play-state: running;
+    }
+  }
+}
 
 body, h1, h2, h3, p {
   margin: 0; padding: 0;
@@ -11,11 +32,11 @@ body, h1, h2, h3, p {
 
 h1, h2, h3 {
   font-family: $fontSpartan;
-  font-weight: fontWeight(normal);
 }
 
 h1 {
   @extend %t-xxlarge;
+  color: color(titleCopy);
 }
 
 h2 {
@@ -40,8 +61,54 @@ p {
 }
 
 #title {
-  background: #5fa4ff;
+  background: color(sky);
   color: color(altCopy);
+}
+
+.waves {
+  background: $surface;
+  height: 110px;
+  padding-bottom: 2em;
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%;
+}
+
+.wave {
+  position: absolute;
+  left: 0; bottom: 2em;
+  width: 100%;
+  padding: 0 40px;
+  transform: scale(1.1) translateX(-20px);
+  height: 120px;
+  .in-view & {
+    animation-name: oceanMotion;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+}
+
+.wave-close {
+  background: url("../img/wave-close.svg") repeat-x 100% 100%;
+  animation-duration: duration(days);
+  bottom: 1.9em;
+}
+
+.wave-near {
+  background: url("../img/wave-near.svg") repeat-x 100% 100%;
+  animation-duration: duration(weeks)
+}
+
+.wave-mid {
+  background: $midnight url("../img/wave-mid.svg") repeat-x 100% 100%;
+  background-size: 305px 120px;
+  animation-duration: duration(months);
+  padding-top: 10px;
+}
+
+@keyframes oceanMotion {
+  100% { transform: scale(1.1) translateX(20px); }
 }
 
 #epipelagic {

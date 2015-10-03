@@ -16,91 +16,98 @@
 		<script src="js/vendor/fontfaceobserver.standalone.js"></script>
 		<script src="js/preflight.js"></script>
 
-		<div class="segment" id="title">
-			<h1>Deep Sea Dive into Dev Tools</h1>
-		</div>
-		<div class="zone" id="epipelagic">
-			<div class="segment" id="d0">
-				<h2>The Epipelagic Zone</h2>
-				<p>At only 200 meters deep, most of the biomass of the ocean lives here. Humans refer to everything below these zone as the &ldquo;deep sea.&rdquo;</p>
+		<div class="wrapper">
+			<div class="segment" id="title">
+				<h1>Deep Sea Dive into Dev Tools</h1>
+				<div class="waves">
+					<div class="wave wave-mid"></div>
+					<div class="wave wave-near"></div>
+					<div class="wave wave-close"></div>
+				</div>
 			</div>
-		</div>
-		<div class="zone" id="mesopelagic">
-			<div class="segment" id="d200">
-				<h2>Welcome to the Twilight Zone</h2>
-				<h3 class="tagline">aka the Mesopelagic</h3>
-				<p>No photosynthesis happens from here on.</p>
-				<p>Sorry, Plants &amp; Co.</p>
+			<div class="zone" id="epipelagic">
+				<div class="segment" id="d0">
+					<h2>The Epipelagic Zone</h2>
+					<p>At only 200 meters deep, most of the biomass of the ocean lives here. Humans refer to everything below these zone as the &ldquo;deep sea.&rdquo;</p>
+				</div>
 			</div>
-			<div class="segment" id="d400">
-				<p>Flashlight fish: help a flashlight fish catch up with its school by playing it's animation. Take a sample of its bioluminescent patch. (Might need to swap this for a deep lanternfish and put nautilus here? But need that luminscent patch!)</p>
+			<div class="zone" id="mesopelagic">
+				<div class="segment" id="d200">
+					<h2>Welcome to the Twilight Zone</h2>
+					<h3 class="tagline">aka the Mesopelagic</h3>
+					<p>No photosynthesis happens from here on.</p>
+					<p>Sorry, Plants &amp; Co.</p>
+				</div>
+				<div class="segment" id="d400">
+					<p>Flashlight fish: help a flashlight fish catch up with its school by playing it's animation. Take a sample of its bioluminescent patch. (Might need to swap this for a deep lanternfish and put nautilus here? But need that luminscent patch!)</p>
+				</div>
+				<div class="segment" id="d600">
+					<p>Nautilus: edit cubic-bezier to add bobbing motion to swimming.</p>
+				</div>
+				<div class="segment" id="d800">
+					<p>Humboldt squid: these squid are on the hunt. When Humboldt squid feed, they rapidly flash from white to red. Use the animation playback controls to slow down their flashing and see what's <em>really</em> happening.</p>
+				</div>
 			</div>
-			<div class="segment" id="d600">
-				<p>Nautilus: edit cubic-bezier to add bobbing motion to swimming.</p>
+			<div class="zone" id="bathypelagic">
+				<div class="segment" id="d1000">
+					<h2>The Midnight Zone</h2>
+					<h3 class="tagline">aka the Bathypelagic</h3>
+					<p>No plants can live here. Period. Everyone here lives off the poop and dead things floating down from above.</p>
+					<p>There is no light. This pretty blue color? I put it here for your amusement. This would actually be pitch black unless you were packing your own bioluminescence.</p>
+					<p>There is little oxygen.</p>
+					<p>Try not to move around too much.</p>
+					<p>Conserve&hellip;</p>
+					<p>&hellip;energy&hellip;</p>
+				</div>
+				<div class="segment" id="d1200"></div>
+				<div class="segment" id="d1400"></div>
+				<div class="segment" id="d1600"></div>
+				<div class="segment" id="d1800">
+					<p>Orange roughy: Did you see that? Something's moving down here. Check the animations panel to see what it is. Use the element highlighter to track the fish. Why can't you see it?</p>
+					<h3>Blue Lights</h3>
+					<p>Red wavelengths are the first part of the color spectrum to be filtered out by water. In other words, The deeper you go, the bluer things get. Many fish in the deep are bright red in broad daylight, but look black down here because there's no red light for them to reflect.</p>
+					<p>Task: To see how the Orange Roughy gets its name, edit the CSS filter in the inspection panel.</p>
+				</div>
+				<div class="segment" id="d2000"></div>
+				<div class="segment" id="d2200">
+					<p>Shh. It's a surprise. Collossal squid gets injected here. We tell them the coordinates only after they reach the bottom and if they're in FF.</p>
+				</div>
+				<div class="segment" id="d2400"></div>
+				<div class="segment" id="d2600">
+					<p>Deep sea disco: Sample the flashlight fish's bioluminescent patch from before to "turn on" the underwater light show.</p>
+				</div>
+				<div class="segment" id="d2800"></div>
+				<div class="segment" id="d3000"></div>
+				<div class="segment" id="d3200"></div>
+				<div class="segment" id="d3400"></div>
+				<div class="segment" id="d3600"></div>
+				<div class="segment" id="d3800"></div>
 			</div>
-			<div class="segment" id="d800">
-				<p>Humboldt squid: these squid are on the hunt. When Humboldt squid feed, they rapidly flash from white to red. Use the animation playback controls to slow down their flashing and see what's <em>really</em> happening.</p>
-			</div>
-		</div>
-		<div class="zone" id="bathypelagic">
-			<div class="segment" id="d1000">
-				<h2>The Midnight Zone</h2>
-				<h3 class="tagline">aka the Bathypelagic</h3>
-				<p>No plants can live here. Period. Everyone here lives off the poop and dead things floating down from above.</p>
-				<p>There is no light. This pretty blue color? I put it here for your amusement. This would actually be pitch black unless you were packing your own bioluminescence.</p>
-				<p>There is little oxygen.</p>
-				<p>Try not to move around too much.</p>
-				<p>Conserve&hellip;</p>
-				<p>&hellip;energy&hellip;</p>
-			</div>
-			<div class="segment" id="d1200"></div>
-			<div class="segment" id="d1400"></div>
-			<div class="segment" id="d1600"></div>
-			<div class="segment" id="d1800">
-				<p>Orange roughy: Did you see that? Something's moving down here. Check the animations panel to see what it is. Use the element highlighter to track the fish. Why can't you see it?</p>
-				<h3>Blue Lights</h3>
-				<p>Red wavelengths are the first part of the color spectrum to be filtered out by water. In other words, The deeper you go, the bluer things get. Many fish in the deep are bright red in broad daylight, but look black down here because there's no red light for them to reflect.</p>
-				<p>Task: To see how the Orange Roughy gets its name, edit the CSS filter in the inspection panel.</p>
-			</div>
-			<div class="segment" id="d2000"></div>
-			<div class="segment" id="d2200">
-				<p>Shh. It's a surprise. Collossal squid gets injected here. We tell them the coordinates only after they reach the bottom and if they're in FF.</p>
-			</div>
-			<div class="segment" id="d2400"></div>
-			<div class="segment" id="d2600">
-				<p>Deep sea disco: Sample the flashlight fish's bioluminescent patch from before to "turn on" the underwater light show.</p>
-			</div>
-			<div class="segment" id="d2800"></div>
-			<div class="segment" id="d3000"></div>
-			<div class="segment" id="d3200"></div>
-			<div class="segment" id="d3400"></div>
-			<div class="segment" id="d3600"></div>
-			<div class="segment" id="d3800"></div>
-		</div>
-		<div class="zone" id="abyssal">
-			<div class="segment" id="d4000">
-				<h2>The Abyssal Zone</h2>
-				<p>Why, why did you come here?</p>
-			</div>
-			<div class="segment" id="d4200">
-				<p>Alarm jellyfish: The alarm jellyfish is happily going about her life when a fangtooth starts hassling her. Change her <code>animation</code> property from <code>calm</code> to <code>alarmed</code> to attract a rattail to chase away the fangtooth.</p>
-			</div>
-			<div class="segment" id="d4400"></div>
-			<div class="segment" id="d4600"></div>
-			<div class="segment" id="d4800"></div>
-			<div class="segment" id="d5000">
-				<p>Vomiting shrimp: What was that? It looks like you disturbed someone.</p>
-				<p>Task: Replay the animation to see shrimp who left behind a swirl of bioluminescence.</p>
-			</div>
-			<div class="segment" id="d5200"></div>
-			<div class="segment" id="d5400"></div>
-			<div class="segment" id="d5600"></div>
-			<div class="segment" id="d5800"></div>
-			<div class="segment" id="d6000">
-				<p>Hagfish: Not much lives this far down. But the ancient hagfish make a home here. Where's it hiding, though?</p>
-				<p>Task: search the DOM for "hagfish" to find it hiding behind a rock. Delete, move (transform, margin, position), or fade out (change opacity) to see the fish.</p>
-				<p>For FireFox users, this generates a bonus quest: Something... big has been detected X-pixels deep. Use the rulers to go there and visit the Collossal Squid!</p>
-				<p>For everyone else, phew, you made it deeper into the ocean than any browser has been before! Next time give it a try with FireFox Developer Edition and see what more you can discover ;)</p>
+			<div class="zone" id="abyssal">
+				<div class="segment" id="d4000">
+					<h2>The Abyssal Zone</h2>
+					<p>Why, why did you come here?</p>
+				</div>
+				<div class="segment" id="d4200">
+					<p>Alarm jellyfish: The alarm jellyfish is happily going about her life when a fangtooth starts hassling her. Change her <code>animation</code> property from <code>calm</code> to <code>alarmed</code> to attract a rattail to chase away the fangtooth.</p>
+				</div>
+				<div class="segment" id="d4400"></div>
+				<div class="segment" id="d4600"></div>
+				<div class="segment" id="d4800"></div>
+				<div class="segment" id="d5000">
+					<p>Vomiting shrimp: What was that? It looks like you disturbed someone.</p>
+					<p>Task: Replay the animation to see shrimp who left behind a swirl of bioluminescence.</p>
+				</div>
+				<div class="segment" id="d5200"></div>
+				<div class="segment" id="d5400"></div>
+				<div class="segment" id="d5600"></div>
+				<div class="segment" id="d5800"></div>
+				<div class="segment" id="d6000">
+					<p>Hagfish: Not much lives this far down. But the ancient hagfish make a home here. Where's it hiding, though?</p>
+					<p>Task: search the DOM for "hagfish" to find it hiding behind a rock. Delete, move (transform, margin, position), or fade out (change opacity) to see the fish.</p>
+					<p>For FireFox users, this generates a bonus quest: Something... big has been detected X-pixels deep. Use the rulers to go there and visit the Collossal Squid!</p>
+					<p>For everyone else, phew, you made it deeper into the ocean than any browser has been before! Next time give it a try with FireFox Developer Edition and see what more you can discover ;)</p>
+				</div>
 			</div>
 		</div>
 		<footer>

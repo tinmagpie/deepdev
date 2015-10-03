@@ -28,34 +28,26 @@ $fontWeights: (
     font-style: normal;
 }
 
-%fontSpartan,
-%fontMerriweather,
-%fontMerriweatherItalic {
-  opacity: 0;
-  transition: opacity 200ms easing(out);
-}
-
+// Bah, no fonts loaded. Just show the text.
 .default-fonts %fontSpartan,
 .default-fonts %fontMerriweather,
 .default-fonts %fontMerriweatherItalic {
-  opacity: 1;
 }
 
 .leagueSpartanRegular400 %fontSpartan {
   font-family: $fontSpartan;
-  opacity: 1;
+  font-weight: fontWeight(normal);
 }
 
 .Merriweather400 %fontMerriweather {
   font-family: $fontMerriweather;
-  opacity: 1;
+  font-weight: fontWeight(normal);
 }
 
-.Merriweather700 %fontMerriweatherItalic {
+%fontMerriweatherItalic {
   font-family: $fontMerriweather;
   font-weight: fontWeight(bold);
   font-style: italic;
-  opacity: 1;
 }
 
 // Vertical Rhythm

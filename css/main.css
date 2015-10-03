@@ -5,31 +5,15 @@
   font-weight: normal;
   font-style: normal;
 }
-p,
-footer,
-.tagline,
-em {
-  opacity: 0;
-  transition: opacity 200ms easing(out);
-}
-
-.default-fonts p,
-.default-fonts footer,
-.default-fonts .tagline,
-.default-fonts em {
-  opacity: 1;
-}
-
 .Merriweather400 p, .Merriweather400 footer {
   font-family: "Merriweather", serif;
-  opacity: 1;
+  font-weight: 400;
 }
 
-.Merriweather700 .tagline, .Merriweather700 em {
+.tagline, em {
   font-family: "Merriweather", serif;
   font-weight: 700;
   font-style: italic;
-  opacity: 1;
 }
 
 p, footer {
@@ -57,8 +41,26 @@ html {
   line-height: 0.33333em;
 }
 
+.wrapper {
+  overflow: hidden;
+}
+
 .segment {
   min-height: 100vh;
+  position: relative;
+}
+.segment h1, .segment h2, .segment h3, .segment p {
+  opacity: 0;
+  transition: opacity 500ms easing(out);
+}
+.segment * {
+  animation-play-state: paused;
+}
+.segment.in-view h1, .segment.in-view h2, .segment.in-view h3, .segment.in-view p {
+  opacity: 1;
+}
+.segment.in-view * {
+  animation-play-state: running;
 }
 
 body, h1, h2, h3, p {
@@ -68,14 +70,66 @@ body, h1, h2, h3, p {
 
 h1, h2, h3 {
   font-family: "leagueSpartanRegular", sans-serif;
-  font-weight: 400;
+}
+
+h1 {
+  color: #000c1c;
 }
 
 #title {
-  background: #5fa4ff;
+  background: #A9DDF2;
   color: #12454b;
 }
 
+.waves {
+  background: #39dbb4;
+  height: 110px;
+  padding-bottom: 2em;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  bottom: 2em;
+  width: 100%;
+  padding: 0 40px;
+  transform: scale(1.1) translateX(-20px);
+  height: 120px;
+}
+.in-view .wave {
+  animation-name: oceanMotion;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.wave-close {
+  background: url("../img/wave-close.svg") repeat-x 100% 100%;
+  animation-duration: 2.1s;
+  bottom: 1.9em;
+}
+
+.wave-near {
+  background: url("../img/wave-near.svg") repeat-x 100% 100%;
+  animation-duration: 3.4s;
+}
+
+.wave-mid {
+  background: #002351 url("../img/wave-mid.svg") repeat-x 100% 100%;
+  background-size: 305px 120px;
+  animation-duration: 5.5s;
+  padding-top: 10px;
+}
+
+@keyframes oceanMotion {
+  100% {
+    transform: scale(1.1) translateX(20px);
+  }
+}
 #epipelagic {
   background: linear-gradient(to bottom, #39dbb3 0%, #007e84 100%);
   color: #12454b;

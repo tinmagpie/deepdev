@@ -16,15 +16,18 @@ $black: #06191b;
 // Spot Colors
 $biolumination: #56fddb;
 $red: #c6244b;
-$sky: #4ed9f2;
+$skyLight: #A9DDF2;
+$skyMedium: #4ed9f2;
 
 $base-font-color: color(copy);
 
 $colors: (
     copy: $greyLight,
     altCopy: $greyDark,
+    titleCopy: $abyss,
     link: $biolumination,
-    link-visited: $sky,
+    link-visited: $skyMedium,
+    sky: $skyLight,
 );
 
 // Now, getting colors...
@@ -47,7 +50,7 @@ $easings: (
     bounceInOut: cubic-bezier(0.68, -0.55, 0.265, 1.55)
 );
 
-@function easing($key) {
+@function ease($key) {
   @if map-has-key($easings, $key) {
     @return map-get($easings, $key);
   }
@@ -61,6 +64,11 @@ $durations: (
     fast: 200ms,
     timely: 300ms,
     slow: 500ms,
+    slower: 800ms,
+    slowest: 1.3s,
+    days: 2.1s,
+    weeks: 3.4s,
+    months: 5.5s,
 );
 
 @function duration($key) {
