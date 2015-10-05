@@ -69,6 +69,7 @@ $durations: (
     days: 2.1s,
     weeks: 3.4s,
     months: 5.5s,
+    years: 8.9s,
 );
 
 @function duration($key) {

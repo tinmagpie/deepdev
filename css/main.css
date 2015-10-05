@@ -96,11 +96,25 @@ h1 {
   left: 0;
   bottom: 2em;
   width: 100%;
-  padding: 0 40px;
-  transform: scale(1.1) translateX(-20px);
   height: 120px;
 }
 .in-view .wave {
+  animation-name: oceanSurge;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.wave:before {
+  content: " ";
+  transform: scale(1.1) translateX(-20px);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 0 40px;
+  height: 120px;
+}
+.in-view .wave:before {
   animation-name: oceanMotion;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -108,26 +122,41 @@ h1 {
 }
 
 .wave-close {
+  bottom: 1.9em;
+  animation-duration: 3.4s;
+}
+.wave-close:before {
   background: url("../img/wave-close.svg") repeat-x 100% 100%;
   animation-duration: 2.1s;
-  bottom: 1.9em;
 }
 
 .wave-near {
-  background: url("../img/wave-near.svg") repeat-x 100% 100%;
+  animation-duration: 5.5s;
+}
+.wave-near:before {
+  background: url("../img/wave-near.svg") repeat-x 60% 100%;
   animation-duration: 3.4s;
+  transform: translateY(-10px);
 }
 
 .wave-mid {
-  background: #002351 url("../img/wave-mid.svg") repeat-x 100% 100%;
+  background: #002351;
+  padding-top: 10px;
+}
+.wave-mid:before {
+  background: url("../img/wave-mid.svg") repeat-x 0 10px;
   background-size: 305px 120px;
   animation-duration: 5.5s;
-  padding-top: 10px;
 }
 
 @keyframes oceanMotion {
   100% {
-    transform: scale(1.1) translateX(20px);
+    transform: scale(1.1) translateX(30px);
+  }
+}
+@keyframes oceanSurge {
+  100% {
+    transform: translateY(10px);
   }
 }
 #epipelagic {
