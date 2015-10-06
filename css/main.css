@@ -10,7 +10,7 @@
   font-weight: 400;
 }
 
-.Merriweather400 p, .Merriweather400 footer {
+.Merriweather400 p, .Merriweather400 li, .Merriweather400 footer {
   font-family: "Merriweather", serif;
   font-weight: 400;
 }
@@ -26,7 +26,7 @@
   line-height: 2rem;
 }
 
-h3, h2 + .subtitle, blockquote, cite {
+h3, .subtitle, blockquote, cite {
   font-size: 2rem;
   line-height: 2.66667rem;
 }
@@ -63,13 +63,16 @@ html {
 }
 .segment h1, .segment h2, .segment h3, .segment p {
   opacity: 0;
-  transition: opacity 500ms easing(out);
+  transition: opacity 2.1s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .segment * {
   animation-play-state: paused;
 }
 .segment.in-view h1, .segment.in-view h2, .segment.in-view h3, .segment.in-view p {
   opacity: 1;
+}
+.segment.in-view .subtitle {
+  opacity: 0.6;
 }
 .segment.in-view * {
   animation-play-state: running;
@@ -88,11 +91,7 @@ h1 {
   color: #000c1c;
 }
 
-h2 + .subtitle {
-  opacity: .8;
-}
-
-p {
+p, li {
   padding-bottom: 0.33333rem;
 }
 
@@ -130,7 +129,7 @@ img {
 
 #surface {
   background: #A9DDF2;
-  color: #12454b;
+  color: #06191b;
   text-align: center;
   position: relative;
 }
@@ -214,8 +213,8 @@ img {
   }
 }
 #epipelagic {
-  background: linear-gradient(to bottom, #39dbb3 0%, #007e84 50%, #0b4960 100%);
-  color: #12454b;
+  background: linear-gradient(to bottom, #39dbb4 0%, #007e84 50%, #0b4960 100%);
+  color: #06191b;
 }
 
 #mesopelagic {

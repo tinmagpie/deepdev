@@ -19,7 +19,7 @@ $heightScreen: 100vh; // 100vh = height of screen = 200 meters of ocean
   @extend %t-medium;
   h1, h2, h3, p {
     opacity: 0;
-    transition: opacity duration(slow) easing(out);
+    transition: opacity duration(days) ease(out);
   }
   * {
     animation-play-state: paused;
@@ -27,6 +27,9 @@ $heightScreen: 100vh; // 100vh = height of screen = 200 meters of ocean
   &.in-view {
     h1, h2, h3, p {
       opacity: 1;
+    }
+    .subtitle {
+      opacity: .6
     }
     * {
       animation-play-state: running;
@@ -58,17 +61,14 @@ h3 {
 
 .subtitle {
   @extend %fontMerriweatherItalic;
-  h2 + & {
-    @extend %t-large;
-    opacity: .8;
-  }
+  @extend %t-large;
 }
 
 em {
   @extend %fontMerriweatherItalic;
 }
 
-p {
+p, li {
   @extend %fontMerriweather;
   @include padding-trailer();
 }
@@ -197,7 +197,7 @@ img {
 }
 
 #epipelagic {
-  background: linear-gradient(to bottom, #39dbb3 0%, #007e84 50%, #0b4960 100%);
+  background: linear-gradient(to bottom, $surface 0%, #007e84 50%, #0b4960 100%);
   color: color(altCopy);
 }
 #mesopelagic {
