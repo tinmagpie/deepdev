@@ -7,11 +7,15 @@ $heightScreen: 100vh; // 100vh = height of screen = 200 meters of ocean
 .wrapper {
   overflow: hidden;
 }
+
 .segment {
   min-height: $heightScreen;
   position: relative;
-  margin: 0 auto;
-  max-width: 50em;
+  padding: 0 2em;
+  @include breakpoint($single_col){
+    max-width: 102rem;
+    margin: 0 auto;
+  }
   @extend %t-medium;
   h1, h2, h3, p {
     opacity: 0;
@@ -69,13 +73,14 @@ p {
   @include padding-trailer();
 }
 
-.facts, .reveal {
-  -moz-column-width: span(4 of 9);
-  -moz-column-count: 2;
-  column-width: span(4 of 9);
-  column-count: 2;
-  //break-inside: avoid;
-
+@include breakpoint($single_col){
+  .facts, .reveal {
+    -moz-column-count: 2;
+    -moz-column-gap: 2rem;
+    column-count: 2;
+    column-gap: 2rem;
+    //break-inside: avoid;
+  }
 }
 
 blockquote {
@@ -115,6 +120,7 @@ img {
   background: color(sky);
   color: color(altCopy);
   text-align: center;
+  position: relative;
 }
 
 .waves {
