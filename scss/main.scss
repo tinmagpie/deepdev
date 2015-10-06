@@ -1,3 +1,4 @@
+@import "breakpoint";
 @import "config";
 @import "typography";
 
@@ -9,6 +10,9 @@ $heightScreen: 100vh; // 100vh = height of screen = 200 meters of ocean
 .segment {
   min-height: $heightScreen;
   position: relative;
+  margin: 0 auto;
+  max-width: 50em;
+  @extend %t-medium;
   h1, h2, h3, p {
     opacity: 0;
     transition: opacity duration(slow) easing(out);
@@ -31,7 +35,8 @@ body, h1, h2, h3, p {
 }
 
 h1, h2, h3 {
-  font-family: $fontSpartan;
+  @extend %fontSpartan;
+  @include padding-leader();
 }
 
 h1 {
@@ -43,12 +48,16 @@ h2 {
   @extend %t-xlarge;
 }
 
-h2 {
+h3 {
   @extend %t-large;
 }
 
 .subtitle {
   @extend %fontMerriweatherItalic;
+  h2 + & {
+    @extend %t-large;
+    opacity: .8;
+  }
 }
 
 em {
@@ -57,15 +66,52 @@ em {
 
 p {
   @extend %fontMerriweather;
-  @extend %t-medium;
   @include padding-trailer();
+}
+
+.facts, .reveal {
+  -moz-column-width: span(4 of 9);
+  -moz-column-count: 2;
+  column-width: span(4 of 9);
+  column-count: 2;
+  //break-inside: avoid;
+
+}
+
+blockquote {
+  &:first-child {
+      padding: 0;
+  }
+  opacity: .7;
+  @extend %t-large;
+  @extend %fontMerriweatherItalic;
+  @include padding-leader();
+  @include padding-trailer();
+  margin: rhythm(6);
+  // &:before {
+  //     content: "\201C";
+  //     @extend %fontSpartan;
+  //     position: absolute;
+  //     left: -.35em;
+  //     font-size: 3em;
+  //     opacity: .4;
+  //     top: .5em;
+  // }
+}
+cite {
+  @extend %t-large;
+  font-style: normal;
+  display: block;
+  margin: 0 rhythm(6);
+  text-align: right;
+  &:before {content: "\2014"; }
 }
 
 img {
   filter: url("../img/blue-filter.svg#seafish") grayscale(100%) brightness(20%);
 }
 
-#title {
+#surface {
   background: color(sky);
   color: color(altCopy);
   text-align: center;

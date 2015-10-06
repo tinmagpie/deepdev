@@ -1,199 +1,63 @@
-@font-face {
-  font-family: 'leagueSpartanRegular';
-  src: url("../fonts/leaguespartan-bold-webfont.eot");
-  src: url("../fonts/leaguespartan-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/leaguespartan-bold-webfont.woff2") format("woff2"), url("../fonts/leaguespartan-bold-webfont.woff") format("woff"), url("../fonts/leaguespartan-bold-webfont.ttf") format("truetype"), url("../fonts/leaguespartan-bold-webfont.svg#league_spartanregular") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-.Merriweather400 p, .Merriweather400 footer {
-  font-family: "Merriweather", serif;
-  font-weight: 400;
-}
+/*
+Error: File to import not found or unreadable: breakpoint.
+       Load paths:
+         Compass::SpriteImporter
+         /Users/rachel/Animation Projects/Mozilla Dive into Dev Tools/site/scss
+         /Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets
+        on line 1 of /Users/rachel/Animation Projects/Mozilla Dive into Dev Tools/site/scss/main.scss
 
-.subtitle, em {
-  font-family: "Merriweather", serif;
-  font-weight: 700;
-  font-style: italic;
-}
+1: @import "breakpoint";
+2: @import "config";
+3: @import "typography";
+4: 
+5: $heightScreen: 100vh; // 100vh = height of screen = 200 meters of ocean
+6: 
 
-p, footer {
-  font-size: 1rem;
-  line-height: 2rem;
-}
-
-h2 {
-  font-size: 2rem;
-  line-height: 2.66667rem;
-}
-
-h2 {
-  font-size: 3rem;
-  line-height: 3.33333rem;
-}
-
-h1 {
-  font-size: 4rem;
-  line-height: 4rem;
-}
-
-html {
-  font-size: 112.5%;
-  line-height: 0.33333em;
-}
-
-.wrapper {
-  overflow: hidden;
-}
-
-.segment {
-  min-height: 100vh;
-  position: relative;
-}
-.segment h1, .segment h2, .segment h3, .segment p {
-  opacity: 0;
-  transition: opacity 500ms easing(out);
-}
-.segment * {
-  animation-play-state: paused;
-}
-.segment.in-view h1, .segment.in-view h2, .segment.in-view h3, .segment.in-view p {
-  opacity: 1;
-}
-.segment.in-view * {
-  animation-play-state: running;
-}
-
-body, h1, h2, h3, p {
-  margin: 0;
-  padding: 0;
-}
-
-h1, h2, h3 {
-  font-family: "leagueSpartanRegular", sans-serif;
-}
-
-h1 {
-  color: #000c1c;
-}
-
-p {
-  padding-bottom: 0.33333rem;
-}
-
-img {
-  filter: url("../img/blue-filter.svg#seafish") grayscale(100%) brightness(20%);
-}
-
-#title {
-  background: #A9DDF2;
-  color: #12454b;
-  text-align: center;
-}
-
-.waves {
-  background: #39dbb4;
-  height: 110px;
-  padding-bottom: 2em;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
-
-.wave {
-  position: absolute;
-  left: 0;
-  bottom: 2em;
-  width: 100%;
-  height: 120px;
-}
-.in-view .wave {
-  animation-name: oceanSurge;
-  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-.wave:before {
-  content: " ";
-  transform: scale(1.1) translateX(-20px);
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding: 0 40px;
-  height: 120px;
-}
-.in-view .wave:before {
-  animation-name: oceanMotion;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-.wave-close {
-  bottom: 1.9em;
-  animation-duration: 3.4s;
-}
-.wave-close:before {
-  background: url("../img/wave-close.svg") repeat-x 100% 100%;
-  animation-duration: 2.1s;
-}
-
-.wave-near {
-  animation-duration: 5.5s;
-}
-.wave-near:before {
-  background: url("../img/wave-near.svg") repeat-x 60% 100%;
-  animation-duration: 3.4s;
-  transform: translateY(-10px);
-}
-
-.wave-mid {
-  background: #002351;
-  padding-top: 10px;
-}
-.wave-mid:before {
-  background: url("../img/wave-mid.svg") repeat-x 0 10px;
-  background-size: 305px 120px;
-  animation-duration: 5.5s;
-}
-
-@keyframes oceanMotion {
-  100% {
-    transform: scale(1.1) translateX(30px);
-  }
-}
-@keyframes oceanSurge {
-  100% {
-    transform: translateY(10px);
-  }
-}
-#epipelagic {
-  background: linear-gradient(to bottom, #39dbb3 0%, #007e84 50%, #0b4960 100%);
-  color: #12454b;
-}
-
-#mesopelagic {
-  background: linear-gradient(to bottom, #0b4960 0%, #0b4960 33%, #002351 67%, #000c1c 100%);
-  color: #c6f3c7;
-}
-
-#bathypelagic {
-  background: #000c1c;
-  color: #c6f3c7;
-}
-
-#abyssal {
-  background: #000c1c;
-  color: #c6f3c7;
-}
-
-footer {
-  background: #000c1c;
-  color: #c6f3c7;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  line-height: 2em;
-}
+Backtrace:
+/Users/rachel/Animation Projects/Mozilla Dive into Dev Tools/site/scss/main.scss:1
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/import_node.rb:67:in `rescue in import'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/import_node.rb:45:in `import'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/import_node.rb:28:in `imported_file'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/import_node.rb:37:in `css_import?'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `block in with_base'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `with_base'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/root_node.rb:20:in `render'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/engine.rb:278:in `render'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:16:in `render'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:328:in `block in watch'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/vendor/listen/lib/listen/listener.rb:252:in `call'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/vendor/listen/lib/listen/adapter.rb:254:in `call'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
+/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: breakpoint.\A        Load paths:\A          Compass::SpriteImporter\A          /Users/rachel/Animation Projects/Mozilla Dive into Dev Tools/site/scss\A          /Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets\A         on line 1 of /Users/rachel/Animation Projects/Mozilla Dive into Dev Tools/site/scss/main.scss\A \A 1: @import \"breakpoint\";\A 2: @import \"config\";\A 3: @import \"typography\";\A 4: \A 5: $heightScreen: 100vh; // 100vh = height of screen = 200 meters of ocean\A 6: "; }
