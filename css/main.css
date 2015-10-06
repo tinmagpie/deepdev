@@ -10,7 +10,7 @@
   font-weight: 400;
 }
 
-.tagline, em {
+.subtitle, em {
   font-family: "Merriweather", serif;
   font-weight: 700;
   font-style: italic;
@@ -76,9 +76,18 @@ h1 {
   color: #000c1c;
 }
 
+p {
+  padding-bottom: 0.33333rem;
+}
+
+img {
+  filter: url("../img/blue-filter.svg#seafish") grayscale(100%) brightness(20%);
+}
+
 #title {
   background: #A9DDF2;
   color: #12454b;
+  text-align: center;
 }
 
 .waves {
@@ -160,22 +169,22 @@ h1 {
   }
 }
 #epipelagic {
-  background: linear-gradient(to bottom, #39dbb3 0%, #007e84 100%);
+  background: linear-gradient(to bottom, #39dbb3 0%, #007e84 50%, #0b4960 100%);
   color: #12454b;
 }
 
 #mesopelagic {
-  background: linear-gradient(to bottom, #007e84 0%, #0b4960 100%);
+  background: linear-gradient(to bottom, #0b4960 0%, #0b4960 33%, #002351 67%, #000c1c 100%);
   color: #c6f3c7;
 }
 
 #bathypelagic {
-  background: linear-gradient(to bottom, #0b4960 0%, #002351 100%);
+  background: #000c1c;
   color: #c6f3c7;
 }
 
 #abyssal {
-  background: linear-gradient(to bottom, #002351 0%, #000c1c 100%);
+  background: #000c1c;
   color: #c6f3c7;
 }
 

@@ -47,7 +47,7 @@ h2 {
   @extend %t-large;
 }
 
-.tagline {
+.subtitle {
   @extend %fontMerriweatherItalic;
 }
 
@@ -58,11 +58,17 @@ em {
 p {
   @extend %fontMerriweather;
   @extend %t-medium;
+  @include padding-trailer();
+}
+
+img {
+  filter: url("../img/blue-filter.svg#seafish") grayscale(100%) brightness(20%);
 }
 
 #title {
   background: color(sky);
   color: color(altCopy);
+  text-align: center;
 }
 
 .waves {
@@ -139,19 +145,21 @@ p {
 }
 
 #epipelagic {
-  background: linear-gradient(to bottom, #39dbb3 0%, #007e84 100%);
+  background: linear-gradient(to bottom, #39dbb3 0%, #007e84 50%, #0b4960 100%);
   color: color(altCopy);
 }
 #mesopelagic {
-  background: linear-gradient(to bottom, #007e84 0%, #0b4960 100%);
+  background: linear-gradient(to bottom, #0b4960 0%, #0b4960 33%, #002351 67%, $abyss 100%);
   color: color(copy);
 }
 #bathypelagic {
-  background: linear-gradient(to bottom, #0b4960 0%, #002351 100%);
+  background: $abyss;
+  // background: linear-gradient(to bottom, #0b4960 0%, #002351 100%);
   color: color(copy);
 }
 #abyssal {
-  background: linear-gradient(to bottom, #002351 0%, $abyss 100%);
+  background: $abyss;
+  // background: linear-gradient(to bottom, #002351 0%, $abyss 100%);
   color: color(copy);
 }
 
