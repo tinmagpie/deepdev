@@ -61,14 +61,14 @@ html {
     margin: 0 auto;
   }
 }
-.segment h1, .segment h2, .segment h3, .segment p {
+.segment h1, .segment h2, .segment h3, .segment p, .segment li {
   opacity: 0;
   transition: opacity 2.1s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .segment * {
   animation-play-state: paused;
 }
-.segment.in-view h1, .segment.in-view h2, .segment.in-view h3, .segment.in-view p {
+.segment.in-view h1, .segment.in-view h2, .segment.in-view h3, .segment.in-view p, .segment.in-view li {
   opacity: 1;
 }
 .segment.in-view .subtitle {
@@ -78,7 +78,15 @@ html {
   animation-play-state: running;
 }
 
-body, h1, h2, h3, p {
+.challenge, .solved .challenge, .facts, .show-challenge .facts {
+  opacity: 0;
+}
+
+.solving .challenge, .show-challenge .challenge, .solved .facts {
+  opacity: 1;
+}
+
+body, h1, h2, h3, p, ul {
   margin: 0;
   padding: 0;
 }
@@ -91,23 +99,52 @@ h1 {
   color: #000c1c;
 }
 
-p, li {
+.subtitle {
+  padding-bottom: 1rem;
+}
+
+p {
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 35em) {
+  p {
+    padding-bottom: 0;
+  }
+  p:not(:first-of-type) {
+    text-indent: 4em;
+  }
+}
+li {
   padding-bottom: 0.33333rem;
+  margin-left: 4em;
 }
 
 @media (min-width: 54em) {
-  .facts, .reveal {
+  .content, .facts, .challenge {
     -moz-column-count: 2;
     -moz-column-gap: 2rem;
     column-count: 2;
     column-gap: 2rem;
   }
+  .content ul, .facts ul, .challenge ul {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
+@media (min-width: 54em) {
+  p {
+    padding-bottom: 2rem;
+    text-indent: 0 !important;
+  }
 }
 blockquote {
+  page-break-inside: avoid;
+  break-inside: avoid;
   opacity: .7;
   padding-top: 0.33333rem;
   padding-bottom: 0.33333rem;
-  margin: 2rem;
+  margin: 4rem;
 }
 blockquote:first-child {
   padding: 0;
@@ -116,7 +153,7 @@ blockquote:first-child {
 cite {
   font-style: normal;
   display: block;
-  margin: 0 2rem;
+  margin: 0 4rem;
   text-align: right;
 }
 cite:before {

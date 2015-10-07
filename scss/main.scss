@@ -12,12 +12,12 @@ $heightScreen: 100vh; // 100vh = height of screen = 200 meters of ocean
   min-height: $heightScreen;
   position: relative;
   padding: 0 2em;
-  @include breakpoint($single_col){
+  @include breakpoint($double_col){
     max-width: 102rem;
     margin: 0 auto;
   }
   @extend %t-medium;
-  h1, h2, h3, p {
+  h1, h2, h3, p, li {
     opacity: 0;
     transition: opacity duration(days) ease(out);
   }
@@ -25,7 +25,7 @@ $heightScreen: 100vh; // 100vh = height of screen = 200 meters of ocean
     animation-play-state: paused;
   }
   &.in-view {
-    h1, h2, h3, p {
+    h1, h2, h3, p, li {
       opacity: 1;
     }
     .subtitle {
@@ -37,7 +37,67 @@ $heightScreen: 100vh; // 100vh = height of screen = 200 meters of ocean
   }
 }
 
-body, h1, h2, h3, p {
+.segment {
+  // undiscovered/default
+  // hide facts and challenge
+
+  // discovered
+  // show challenge
+  // .solving
+
+  // .solved
+  // hide challenge, show facts
+
+  // reopened
+  // show challenge, hide facts
+  // .show-challenge
+
+  // aside from the default state where both are hidden,
+  // facts and challenge are always toggling: challenge or facts
+}
+
+%content-hidden {
+  opacity: 0;
+}
+
+%content-revealed {
+  opacity: 1;
+}
+
+.challenge {
+  // undiscovered/default
+  @extend %content-hidden;
+
+  // opened/shown
+  .solving &,
+  .show-challenge & {
+    @extend %content-revealed;
+  }
+
+  // solved
+  .solved & {
+    @extend %content-hidden;
+  }
+}
+
+.facts {
+  // unsolved/default
+  // unsolved
+  @extend %content-hidden;
+
+  // solved/shown
+  .solved & {
+    @extend %content-revealed;
+  }
+  // toggled off
+  .show-challenge & {
+    @extend %content-hidden;
+  }
+}
+
+.progress {}
+
+body, h1, h2, h3, p, ul {
   margin: 0; padding: 0;
 }
 
@@ -62,24 +122,54 @@ h3 {
 .subtitle {
   @extend %fontMerriweatherItalic;
   @extend %t-large;
+  @include padding-trailer(3);
 }
 
 em {
   @extend %fontMerriweatherItalic;
 }
 
-p, li {
+p {
   @extend %fontMerriweather;
-  @include padding-trailer();
+  @include padding-trailer(3);
 }
 
-@include breakpoint($single_col){
-  .facts, .reveal {
+@include breakpoint($medium){
+  p {
+    padding-bottom: 0;
+    &:not(:first-of-type) {
+      text-indent: 4em;
+    }
+  }
+}
+
+li {
+  @extend %fontMerriweather;
+  @include padding-trailer();
+  margin-left: 4em;
+}
+
+@include breakpoint($double_col){
+  .content {
     -moz-column-count: 2;
     -moz-column-gap: 2rem;
     column-count: 2;
     column-gap: 2rem;
     //break-inside: avoid;
+    ul {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+  }
+  .facts, .challenge {
+    @extend .content;
+  }
+}
+
+@include breakpoint($double_col){
+  p {
+    @include padding-trailer(6);
+    text-indent: 0 !important;
   }
 }
 
@@ -87,12 +177,14 @@ blockquote {
   &:first-child {
       padding: 0;
   }
+  page-break-inside: avoid;
+  break-inside: avoid;
   opacity: .7;
   @extend %t-large;
   @extend %fontMerriweatherItalic;
   @include padding-leader();
   @include padding-trailer();
-  margin: rhythm(6);
+  margin: 4rem;
   // &:before {
   //     content: "\201C";
   //     @extend %fontSpartan;
@@ -107,7 +199,7 @@ cite {
   @extend %t-large;
   font-style: normal;
   display: block;
-  margin: 0 rhythm(6);
+  margin: 0 4rem;
   text-align: right;
   &:before {content: "\2014"; }
 }
