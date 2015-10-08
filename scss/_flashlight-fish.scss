@@ -8,9 +8,27 @@
 }
 
 #creature_flashlight-fish1 {
+    animation: swimmyFlashy duration(years) -4.45s ease(inOut) infinite paused;
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
+}
+
+@keyframes swimmyFlashy {
+    0% {
+        opacity: 0;
+        transform: translate(-400%, -50%);
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(400%, -50%);
+    }
 }
 
 .school_flashlight-fish {
