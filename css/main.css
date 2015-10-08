@@ -50,10 +50,17 @@ html {
   overflow: hidden;
 }
 
+/* UI */
+.indicator {
+  cursor: pointer;
+}
+
 .segment {
-  min-height: 100vh;
+  min-height: 80rem;
   position: relative;
-  padding: 0 2em;
+  padding: 2em;
+  padding-top: 2.33333rem;
+  padding-bottom: 2.66667rem;
 }
 @media (min-width: 54em) {
   .segment {
@@ -61,15 +68,8 @@ html {
     margin: 0 auto;
   }
 }
-.segment h1, .segment h2, .segment h3, .segment p, .segment li {
-  opacity: 0;
-  transition: opacity 2.1s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
 .segment * {
   animation-play-state: paused;
-}
-.segment.in-view h1, .segment.in-view h2, .segment.in-view h3, .segment.in-view p, .segment.in-view li {
-  opacity: 1;
 }
 .segment.in-view .subtitle {
   opacity: 0.6;
@@ -78,12 +78,25 @@ html {
   animation-play-state: running;
 }
 
-.challenge, .solved .challenge, .facts, .show-challenge .facts {
+.segment h1, .segment h2, .segment h3, .segment .content, .challenge, .solved .challenge {
   opacity: 0;
+  transition: opacity 2.1s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.solving .challenge, .show-challenge .challenge, .solved .facts {
+.segment.in-view h1, .segment.in-view h2, .segment.in-view h3, .segment.in-view .content, .solving .challenge, .show-challenge .challenge, .solved .facts {
   opacity: 1;
+}
+
+.puzzle {
+  position: relative;
+  z-index: 1;
+}
+
+.challenge {
+  transition-duration: 300ms;
+  background: #0b4a61;
+  padding: 1.33333rem 1em;
+  margin: 1.33333rem -1em;
 }
 
 body, h1, h2, h3, p, ul {
@@ -132,12 +145,7 @@ li {
     break-inside: avoid;
   }
 }
-@media (min-width: 54em) {
-  p {
-    padding-bottom: 2rem;
-    text-indent: 0 !important;
-  }
-}
+
 blockquote {
   page-break-inside: avoid;
   break-inside: avoid;
@@ -171,22 +179,28 @@ img {
   position: relative;
 }
 
+#title {
+  box-sizing: border-box;
+  padding-bottom: 190px;
+  min-height: 100vh;
+}
+
 .waves {
   background: #39dbb4;
-  height: 110px;
-  padding-bottom: 2em;
+  height: 120px;
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
+  padding-bottom: 60px;
 }
 
 .wave {
   position: absolute;
   left: 0;
-  bottom: 2em;
+  bottom: 60px;
   width: 100%;
-  height: 120px;
+  height: 130px;
 }
 .in-zone .wave {
   animation-name: oceanSurge;
@@ -212,7 +226,6 @@ img {
 }
 
 .wave-close {
-  bottom: 1.9em;
   animation-duration: 3.4s;
 }
 .wave-close:before {
@@ -224,14 +237,14 @@ img {
   animation-duration: 5.5s;
 }
 .wave-near:before {
-  background: url("../img/wave-near.svg") repeat-x 60% 100%;
+  background: url("../img/wave-near.svg") repeat-x 100% 100%;
   animation-duration: 3.4s;
   transform: translateY(-10px);
 }
 
 .wave-mid {
   background: #002351;
-  padding-top: 10px;
+  height: 130px;
 }
 .wave-mid:before {
   background: url("../img/wave-mid.svg") repeat-x 0 10px;
@@ -249,6 +262,7 @@ img {
     transform: translateY(10px);
   }
 }
+/* Zones */
 #epipelagic {
   background: linear-gradient(to bottom, #39dbb4 0%, #007e84 50%, #0b4960 100%);
   color: #06191b;
@@ -277,4 +291,5 @@ footer {
   left: 0;
   width: 100%;
   line-height: 2em;
+  z-index: 3;
 }

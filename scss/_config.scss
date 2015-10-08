@@ -29,13 +29,13 @@ $skyMedium: #4ed9f2;
 $base-font-color: color(copy);
 
 $colors: (
-    copy: $greyLight,
-    altCopy: $black,
-    titleCopy: $abyss,
-    altTitleCopy: $greyDark,
-    link: $biolumination,
-    link-visited: $skyMedium,
-    sky: $skyLight,
+  copy: $greyLight,
+  altCopy: $black,
+  titleCopy: $abyss,
+  altTitleCopy: $greyDark,
+  link: $biolumination,
+  link-visited: $skyMedium,
+  sky: $skyLight,
 );
 
 // Now, getting colors...
@@ -50,12 +50,12 @@ $colors: (
 
 // Easings
 $easings: (
-    // in: cubic-bezier(0.55, 0.055, 0.675, 0.19),
-    out: cubic-bezier(0.215, 0.61, 0.355, 1),
-    inOut: cubic-bezier(0.645, 0.045, 0.355, 1),
-    bounceIn: cubic-bezier(0.6, -0.28, 0.735, 0.045),
-    bounceOut: cubic-bezier(0.175, 0.885, 0.32, 1.275),
-    bounceInOut: cubic-bezier(0.68, -0.55, 0.265, 1.55)
+  // in: cubic-bezier(0.55, 0.055, 0.675, 0.19),
+  out: cubic-bezier(0.215, 0.61, 0.355, 1),
+  inOut: cubic-bezier(0.645, 0.045, 0.355, 1),
+  bounceIn: cubic-bezier(0.6, -0.28, 0.735, 0.045),
+  bounceOut: cubic-bezier(0.175, 0.885, 0.32, 1.275),
+  bounceInOut: cubic-bezier(0.68, -0.55, 0.265, 1.55)
 );
 
 @function ease($key) {
@@ -69,15 +69,15 @@ $easings: (
 
 // Timings
 $durations: (
-    fast: 200ms,
-    timely: 300ms,
-    slow: 500ms,
-    slower: 800ms,
-    slowest: 1.3s,
-    days: 2.1s,
-    weeks: 3.4s,
-    months: 5.5s,
-    years: 8.9s,
+  fast: 200ms,
+  timely: 300ms,
+  slow: 500ms,
+  slower: 800ms,
+  slowest: 1.3s,
+  days: 2.1s,
+  weeks: 3.4s,
+  months: 5.5s,
+  years: 8.9s,
 );
 
 @function duration($key) {
