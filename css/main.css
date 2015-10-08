@@ -339,7 +339,7 @@ cite:before {
 }
 
 #creature_flashlight-fish1 {
-  animation: swimmyFlashy 8.9s -4.45s cubic-bezier(0.645, 0.045, 0.355, 1) infinite paused;
+  animation: swimmyFlashy 8.9s -4.45s linear infinite paused;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -359,7 +359,7 @@ cite:before {
   }
   100% {
     opacity: 0;
-    transform: translate(400%, -50%);
+    transform: translate(300%, -50%);
   }
 }
 .school_flashlight-fish {
@@ -436,7 +436,7 @@ cite:before {
   transform: scale(0.7);
 }
 #school_flashlight-fish_bg .creature_flashlight-fish:nth-child(even):before {
-  filter: url("../img/blue-filter.svg#seafish") brightness(40%) saturate(40%);
+  filter: url("../img/blue-filter.svg#seafish") brightness(30%) saturate(30%);
 }
 
 #school_flashlight-fish_fg .creature_flashlight-fish:nth-child(0n+1) {
@@ -463,13 +463,13 @@ cite:before {
   transform: scale(-0.85, 0.85);
 }
 #school_flashlight-fish_fg .creature_flashlight-fish:nth-child(odd):before {
-  filter: url("../img/blue-filter.svg#seafish") brightness(60%) saturate(60%);
+  filter: url("../img/blue-filter.svg#seafish") brightness(40%) saturate(40%);
 }
 #school_flashlight-fish_fg .creature_flashlight-fish:nth-child(even) {
   transform: scale(-0.9, 0.9);
 }
 #school_flashlight-fish_fg .creature_flashlight-fish:nth-child(even):before {
-  filter: url("../img/blue-filter.svg#seafish") brightness(80%) saturate(80%);
+  filter: url("../img/blue-filter.svg#seafish") brightness(50%) saturate(50%);
 }
 
 #school_flashlight-fish1 {
