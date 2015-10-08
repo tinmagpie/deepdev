@@ -1,7 +1,6 @@
 @import "breakpoint";
 @import "config";
 @import "typography";
-
 $heightScreen: 80rem; // 100vh = height of screen = 200 meters of ocean
 
 .wrapper {
@@ -11,6 +10,13 @@ $heightScreen: 80rem; // 100vh = height of screen = 200 meters of ocean
 /* UI */
 .indicator {
   cursor: pointer;
+}
+
+%play-pause {
+  animation-play-state: paused;
+  .in-view & {
+    animation-play-state: running;
+  }
 }
 
 .segment {
@@ -214,10 +220,6 @@ cite {
   &:before {content: "\2014"; }
 }
 
-img {
-  filter: url("../img/blue-filter.svg#seafish") grayscale(100%) brightness(20%);
-}
-
 #surface {
   background: color(sky);
   color: color(altCopy);
@@ -322,6 +324,10 @@ img {
   // background: linear-gradient(to bottom, #002351 0%, $abyss 100%);
   color: color(copy);
 }
+
+/* Challenges */
+@import "creature-shop";
+@import "flashlight-fish";
 
 footer {
   background: $abyss;

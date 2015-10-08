@@ -1,0 +1,112 @@
+/* Props */
+$creatures2x-use-percentages: true;
+$creatures2x-spacing: 4px;
+$creatures2x-layout: smart;
+$creatures2x-sprite: sprite-map("creatures2x/*.png");
+@import "creatures2x/*.png";
+$creatures2x-sprite-width: sprite_width($creatures2x-sprites);
+
+$creatures-use-percentages: true;
+$creatures-spacing: 2px;
+$creatures-layout: smart;
+@import "creatures/*.png";
+$creatures-sprite-width: sprite_width($creatures-sprites);
+
+// Creature basics
+.creature {
+  overflow: hidden;
+  position: relative;
+  // image that might animate
+  &:before {
+    filter: $blueFilter;
+    content: " ";
+    width: 100%;
+    height: 100%; // non-animating default
+    display: block;
+  }
+  // SVG lights
+  .lumi {
+    position: absolute;
+  }
+}
+
+// Make a creature
+@mixin make-creature($imgName, $lumiX, $lumiY, $lumiW, $lumiH) {
+  $iWidth: image-width(sprite-file($creatures2x-sprites, #{$imgName}));
+  $iHeight: image-height(sprite-file($creatures2x-sprites, #{$imgName}));
+  width: $iWidth/2;
+  height: $iHeight/2;
+  // TODO make 2 sprites: 1 and 2x
+  &:before {
+    @include creatures-sprite(#{$imgName});
+    @include set-bg-width($creatures-sprite-width, $creatures-sprites, #{$imgName});
+    // background
+  }
+  @if $lumiX {
+    .lumi {
+      left: percentage(($lumiX * 1px)/$iWidth);
+      top: percentage(($lumiY * 1px)/$iHeight);
+      width: percentage(($lumiW * 1px)/$iWidth);
+      height: percentage(($lumiH * 1px)/$iHeight);
+    }
+  }
+}
+
+@mixin set-bg-width($sprites-width, $sprite, $sprite-image) {
+    $spriteX: percentage($sprites-width / image-width(sprite-file($sprite, $sprite-image)));
+    background-size: $spriteX auto;
+}
+
+@media only screen and ( -webkit-min-device-pixel-ratio: 1.3 ),
+       only screen and (    min--moz-device-pixel-ratio: 1.3 ),
+       only screen and (      -o-min-device-pixel-ratio: 2.6/2 ),
+       only screen and (         min-device-pixel-ratio: 1.3 ),
+       only screen and ( min-resolution: 124.8dpi ),
+       only screen and ( min-resolution: 1.3dppx ) {
+
+      .creature {
+        &:before {
+          background-image: sprite-url($creatures2x-sprite);
+        }
+      }
+}
+
+// @mixin set-dimensions($width, $height, $parent-width, $bottom: false) {
+//     width: percentage($width/$parent-width);
+//     @if $bottom {
+//         padding-bottom: percentage($height/$parent-width);
+//     } @else {
+//         padding-top: percentage($height/$parent-width);
+//         height: 0;
+//     }
+// }
+
+// @mixin set-width($width, $parent-width) {
+//     width: percentage($width/$parent-width);
+// }
+
+// @mixin set-position($sX, $sY, $parent-width, $parent-height) {
+//     left: percentage($sX/$parent-width);
+//     top: percentage($sY/$parent-height);
+// }
+
+// @mixin offsetLeft($offset, $parent-width) {
+//     left: percentage($offset/$parent-width);
+// }
+
+
+// @mixin set-bg-height($sprites-height, $sprite, $sprite-image) {
+//     $spriteY: percentage($sprites-height / image-height(sprite-file($sprite, $sprite-image)));
+//     @include background-size(auto $spriteY);
+// }
+
+// @mixin create-creature($prop, $sX, $sY, $parent-width: $house-width, $parent-height: $frame-height*2) {
+//     .#{$prop}-prop {
+//         $iWidth: image-width(sprite-file($props-sprites, #{$prop}));
+//         $iHeight: image-height(sprite-file($props-sprites, #{$prop}));
+//         @include props-sprite(#{$prop});
+//       @include set-dimensions($iWidth, $iHeight, $parent-width);
+//       @include set-position($sX, $sY, $parent-width, $parent-height);
+//       @include set-bg-width($props-sprite-width, $props-sprites, #{$prop});
+//     }
+// }

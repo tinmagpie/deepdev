@@ -53,11 +53,16 @@
       parent.classList.toggle('show-challenge');
       // var challenge = parent.getElementsByClassName('challenge')[0];
       var puzzle = findParentBySelector(indicator, '.puzzle');
-      $('html, body').animate({
+      $('.wrapper').animate({
         scrollTop: $(puzzle).offset().top
       }, 300);
     })
   });
+
+  // Scroll to nearest in-view puzzle when devtools are opened.
+  // window.addEventListener('devtoolschange', function (e) {
+  // });
+
 
   // Debouncing on rezize
   // http://davidwalsh.name/javascript-debounce-function

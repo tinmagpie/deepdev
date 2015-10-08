@@ -1,0 +1,134 @@
+#d400 .puzzle {
+    position:relative;
+    height: 400px;
+}
+
+.creature_flashlight-fish {
+    @include make-creature(flashlight-fish, 302, 116, 47, 37);
+}
+
+#creature_flashlight-fish1 {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.school_flashlight-fish {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    .creature_flashlight-fish {
+        position: absolute;
+    }
+}
+
+.schooling_flashlight-fish {
+    padding: 0 2em;
+    margin: 0 -2em;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    .lumi {
+        animation: winking steps(1) infinite duration(slow);
+    }
+    .creature_flashlight-fish:nth-child(odd) {
+        .lumi {
+            animation-duration: duration(timely);
+        }
+    }
+    .creature_flashlight-fish:nth-child(3) {
+        .lumi {
+            animation-delay: duration(fast);
+        }
+    }
+    .creature_flashlight-fish:nth-child(4) {
+        .lumi {
+            animation-duration: duration(slower);
+        }
+    }
+}
+
+@keyframes winking {
+    50% { opacity: 0;}
+}
+
+#school_flashlight-fish_bg {
+    .creature_flashlight-fish:nth-child(0n+1) { top: 40%; right: 46%; }
+    .creature_flashlight-fish:nth-child(0n+2) { top: 20%; left: 5%; }
+    .creature_flashlight-fish:nth-child(0n+3) { top: 64%; left: 44%; }
+    .creature_flashlight-fish:nth-child(0n+4) { top: 60%; left: 10%; }
+    .creature_flashlight-fish:nth-child(0n+5) { top: 30%; left: 25%; }
+    .creature_flashlight-fish:nth-child(0n+6) { top: 10%; right: 10%; }
+    .creature_flashlight-fish:nth-child(0n+7) { top: 50%; left: 90%; }
+    .creature_flashlight-fish:nth-child(odd) {
+        transform: scale(0.5);
+        &:before{
+            filter: $blueFilter  brightness(20%) saturate(20%);
+        }
+    }
+    .creature_flashlight-fish:nth-child(even) {
+        transform: scale(0.7);
+        &:before{
+            filter: $blueFilter  brightness(40%) saturate(40%);
+        }
+    }
+}
+
+#school_flashlight-fish_fg {
+    .creature_flashlight-fish:nth-child(0n+1) { top: 68%; left: 41%; }
+    .creature_flashlight-fish:nth-child(0n+2) { top: 55%; left: 0%; }
+    .creature_flashlight-fish:nth-child(0n+3) { top: 12%; left: 15%; }
+    .creature_flashlight-fish:nth-child(0n+4) { top: 20%; right: 24%; }
+    .creature_flashlight-fish:nth-child(0n+5) { top: 36%; right: 0%; }
+    .creature_flashlight-fish:nth-child(odd) {
+        transform: scale(-0.85, .85);
+        &:before{
+            filter: $blueFilter  brightness(60%) saturate(60%);
+        }
+    }
+    .creature_flashlight-fish:nth-child(even) {
+        transform: scale(-0.9, .9);
+        &:before{
+            filter: $blueFilter  brightness(80%) saturate(80%);
+        }
+    }
+}
+
+#school_flashlight-fish1 {
+    animation: flashlight-swim linear infinite duration(months);
+    @extend %play-pause;
+}
+
+@keyframes flashlight-swim {
+    100% { transform: translateX(100%); }
+}
+
+#school_flashlight-fish2 {
+    animation: flashlight-swim2 linear infinite duration(months);
+    transform: translate(-100%);
+    @extend %play-pause;
+}
+
+@keyframes flashlight-swim2 {
+    100% { transform: translateX(0); }
+}
+
+#school_flashlight-fish3 {
+    animation: flashlight-swim3 linear infinite duration(months);
+    @extend %play-pause;
+}
+
+@keyframes flashlight-swim3 {
+    100% { transform: translateX(-100%); }
+}
+
+#school_flashlight-fish4 {
+    animation: flashlight-swim4 linear infinite duration(months);
+    transform: translate(100%);
+    @extend %play-pause;
+}
+
+@keyframes flashlight-swim4 {
+    100% { transform: translateX(0); }
+}
