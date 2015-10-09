@@ -39,9 +39,9 @@ $creatures-sprite-width: sprite_width($creatures-sprites);
   height: $iHeight/2;
   // TODO make 2 sprites: 1 and 2x
   &:before {
+    @include creatures-sprite(#{$imgName});
+    @include set-bg-width($creatures-sprite-width, $creatures-sprites, #{$imgName});
     @if $animation {
-      @include creatures-sprite(#{$imgName});
-      @include set-bg-width($creatures-sprite-width, $creatures-sprites, #{$imgName});
       $lastFrameLoc: nth(sprite-position($creatures2x-sprites, #{$lastKeyframe}), 2);
       $lastFrameSize: image-height(sprite-file($creatures2x-sprites, #{$lastKeyframe}));
       $lastFrameBottom: (-$lastFrameLoc) + $lastFrameSize;

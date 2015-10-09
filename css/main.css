@@ -293,7 +293,7 @@ cite:before {
   background-repeat: no-repeat;
 }
 
-.creatures-sprite, .creature_nautilus:before {
+.creatures-sprite, .creature_flashlight-fish:before, .creature_nautilus:before {
   background-image: url('../img/creatures-s375be89c7c.png');
   background-repeat: no-repeat;
 }
@@ -326,6 +326,10 @@ cite:before {
 .creature_flashlight-fish {
   width: 181.5px;
   height: 90.5px;
+}
+.creature_flashlight-fish:before {
+  background-position: 0 0;
+  background-size: 120.87912% auto;
 }
 .creature_flashlight-fish .lumi {
   left: 83.19559%;
