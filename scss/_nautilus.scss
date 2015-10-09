@@ -1,0 +1,46 @@
+@include breakpoint($double_col){
+    .right {
+        .puzzle {
+            float: right;
+            width: calc(50% - 2em);
+        }
+        .challenge_wrapper {
+            float: left;
+            width: calc(50% - 2em);
+        }
+        .challenge, .facts {
+            -moz-column-count: unset;
+            -moz-column-gap: 2rem;
+            column-count: unset;
+            column-gap: 2rem;
+        }
+    }
+}
+
+#d600 .puzzle {
+    height: 600px;
+}
+
+.creature_nautilus {
+    @include make-creature(nautilus, $animation: true, $lastKeyframe: nautilus2);
+}
+
+#creature_nautilus1 {
+    animation: nautyBounce linear duration(weeks) infinite alternate;
+    &:before {
+        animation: nautyRaspberry steps(1) duration(days) infinite;
+        height: 200%;
+    }
+}
+
+@keyframes nautyRaspberry {
+    25% { transform: translateY(-50%)}
+    35% { transform: translateY(0)}
+    45% { transform: translateY(-50%)}
+}
+
+@keyframes nautyBounce {
+    100% {
+        transform: translateY(50vh);
+    }
+}

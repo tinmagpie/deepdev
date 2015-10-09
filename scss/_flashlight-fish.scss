@@ -4,7 +4,7 @@
 }
 
 .creature_flashlight-fish {
-    @include make-creature(flashlight-fish, 302, 116, 47, 37);
+    @include make-creature(flashlight-fish, 302, 116, 47, 37, $animation: false, $biolumi: true);
 }
 
 #creature_flashlight-fish1 {
