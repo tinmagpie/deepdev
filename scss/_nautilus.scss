@@ -22,14 +22,13 @@
 }
 
 .creature_nautilus {
-    @include make-creature(nautilus, $animation: true, $lastKeyframe: nautilus2);
+    @include make-creature(nautilus, $animation: true, $keyframes: 2);
 }
 
 #creature_nautilus1 {
     animation: nautyBounce linear duration(weeks) infinite alternate;
     &:before {
         animation: nautyRaspberry steps(1) duration(days) infinite;
-        height: 200%;
     }
 }
 

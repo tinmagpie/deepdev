@@ -289,12 +289,12 @@ cite:before {
 /* Challenges */
 /* Props */
 .creatures2x-sprite {
-  background-image: url('../img/creatures2x-s23c1153336.png');
+  background-image: url('../img/creatures2x-sde5b036c11.png');
   background-repeat: no-repeat;
 }
 
-.creatures-sprite, .creature_flashlight-fish:before, .creature_nautilus:before {
-  background-image: url('../img/creatures-s375be89c7c.png');
+.creatures-sprite, .creature_flashlight-fish:before, .creature_nautilus:before, .creature_orange-roughy:before {
+  background-image: url('../img/creatures-s04b93505b8.png');
   background-repeat: no-repeat;
 }
 
@@ -315,7 +315,7 @@ cite:before {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6 / 2), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 124.8dpi), only screen and (min-resolution: 1.3dppx) {
   .creature:before {
-    background-image: url('../img/creatures2x-s5a471e2264.png');
+    background-image: url('../img/creatures2x-se2771d0b7f.png');
   }
 }
 #d400 .puzzle {
@@ -326,16 +326,17 @@ cite:before {
 .creature_flashlight-fish {
   width: 181.5px;
   height: 90.5px;
+  height: 90.5px;
 }
 .creature_flashlight-fish:before {
   background-position: 0 0;
-  background-size: 120.87912% auto;
+  background-size: 272.52747% auto;
+  height: 100%;
 }
 .creature_flashlight-fish .lumi {
   left: 83.19559%;
   top: 64.0884%;
   width: 12.94766%;
-  height: 20.44199%;
 }
 
 #creature_flashlight-fish1 {
@@ -532,12 +533,13 @@ cite:before {
 
 .creature_nautilus {
   width: 219.5px;
-  height: 206px;
+  height: 414px;
+  height: 205px;
 }
 .creature_nautilus:before {
-  background-position: 0 30.63973%;
-  background-size: 100% auto;
-  background-position: 0 100%;
+  background-position: 0 14.50858%;
+  background-size: 225.45455% auto;
+  height: 200%;
 }
 
 #creature_nautilus1 {
@@ -545,7 +547,6 @@ cite:before {
 }
 #creature_nautilus1:before {
   animation: nautyRaspberry steps(1) 2.1s infinite;
-  height: 200%;
 }
 
 @keyframes nautyRaspberry {
@@ -562,6 +563,39 @@ cite:before {
 @keyframes nautyBounce {
   100% {
     transform: translateY(50vh);
+  }
+}
+#d1600 .puzzle {
+  height: 600px;
+  width: 1000px;
+}
+
+.creature_orange-roughy {
+  width: 496px;
+  height: 546px;
+  height: 271px;
+}
+.creature_orange-roughy:before {
+  background-position: 0 100%;
+  background-size: 100% auto;
+  height: 200%;
+}
+
+#creature_orange-roughy1 {
+  animation: gentlyHovering cubic-bezier(0.645, 0.045, 0.355, 1) 5.5s infinite alternate;
+}
+#creature_orange-roughy1:before {
+  animation: roughSwimming steps(1) 5.5s alternate-reverse infinite;
+}
+
+@keyframes gentlyHovering {
+  100% {
+    transform: translateY(15%);
+  }
+}
+@keyframes roughSwimming {
+  50% {
+    transform: translateY(-50%);
   }
 }
 footer {

@@ -1,7 +1,6 @@
 /* Props */
 $creatures2x-use-percentages: true;
 $creatures2x-spacing: 4px;
-$creatures2x-layout: smart;
 $creatures2x-sprite: sprite-map("creatures2x/*.png");
 @import "creatures2x/*.png";
 $creatures2x-sprite-width: sprite_width($creatures2x-sprites);
@@ -9,7 +8,6 @@ $creatures2x-sprite-height: sprite_height($creatures2x-sprites);
 
 $creatures-use-percentages: true;
 $creatures-spacing: 2px;
-$creatures-layout: smart;
 @import "creatures/*.png";
 $creatures-sprite-width: sprite_width($creatures-sprites);
 
@@ -32,31 +30,82 @@ $creatures-sprite-width: sprite_width($creatures-sprites);
 }
 
 // Make a creature
-@mixin make-creature($imgName, $lumiX: 0, $lumiY: 0, $lumiW: 0, $lumiH: 0, $biolumi: false, $animation:false, $lastKeyframe: false) {
+@mixin make-creature($imgName, $lumiX: 0, $lumiY: 0, $lumiW: 0, $lumiH: 0, $keyframes: 2, $biolumi: false, $animation:false) {
   $iWidth: image-width(sprite-file($creatures2x-sprites, #{$imgName}));
   $iHeight: image-height(sprite-file($creatures2x-sprites, #{$imgName}));
   width: $iWidth/2;
   height: $iHeight/2;
-  // TODO make 2 sprites: 1 and 2x
+
   &:before {
     @include creatures-sprite(#{$imgName});
     @include set-bg-width($creatures-sprite-width, $creatures-sprites, #{$imgName});
     @if $animation {
-      $lastFrameLoc: nth(sprite-position($creatures2x-sprites, #{$lastKeyframe}), 2);
-      $lastFrameSize: image-height(sprite-file($creatures2x-sprites, #{$lastKeyframe}));
-      $lastFrameBottom: (-$lastFrameLoc) + $lastFrameSize;
-      background-position: 0 percentage($lastFrameBottom/$creatures2x-sprite-height);
+      height: $keyframes * 100%;
+    } @else {
+      height: 100%
     }
   }
-  @if $biolumi {
-    .lumi {
-      left: percentage(($lumiX * 1px)/$iWidth);
-      top: percentage(($lumiY * 1px)/$iHeight);
-      width: percentage(($lumiW * 1px)/$iWidth);
-      height: percentage(($lumiH * 1px)/$iHeight);
+  @if $animation {
+    $iHeight: image-height(sprite-file($creatures2x-sprites, #{$imgName}))/$keyframes - $creatures2x-spacing;
+    height: $iHeight/2;
+    @if $biolumi {
+      .lumi {
+        left: percentage(($lumiX * 1px)/$iWidth);
+        top: percentage(($lumiY * 1px)/$iHeight);
+        width: percentage(($lumiW * 1px)/$iWidth);
+      }
+    }
+  } @else {
+    $iHeight: image-height(sprite-file($creatures2x-sprites, #{$imgName}));
+    height: $iHeight/2;
+    @if $biolumi {
+      .lumi {
+        left: percentage(($lumiX * 1px)/$iWidth);
+        top: percentage(($lumiY * 1px)/$iHeight);
+        width: percentage(($lumiW * 1px)/$iWidth);
+      }
     }
   }
 }
+
+// // Make a creature
+// @mixin mabe-creature($imgName, $keyframes: 2, $lumiX: 0, $lumiY: 0, $lumiW: 0, $lumiH: 0, $biolumi: false, $animation:false) {
+//   $iWidth: image-width(sprite-file($creatures2x-sprites, #{$imgName}));
+//   width: $iWidth/2;
+//   @if $animation {
+//     $iHeight: image-height(sprite-file($creatures2x-sprites, #{$imgName}))/$keyframes - $creatures2x-spacing * $keyframes;
+//     height: $iHeight/2;
+//     @if $biolumi {
+//       .lumi {
+//         top: percentage(($lumiY * 1px)/$iHeight);
+//       }
+//     }
+//   } @else {
+//     $iHeight: image-height(sprite-file($creatures2x-sprites, #{$imgName}));
+//     height: $iHeight/2;
+//     @if $biolumi {
+//       .lumi {
+//         top: percentage(($lumiY * 1px)/$iHeight);
+//       }
+//     }
+//   }
+//   &:before {
+//     @include creatures-sprite(#{$imgName});
+//     // @include set-bg-width($creatures-sprite-width, $creatures-sprites, #{$imgName});
+//     @if $animation {
+//       height: $keyframes * 100%;
+//     } @else {
+//       height: 100%
+//     }
+//   }
+//   @if $biolumi {
+//     .lumi {
+//       left: percentage(($lumiX * 1px)/$iWidth);
+//       width: percentage(($lumiW * 1px)/$iWidth);
+//     }
+//   }
+// }
+
 
 @mixin set-bg-width($sprites-width, $sprite, $sprite-image) {
     $spriteX: percentage($sprites-width / image-width(sprite-file($sprite, $sprite-image)));

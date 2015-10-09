@@ -1,0 +1,23 @@
+#d1600 .puzzle {
+    height: 600px;
+    width: 1000px;
+}
+
+.creature_orange-roughy {
+    @include make-creature(orange-roughy, $animation: true, $keyframes: 2);
+}
+
+#creature_orange-roughy1 {
+    animation: gentlyHovering ease(inOut) duration(months) infinite alternate;
+    &:before {
+        animation: roughSwimming steps(1) duration(months) alternate-reverse infinite;
+    }
+}
+
+@keyframes gentlyHovering {
+    100% { transform: translateY(15%)}
+}
+
+@keyframes roughSwimming {
+    50% { transform: translateY(-50%)}
+}
