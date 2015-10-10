@@ -1,0 +1,58 @@
+#d5000 .puzzle {
+    width: 500px;
+    height: 500px;
+    position: relative;
+}
+
+.creature_vomiting-shrimp {
+    @include make-creature(vomiting-shrimp, $animation: true, $keyframes: 2);
+}
+
+#creature_vomiting-shrimp1 {
+    .in-view & {
+    animation: escapingGloriously ease(out) duration(slow) duration(fast) forwards;
+    }
+    position: absolute;
+    top: 40%; left: 25%;
+    &:before {
+        .in-view & {
+            animation: tailTuck steps(1) duration(timely) 1 forwards;
+        }
+    }
+}
+
+@keyframes escapingGloriously {
+    60% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+}
+
+@keyframes tailTuck {
+    100% { transform: translateY(-50%); }
+}
+
+.luminous-spew {
+    @include make-creature(spew, $animation: true, $keyframes: 4);
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    &:before {
+        .in-view & {
+            animation:
+                glowingPuke steps(3, end) duration(slow) 1 forwards,
+                incriminatingPuke ease(inOut) duration(days) duration(slowest) infinite alternate;
+        }
+    }
+}
+
+@keyframes glowingPuke {
+    100% { transform: translateY(-75%); }
+}
+
+@keyframes incriminatingPuke {
+    100% { opacity: .8; }
+}

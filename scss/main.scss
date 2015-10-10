@@ -19,6 +19,7 @@ $heightScreen: 80rem; // 100vh = height of screen = 200 meters of ocean
   }
 }
 
+
 .segment {
   min-height: $heightScreen;
   position: relative;
@@ -330,6 +331,7 @@ cite {
 @import "flashlight-fish";
 @import "nautilus";
 @import "orange-roughy";
+@import "vomiting-shrimp";
 
 footer {
   background: $abyss;
