@@ -19,6 +19,18 @@ $heightScreen: 80rem; // 100vh = height of screen = 200 meters of ocean
   }
 }
 
+%sprited-thing {
+  overflow: hidden;
+  position: relative;
+  // image that might animate
+  &:before {
+    content: " ";
+    width: 100%;
+    height: 100%; // non-animating default
+    display: block;
+  }
+}
+
 
 .segment {
   min-height: $heightScreen;
@@ -328,6 +340,7 @@ cite {
 
 /* Challenges */
 @import "creature-shop";
+@import "object-shop";
 @import "flashlight-fish";
 @import "nautilus";
 @import "orange-roughy";

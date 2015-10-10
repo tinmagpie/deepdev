@@ -1,65 +1,22 @@
-/*
-Error: No files were found in the load path matching "bloop2x/*.png". Your current load paths are: /Users/rachel/Animation Projects/Mozilla Dive into Dev Tools/site/img
-        on line 7 of /Users/rachel/Animation Projects/Mozilla Dive into Dev Tools/site/scss/bloop.scss
+/* Props */
+.bloop2x-sprite {
+  background-image: url('../img/bloop2x-se536a679ec.png');
+  background-repeat: no-repeat;
+}
 
-2: @import "config";
-3: 
-4: /* Props *\/
-5: $bloop2x-use-percentages: true;
-6: $bloop2x-spacing: 4px;
-7: $bloop2x-sprite: sprite-map("bloop2x/*.png");
-8: @import "bloop2x/*.png";
-9: $bloop2x-sprite-width: sprite_width($bloop2x-sprites);
-10: $bloop2x-sprite-height: sprite_height($bloop2x-sprites);
-11: 
-12: $bloop-use-percentages: true;
+.bloop-sprite {
+  background-image: url('../img/bloop-seb528d1c48.png');
+  background-repeat: no-repeat;
+}
 
-Backtrace:
-/Users/rachel/Animation Projects/Mozilla Dive into Dev Tools/site/scss/bloop.scss:7
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-1.0.3/lib/compass/sprite_importer.rb:89:in `files'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-1.0.3/lib/compass/sass_extensions/sprites/sprite_map.rb:19:in `from_uri'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-1.0.3/lib/compass/sass_extensions/functions/sprites.rb:78:in `sprite_map'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/script/tree/funcall.rb:140:in `_perform'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/script/tree/node.rb:50:in `perform'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:469:in `visit_variable'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `block in with_base'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `with_base'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `map'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/tree/root_node.rb:20:in `render'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/engine.rb:278:in `render'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:16:in `render'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:209:in `each'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:328:in `block in watch'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/vendor/listen/lib/listen/listener.rb:252:in `call'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/vendor/listen/lib/listen/adapter.rb:254:in `call'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
-/Users/rachel/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.18/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: No files were found in the load path matching \"bloop2x/*.png\". Your current load paths are: /Users/rachel/Animation Projects/Mozilla Dive into Dev Tools/site/img\A         on line 7 of /Users/rachel/Animation Projects/Mozilla Dive into Dev Tools/site/scss/bloop.scss\A \A 2: @import \"config\";\A 3: \A 4: /* Props */\A 5: $bloop2x-use-percentages: true;\A 6: $bloop2x-spacing: 4px;\A 7: $bloop2x-sprite: sprite-map(\"bloop2x/*.png\");\A 8: @import \"bloop2x/*.png\";\A 9: $bloop2x-sprite-width: sprite_width($bloop2x-sprites);\A 10: $bloop2x-sprite-height: sprite_height($bloop2x-sprites);\A 11: \A 12: $bloop-use-percentages: true;"; }
+.bloop {
+  filter: url("../img/blue-filter.svg#seafish");
+  overflow: hidden;
+  position: relative;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6 / 2), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 124.8dpi), only screen and (min-resolution: 1.3dppx) {
+  .bloop {
+    background-image: url('../img/bloop2x-s442440d9a2.png');
+  }
+}

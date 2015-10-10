@@ -36,11 +36,12 @@
 }
 
 .luminous-spew {
-    @include make-creature(spew, $animation: true, $keyframes: 4);
+    @include make-object(spew, $animation: true, $keyframes: 4);
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     &:before {
+        background-size: 100% 100%;
         .in-view & {
             animation:
                 glowingPuke steps(3, end) duration(slow) 1 forwards,
