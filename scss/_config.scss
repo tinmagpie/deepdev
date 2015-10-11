@@ -5,6 +5,14 @@ $super_wide: 2 * 50em + 4em + 2em;
 
 $medium: 35em;
 
+// Modular Scale
+$ms-base: 18px;
+$base-font-size: $ms-base;
+
+// Widths
+$maxSegmentCharacters: 102;
+$maxSegmentWidth: $maxSegmentCharacters * 1rem;
+
 // Site Colors
 $blueFilter: url("../img/blue-filter.svg#seafish");
 
@@ -51,8 +59,8 @@ $colors: (
 
 // Easings
 $easings: (
-  // in: cubic-bezier(0.55, 0.055, 0.675, 0.19),
-  out: cubic-bezier(0.215, 0.61, 0.355, 1),
+  In: cubic-bezier(0.55, 0.055, 0.675, 0.19),
+  Out: cubic-bezier(0.215, 0.61, 0.355, 1),
   inOut: cubic-bezier(0.645, 0.045, 0.355, 1),
   bounceIn: cubic-bezier(0.6, -0.28, 0.735, 0.045),
   bounceOut: cubic-bezier(0.175, 0.885, 0.32, 1.275),
@@ -79,6 +87,7 @@ $durations: (
   weeks: 3.4s,
   months: 5.5s,
   years: 8.9s,
+  eons: 14.4s,
 );
 
 @function duration($key) {

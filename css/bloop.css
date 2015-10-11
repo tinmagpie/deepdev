@@ -1,22 +1,255 @@
 /* Props */
 .bloop2x-sprite {
-  background-image: url('../img/bloop2x-se536a679ec.png');
+  background-image: url('../img/bloop2x-s4b60365d9b.png');
   background-repeat: no-repeat;
 }
 
-.bloop-sprite {
-  background-image: url('../img/bloop-seb528d1c48.png');
+.bloop-sprite, .bloop_body, .bloop_siphon, .bloop_eye, .bloop_tentacle1, .bloop_arm5, .bloop_arm7, .bloop_arm6, .bloop_arm8, .bloop_tentacle2, .bloop_arm3 {
+  background-image: url('../img/bloop-s3e7bcbcb08.png');
   background-repeat: no-repeat;
 }
 
 .bloop {
   filter: url("../img/blue-filter.svg#seafish");
-  overflow: hidden;
-  position: relative;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  padding-top: 59.53799%;
+  height: 0;
+}
+.one-off .bloop {
+  will-change: transform, opacity;
+}
+.in-view .bloop {
+  opacity: 1;
+  animation: swimIn cubic-bezier(0.215, 0.61, 0.355, 1) 8.9s both, swimOut cubic-bezier(0.215, 0.61, 0.355, 1) 8.9s 17.8s forwards;
+}
+
+@keyframes swimIn {
+  0% {
+    transform: translate(-100%, -50%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes swimOut {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(100%, -50%);
+  }
+}
+.bloop_bits {
+  position: absolute;
+}
+
+.bloop_body {
+  width: 86.17059%;
+  height: 92.35105%;
+  background-position: 0 53.52349%;
+  background-size: 100% auto;
+  top: 0;
+  right: 0;
+}
+
+.bloop_siphon {
+  width: 3.85805%;
+  height: 10.56617%;
+  background-position: 0 70.83588%;
+  background-size: 2234.11765% auto;
+  top: 71.46922%;
+  left: 42.44097%;
+}
+.one-off .bloop_siphon {
+  will-change: transform;
+}
+.in-view .one-off .bloop_siphon {
+  animation: pumpSiphon infinite steps(1) 2.1s;
+}
+
+@keyframes pumpSiphon {
+  50% {
+    opacity: 0;
+  }
+}
+.bloop_eye {
+  width: 1.45244%;
+  height: 2.88168%;
+  background-position: 0 68.05473%;
+  background-size: 5934.375% auto;
+  top: 66.76151%;
+  left: 37.16632%;
+}
+.one-off .bloop_eye {
+  will-change: transform;
+}
+.in-view .one-off .bloop_eye {
+  animation: swivelEye cubic-bezier(0.215, 0.61, 0.355, 1) 2 2.1s 8.9s alternate;
+}
+
+@keyframes swivelEye {
+  0% {
+    transform: translate(10%, 20%);
+  }
+  30% {
+    transform: translate(15%, 10%);
+  }
+  85% {
+    transform: translate(-12%, -14%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.bloop_tentacle1 {
+  width: 23.69294%;
+  height: 48.66841%;
+  background-position: 0 85.25507%;
+  background-size: 363.7931% auto;
+  top: 18.88257%;
+  left: 21.70175%;
+  transform-origin: 50% 100%;
+}
+.one-off .bloop_tentacle1 {
+  will-change: transform;
+}
+.in-view .one-off .bloop_tentacle1 {
+  animation: tentacleFlail1 infinite cubic-bezier(0.645, 0.045, 0.355, 1) 8.9s 800ms alternate both;
+}
+
+@keyframes tentacleFlail1 {
+  0% {
+    transform: rotate(rotate(18deg));
+  }
+  100% {
+    transform: rotate(-28deg);
+  }
+}
+.bloop_arm5 {
+  width: 20.12992%;
+  height: 42.99653%;
+  background-position: 0 4.54856%;
+  background-size: 427.7027% auto;
+  top: 28.06518%;
+  left: 8.94507%;
+  transform-origin: 100% 100%;
+}
+.one-off .bloop_arm5 {
+  will-change: transform;
+}
+.in-view .one-off .bloop_arm5 {
+  animation: armFlail5 infinite cubic-bezier(0.645, 0.045, 0.355, 1) 8.9s alternate both;
+}
+
+@keyframes armFlail5 {
+  0% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(-70deg);
+  }
+}
+.bloop_arm7 {
+  width: 28.36798%;
+  height: 21.13234%;
+  background-position: 0 28.23269%;
+  background-size: 303.84% auto;
+  top: 55.04397%;
+  left: 0%;
+  transform-origin: 100% 100%;
+}
+.one-off .bloop_arm7 {
+  will-change: transform;
+}
+.in-view .one-off .bloop_arm7 {
+  animation: armFlail7 infinite cubic-bezier(0.645, 0.045, 0.355, 1) 3.4s 500ms alternate both;
+}
+
+@keyframes armFlail7 {
+  0% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+.bloop_arm6 {
+  width: 23.98797%;
+  height: 26.1181%;
+  background-position: 0 19.46589%;
+  background-size: 358.97921% auto;
+  top: 49.224%;
+  left: 4.40195%;
+  transform-origin: 100% 100%;
+}
+.one-off .bloop_arm6 {
+  will-change: transform;
+}
+.in-view .one-off .bloop_arm6 {
+  animation: armFlail6 infinite cubic-bezier(0.645, 0.045, 0.355, 1) 14.4s 800ms alternate both;
+}
+
+@keyframes armFlail6 {
+  0% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+.bloop_arm8 {
+  width: 30.90975%;
+  height: 13.53933%;
+  background-position: 0 34.68885%;
+  background-size: 278.85463% auto;
+  top: 65.13192%;
+  left: 1.75821%;
+}
+
+.bloop_tentacle2 {
+  width: 36.22024%;
+  height: 38.42243%;
+  background-position: 0 100%;
+  background-size: 237.96992% auto;
+  top: 61.5882%;
+  left: 13.6807%;
+  transform-origin: 50% 100%;
+}
+.one-off .bloop_tentacle2 {
+  will-change: transform;
+}
+.in-view .one-off .bloop_tentacle2 {
+  animation: tentacleFlail2 infinite cubic-bezier(0.645, 0.045, 0.355, 1) 5.5s alternate both;
+}
+
+@keyframes tentacleFlail2 {
+  0% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+.bloop_arm3 {
+  width: 26.71129%;
+  height: 11.9384%;
+  background-position: 0 0;
+  background-size: 322.41087% auto;
+  top: 65.05432%;
+  left: 6.72485%;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6 / 2), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 124.8dpi), only screen and (min-resolution: 1.3dppx) {
-  .bloop {
-    background-image: url('../img/bloop2x-s442440d9a2.png');
+  .bloop_bits {
+    background-image: url('../img/bloop2x-s12f50c2652.png');
   }
 }

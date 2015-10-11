@@ -10,7 +10,7 @@
 
 #creature_vomiting-shrimp1 {
     .in-view & {
-    animation: escapingGloriously ease(out) duration(slow) duration(fast) forwards;
+    animation: escapingGloriously ease(Out) duration(slow) duration(fast) forwards;
     }
     position: absolute;
     top: 40%; left: 25%;

@@ -39,7 +39,7 @@ $heightScreen: 80rem; // 100vh = height of screen = 200 meters of ocean
   @include padding-leader(7);
   @include padding-trailer(8);
   @include breakpoint($double_col){
-    max-width: 102rem;
+    max-width: $maxSegmentWidth;
     margin: 0 auto;
   }
   @extend %t-medium;
@@ -83,7 +83,7 @@ $heightScreen: 80rem; // 100vh = height of screen = 200 meters of ocean
 
 %content-hidden {
   opacity: 0;
-  transition: opacity duration(days) ease(out);
+  transition: opacity duration(days) ease(Out);
 }
 
 %content-revealed {

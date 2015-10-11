@@ -35,10 +35,12 @@
       enter: function(direction) {
         this.element.classList.add('in-view');
       },
-      // entered: function(direction) {
-      // },
-      // exit: function(direction) {
-      // },
+      entered: function(direction) {
+        // this.element.classList.add('viz-focus');
+      },
+      exit: function(direction) {
+        // this.element.classList.remove('viz-focus');
+      },
       exited: function(direction) {
         this.element.classList.remove('in-view');
       }

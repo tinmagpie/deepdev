@@ -1,6 +1,13 @@
 @import "breakpoint";
 @import "config";
 
+$bloopReduction: .5655;
+$bloopWidth: 7792px * $bloopReduction;
+$bloopHeight: 3866px * $bloopReduction;
+$maxBloopW: 1.2;
+
+$bloopBody2x: $maxSegmentCharacters * $base-font-size * $maxBloopW * 2; // 4406.4
+
 /* Props */
 $bloop2x-use-percentages: true;
 $bloop2x-spacing: 4px;
@@ -14,24 +21,208 @@ $bloop-spacing: 2px;
 @import "bloop/*.png";
 $bloop-sprite-width: sprite_width($bloop-sprites);
 
-.bloop {
-  filter: $blueFilter;
-  overflow: hidden;
-  position: relative;
-}
-
 @mixin make-bloop($imgName) {
   $iWidth: image-width(sprite-file($bloop2x-sprites, #{$imgName}));
   $iHeight: image-height(sprite-file($bloop2x-sprites, #{$imgName}));
-  width: $iWidth/2;
-  height: $iHeight/2;
+  width: percentage($iWidth/$bloopWidth);
+  height: percentage($iHeight/$bloopHeight);
   @include bloop-sprite(#{$imgName});
   @include set-bg-width($bloop-sprite-width, $bloop-sprites, #{$imgName});
 }
 
 @mixin set-bg-width($sprites-width, $sprite, $sprite-image) {
-    $spriteX: percentage($sprites-width / image-width(sprite-file($sprite, $sprite-image)));
-    background-size: $spriteX auto;
+  $spriteX: percentage($sprites-width / image-width(sprite-file($sprite, $sprite-image)));
+  background-size: $spriteX auto;
+}
+
+@mixin bloopBitLocation($left, $top, $reverse: false) {
+  @if $reverse {
+      transform: rotate(90deg) translateY(-100%);
+      top: percentage($top/$bloopHeight*$bloopReduction);
+      left: percentage($left/$bloopWidth*$bloopReduction);
+      transform-origin: 0 0;
+    } @else {
+      top: percentage($top/$bloopHeight*$bloopReduction);
+      left: percentage($left/$bloopWidth*$bloopReduction);
+    }
+}
+
+#d2200 { }
+
+.bloop {
+  filter: $blueFilter;
+  opacity: 0;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: percentage($maxBloopW); padding-top: percentage($bloopHeight/$bloopWidth * $maxBloopW);
+  // max-width: 7792px * .25;
+  height: 0;
+  // max-height: 3866px * .25;
+  .one-off & {
+    will-change: transform, opacity;
+  }
+  .in-view & {
+    opacity: 1;
+    animation:
+      swimIn ease(Out) duration(years) both,
+      swimOut ease(Out) duration(years) duration(years)*2 forwards;
+  }
+}
+
+@keyframes swimIn {
+  0% {
+    transform: translate(-100%, -50%);
+  }
+  100% { transform: translate(-50%, -50%); }
+}
+
+@keyframes swimOut {
+  0% { transform: translate(-50%, -50%); }
+  80% { opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: translate(100%, -50%);
+  }
+}
+
+
+.bloop_bits {
+  position: absolute;
+}
+
+.bloop_body {
+  @include make-bloop(bloop_body);
+  top: 0; right: 0;
+}
+
+.bloop_siphon {
+  @include make-bloop(bloop_siphon);
+  @include bloopBitLocation(3307px,2763px);
+  .one-off & {
+    will-change: transform;
+    .in-view & {
+      animation: pumpSiphon infinite steps(1) duration(days);
+    }
+  }
+}
+
+@keyframes pumpSiphon {
+  50% { opacity: 0;}
+}
+
+.bloop_eye {
+  @include make-bloop(bloop_eye);
+  @include bloopBitLocation(2896px,2581px);
+  .one-off & {
+    will-change: transform;
+    .in-view & {
+      animation: swivelEye ease(Out) 2 duration(days) duration(years) alternate;
+    }
+  }
+}
+
+@keyframes swivelEye {
+  0% { transform: translate( 10%, 20%); }
+  30% { transform: translate( 15%, 10% ); }
+  85% { transform: translate(-12%, -14%); }
+  100% { transform: translate( 0, 0); }
+}
+
+.bloop_tentacle1 {
+  @include make-bloop(bloop_tentacle1);
+  @include bloopBitLocation(1691px,730px);
+  transform-origin: 50% 100%;
+  .one-off & {
+    will-change: transform;
+    .in-view & {
+      animation: tentacleFlail1 infinite ease(inOut) duration(years) duration(slower) alternate both;
+    }
+  }
+}
+
+@keyframes tentacleFlail1 {
+  0% { transform: rotate(rotate(18deg)); }
+  100% { transform: rotate(-28deg); }
+}
+
+.bloop_arm5 {
+  @include make-bloop(bloop_arm5);
+  @include bloopBitLocation(697px,1085px);
+  transform-origin: 100% 100%;
+  .one-off & {
+    will-change: transform;
+    .in-view & {
+      animation: armFlail5 infinite ease(inOut) duration(years) alternate both;
+    }
+  }
+}
+
+@keyframes armFlail5 {
+  0% { transform: rotate(20deg); }
+  100% { transform: rotate(-70deg); }
+}
+
+.bloop_arm7 {
+  @include make-bloop(bloop_arm7);
+  @include bloopBitLocation(0px,2128px);
+  transform-origin: 100% 100%;
+  .one-off & {
+    will-change: transform;
+    .in-view & {
+      animation: armFlail7 infinite ease(inOut) duration(weeks) duration(slow) alternate both;
+    }
+  }
+}
+
+@keyframes armFlail7 {
+  0% { transform: rotate(-10deg); }
+  100% { transform: rotate(10deg); }
+}
+
+.bloop_arm6 {
+  @include make-bloop(bloop_arm6);
+  @include bloopBitLocation(343px,1903px);
+  transform-origin: 100% 100%;
+  .one-off & {
+    will-change: transform;
+    .in-view & {
+      animation: armFlail6 infinite ease(inOut) duration(eons) duration(slower) alternate both;
+    }
+  }
+}
+
+@keyframes armFlail6 {
+  0% { transform: rotate(-10deg); }
+  100% { transform: rotate(20deg); }
+}
+
+
+.bloop_arm8 {
+  @include make-bloop(bloop_arm8);
+  @include bloopBitLocation(137px,2518px);
+}
+
+.bloop_tentacle2 {
+  @include make-bloop(bloop_tentacle2);
+  @include bloopBitLocation(1066px,2381px);
+  transform-origin: 50% 100%;
+  .one-off & {
+    will-change: transform;
+    .in-view & {
+      animation: tentacleFlail2 infinite ease(inOut) duration(months) alternate both;
+    }
+  }
+}
+
+@keyframes tentacleFlail2 {
+  0% { transform: rotate(5deg); }
+  100% { transform: rotate(-5deg); }
+}
+
+.bloop_arm3 {
+  @include make-bloop(bloop_arm3);
+  @include bloopBitLocation(524px,2515px);
 }
 
 @media only screen and ( -webkit-min-device-pixel-ratio: 1.3 ),
@@ -41,7 +232,7 @@ $bloop-sprite-width: sprite_width($bloop-sprites);
        only screen and ( min-resolution: 124.8dpi ),
        only screen and ( min-resolution: 1.3dppx ) {
 
-  .bloop {
+  .bloop_bits {
     background-image: sprite-url($bloop2x-sprite);
   }
 }
