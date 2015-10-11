@@ -338,14 +338,6 @@ cite {
   color: color(copy);
 }
 
-.ooze {
-  @include background(
-    linear-gradient($greyLight, transparent),
-    image-url("plain.svg") repeat-x 100% 100%
-  );
-  height: 100px;
-}
-
 /* Challenges */
 @import "creature-shop";
 @import "object-shop";

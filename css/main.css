@@ -297,24 +297,15 @@ cite:before {
   color: #c6f3c7;
 }
 
-.ooze {
-  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2M2ZjNjNyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA='), url('../img/plain.svg?1444594809') repeat-x 100% 100%;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c6f3c7), color-stop(100%, rgba(0, 0, 0, 0))), url('../img/plain.svg?1444594809') repeat-x 100% 100%;
-  background: -moz-linear-gradient(#c6f3c7, rgba(0, 0, 0, 0)), url('../img/plain.svg?1444594809') repeat-x 100% 100%;
-  background: -webkit-linear-gradient(#c6f3c7, rgba(0, 0, 0, 0)), url('../img/plain.svg?1444594809') repeat-x 100% 100%;
-  background: linear-gradient(#c6f3c7, rgba(0, 0, 0, 0)), url('../img/plain.svg?1444594809') repeat-x 100% 100%;
-  height: 100px;
-}
-
 /* Challenges */
 /* Props */
 .creatures2x-sprite {
-  background-image: url('../img/creatures2x-s36cdd12945.png');
+  background-image: url('../img/creatures2x-s91b5fd17f3.png');
   background-repeat: no-repeat;
 }
 
 .creatures-sprite, .creature_flashlight-fish:before, .creature_nautilus:before, .creature_orange-roughy:before, .creature_vomiting-shrimp:before, .creature_hagfish:before {
-  background-image: url('../img/creatures-s3df648a74e.png');
+  background-image: url('../img/creatures-s3d2a16e2ec.png');
   background-repeat: no-repeat;
 }
 
@@ -327,7 +318,7 @@ cite:before {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6 / 2), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 124.8dpi), only screen and (min-resolution: 1.3dppx) {
   .creature:before {
-    background-image: url('../img/creatures2x-s36cdd12945.png');
+    background-image: url('../img/creatures2x-s91b5fd17f3.png');
   }
 }
 /* Props */
@@ -563,7 +554,7 @@ cite:before {
   height: 205px;
 }
 .creature_nautilus:before {
-  background-position: 0 38.42482%;
+  background-position: 0 25.79099%;
   background-size: 225.45455% auto;
   height: 200%;
 }
@@ -601,7 +592,7 @@ cite:before {
   height: 271px;
 }
 .creature_orange-roughy:before {
-  background-position: 0 79.91111%;
+  background-position: 0 75.1921%;
   background-size: 100% auto;
   height: 200%;
 }
@@ -696,19 +687,69 @@ cite:before {
   }
 }
 #d5800 .puzzle {
-  width: 500px;
+  width: 100%;
   height: 500px;
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .creature_hagfish {
-  width: 450px;
-  height: 192px;
+  width: 200px;
+  height: 85px;
+  position: absolute;
+  bottom: -20px;
+  right: 2em;
+  z-index: 1;
 }
 .creature_hagfish:before {
   background-position: 0 7.24864%;
-  background-size: 110.22222% auto;
+  background-size: 248% auto;
   height: 200%;
+}
+.in-view .creature_hagfish {
+  animation: wrigglingAround cubic-bezier(0.645, 0.045, 0.355, 1) 300ms infinite;
+}
+.in-view .creature_hagfish:before {
+  animation: wriggle steps(1) 300ms infinite;
+}
+
+#creature_hagfish1 {
+  bottom: -150px;
+}
+
+@keyframes wrigglingAround {
+  50% {
+    transform: translate(-1%, -1%);
+  }
+}
+@keyframes wriggle {
+  50% {
+    transform: translateY(-50%);
+  }
+}
+.ooze {
+  background: #12454b;
+  height: 140px;
+  width: 100%;
+  position: relative;
+}
+
+.ooze_near {
+  background: url('../img/ooze_near.svg?1444594809') repeat-x 0 30px;
+  z-index: 2;
+}
+
+.ooze_far {
+  background: url('../img/ooze_far.svg?1444601205') repeat-x 0 10px;
+}
+
+.ooze_far, .ooze_near {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 footer {

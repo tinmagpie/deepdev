@@ -1,0 +1,60 @@
+#d5800 .puzzle {
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    bottom: 0; right: 0;
+}
+
+.creature_hagfish {
+    @include make-creature(hagfish, $animation: true, $keyframes: 2);
+    .in-view & {
+        animation: wrigglingAround ease(inOut) duration(timely) infinite;
+    }
+    position: absolute;
+    bottom: -20px;
+    right: 2em;
+    z-index: 1;
+    &:before {
+        .in-view & {
+            animation: wriggle steps(1) duration(timely) infinite;
+        }
+    }
+}
+
+#creature_hagfish1 {
+    bottom: -150px;
+}
+
+@keyframes wrigglingAround {
+    50% {
+        transform: translate(-1%, -1%);
+    }
+}
+
+@keyframes wriggle {
+    50% { transform: translateY(-50%); }
+}
+
+.ooze {
+    background: $greyDark;
+    height: 140px;
+    width: 100%;
+    position: relative;
+}
+
+.ooze_near {
+    background:
+        image-url("ooze_near.svg") repeat-x 0 30px;
+    z-index: 2;
+}
+
+.ooze_far {
+    background:
+        image-url("ooze_far.svg") repeat-x 0 10px;
+}
+
+.ooze_far, .ooze_near {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 100%;
+}

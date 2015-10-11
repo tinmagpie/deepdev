@@ -326,22 +326,31 @@
 						<p>The pressure here is intense. Most abyssal creatures have flabby, gelatinous bodies that explode when brought to the surface. Few fish live here, and those that do are often very small and very efficient.</p>
 						<p>On the bright side, if you like to eat grey ooze, living down here is fairly easy. And many soft, squishy creatures do just that. The ancient hagfish doesn’t seem to mind the ooze or the pressure.</p>
 					</div>
+				</div>
+				<div class="segment" id="d5800">
 					<div class="challenge">
 						<p>Where's the hagfish hiding? Search the DOM for “hagfish” to find it hiding behind a rock. Delete, move (transform, margin, position), or fade out (change opacity) to see the fish.</p>
 					</div>
 					<div class="facts">
 						Hagfish facts!
 					</div>
-					<div class="alert">
+					<div class="puzzle">
+						<div class="creature_hagfish creature" id="creature_hagfish1"></div>
+						<div class="rock object"></div>
+						<div class="indicator">Start challenge</div>
+					</div>
+<!-- 					<div class="alert">
 						<p>For FireFox users, this generates a 	bonus quest: Something... big has been detected X-pixels deep. Use the rulers to go there and visit the Collossal Squid!</p>
 					</div>
 					<div class="end-state">
 						<p>For everyone else, phew, you made it deeper into the ocean than any browser has been before! Next time give it a try with FireFox Developer Edition and see what more you can discover ;)</p>
-					</div>
+					</div> -->
 				</div>
-				<div class="segment" id="d5800"></div>
 			</div>
-			<div class="ooze"></div>
+			<div class="ooze">
+				<div class="ooze_near"></div>
+				<div class="ooze_far"></div>
+			</div>
 		</div>
 		<footer>
 			<label>Motion sick?</label> <button>Reduce Animation</button> <label for="audio">Headphones on?</label> <button id="audio">Listen to the Deep</button> Crew, Share
