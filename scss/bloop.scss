@@ -11,7 +11,6 @@ $bloopBody2x: $maxSegmentCharacters * $base-font-size * $maxBloopW * 2; // 4406.
 /* Props */
 $bloop2x-use-percentages: true;
 $bloop2x-spacing: 4px;
-$bloop2x-sprite: sprite-map("bloop2x/*.png");
 @import "bloop2x/*.png";
 $bloop2x-sprite-width: sprite_width($bloop2x-sprites);
 $bloop2x-sprite-height: sprite_height($bloop2x-sprites);
@@ -59,9 +58,9 @@ $bloop-sprite-width: sprite_width($bloop-sprites);
   // max-width: 7792px * .25;
   height: 0;
   // max-height: 3866px * .25;
-  .one-off & {
-    will-change: transform, opacity;
-  }
+  // .one-off & {
+  //   will-change: transform, opacity;
+  // }
   .in-view & {
     opacity: 1;
     animation:
@@ -233,6 +232,6 @@ $bloop-sprite-width: sprite_width($bloop-sprites);
        only screen and ( min-resolution: 1.3dppx ) {
 
   .bloop_bits {
-    background-image: sprite-url($bloop2x-sprite);
+    background-image: sprite-url($bloop2x-sprites);
   }
 }

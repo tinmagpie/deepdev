@@ -297,15 +297,24 @@ cite:before {
   color: #c6f3c7;
 }
 
+.ooze {
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2M2ZjNjNyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA='), url('../img/plain.svg?1444594809') repeat-x 100% 100%;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c6f3c7), color-stop(100%, rgba(0, 0, 0, 0))), url('../img/plain.svg?1444594809') repeat-x 100% 100%;
+  background: -moz-linear-gradient(#c6f3c7, rgba(0, 0, 0, 0)), url('../img/plain.svg?1444594809') repeat-x 100% 100%;
+  background: -webkit-linear-gradient(#c6f3c7, rgba(0, 0, 0, 0)), url('../img/plain.svg?1444594809') repeat-x 100% 100%;
+  background: linear-gradient(#c6f3c7, rgba(0, 0, 0, 0)), url('../img/plain.svg?1444594809') repeat-x 100% 100%;
+  height: 100px;
+}
+
 /* Challenges */
 /* Props */
 .creatures2x-sprite {
-  background-image: url('../img/creatures2x-sbb7933cf7a.png');
+  background-image: url('../img/creatures2x-s36cdd12945.png');
   background-repeat: no-repeat;
 }
 
-.creatures-sprite, .creature_flashlight-fish:before, .creature_nautilus:before, .creature_orange-roughy:before, .creature_vomiting-shrimp:before {
-  background-image: url('../img/creatures-s40834bb7b7.png');
+.creatures-sprite, .creature_flashlight-fish:before, .creature_nautilus:before, .creature_orange-roughy:before, .creature_vomiting-shrimp:before, .creature_hagfish:before {
+  background-image: url('../img/creatures-s3df648a74e.png');
   background-repeat: no-repeat;
 }
 
@@ -318,7 +327,7 @@ cite:before {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6 / 2), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 124.8dpi), only screen and (min-resolution: 1.3dppx) {
   .creature:before {
-    background-image: url('../img/creatures2x-s946dd0fe76.png');
+    background-image: url('../img/creatures2x-s36cdd12945.png');
   }
 }
 /* Props */
@@ -334,7 +343,7 @@ cite:before {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6 / 2), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 124.8dpi), only screen and (min-resolution: 1.3dppx) {
   .object:before {
-    background-image: url('../img/objects2x-sdfbc6aca33.png');
+    background-image: url('../img/objects2x-sdb35995763.png');
   }
 }
 #d400 .puzzle {
@@ -554,7 +563,7 @@ cite:before {
   height: 205px;
 }
 .creature_nautilus:before {
-  background-position: 0 10.72664%;
+  background-position: 0 38.42482%;
   background-size: 225.45455% auto;
   height: 200%;
 }
@@ -592,7 +601,7 @@ cite:before {
   height: 271px;
 }
 .creature_orange-roughy:before {
-  background-position: 0 69.2517%;
+  background-position: 0 79.91111%;
   background-size: 100% auto;
   height: 200%;
 }
@@ -686,6 +695,22 @@ cite:before {
     opacity: .8;
   }
 }
+#d5800 .puzzle {
+  width: 500px;
+  height: 500px;
+  position: relative;
+}
+
+.creature_hagfish {
+  width: 450px;
+  height: 192px;
+}
+.creature_hagfish:before {
+  background-position: 0 7.24864%;
+  background-size: 110.22222% auto;
+  height: 200%;
+}
+
 footer {
   background: #000c1c;
   color: #c6f3c7;

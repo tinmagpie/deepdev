@@ -1,7 +1,6 @@
 /* Props */
 $objects2x-use-percentages: true;
 $objects2x-spacing: 4px;
-$objects2x-sprite: sprite-map("objects2x/*.png");
 @import "objects2x/*.png";
 $objects2x-sprite-width: sprite_width($objects2x-sprites);
 $objects2x-sprite-height: sprite_height($objects2x-sprites);
@@ -49,7 +48,7 @@ $objects-sprite-width: sprite_width($objects-sprites);
 
       .object {
         &:before {
-          background-image: sprite-url($objects2x-sprite);
+          background-image: sprite-url($objects2x-sprites);
         }
       }
 }

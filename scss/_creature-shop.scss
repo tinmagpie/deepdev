@@ -1,7 +1,6 @@
 /* Props */
 $creatures2x-use-percentages: true;
 $creatures2x-spacing: 4px;
-$creatures2x-sprite: sprite-map("creatures2x/*.png");
 @import "creatures2x/*.png";
 $creatures2x-sprite-width: sprite_width($creatures2x-sprites);
 $creatures2x-sprite-height: sprite_height($creatures2x-sprites);
@@ -74,47 +73,7 @@ $creatures-sprite-width: sprite_width($creatures-sprites);
 
       .creature {
         &:before {
-          background-image: sprite-url($creatures2x-sprite);
+          background-image: sprite-url($creatures2x-sprites);
         }
       }
 }
-
-// @mixin set-dimensions($width, $height, $parent-width, $bottom: false) {
-//     width: percentage($width/$parent-width);
-//     @if $bottom {
-//         padding-bottom: percentage($height/$parent-width);
-//     } @else {
-//         padding-top: percentage($height/$parent-width);
-//         height: 0;
-//     }
-// }
-
-// @mixin set-width($width, $parent-width) {
-//     width: percentage($width/$parent-width);
-// }
-
-// @mixin set-position($sX, $sY, $parent-width, $parent-height) {
-//     left: percentage($sX/$parent-width);
-//     top: percentage($sY/$parent-height);
-// }
-
-// @mixin offsetLeft($offset, $parent-width) {
-//     left: percentage($offset/$parent-width);
-// }
-
-
-// @mixin set-bg-height($sprites-height, $sprite, $sprite-image) {
-//     $spriteY: percentage($sprites-height / image-height(sprite-file($sprite, $sprite-image)));
-//     @include background-size(auto $spriteY);
-// }
-
-// @mixin create-creature($prop, $sX, $sY, $parent-width: $house-width, $parent-height: $frame-height*2) {
-//     .#{$prop}-prop {
-//         $iWidth: image-width(sprite-file($props-sprites, #{$prop}));
-//         $iHeight: image-height(sprite-file($props-sprites, #{$prop}));
-//         @include props-sprite(#{$prop});
-//       @include set-dimensions($iWidth, $iHeight, $parent-width);
-//       @include set-position($sX, $sY, $parent-width, $parent-height);
-//       @include set-bg-width($props-sprite-width, $props-sprites, #{$prop});
-//     }
-// }
