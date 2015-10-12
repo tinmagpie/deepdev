@@ -1,0 +1,50 @@
+#d2600 .puzzle {
+    width: 100%;
+    height: 50vh;
+    .lumi {
+        //animation: winking steps(1) infinite duration(slow);
+        path {
+            fill: $biolumination;
+        }
+    }
+}
+
+#creature_viperfish1 {
+    @include make-creature(viperfish, $lumiX: 139, $lumiY: 2, $lumiW: 612, $lumiH: 397, $animation: false, $biolumi: true);
+}
+
+#creature_gulper-eel1 {
+    @include make-creature(gulper-eel, $lumiX: 26, $lumiY: 491, $lumiW: 115, $lumiH: 87, $keyframes: 2, $animation: true, $biolumi: true);
+    &:before {
+        .in-view & {
+            animation: wriggle steps(1) duration(slow) infinite;
+        }
+    }
+}
+
+#creature_dragonfish1 {
+    @include make-creature(dragonfish, $lumiX: 80, $lumiY: 17, $lumiW: 809, $lumiH: 254, $keyframes: 2, $animation: true, $biolumi: true);
+    &:before {
+        .in-view & {
+            animation: wriggle steps(1) duration(slow) infinite;
+        }
+    }
+}
+
+#creature_anglerfish1 {
+    @include make-creature(anglerfish, $keyframes: 2, $animation: true, $biolumi: false);
+    &:before {
+        .in-view & {
+            animation: wriggle steps(1) duration(slow) infinite;
+        }
+    }
+}
+
+#creature_bristlemouth1 {
+    @include make-creature(bristlemouth, $lumiX: 12, $lumiY: 50, $lumiW: 368, $lumiH: 50, $keyframes: 2, $animation: true, $biolumi: true);
+    &:before {
+        .in-view & {
+            animation: wriggle steps(1) duration(slow) infinite;
+        }
+    }
+}
