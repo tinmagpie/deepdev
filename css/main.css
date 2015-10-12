@@ -300,12 +300,12 @@ cite:before {
 /* Challenges */
 /* Props */
 .creatures2x-sprite {
-  background-image: url('../img/creatures2x-s91b5fd17f3.png');
+  background-image: url('../img/creatures2x-s2908492c48.png');
   background-repeat: no-repeat;
 }
 
-.creatures-sprite, .creature_flashlight-fish:before, .creature_nautilus:before, .creature_orange-roughy:before, .creature_vomiting-shrimp:before, .creature_hagfish:before {
-  background-image: url('../img/creatures-s3d2a16e2ec.png');
+.creatures-sprite, .creature_flashlight-fish:before, .creature_nautilus:before, .creature_orange-roughy:before, .creature_vomiting-shrimp:before, .creature_hagfish:before, #creature_viperfish1:before, #creature_gulper-eel1:before, #creature_dragonfish1:before, #creature_anglerfish1:before, #creature_bristlemouth1:before {
+  background-image: url('../img/creatures-sba66b1e045.png');
   background-repeat: no-repeat;
 }
 
@@ -318,7 +318,7 @@ cite:before {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6 / 2), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 124.8dpi), only screen and (min-resolution: 1.3dppx) {
   .creature:before {
-    background-image: url('../img/creatures2x-s91b5fd17f3.png');
+    background-image: url('../img/creatures2x-s2908492c48.png');
   }
 }
 /* Props */
@@ -347,7 +347,7 @@ cite:before {
   height: 90.5px;
 }
 .creature_flashlight-fish:before {
-  background-position: 0 0;
+  background-position: 0 24.72238%;
   background-size: 272.52747% auto;
   height: 100%;
 }
@@ -554,7 +554,7 @@ cite:before {
   height: 205px;
 }
 .creature_nautilus:before {
-  background-position: 0 25.79099%;
+  background-position: 0 68.05421%;
   background-size: 225.45455% auto;
   height: 200%;
 }
@@ -592,7 +592,7 @@ cite:before {
   height: 271px;
 }
 .creature_orange-roughy:before {
-  background-position: 0 75.1921%;
+  background-position: 0 85.1028%;
   background-size: 100% auto;
   height: 200%;
 }
@@ -703,7 +703,7 @@ cite:before {
   z-index: 1;
 }
 .creature_hagfish:before {
-  background-position: 0 7.24864%;
+  background-position: 0 57.89158%;
   background-size: 248% auto;
   height: 200%;
 }
@@ -736,12 +736,12 @@ cite:before {
 }
 
 .ooze_near {
-  background: url('../img/ooze_near.svg?1444594809') repeat-x 0 30px;
+  background: url('../img/ooze_near.svg?1444603715') repeat-x 0 30px;
   z-index: 2;
 }
 
 .ooze_far {
-  background: url('../img/ooze_far.svg?1444601205') repeat-x 0 10px;
+  background: url('../img/ooze_far.svg?1444603715') repeat-x 0 10px;
 }
 
 .ooze_far, .ooze_near {
@@ -750,6 +750,96 @@ cite:before {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+#d2600 .puzzle {
+  width: 100%;
+  height: 50vh;
+}
+#d2600 .puzzle .lumi path {
+  fill: #56fddb;
+}
+
+#creature_viperfish1 {
+  width: 428px;
+  height: 214px;
+}
+#creature_viperfish1:before {
+  background-position: 0 93.14944%;
+  background-size: 115.88785% auto;
+  height: 100%;
+}
+#creature_viperfish1 .lumi {
+  left: 16.23832%;
+  top: 0.46729%;
+  width: 71.49533%;
+}
+
+#creature_gulper-eel1 {
+  width: 278px;
+  height: 494px;
+}
+#creature_gulper-eel1:before {
+  background-position: 0 37.24712%;
+  background-size: 178.41727% auto;
+  height: 200%;
+}
+#creature_gulper-eel1 .lumi {
+  left: 4.67626%;
+  top: 49.69636%;
+  width: 20.68345%;
+}
+.in-view #creature_gulper-eel1:before {
+  animation: wriggle steps(1) 500ms infinite;
+}
+
+#creature_dragonfish1 {
+  width: 478px;
+  height: 164px;
+}
+#creature_dragonfish1:before {
+  background-position: 0 16.09557%;
+  background-size: 103.76569% auto;
+  height: 200%;
+}
+#creature_dragonfish1 .lumi {
+  left: 8.3682%;
+  top: 5.18293%;
+  width: 84.62343%;
+}
+.in-view #creature_dragonfish1:before {
+  animation: wriggle steps(1) 500ms infinite;
+}
+
+#creature_anglerfish1 {
+  width: 208px;
+  height: 192px;
+}
+#creature_anglerfish1:before {
+  background-position: 0 0;
+  background-size: 238.46154% auto;
+  height: 200%;
+}
+.in-view #creature_anglerfish1:before {
+  animation: wriggle steps(1) 500ms infinite;
+}
+
+#creature_bristlemouth1 {
+  width: 278px;
+  height: 58px;
+}
+#creature_bristlemouth1:before {
+  background-position: 0 11.49425%;
+  background-size: 178.41727% auto;
+  height: 200%;
+}
+#creature_bristlemouth1 .lumi {
+  left: 2.15827%;
+  top: 43.10345%;
+  width: 66.18705%;
+}
+.in-view #creature_bristlemouth1:before {
+  animation: wriggle steps(1) 500ms infinite;
 }
 
 footer {
