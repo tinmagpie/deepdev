@@ -106,4 +106,21 @@
     return cur; //will return null if not found
   }
 
+
+  GoalManager.addGoal({
+    name: 'shrimp',
+    evaluate: function (complete) {
+      document.querySelector('#creature_vomiting-shrimp1').addEventListener('animationstart', function (e) {
+        complete();
+      });
+    },
+    success: function () {
+      console.log('shrimp found!');
+    }
+  });
+
+  window.addEventListener('load', function () {
+    GoalManager.init();
+  });
+
 })();
