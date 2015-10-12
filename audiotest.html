@@ -46,28 +46,36 @@
       }
 
       function Sound(buffer) {
-        this.source = context.createBufferSource();
-        this.source.buffer = buffer;
         this.gain = context.createGain();
-        this.source.connect(this.gain);
+        this.buffer = buffer;
         this.output = this.gain;
         this.output.connect(context.destination);
       }
       Sound.prototype.loop = function () {
-        this.source.loop = true;
-        this._play();
+        this._play(true);
       }
       Sound.prototype.play = function () {
-        this.source.loop = false;
-        this._play();
+        this._play(false);
       }
       Sound.prototype.fadeOut = function (duration) {
+        this.gain.gain.cancelScheduledValues(context.currentTime);
         this.gain.gain.setValueCurveAtTime(fadeOutCurve, context.currentTime, duration);
       }
       Sound.prototype.fadeIn = function (duration) {
+        this.gain.gain.cancelScheduledValues(context.currentTime);
         this.gain.gain.setValueCurveAtTime(fadeInCurve, context.currentTime, duration);
       }
-      Sound.prototype._play = function () {
+      Sound.prototype._play = function (loop) {
+        if (this.source) {
+          this.source.stop(context.currentTime);
+          this.source.disconnect();
+        }
+        this.source = context.createBufferSource();
+        this.source.buffer = this.buffer;
+        if (loop) {
+          this.source.looped = true
+        }
+        this.source.connect(this.gain);
         this.gain.gain = 0;
         this.source.start(context.currentTime);
         this.fadeIn(2);
@@ -94,7 +102,7 @@
         this.active = null;
       }
       AudioManager.prototype.setBg = function (n) {
-        if (this.active) {
+        if (this.active && this.active !== this.sounds[n]) {
           this.active.fadeOut(2);
         }
         this.active = this.sounds[n];
