@@ -10,7 +10,7 @@
 }
 
 #creature_viperfish1 {
-    @include make-creature(viperfish, $lumiX: 139, $lumiY: 2, $lumiW: 612, $lumiH: 397, $animation: false, $biolumi: true);
+    @include make-creature(viperfish, $lumiX: 139, $lumiY: 2, $lumiW: 612, $lumiH: 397, $keyframes: 1, $animation: false, $biolumi: true);
 }
 
 #creature_gulper-eel1 {

@@ -37,7 +37,7 @@ $creatures-sprite-width: sprite_width($creatures-sprites);
     }
   }
   @if $animation {
-    $iHeight: image-height(sprite-file($creatures2x-sprites, #{$imgName}))/$keyframes - $creatures2x-spacing;
+    $iHeight: image-height(sprite-file($creatures2x-sprites, #{$imgName}))/$keyframes;
     height: $iHeight/2;
     @if $biolumi {
       .lumi {
