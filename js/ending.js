@@ -19,5 +19,12 @@ var Ending = (function() {
     return !!navigator.userAgent.search(/refo/i);
   }
 
+  GoalManager.onGoalComplete(function() {
+    if (GoalManager.goalsCompleted >= GoalManager.goalCount / 2) {
+      // Release the Kraken! (maybe)
+      window.Ending.inject();
+    }
+  });
+
   return new Ending();
 })()

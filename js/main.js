@@ -149,9 +149,12 @@
   GoalManager.addGoal({
     name: 'shrimp',
     evaluate: function (complete) {
-      document.querySelector('#creature_vomiting-shrimp1').addEventListener('animationstart', function (e) {
+      var vomitingShrimp = document.querySelector('#creature_vomiting-shrimp1');
+      function onAnimationStart(e) {
         complete();
-      });
+        vomitingShrimp.removeEventListener('animationstart', onAnimationStart, true);
+      }
+      vomitingShrimp.addEventListener('animationstart', onAnimationStart, true);
     },
     success: function () {
       document.querySelector('#challenge_flashlight-fish').classList.add('completed');

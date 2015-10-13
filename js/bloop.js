@@ -41,7 +41,6 @@
     if (havePlayedReveal) {
       return;
     }
-    console.log('playing reveal');
     havePlayedReveal = true;
 
     var source = context.createBufferSource();

@@ -3,7 +3,10 @@ var GoalManager = (function() {
     this.state = {};
     this.listeners = [];
     this.evaluators = [];
+    this.goalCount = 0;
+    this.goalsCompleted = 0;
   };
+
   GoalManager.prototype.init = function () {
     var initState;
     try {
@@ -20,26 +23,31 @@ var GoalManager = (function() {
       ev();
     });
   };
+
   GoalManager.prototype._notify = function (goalName) {
     this.listeners.forEach(function (listener) {
       listener(goalName);
     });
   };
+
   GoalManager.prototype.onGoalComplete = function (fn) {
     this.listeners.push(fn);
   };
+
   GoalManager.prototype.addGoal = function (opts) {
     var name = opts.name;
     var evaluated = false;
 
     var self = this;
 
+    this.goalCount++;
     self.state[name] = false;
 
     function complete () {
       if (self.state[name]) {
         return;
       }
+      self.goalsCompleted++;
       self._notify(name);
       self.state[name] = true;
       if (opts.success) {
