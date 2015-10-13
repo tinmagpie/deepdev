@@ -11,12 +11,12 @@ var Ending = (function() {
     }
     $.get(url)
     .done(function(html) {
-      $('#d2200').html(html);
+      $('#d2200').append($(html));
     });
   }
 
   function shouldShowBloop() {
-    return !!navigator.userAgent.search(/refo/i);
+    return navigator.userAgent.search(/refo/i) !== -1;
   }
 
   GoalManager.onGoalComplete(function() {
