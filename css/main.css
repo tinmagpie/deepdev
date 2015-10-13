@@ -349,6 +349,7 @@ cite:before {
 .creature_flashlight-fish:before {
   background-position: 0 24.81203%;
   background-size: 272.52747% auto;
+  height: 100%;
 }
 .creature_flashlight-fish .lumi {
   left: 83.19559%;
@@ -766,6 +767,7 @@ cite:before {
 #creature_viperfish1:before {
   background-position: 0 93.10345%;
   background-size: 115.88785% auto;
+  height: 100%;
 }
 #creature_viperfish1 .lumi {
   left: 16.23832%;

@@ -49,7 +49,6 @@ $bloop-sprite-width: sprite_width($bloop-sprites);
 #d2200 { }
 
 .bloop {
-  filter: $blueFilter;
   opacity: 0;
   position: absolute;
   top: 50%; left: 50%;
