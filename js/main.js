@@ -25,7 +25,7 @@
       exited: function(direction) {
         this.element.classList.remove('in-zone');
       }
-    })
+    });
   });
 
   var segments = document.getElementsByClassName('segment');
@@ -46,10 +46,34 @@
       exited: function(direction) {
         this.element.classList.remove('in-view');
       }
-    })
+    });
   });
 
   var $wrapper = $('.wrapper');
+
+  var puzzles = document.getElementsByClassName('puzzle');
+
+  Array.prototype.forEach.call(puzzles, function(child) {
+    new Waypoint.Inview({
+      element: child,
+      enter: function(direction) {
+        var creature = this.element.getAttribute('data-creature');
+        var indicator = document.querySelector('.progress [data-creature="' + creature + '"]');
+        if (indicator) {
+          indicator.classList.add('visited');
+        }
+      },
+      entered: function(direction) {
+        // this.element.classList.add('viz-focus');
+      },
+      exit: function(direction) {
+        // this.element.classList.remove('viz-focus');
+      },
+      exited: function(direction) {
+      }
+    });
+  });
+
   var indicators = document.getElementsByClassName('indicator');
 
   Array.prototype.forEach.call(indicators, function(indicator) {
@@ -61,7 +85,7 @@
       $wrapper.animate({
         scrollTop: $(puzzle).offset().top
       }, 300);
-    })
+    });
   });
 
   // Progress bar icons scroll to appropriate depth
@@ -101,7 +125,7 @@
       timeout = setTimeout(later, wait);
       if (callNow) func.apply(context, args);
     };
-  };
+  }
 
 
   // For accessing parents by selector:
@@ -130,7 +154,7 @@
       });
     },
     success: function () {
-      console.log('shrimp found!');
+      document.querySelector('#challenge_flashlight-fish').classList.add('completed');
     }
   });
 
