@@ -17,7 +17,7 @@
 		<script src="js/preflight.js"></script>
 
 		<div class="wrapper">
-			<nav class="progress">
+			<nav class="progress" id="progress_bar">
 				<ul>
 					<li id="challenge_flashlight-fish">
 						<a href="#d400">
@@ -407,8 +407,9 @@
 		<script src="js/vendor/devtools-detect.js"></script>
 		<script src="js/vendor/waypoints.noframework.4.0.0.min.js"></script>
 		<script src="js/vendor/waypoints.inview.min.js"></script>
-	    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	    <script>if (!window.jQuery) { document.write('<script src="js/jquery-2.1.4.min.js"><\/script>'); }
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	    <script>if (typeof jQuery === 'undefined') {
+	    	document.write('<script src="js/jquery-2.1.4.min.js"><\/script>'); }
 	    </script>
 		<script src="js/goals.js"></script>
 		<script src="js/main.js"></script>

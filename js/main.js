@@ -1,6 +1,7 @@
 (function(){
   'use strict';
 
+  var currentDepth;
   /*
   var waypoint = new Waypoint({
     element: document.getElementById('mesopelagic'),
@@ -34,6 +35,7 @@
       element: child,
       enter: function(direction) {
         this.element.classList.add('in-view');
+        currentDepth = this.element.id.slice(1);
       },
       entered: function(direction) {
         // this.element.classList.add('viz-focus');
@@ -47,6 +49,7 @@
     })
   });
 
+  var $wrapper = $('.wrapper');
   var indicators = document.getElementsByClassName('indicator');
 
   Array.prototype.forEach.call(indicators, function(indicator) {
@@ -55,10 +58,22 @@
       parent.classList.toggle('show-challenge');
       // var challenge = parent.getElementsByClassName('challenge')[0];
       var puzzle = findParentBySelector(indicator, '.puzzle');
-      $('.wrapper').animate({
+      $wrapper.animate({
         scrollTop: $(puzzle).offset().top
       }, 300);
     })
+  });
+
+  // Progress bar icons scroll to appropriate depth
+  $("#progress_bar").find("a").each(function(a){
+    $(this).on("click", function(){
+      var section = $(this).attr('href');
+      var newDepth = section.slice(2);
+      var time = Math.round(Math.abs((newDepth - currentDepth)));
+      $('html, body').animate({
+        scrollTop: $(section).offset().top
+      }, time);
+    });
   });
 
   // Scroll to nearest in-view puzzle when devtools are opened.

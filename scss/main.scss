@@ -66,11 +66,6 @@ a {
     margin: 0; padding: 0;
     text-indent: 0;
   }
-  li {
-    display: none;
-    opacity: 0;
-    transition: opacity ease(Out) duration(fast);
-  }
   .visited {
     display: block;
     opacity: 1;
@@ -106,8 +101,10 @@ a {
         top: calc(7vh - .6667em );
       }
     }
+    display: none;
+    opacity: 0;
+    transition: opacity ease(Out) duration(fast);
     position: relative;
-    display: block;
     span {
       background: rgba($twilight, .8);
       border-radius: .5rem;

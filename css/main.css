@@ -103,11 +103,6 @@ a:hover, a:active, a:focus {
   padding: 0;
   text-indent: 0;
 }
-.progress li {
-  display: none;
-  opacity: 0;
-  transition: opacity cubic-bezier(0.215, 0.61, 0.355, 1) 200ms;
-}
 .progress .visited {
   display: block;
   opacity: 1;
@@ -135,8 +130,10 @@ a:hover, a:active, a:focus {
   paddng: .25rem;
 }
 .progress li {
+  display: none;
+  opacity: 0;
+  transition: opacity cubic-bezier(0.215, 0.61, 0.355, 1) 200ms;
   position: relative;
-  display: block;
 }
 .progress li:not(:first-child) {
   background: url("../img/icons/progress-dots.svg") no-repeat top center;
