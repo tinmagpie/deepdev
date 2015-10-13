@@ -15,10 +15,15 @@
   font-weight: 400;
 }
 
-.Merriweather700 .subtitle, .Merriweather700 em, .Merriweather700 blockquote {
+.Merriweather700 .progress, .Merriweather700 .subtitle, .Merriweather700 em, .Merriweather700 blockquote {
   font-family: "Merriweather", serif;
   font-weight: 700;
   font-style: italic;
+}
+
+.progress {
+  font-size: 0.66667rem;
+  line-height: 1rem;
 }
 
 .segment, footer {
@@ -50,11 +55,17 @@ html {
   overflow: hidden;
 }
 
-/* UI */
-.indicator {
-  cursor: pointer;
+a:link {
+  color: #56fddb;
+}
+a:visited {
+  color: #4ed9f2;
+}
+a:hover, a:active, a:focus {
+  color: #A9DDF2;
 }
 
+/* Animations */
 #school_flashlight-fish1, #school_flashlight-fish2, #school_flashlight-fish3, #school_flashlight-fish4 {
   animation-play-state: paused;
 }
@@ -73,10 +84,108 @@ html {
   display: block;
 }
 
+/* UI */
+.indicator {
+  cursor: pointer;
+}
+
+.progress {
+  width: 2rem;
+  position: fixed;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.progress ul, .progress li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+}
+.progress li {
+  display: none;
+  opacity: 0;
+  transition: opacity cubic-bezier(0.215, 0.61, 0.355, 1) 200ms;
+}
+.progress .visited {
+  display: block;
+  opacity: 1;
+}
+.progress .completed {
+  color: #fff;
+}
+.progress svg {
+  color: #000c1c;
+  display: block;
+  max-height: 5vh;
+  width: 2rem;
+  position: relative;
+  z-index: 2;
+}
+.progress svg circle {
+  fill: #56fddb;
+  transition: fill cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
+}
+.progress svg path {
+  fill: currentColor;
+}
+.progress a {
+  display: block;
+  paddng: .25rem;
+}
+.progress li {
+  position: relative;
+  display: block;
+}
+.progress li:not(:first-child) {
+  background: url("../img/icons/progress-dots.svg") no-repeat top center;
+  background-size: 7vh auto;
+  padding-top: 7vh;
+}
+.progress li:not(:first-child) span {
+  top: calc(7vh - .6667em );
+}
+.progress li span {
+  background: rgba(11, 74, 97, 0.8);
+  border-radius: .5rem;
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  padding-right: .5rem;
+  opacity: 0;
+  transition: opacity cubic-bezier(0.68, -0.55, 0.265, 1.55) 200ms 200ms, transform cubic-bezier(0.68, -0.55, 0.265, 1.55) 500ms 200ms;
+  width: 15rem;
+  padding: 0.66667rem;
+  z-index: 1;
+}
+.progress li span:after {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: transparent;
+  border-left-color: rgba(11, 74, 97, 0.8);
+  border-width: .5rem;
+  margin-top: -.5rem;
+}
+.progress li a:hover span {
+  transform: translateX(-100%);
+  opacity: 1;
+}
+
+#challenge_orange-roughy svg {
+  color: #c6244b;
+}
+
 .segment {
   min-height: 80rem;
   position: relative;
-  padding: 2em;
+  padding: 2rem 4rem 2rem 2rem;
   padding-top: 2.33333rem;
   padding-bottom: 2.66667rem;
 }
@@ -191,6 +300,7 @@ cite:before {
   color: #06191b;
   text-align: center;
   position: relative;
+  z-index: 20;
 }
 
 #title {

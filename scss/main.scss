@@ -7,11 +7,13 @@ $heightScreen: 80rem; // 100vh = height of screen = 200 meters of ocean
   overflow: hidden;
 }
 
-/* UI */
-.indicator {
-  cursor: pointer;
+a {
+  &:link { color: color(link) }
+  &:visited { color: color(linkVisited) }
+  &:hover, &:active, &:focus { color: color(linkHover) }
 }
 
+/* Animations */
 %play-pause {
   animation-play-state: paused;
   .in-view & {
@@ -32,10 +34,121 @@ $heightScreen: 80rem; // 100vh = height of screen = 200 meters of ocean
 }
 
 
+/* UI */
+.indicator {
+
+  cursor: pointer;
+  // &:before {
+  //   content: "!";
+  //   @extend %fontSpartan;
+  //   background: $red;
+  //   color: #fff;
+  //   display: block;
+  //   font-size: 1rem;
+  //   border-radius: 100%;
+  //   border: .1667rem solid;
+  //   line-height: 1.25rem;
+  //   text-align: center;
+  //   width: 1.25rem;
+  // }
+}
+
+.progress {
+  @extend %fontMerriweatherItalic;
+  @extend %t-small;
+  width: 2rem;
+  position: fixed;
+  right: 1rem; top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  ul, li {
+    list-style: none;
+    margin: 0; padding: 0;
+    text-indent: 0;
+  }
+  li {
+    display: none;
+    opacity: 0;
+    transition: opacity ease(Out) duration(fast);
+  }
+  .visited {
+    display: block;
+    opacity: 1;
+  }
+  .completed {
+    color: #fff;
+  }
+  svg {
+    color: $abyss;
+    display: block;
+    max-height: 5vh;
+    width: 2rem;
+    position: relative;
+    z-index: 2;
+    circle {
+      fill: color(link);
+      transition: fill ease(In) duration(timely);
+    }
+    path {
+      fill: currentColor
+    }
+  }
+  a {
+    display: block;
+    paddng: .25rem;
+  }
+  li {
+    &:not(:first-child) {
+      background: url("../img/icons/progress-dots.svg") no-repeat top center;
+      background-size: 7vh auto;
+      padding-top: 7vh;
+      span {
+        top: calc(7vh - .6667em );
+      }
+    }
+    position: relative;
+    display: block;
+    span {
+      background: rgba($twilight, .8);
+      border-radius: .5rem;
+      position: absolute;
+      top: 0; left: -1rem;
+      padding-right: .5rem;
+      opacity: 0;
+      transition:
+        opacity ease(bounceInOut) duration(fast) duration(fast),
+        transform ease(bounceInOut) duration(slow) duration(fast);
+      width: 15rem;
+      padding: rhythm(2);
+      z-index: 1;
+      &:after {
+        left: 100%;
+        top: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(0, 0, 0, 0);
+        border-left-color: rgba($twilight, .8);
+        border-width: .5rem;
+        margin-top: -.5rem;
+      }
+    }
+    a:hover span {
+      transform: translateX(-100%);
+      opacity: 1;
+    }
+  }
+}
+
+#challenge_orange-roughy svg { color: $red; }
+
 .segment {
   min-height: $heightScreen;
   position: relative;
-  padding: 2em;
+  padding: 2rem 4rem 2rem 2rem;
   @include padding-leader(7);
   @include padding-trailer(8);
   @include breakpoint($double_col){
@@ -60,25 +173,6 @@ $heightScreen: 80rem; // 100vh = height of screen = 200 meters of ocean
       animation-play-state: running;
     }
   }
-}
-
-.segment {
-  // undiscovered/default
-  // hide facts and challenge
-
-  // discovered
-  // show challenge
-  // .solving
-
-  // .solved
-  // hide challenge, show facts
-
-  // reopened
-  // show challenge, hide facts
-  // .show-challenge
-
-  // aside from the default state where both are hidden,
-  // facts and challenge are always toggling: challenge or facts
 }
 
 %content-hidden {
@@ -134,8 +228,6 @@ $heightScreen: 80rem; // 100vh = height of screen = 200 meters of ocean
   //   @extend %content-hidden;
   // }
 }
-
-.progress {}
 
 body, h1, h2, h3, p, ul {
   margin: 0; padding: 0;
@@ -238,6 +330,7 @@ cite {
   color: color(altCopy);
   text-align: center;
   position: relative;
+  z-index: 20;
 }
 
 #title {
