@@ -416,7 +416,7 @@ cite:before {
   background-repeat: no-repeat;
 }
 
-.creature:before {
+.creature {
   filter: url("../img/blue-filter.svg#seafish");
 }
 .creature .lumi {
