@@ -1,18 +1,19 @@
-var Ending = (function() {
-  function Ending() {
-  };
+(function() {
+  function loadBloop() {
+    var request = new XMLHttpRequest();
+    request.open('GET', 'snippets/bloop.html');
+    request.onload = function() {
+      var target = document.querySelector('#d2200');
+      target.innerHTML = request.response;
 
-  Ending.prototype.inject = function() {
-    var url;
-    if (shouldShowBloop()) {
-      url = 'snippets/bloop.html';
-    } else {
-      url = 'snippets/alternate-ending.html';
-    }
-    $.get(url)
-    .done(function(html) {
-      $('#d2200').append($(html));
-    });
+      var bloopDepth = document.querySelector('#bloop-depth');
+      var depth = $(target).find('#the-bloop').offset().top;
+      bloopDepth.textContent = '' + depth + '-';
+    };
+    request.onerror = function() {
+      console.error('Bloop: XHR error');
+    };
+    request.send();
   }
 
   function shouldShowBloop() {
@@ -21,10 +22,9 @@ var Ending = (function() {
 
   GoalManager.onGoalComplete(function() {
     if (GoalManager.goalsCompleted >= GoalManager.goalCount / 2) {
-      // Release the Kraken! (maybe)
-      window.Ending.inject();
+      if (shouldShowBloop()) {
+        loadBloop();
+      }
     }
   });
-
-  return new Ending();
 })()
