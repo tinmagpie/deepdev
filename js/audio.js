@@ -17,23 +17,29 @@ function Sound(buffer) {
   this.buffer = buffer;
   this.output = this.gain;
 }
+
 Sound.prototype.loop = function () {
   this._play(true);
 };
+
 Sound.prototype.play = function () {
   this._play(false);
 };
+
 Sound.prototype.fadeOut = function (duration) {
   this.gain.gain.cancelScheduledValues(context.currentTime);
   this.gain.gain.setValueCurveAtTime(fadeOutCurve, context.currentTime, duration);
 };
+
 Sound.prototype.fadeIn = function (duration) {
   this.gain.gain.cancelScheduledValues(context.currentTime);
   this.gain.gain.setValueCurveAtTime(fadeInCurve, context.currentTime, duration);
 };
+
 Sound.prototype.getDuration = function () {
   return this.buffer.duration;
 };
+
 Sound.prototype._play = function (loop) {
   if (this.source) {
     this.source.stop(context.currentTime);
@@ -54,24 +60,51 @@ Sound.prototype._play = function (loop) {
 };
 
 
-function AudioManager(sounds) {
-  this.sounds = sounds;
+function AudioManager() {
+  this.sounds = {};
   this.active = null;
   this.bg = context.createGain();
   this.cue = context.createGain();
   this.cue.connect(context.destination);
   this.bg.connect(context.destination);
 }
-AudioManager.prototype.setBg = function (n) {
-  this.sounds[n].output.connect(this.bg);
-  if (this.active && this.active !== this.sounds[n]) {
+
+AudioManager.prototype.addSounds = function(soundDescs, cb) {
+  var self = this;
+  var remaining = soundDescs.length;
+  var soundUrls = soundDescs.map(function(soundDesc) { return soundDesc.url; });
+
+  var loader = new BufferLoader(window.context, soundUrls, function(buffers) {
+    for (var i = 0; i < buffers.length; i++) {
+      var buffer = buffers[i];
+      var soundDesc = soundDescs[i];
+      self.sounds[soundDesc.name] = new Sound(buffer);
+    }
+    setTimeout(cb, 0);
+  });
+  loader.load();
+}
+
+AudioManager.prototype.getSound = function (name) {
+  var sound = this.sounds[name];
+  if (sound === undefined) {
+    throw new Error('Unknown sound "' + name + '".');
+  }
+  return sound;
+};
+
+AudioManager.prototype.setBg = function (name) {
+  var sound = this.getSound(name);
+  if (this.active && this.active !== sound) {
     this.active.fadeOut(2);
   }
-  this.active = this.sounds[n];
+  this.active = sound;
+  this.active.output.connect(this.bg);
   this.active.loop();
 };
-AudioManager.prototype.playCue = function (n) {
-  var sound = this.sounds[n];
+
+AudioManager.prototype.playCue = function (name) {
+  var sound = this.getSound(name);
   sound.output.connect(this.cue);
   sound.output.foo = 'cue';
   console.log(sound.getDuration());
@@ -80,6 +113,7 @@ AudioManager.prototype.playCue = function (n) {
   console.log('playCue');
   sound.play();
 };
+
 function setBg(n) {
   return function () {
     window.audio.setBg(n);
@@ -133,6 +167,7 @@ BufferLoader.prototype.load = function() {
   for (var i = 0; i < this.urlList.length; ++i)
   this.loadBuffer(this.urlList[i], i);
 };
+
 
 window.BufferLoader = BufferLoader;
 window.Sound = Sound;

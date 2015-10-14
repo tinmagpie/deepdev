@@ -156,7 +156,7 @@
       vomitingShrimp.addEventListener('animationstart', onAnimationStart, true);
     },
     success: function () {
-      audio.playCue(4);
+      audio.playCue('discover');
       document.querySelector('#challenge_vomiting-shrimp').classList.add('completed');
     }
   });
@@ -170,30 +170,18 @@
     window.AudioContext = window.AudioContext || window.webkitAudioContext;
     if (!window.AudioContext) return;
     window.context = new AudioContext();
+    window.audio = new AudioManager();
 
-    var bufferLoader = new BufferLoader(
-      context,
-      [
-        'audio/quad1.ogg',
-        'audio/quad2.ogg',
-        'audio/quad3.ogg',
-        'audio/quad4.ogg',
-        'audio/discover.ogg'
-      ],
-      finishedLoading
-    );
+    var sounds = [
+      {name: 'quad1', url: 'audio/quad1.ogg'},
+      {name: 'quad2', url: 'audio/quad2.ogg'},
+      {name: 'quad3', url: 'audio/quad3.ogg'},
+      {name: 'quad4', url: 'audio/quad4.ogg'},
+      {name: 'discover', url: 'audio/discover.ogg'}
+    ];
 
-    bufferLoader.load();
-  }
-
-  function finishedLoading(buffers) {
-    var sounds = buffers.map(function (b) {
-      return new Sound(b);
+    window.audio.addSounds(sounds, function() {
+      audio.setBg('quad1');
     });
-
-    window.audio = new AudioManager(sounds);
-    // audio.setBg(0);
   }
-
-
 })();
