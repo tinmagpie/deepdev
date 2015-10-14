@@ -83,7 +83,7 @@ AudioManager.prototype.addSounds = function(soundDescs, cb) {
     setTimeout(cb, 0);
   });
   loader.load();
-}
+};
 
 AudioManager.prototype.getSound = function (name) {
   var sound = this.sounds[name];
@@ -95,7 +95,10 @@ AudioManager.prototype.getSound = function (name) {
 
 AudioManager.prototype.setBg = function (name) {
   var sound = this.getSound(name);
-  if (this.active && this.active !== sound) {
+  if (this.active === sound) {
+    return;
+  }
+  if (this.active) {
     this.active.fadeOut(2);
   }
   this.active = sound;
