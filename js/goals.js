@@ -10,10 +10,10 @@ var GoalManager = (function() {
   GoalManager.prototype.init = function () {
     var initState;
     try {
-      initState = localStorage.getItem('goalmanager-state');
-      this.state = JSON.parse(initState);
+      // initState = localStorage.getItem('goalmanager-state');
+      // this.state = JSON.parse(initState);
     } catch (e) {
-      this.state = {}
+      this.state = {};
     }
     if (!this.state) {
       this.state = {};
@@ -37,22 +37,23 @@ var GoalManager = (function() {
   GoalManager.prototype.addGoal = function (opts) {
     var name = opts.name;
     var evaluated = false;
+    var success = opts.success;
 
     var self = this;
 
     this.goalCount++;
     self.state[name] = false;
 
+    console.log('registering goal', name);
+
     function complete () {
       if (self.state[name]) {
         return;
       }
       self.goalsCompleted++;
+      success();
       self._notify(name);
       self.state[name] = true;
-      if (opts.success) {
-        opts.success();
-      }
     }
 
     if (!self.state[name]) {

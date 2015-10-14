@@ -145,7 +145,6 @@
     return cur; //will return null if not found
   }
 
-
   GoalManager.addGoal({
     name: 'shrimp',
     evaluate: function (complete) {
@@ -157,12 +156,44 @@
       vomitingShrimp.addEventListener('animationstart', onAnimationStart, true);
     },
     success: function () {
-      document.querySelector('#challenge_flashlight-fish').classList.add('completed');
+      audio.playCue(4);
+      document.querySelector('#challenge_vomiting-shrimp').classList.add('completed');
     }
   });
 
   window.addEventListener('load', function () {
     GoalManager.init();
+    setupAudio();
   });
+
+  function setupAudio() {
+    window.AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (!window.AudioContext) return;
+    window.context = new AudioContext();
+
+    var bufferLoader = new BufferLoader(
+      context,
+      [
+        'audio/quad1.ogg',
+        'audio/quad2.ogg',
+        'audio/quad3.ogg',
+        'audio/quad4.ogg',
+        'audio/discover.ogg'
+      ],
+      finishedLoading
+    );
+
+    bufferLoader.load();
+  }
+
+  function finishedLoading(buffers) {
+    var sounds = buffers.map(function (b) {
+      return new Sound(b);
+    });
+
+    window.audio = new AudioManager(sounds);
+    // audio.setBg(0);
+  }
+
 
 })();

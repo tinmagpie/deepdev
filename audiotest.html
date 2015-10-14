@@ -9,6 +9,7 @@
     <button class="zone2">Zone 2</button>
     <button class="zone3">Zone 3</button>
     <button class="zone4">Zone 4</button>
+    <button class="cue">Reveal</button>
     <script>
 
       var context;
@@ -25,7 +26,8 @@
             'audio/quad1.ogg',
             'audio/quad2.ogg',
             'audio/quad3.ogg',
-            'audio/quad4.ogg'
+            'audio/quad4.ogg',
+            'audio/discover.ogg'
           ],
           finishedLoading
         );
@@ -49,7 +51,6 @@
         this.gain = context.createGain();
         this.buffer = buffer;
         this.output = this.gain;
-        this.output.connect(context.destination);
       }
       Sound.prototype.loop = function () {
         this._play(true);
@@ -65,6 +66,9 @@
         this.gain.gain.cancelScheduledValues(context.currentTime);
         this.gain.gain.setValueCurveAtTime(fadeInCurve, context.currentTime, duration);
       }
+      Sound.prototype.getDuration = function () {
+        return this.buffer.duration;
+      }
       Sound.prototype._play = function (loop) {
         if (this.source) {
           this.source.stop(context.currentTime);
@@ -72,8 +76,11 @@
         }
         this.source = context.createBufferSource();
         this.source.buffer = this.buffer;
+        console.log(loop);
         if (loop) {
-          this.source.looped = true
+          this.source.loop = true;
+        } else {
+          this.source.loop = false;
         }
         this.source.connect(this.gain);
         this.gain.gain = 0;
@@ -94,19 +101,39 @@
         document.querySelector('.zone2').addEventListener('click', setBg(1));
         document.querySelector('.zone3').addEventListener('click', setBg(2));
         document.querySelector('.zone4').addEventListener('click', setBg(3));
+
+        document.querySelector('.cue').addEventListener('click', function () {
+          audio.playCue(4);
+        });
+
       }
 
 
       function AudioManager(sounds) {
         this.sounds = sounds;
         this.active = null;
+        this.bg = context.createGain();
+        this.cue = context.createGain();
+        this.cue.connect(context.destination);
+        this.bg.connect(context.destination);
       }
       AudioManager.prototype.setBg = function (n) {
+        this.sounds[n].output.connect(this.bg);
         if (this.active && this.active !== this.sounds[n]) {
           this.active.fadeOut(2);
         }
         this.active = this.sounds[n];
         this.active.loop();
+      }
+      AudioManager.prototype.playCue = function (n) {
+        var sound = this.sounds[n];
+        sound.output.connect(this.cue);
+        sound.output.foo = 'cue';
+        console.log(sound.getDuration());
+        this.bg.gain.exponentialRampToValueAtTime(.3, context.currentTime + .3);
+        this.bg.gain.exponentialRampToValueAtTime(1, context.currentTime + sound.getDuration() + .5);
+        console.log('playCue');
+        sound.play();
       }
       function setBg(n) {
         return function () {
