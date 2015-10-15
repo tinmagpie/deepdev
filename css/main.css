@@ -1000,7 +1000,7 @@ menu {
   left: 0;
   width: 100%;
   line-height: 2em;
-  z-index: 3;
+  z-index: 30;
 }
 
 #d1200 em {
