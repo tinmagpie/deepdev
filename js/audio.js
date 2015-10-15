@@ -108,7 +108,7 @@ AudioManager.prototype.setBg = function (name) {
 
 AudioManager.prototype.stopBg = function () {
   if (!this.active) {
-    return
+    return;
   }
   this.active.fadeOut(2);
   this.active = null;
