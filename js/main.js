@@ -11,13 +11,18 @@
   })*/
 
   var zoneListeners = [];
+  var currentZone;
   function zoneChanged(zoneEl) {
+    currentZone = zoneEl;
     zoneListeners.forEach(function (listener) {
       listener(zoneEl);
     });
   }
   function onZoneChanged(fn) {
     zoneListeners.push(fn);
+    if (currentZone) {
+      fn(currentZone);
+    }
   }
 
   var zones = document.getElementsByClassName('zone');
@@ -280,7 +285,7 @@
       pollPolitely(function (stop) {
         var val = window.getComputedStyle(creature).getPropertyValue('filter');
         // checking for negative values in a cubic bezier
-        if (val.indexOf('http://localhost:8080/img/blue-filter.svg#seafish') < 0) {
+        if (val.indexOf('/img/blue-filter.svg#seafish') < 0) {
           stop();
           complete();
         }
