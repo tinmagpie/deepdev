@@ -145,22 +145,6 @@
     return cur; //will return null if not found
   }
 
-  GoalManager.addGoal({
-    name: 'shrimp',
-    evaluate: function (complete) {
-      var vomitingShrimp = document.querySelector('#creature_vomiting-shrimp1');
-      function onAnimationStart(e) {
-        complete();
-        vomitingShrimp.removeEventListener('animationstart', onAnimationStart, true);
-      }
-      vomitingShrimp.addEventListener('animationstart', onAnimationStart, true);
-    },
-    success: function () {
-      audio.playCue('discover');
-      document.querySelector('#challenge_vomiting-shrimp').classList.add('completed');
-    }
-  });
-
   window.addEventListener('load', function () {
     GoalManager.init();
     setupAudio();
@@ -184,4 +168,83 @@
       audio.setBg('quad1');
     });
   }
+
+  var pollPolitely = (function () {
+    var polls = [];
+
+    function stop(fn) {
+      for (var i=0; i<polls.length; i++) {
+        if (polls[i] === fn) {
+          polls.splice(i, 1);
+          break;
+        }
+      }
+    }
+
+    function poll() {
+      polls.forEach(function (fn) {
+        fn(stop.bind(this, fn));
+      });
+      setTimeout(poll, 100);
+    }
+
+    setTimeout(poll, 100);
+
+    return function (fn) {
+      polls.push(fn);
+    };
+  })();
+
+  GoalManager.addGoal({
+    name: 'flashlight-fish',
+    evaluate: function (complete) {
+      var creature = document.querySelector('#creature_flashlight-fish1');
+      function handler(e) {
+        complete();
+        creature.removeEventListener('animationiteration', handler);
+      }
+      creature.addEventListener('animationiteration', handler);
+    },
+    success: function () {
+      audio.playCue('discover');
+      document.querySelector('#challenge_flashlight-fish').classList.add('completed');
+    }
+  });
+
+  GoalManager.addGoal({
+    name: 'nautilus',
+    evaluate: function (complete) {
+      var creature = document.querySelector('#creature_nautilus1');
+      pollPolitely(function (stop) {
+        var val = window.getComputedStyle(creature).getPropertyValue('animation-timing-function');
+        // checking for negative values in a cubic bezier
+        var hasNegative = val.search(/-\d/) >= 0;
+        if (hasNegative) {
+          stop();
+          complete();
+        }
+      });
+    },
+    success: function () {
+      audio.playCue('discover');
+      document.querySelector('#challenge_flashlight-fish').classList.add('completed');
+    }
+  });
+
+
+  GoalManager.addGoal({
+    name: 'shrimp',
+    evaluate: function (complete) {
+      var vomitingShrimp = document.querySelector('#creature_vomiting-shrimp1');
+      function onAnimationStart(e) {
+        complete();
+        vomitingShrimp.removeEventListener('animationstart', onAnimationStart);
+      }
+      vomitingShrimp.addEventListener('animationstart', onAnimationStart);
+    },
+    success: function () {
+      audio.playCue('discover');
+      document.querySelector('#challenge_vomiting-shrimp').classList.add('completed');
+    }
+  });
 })();
