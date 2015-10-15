@@ -145,25 +145,10 @@
     return cur; //will return null if not found
   }
 
-  GoalManager.addGoal({
-    name: 'shrimp',
-    evaluate: function (complete) {
-      var vomitingShrimp = document.querySelector('#creature_vomiting-shrimp1');
-      function onAnimationStart(e) {
-        complete();
-        vomitingShrimp.removeEventListener('animationstart', onAnimationStart, true);
-      }
-      vomitingShrimp.addEventListener('animationstart', onAnimationStart, true);
-    },
-    success: function () {
-      audio.playCue('discover');
-      document.querySelector('#challenge_vomiting-shrimp').classList.add('completed');
-    }
-  });
-
   window.addEventListener('load', function () {
     GoalManager.init();
     setupAudio();
+    setupButtons();
   });
 
   function setupAudio() {
@@ -180,8 +165,124 @@
       {name: 'discover', url: 'audio/discover.ogg'}
     ];
 
-    window.audio.addSounds(sounds, function() {
-      audio.setBg('quad1');
+    window.audio.addSounds(sounds);
+  }
+
+  function setupButtons() {
+    var audioButton = document.querySelector('button#audio');
+    audioButton.addEventListener('click', function() {
+      if (audioButton.dataset.playing === '1') {
+        audioButton.textContent = 'Listen to the Deep';
+        audio.stopBg();
+        audioButton.dataset.playing = '0';
+      } else {
+        audioButton.textContent = 'Mute the Deep';
+        audio.setBg('quad1');
+        audioButton.dataset.playing = '1';
+      }
     });
   }
+
+  // use only one timeout for style polling, when polling is necessary.
+  var pollPolitely = (function () {
+    var polls = [];
+
+    function stop(fn) {
+      for (var i=0; i<polls.length; i++) {
+        if (polls[i] === fn) {
+          polls.splice(i, 1);
+          break;
+        }
+      }
+    }
+
+    function poll() {
+      polls.forEach(function (fn) {
+        fn(stop.bind(this, fn));
+      });
+      setTimeout(poll, 100);
+    }
+
+    setTimeout(poll, 100);
+
+    return function (fn) {
+      polls.push(fn);
+    };
+  })();
+
+
+  GoalManager.addGoal({
+    name: 'flashlight-fish',
+    evaluate: function (complete) {
+      var creature = document.querySelector('#creature_flashlight-fish1');
+      function handler(e) {
+        complete();
+        creature.removeEventListener('animationiteration', handler);
+      }
+      creature.addEventListener('animationiteration', handler);
+    },
+    success: function () {
+      audio.playCue('discover');
+      document.querySelector('#challenge_flashlight-fish').classList.add('completed');
+    }
+  });
+
+
+  GoalManager.addGoal({
+    name: 'nautilus',
+    evaluate: function (complete) {
+      var creature = document.querySelector('#creature_nautilus1');
+      pollPolitely(function (stop) {
+        var val = window.getComputedStyle(creature).getPropertyValue('animation-timing-function');
+        // checking for negative values in a cubic bezier
+        var hasNegative = val.search(/-\d/) >= 0;
+        if (hasNegative) {
+          stop();
+          complete();
+        }
+      });
+    },
+    success: function () {
+      audio.playCue('discover');
+      document.querySelector('#challenge_flashlight-fish').classList.add('completed');
+    }
+  });
+
+
+  GoalManager.addGoal({
+    name: 'orange-roughy',
+    evaluate: function (complete) {
+      var creature = document.querySelector('#creature_orange-roughy1');
+      pollPolitely(function (stop) {
+        var val = window.getComputedStyle(creature).getPropertyValue('filter');
+        // checking for negative values in a cubic bezier
+        if (val.indexOf('http://localhost:8080/img/blue-filter.svg#seafish') < 0) {
+          stop();
+          complete();
+        }
+      });
+    },
+    success: function () {
+      audio.playCue('discover');
+      document.querySelector('#challenge_orange-roughy').classList.add('completed');
+    }
+  });
+
+
+  GoalManager.addGoal({
+    name: 'shrimp',
+    evaluate: function (complete) {
+      var vomitingShrimp = document.querySelector('#creature_vomiting-shrimp1');
+      function onAnimationStart(e) {
+        complete();
+        vomitingShrimp.removeEventListener('animationstart', onAnimationStart);
+      }
+      vomitingShrimp.addEventListener('animationstart', onAnimationStart);
+    },
+    success: function () {
+      audio.playCue('discover');
+      document.querySelector('#challenge_vomiting-shrimp').classList.add('completed');
+    }
+  });
+
 })();

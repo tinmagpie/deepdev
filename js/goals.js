@@ -50,10 +50,10 @@ var GoalManager = (function() {
       if (self.state[name]) {
         return;
       }
+      self.state[name] = true;
       self.goalsCompleted++;
       success();
       self._notify(name);
-      self.state[name] = true;
     }
 
     if (!self.state[name]) {

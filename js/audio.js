@@ -106,6 +106,14 @@ AudioManager.prototype.setBg = function (name) {
   this.active.loop();
 };
 
+AudioManager.prototype.stopBg = function () {
+  if (!this.active) {
+    return;
+  }
+  this.active.fadeOut(2);
+  this.active = null;
+};
+
 AudioManager.prototype.playCue = function (name) {
   var sound = this.getSound(name);
   sound.output.connect(this.cue);
@@ -135,7 +143,7 @@ function BufferLoader(context, urlList, callback) {
 BufferLoader.prototype.loadBuffer = function(url, index) {
   // Load buffer asynchronously
   var request = new XMLHttpRequest();
-  request.open("GET", url, true);
+  request.open("GET", url);
   request.responseType = "arraybuffer";
 
   var loader = this;
