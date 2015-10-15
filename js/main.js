@@ -169,6 +169,7 @@
     });
   }
 
+  // use only one timeout for style polling, when polling is necessary.
   var pollPolitely = (function () {
     var polls = [];
 
@@ -195,6 +196,7 @@
     };
   })();
 
+
   GoalManager.addGoal({
     name: 'flashlight-fish',
     evaluate: function (complete) {
@@ -210,6 +212,7 @@
       document.querySelector('#challenge_flashlight-fish').classList.add('completed');
     }
   });
+
 
   GoalManager.addGoal({
     name: 'nautilus',
@@ -233,6 +236,26 @@
 
 
   GoalManager.addGoal({
+    name: 'orange-roughy',
+    evaluate: function (complete) {
+      var creature = document.querySelector('#creature_orange-roughy1');
+      pollPolitely(function (stop) {
+        var val = window.getComputedStyle(creature).getPropertyValue('filter');
+        // checking for negative values in a cubic bezier
+        if (val.indexOf('http://localhost:8080/img/blue-filter.svg#seafish') < 0) {
+          stop();
+          complete();
+        }
+      });
+    },
+    success: function () {
+      audio.playCue('discover');
+      document.querySelector('#challenge_orange-roughy').classList.add('completed');
+    }
+  });
+
+
+  GoalManager.addGoal({
     name: 'shrimp',
     evaluate: function (complete) {
       var vomitingShrimp = document.querySelector('#creature_vomiting-shrimp1');
@@ -247,4 +270,5 @@
       document.querySelector('#challenge_vomiting-shrimp').classList.add('completed');
     }
   });
+
 })();
