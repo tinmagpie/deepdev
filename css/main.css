@@ -5,17 +5,17 @@
   font-weight: normal;
   font-style: normal;
 }
-.leagueSpartanRegular400 .challenge li, .challenge .leagueSpartanRegular400 li, .leagueSpartanRegular400 h1, .leagueSpartanRegular400 h2, .leagueSpartanRegular400 h3 {
+.leagueSpartanRegular400 .challenge li, .challenge .leagueSpartanRegular400 li, .leagueSpartanRegular400 h1, .leagueSpartanRegular400 h2, .leagueSpartanRegular400 h3, .leagueSpartanRegular400 .featured {
   font-family: "leagueSpartanRegular", sans-serif;
   font-weight: 400;
 }
 
-.Merriweather400 .challenge li p, .challenge li .Merriweather400 p, .Merriweather400 p, .Merriweather400 li, .Merriweather400 footer {
+.Merriweather400 .challenge li p, .challenge li .Merriweather400 p, .Merriweather400 li, .Merriweather400 p, .Merriweather400 .followup, .Merriweather400 menu {
   font-family: "Merriweather", serif;
   font-weight: 400;
 }
 
-.Merriweather700 .progress, .Merriweather700 .subtitle, .Merriweather700 em, .Merriweather700 blockquote, .Merriweather700 cite {
+.Merriweather700 .progress, .Merriweather700 .subtitle, .Merriweather700 em, .Merriweather700 .callout, .Merriweather700 blockquote, .Merriweather700 cite {
   font-family: "Merriweather", serif;
   font-weight: 700;
   font-style: italic;
@@ -26,12 +26,12 @@
   line-height: 1rem;
 }
 
-.segment, cite, footer {
+.segment, .followup, .standalone p, cite, menu {
   font-size: 1rem;
   line-height: 2rem;
 }
 
-h3, .subtitle, blockquote {
+h3, .subtitle, .callout, blockquote, #d1200 em {
   font-size: 2rem;
   line-height: 2.66667rem;
 }
@@ -83,6 +83,15 @@ a:hover, a:active, a:focus {
 }
 .in-view #school_flashlight-fish1, .in-view #school_flashlight-fish2, .in-view #school_flashlight-fish3, .in-view #school_flashlight-fish4 {
   animation-play-state: running;
+}
+
+.segment *, .challenge, .solved .challenge {
+  opacity: 0;
+  transition: opacity 2.1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.segment.in-view *, .solving .challenge, .show-challenge .challenge, .solved .facts {
+  opacity: 1;
 }
 
 .creature, .object {
@@ -207,20 +216,11 @@ a:hover, a:active, a:focus {
 .segment * {
   animation-play-state: paused;
 }
-.segment.in-view .subtitle {
-  opacity: 0.6;
-}
 .segment.in-view * {
   animation-play-state: running;
 }
-
-.segment h1, .segment h2, .segment h3, .segment .content, .challenge, .solved .challenge {
-  opacity: 0;
-  transition: opacity 2.1s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.segment.in-view h1, .segment.in-view h2, .segment.in-view h3, .segment.in-view .content, .solving .challenge, .show-challenge .challenge, .solved .facts {
-  opacity: 1;
+.segment.in-view .subtitle {
+  opacity: 0.6;
 }
 
 .challenge {
@@ -261,23 +261,23 @@ h2 {
   padding-bottom: 1rem;
 }
 
-p {
-  padding-bottom: 1rem;
-}
-
-@media (min-width: 35em) {
-  p {
-    padding-bottom: 0;
-  }
-  p:not(:first-of-type) {
-    text-indent: 4em;
-  }
-}
 li {
   padding-bottom: 0.33333rem;
   margin-left: 4em;
 }
 
+p {
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 35em) {
+  .content p, .facts p, .challenge p {
+    padding-bottom: 0;
+  }
+  .content p:not(:first-of-type), .facts p:not(:first-of-type), .challenge p:not(:first-of-type) {
+    text-indent: 4em;
+  }
+}
 @media (min-width: 54em) {
   .content, .facts, .challenge {
     -moz-column-count: 2;
@@ -289,6 +289,28 @@ li {
     page-break-inside: avoid;
     break-inside: avoid;
   }
+}
+
+.callout {
+  padding-top: 0.33333rem;
+  padding-bottom: 0.33333rem;
+  text-align: center;
+  transition-duration: 1.3s;
+}
+
+.followup {
+  padding-top: 0.33333rem;
+  padding-bottom: 0.33333rem;
+  text-align: center;
+  transition-delay: 500ms;
+}
+
+.standalone {
+  max-width: 50em;
+  margin: 0 auto;
+}
+.standalone p {
+  padding-bottom: 2rem;
 }
 
 blockquote {
@@ -793,6 +815,7 @@ cite:before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  pointer-effects: none;
 }
 .luminous-spew:before {
   background-position: 0 0;
@@ -968,13 +991,24 @@ cite:before {
   animation: wriggle steps(1) 500ms infinite;
 }
 
-footer {
+menu {
   background: #000c1c;
   color: #c6f3c7;
+  margin: 0;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   line-height: 2em;
   z-index: 3;
+}
+
+#d1200 em {
+  display: block;
+  text-align: right;
+}
+
+#d3200 .callout {
+  transition-delay: 2.1s;
+  transition-duration: 3.4s;
 }

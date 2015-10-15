@@ -31,6 +31,15 @@ a {
   }
 }
 
+%content-hidden {
+  opacity: 0;
+  transition: opacity duration(days) ease(Out);
+}
+
+%content-revealed {
+  opacity: 1;
+}
+
 %sprited-thing {
   overflow: hidden;
   position: relative;
@@ -164,38 +173,22 @@ a {
     margin: 0 auto;
   }
   @extend %t-medium;
-  h1, h2, h3, .content {
-    @extend %content-hidden;
-  }
+  // everything starts paused and transparent...
   * {
+    @extend %content-hidden;
     animation-play-state: paused;
   }
+  // ...until you scroll them into view
   &.in-view {
-    h1, h2, h3, .content {
+    * {
       @extend %content-revealed;
+      animation-play-state: running;
     }
     .subtitle {
       opacity: .6
     }
-    * {
-      animation-play-state: running;
-    }
   }
 }
-
-%content-hidden {
-  opacity: 0;
-  transition: opacity duration(days) ease(Out);
-}
-
-%content-revealed {
-  opacity: 1;
-}
-
-// .puzzle {
-//   position: relative;
-//   z-index: 1;
-// }
 
 .challenge {
   transition-duration: duration(timely);
@@ -275,6 +268,10 @@ h3 {
   @extend %t-large;
 }
 
+.featured {
+  @extend %fontSpartan;
+}
+
 .subtitle {
   @extend %fontMerriweatherItalic;
   @extend %t-large;
@@ -285,27 +282,27 @@ em {
   @extend %fontMerriweatherItalic;
 }
 
-p {
-  @extend %fontMerriweather;
-  @include padding-trailer(3);
-}
-
-@include breakpoint($medium){
-  p {
-    padding-bottom: 0;
-    &:not(:first-of-type) {
-      text-indent: 4em;
-    }
-  }
-}
-
 li {
   @extend %fontMerriweather;
   @include padding-trailer();
   margin-left: 4em;
 }
 
+p {
+  @extend %fontMerriweather;
+  @include padding-trailer(3);
+}
+
 .content, .facts, .challenge {
+  @include breakpoint($medium){
+    p {
+      padding-bottom: 0;
+      &:not(:first-of-type) {
+        text-indent: 4em;
+      }
+    }
+  }
+
   @include breakpoint($double_col){
     -moz-column-count: 2;
     -moz-column-gap: 2rem;
@@ -315,6 +312,33 @@ li {
       page-break-inside: avoid;
       break-inside: avoid;
     }
+  }
+}
+
+.callout {
+  @extend %t-large;
+  @extend %fontMerriweatherItalic;
+  @include padding-leader();
+  @include padding-trailer();
+  text-align: center;
+  transition-duration: duration(slowest);
+}
+
+.followup {
+  @extend %t-medium;
+  @extend %fontMerriweather;
+  @include padding-leader();
+  @include padding-trailer();
+  text-align: center;
+  transition-delay: duration(slow);
+}
+
+.standalone {
+  max-width: 50em;
+  margin: 0 auto;
+  p {
+    @extend %t-medium;
+    @include padding-trailer(6);
   }
 }
 
@@ -330,22 +354,12 @@ blockquote {
   @extend %fontMerriweatherItalic;
   @include padding-leader();
   @include padding-trailer();
-  // &:before {
-  //     content: "\201C";
-  //     @extend %fontSpartan;
-  //     position: absolute;
-  //     left: -.35em;
-  //     font-size: 3em;
-  //     opacity: .4;
-  //     top: .5em;
-  // }
 }
 cite {
   @extend %t-medium;
   @extend %fontMerriweatherItalic;
   font-style: normal;
   display: block;
-  // margin: 0 4rem;
   page-break-inside: avoid;
   break-inside: avoid;
   text-align: right;
@@ -468,14 +482,26 @@ cite {
 @import "hagfish";
 @import "disco";
 
-footer {
+menu {
   background: $abyss;
   @extend %fontMerriweather;
   @extend %t-medium;
   color: color(copy);
+  margin: 0;
   position: fixed;
   bottom: 0; left: 0;
   width: 100%;
   line-height: 2em;
   z-index: 3;
+}
+
+#d1200 em {
+  @extend %t-large;
+  display: block;
+  text-align: right;
+}
+
+#d3200 .callout {
+  transition-delay: duration(days);
+  transition-duration: duration(weeks);
 }
