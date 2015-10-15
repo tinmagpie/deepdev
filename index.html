@@ -12,12 +12,15 @@
 		<link rel="stylesheet" href="css/main.css">
 		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 		<script type="text/javascript">
-			stLight.options({
-				publisher: "19770569-c24b-4219-8ced-6509c387cf63",
-				doNotHash: false,
-				doNotCopy: false,
-				hashAddressBar: false
-			});
+			// in case Tracking Protection blocks stLight, don't error out.
+			if (window.stLight) {
+				window.stLight.options({
+					publisher: "19770569-c24b-4219-8ced-6509c387cf63",
+					doNotHash: false,
+					doNotCopy: false,
+					hashAddressBar: false
+				});
+			}
 		</script>
 	</head>
 	<body>
