@@ -148,6 +148,7 @@
   window.addEventListener('load', function () {
     GoalManager.init();
     setupAudio();
+    setupButtons();
   });
 
   function setupAudio() {
@@ -164,8 +165,21 @@
       {name: 'discover', url: 'audio/discover.ogg'}
     ];
 
-    window.audio.addSounds(sounds, function() {
-      audio.setBg('quad1');
+    window.audio.addSounds(sounds);
+  }
+
+  function setupButtons() {
+    var audioButton = document.querySelector('button#audio');
+    audioButton.addEventListener('click', function() {
+      if (audioButton.dataset.playing === '1') {
+        audioButton.textContent = 'Listen to the Deep';
+        audio.stopBg();
+        audioButton.dataset.playing = '0';
+      } else {
+        audioButton.textContent = 'Mute the Deep';
+        audio.setBg('quad1');
+        audioButton.dataset.playing = '1';
+      }
     });
   }
 
