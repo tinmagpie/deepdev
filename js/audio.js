@@ -135,7 +135,7 @@ function BufferLoader(context, urlList, callback) {
 BufferLoader.prototype.loadBuffer = function(url, index) {
   // Load buffer asynchronously
   var request = new XMLHttpRequest();
-  request.open("GET", url, true);
+  request.open("GET", url);
   request.responseType = "arraybuffer";
 
   var loader = this;
