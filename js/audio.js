@@ -101,25 +101,17 @@ AudioManager.prototype.doneLoading = function (fn) {
   }
 };
 
-AudioManager.prototype.getSound = function (name) {
-  var sound = this.sounds[name];
-  if (sound === undefined) {
-    throw new Error('Unknown sound "' + name + '".');
-  }
-  return sound;
-};
-
 AudioManager.prototype.setBg = function (name) {
   console.log('new zone', name);
-  if (!name || !this.sounds[name]) {
-    console.log('bailing');
+  var sound = this.sounds[name];
+  if (!sound) {
+    console.log('bg sound not found: "' + name + '". bailing');
     if (this.active) {
       this.active.fadeOut(2);
     }
     this.active = null;
     return;
   }
-  var sound = this.getSound(name);
   if (this.active === sound) {
     return;
   }
@@ -140,7 +132,11 @@ AudioManager.prototype.stopBg = function () {
 };
 
 AudioManager.prototype.playCue = function (name) {
-  var sound = this.getSound(name);
+  var sound = this.sounds[name];
+  if (!sound) {
+    console.log('Unknown cue "' + name + '". bailing.');
+    return;
+  }
   sound.output.connect(this.cue);
   this.bg.gain.exponentialRampToValueAtTime(0.3, context.currentTime + 0.3);
   this.bg.gain.exponentialRampToValueAtTime(1, context.currentTime + sound.getDuration() + 0.5);
