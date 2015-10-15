@@ -190,32 +190,60 @@ a {
   }
 }
 
+.content, .challenge {
+  padding: rhythm(4) 0;
+  @include breakpoint($medium){
+    p {
+      padding-bottom: 0;
+      &:not(:first-of-type) {
+        text-indent: 4em;
+      }
+    }
+  }
+
+  @include breakpoint($double_col){
+    -moz-column-count: 2;
+    -moz-column-gap: 2rem;
+    column-count: 2;
+    column-gap: 2rem;
+    ul, ol {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+  }
+}
+
+.challenge_wrapper {
+  position:relative;
+  z-index: 1;
+}
+
+#creature_flashlight-fish1 {
+  z-index: 2;
+}
+
 .challenge {
+  @extend %content-hidden;
   transition-duration: duration(timely);
+  position: absolute;
+  top: 0; left: -1em; width: 100%;
 
   // Appearance
   background: $twilight;
   padding: rhythm(4) 1em;
-  margin: rhythm(4) -1em;
-  // /Appearance
-
-  // undiscovered/default
-  @extend %content-hidden;
+  // margin: rhythm(4) -1em;
 
   // opened/shown
-  .solving &,
-  .show-challenge & {
-    @extend %content-revealed;
-  }
+  // .solving &,
+  // .show-challenge & {
+  //   @extend %content-revealed;
+  // }
 
-  // solved
-  .solved & {
-    @extend %content-hidden;
-  }
+  // // solved
+  // .solved & {
+  //   @extend %content-hidden;
+  // }
 
-}
-
-.challenge {
   ol, li {
     margin: 0; padding: 0;
   }
@@ -230,19 +258,15 @@ a {
   }
 }
 
-.facts {
+.bonus {
   // unsolved/default
   // unsolved
-  // @extend %content-hidden;
+  @extend %content-hidden;
 
   // solved/shown
   .solved & {
     @extend %content-revealed;
   }
-  // toggled off
-  // .show-challenge & {
-  //   @extend %content-hidden;
-  // }
 }
 
 body, h1, h2, h3, p, ul {
@@ -291,28 +315,6 @@ li {
 p {
   @extend %fontMerriweather;
   @include padding-trailer(3);
-}
-
-.content, .facts, .challenge {
-  @include breakpoint($medium){
-    p {
-      padding-bottom: 0;
-      &:not(:first-of-type) {
-        text-indent: 4em;
-      }
-    }
-  }
-
-  @include breakpoint($double_col){
-    -moz-column-count: 2;
-    -moz-column-gap: 2rem;
-    column-count: 2;
-    column-gap: 2rem;
-    ul, ol {
-      page-break-inside: avoid;
-      break-inside: avoid;
-    }
-  }
 }
 
 .callout {

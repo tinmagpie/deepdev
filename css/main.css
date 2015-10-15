@@ -85,12 +85,12 @@ a:hover, a:active, a:focus {
   animation-play-state: running;
 }
 
-.segment *, .challenge, .solved .challenge {
+.segment *, .challenge, .bonus {
   opacity: 0;
   transition: opacity 2.1s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.segment.in-view *, .solving .challenge, .show-challenge .challenge, .solved .facts {
+.segment.in-view *, .solved .bonus {
   opacity: 1;
 }
 
@@ -223,13 +223,48 @@ a:hover, a:active, a:focus {
   opacity: 0.6;
 }
 
-.challenge {
-  transition-duration: 300ms;
-  background: #0b4a61;
-  padding: 1.33333rem 1em;
-  margin: 1.33333rem -1em;
+.content, .challenge {
+  padding: 1.33333rem 0;
+}
+@media (min-width: 35em) {
+  .content p, .challenge p {
+    padding-bottom: 0;
+  }
+  .content p:not(:first-of-type), .challenge p:not(:first-of-type) {
+    text-indent: 4em;
+  }
+}
+@media (min-width: 54em) {
+  .content, .challenge {
+    -moz-column-count: 2;
+    -moz-column-gap: 2rem;
+    column-count: 2;
+    column-gap: 2rem;
+  }
+  .content ul, .content ol, .challenge ul, .challenge ol {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
 }
 
+.challenge_wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+#creature_flashlight-fish1 {
+  z-index: 2;
+}
+
+.challenge {
+  transition-duration: 300ms;
+  position: absolute;
+  top: 0;
+  left: -1em;
+  width: 100%;
+  background: #0b4a61;
+  padding: 1.33333rem 1em;
+}
 .challenge ol, .challenge li {
   margin: 0;
   padding: 0;
@@ -268,27 +303,6 @@ li {
 
 p {
   padding-bottom: 1rem;
-}
-
-@media (min-width: 35em) {
-  .content p, .facts p, .challenge p {
-    padding-bottom: 0;
-  }
-  .content p:not(:first-of-type), .facts p:not(:first-of-type), .challenge p:not(:first-of-type) {
-    text-indent: 4em;
-  }
-}
-@media (min-width: 54em) {
-  .content, .facts, .challenge {
-    -moz-column-count: 2;
-    -moz-column-gap: 2rem;
-    column-count: 2;
-    column-gap: 2rem;
-  }
-  .content ul, .content ol, .facts ul, .facts ol, .challenge ul, .challenge ol {
-    page-break-inside: avoid;
-    break-inside: avoid;
-  }
 }
 
 .callout {
@@ -491,6 +505,7 @@ cite:before {
 #d400 .puzzle {
   position: relative;
   height: 400px;
+  margin-top: -2rem;
 }
 
 .creature_flashlight-fish {
@@ -679,6 +694,16 @@ cite:before {
 @keyframes flashlight-swim4 {
   100% {
     transform: translateX(0);
+  }
+}
+@media (min-width: 54em) {
+  #creature_flashlight-fish1 {
+    top: 15%;
+    left: 25%;
+  }
+
+  #d400 .challenge ol {
+    margin-top: 6.66667rem;
   }
 }
 @media (min-width: 54em) {

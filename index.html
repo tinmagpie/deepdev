@@ -86,9 +86,20 @@
 					</div>
 				</div>
 				<div class="segment bottom" id="d400">
-					<div class="facts">
-						<p>Often deepsea critters like these tropical <span class="featured">Flashlight Fish</span> migrate vertically to shallower waters at night to look for food.</p>
-						<p class="bonus">Flashlight fish have a bioluminescent pocket under their eye they use to communicate with each other, disorient predators, and hunt.</p>
+					<div class="challenge_wrapper">
+						<div class="content">
+							<p>Often deepsea critters like these tropical <span class="featured">Flashlight Fish</span> migrate vertically to shallower waters at night to look for food.</p>
+							<p class="bonus">Flashlight fish have a bioluminescent pocket under their eye they use to communicate with each other, disorient predators, and hunt.</p>
+						</div>
+						<div class="challenge">
+							<p>This little Flashlight Fish is having trouble keeping up with the others. Use your browser’s dev tools to unpause its swimming animation so it can catch up.</p>
+							<ol>
+								<li><p>Right click “inspect element” on the flashlight fish.</p></li>
+								<li><p>Navigate to the Animation Panel tab.</p></li>
+								<li><p>Press play to start the fish’s swimming animation.</p></li>
+							</ol>
+							<iframe width="420" height="315" class="video" src="https://www.youtube.com/embed/T2jykykN3yc" frameborder="0" allowfullscreen></iframe>
+						</div>
 					</div>
 					<div class="puzzle" data-creature="flashlight-fish">
 						<div id="school_flashlight-fish_bg" class="schooling_flashlight-fish">
@@ -174,15 +185,6 @@
 						</div>
 
 						<div class="indicator">Start challenge</div>
-					</div>
-					<div class="challenge">
-						<p>This little Flashlight Fish is having trouble keeping up with the others. Use your browser’s dev tools to unpause its swimming animation so it can catch up.</p>
-						<ol>
-							<li><p>Right click “inspect element” on the flashlight fish.</p></li>
-							<li><p>Navigate to the Animation Panel tab.</p></li>
-							<li><p>Press play to start the fish’s swimming animation.</p></li>
-						</ol>
-						<iframe width="420" height="315" class="video" src="https://www.youtube.com/embed/T2jykykN3yc" frameborder="0" allowfullscreen></iframe>
 					</div>
 				</div>
 				<div class="segment right" id="d600">
@@ -414,7 +416,7 @@
 							<li><p>In the dev tools, open the Animation tab and look for wriggling.</p></li>
 							<li><p>Use the select element to see where the hagfish is wriggling.</p></li>
 							<li><p>With the hagfish selected, click the Rules tab.</p></li>
-							<li><p>Under Rules, change the hagfish’s opacity to 1.</p></li>
+							<li><p>Under Rules, change the hagfish’s <code>bottom</code> property to <code>0</code>.</p></li>
 						</ol>
 					</div>
 					<div class="puzzle" data-creature="hagfish">
@@ -436,7 +438,8 @@
 						</div>
 					</div>
 					<div id="ending">
-						<p>Congratulations! You’ve traveled deeper than most browsers and seen things most people will never see. You’re a hardened mariner of solid repute. We can tell you like uncovering deep sea mysteries. Next time, try taking Firefox Developer Edition for a spin, and see what leviathans you might encounter. </p>
+						<p>Congratulations! You’ve traveled deeper than most browsers and seen things most people will never see. You’re a hardened mariner of solid repute. We can tell you like uncovering deep sea mysteries. Next time, try taking <a href="https://www.mozilla.org/en-US/firefox/developer/">Firefox Developer Edition</a> for a spin, and see what leviathans you might encounter.</p>
+						<p><a href="https://www.mozilla.org/en-US/firefox/developer/">Download FireFox Developer Edition</a></p>
 					</div>
 				</div>
 				<div class="ooze">

@@ -1,6 +1,7 @@
 #d400 .puzzle {
     position:relative;
     height: 400px;
+    margin-top: -(rhythm(6));
 }
 
 .creature_flashlight-fish {
@@ -150,4 +151,13 @@
 
 @keyframes flashlight-swim4 {
     100% { transform: translateX(0); }
+}
+
+@include breakpoint($double_col){
+  #creature_flashlight-fish1 {
+    top: 15%; left: 25%;
+  }
+  #d400 .challenge ol {
+    @include margin-leader(20);
+  }
 }
