@@ -27,13 +27,11 @@ Sound.prototype.play = function () {
 };
 
 Sound.prototype.fadeOut = function (duration) {
-  this.gain.gain.cancelScheduledValues(context.currentTime);
-  this.gain.gain.setValueCurveAtTime(fadeOutCurve, context.currentTime, duration);
+  this.gain.gain.linearRampToValueAtTime(0, context.currentTime + duration);
 };
 
 Sound.prototype.fadeIn = function (duration) {
-  this.gain.gain.cancelScheduledValues(context.currentTime);
-  this.gain.gain.setValueCurveAtTime(fadeInCurve, context.currentTime, duration);
+  this.gain.gain.linearRampToValueAtTime(1, context.currentTime + duration);
 };
 
 Sound.prototype.getDuration = function () {
@@ -65,14 +63,19 @@ function AudioManager() {
   this.active = null;
   this.bg = context.createGain();
   this.cue = context.createGain();
-  this.cue.connect(context.destination);
-  this.bg.connect(context.destination);
+  this.output = context.createGain();
+  this.cue.connect(this.output);
+  this.bg.connect(this.output);
+  this.output.connect(context.destination);
 }
 
 AudioManager.prototype.addSounds = function(soundDescs, cb) {
   var self = this;
   var remaining = soundDescs.length;
   var soundUrls = soundDescs.map(function(soundDesc) { return soundDesc.url; });
+  self.isLoading = true;
+
+  self.loadingListeners = [];
 
   var loader = new BufferLoader(window.context, soundUrls, function(buffers) {
     for (var i = 0; i < buffers.length; i++) {
@@ -80,9 +83,22 @@ AudioManager.prototype.addSounds = function(soundDescs, cb) {
       var soundDesc = soundDescs[i];
       self.sounds[soundDesc.name] = new Sound(buffer);
     }
+    self.isLoading = false;
+    self.loadingListeners.forEach(function (fn) {
+      fn();
+    });
+    self.loadingListeners = [];
     setTimeout(cb, 0);
   });
   loader.load();
+};
+
+AudioManager.prototype.doneLoading = function (fn) {
+  if (self.isLoading) {
+    self.loadingListeners.push(fn);
+  } else {
+    fn();
+  }
 };
 
 AudioManager.prototype.getSound = function (name) {
@@ -94,6 +110,15 @@ AudioManager.prototype.getSound = function (name) {
 };
 
 AudioManager.prototype.setBg = function (name) {
+  console.log('new zone', name);
+  if (!name || !this.sounds[name]) {
+    console.log('bailing');
+    if (this.active) {
+      this.active.fadeOut(2);
+    }
+    this.active = null;
+    return;
+  }
   var sound = this.getSound(name);
   if (this.active === sound) {
     return;
@@ -117,12 +142,17 @@ AudioManager.prototype.stopBg = function () {
 AudioManager.prototype.playCue = function (name) {
   var sound = this.getSound(name);
   sound.output.connect(this.cue);
-  sound.output.foo = 'cue';
-  console.log(sound.getDuration());
   this.bg.gain.exponentialRampToValueAtTime(0.3, context.currentTime + 0.3);
   this.bg.gain.exponentialRampToValueAtTime(1, context.currentTime + sound.getDuration() + 0.5);
-  console.log('playCue');
   sound.play();
+};
+
+AudioManager.prototype.mute = function () {
+  this.output.gain.linearRampToValueAtTime(0, context.currentTime + 0.5);
+};
+
+AudioManager.prototype.unmute = function () {
+  this.output.gain.linearRampToValueAtTime(1, context.currentTime + 0.5);
 };
 
 function setBg(n) {

@@ -10,6 +10,16 @@
     }
   })*/
 
+  var zoneListeners = [];
+  function zoneChanged(zoneEl) {
+    zoneListeners.forEach(function (listener) {
+      listener(zoneEl);
+    });
+  }
+  function onZoneChanged(fn) {
+    zoneListeners.push(fn);
+  }
+
   var zones = document.getElementsByClassName('zone');
 
   Array.prototype.forEach.call(zones, function(child) {
@@ -17,6 +27,7 @@
       element: child,
       enter: function(direction) {
         this.element.classList.add('in-zone');
+        zoneChanged(this.element);
       },
       // entered: function(direction) {
       // },
@@ -148,7 +159,6 @@
   window.addEventListener('load', function () {
     GoalManager.init();
     setupAudio();
-    setupButtons();
   });
 
   function setupAudio() {
@@ -156,6 +166,16 @@
     if (!window.AudioContext) return;
     window.context = new AudioContext();
     window.audio = new AudioManager();
+    audio.mute();
+
+    var activeZone = document.querySelector('.zone.in-view');
+    var currentQuad = activeZone ? activeZone.getAttribute('data-audio') : null;
+    onZoneChanged(function (zone) {
+      currentQuad = zone.getAttribute('data-audio');
+      audio.doneLoading(function () {
+        audio.setBg(currentQuad);
+      });
+    });
 
     var sounds = [
       {name: 'quad1', url: 'audio/quad1.ogg'},
@@ -165,21 +185,20 @@
       {name: 'discover', url: 'audio/discover.ogg'}
     ];
 
-    window.audio.addSounds(sounds);
-  }
-
-  function setupButtons() {
-    var audioButton = document.querySelector('button#audio');
-    audioButton.addEventListener('click', function() {
-      if (audioButton.dataset.playing === '1') {
-        audioButton.textContent = 'Listen to the Deep';
-        audio.stopBg();
-        audioButton.dataset.playing = '0';
-      } else {
-        audioButton.textContent = 'Mute the Deep';
-        audio.setBg('quad1');
-        audioButton.dataset.playing = '1';
-      }
+    audio.addSounds(sounds, function () {
+      var isMuted = true;
+      var audioButton = document.querySelector('#audio');
+      audio.setBg(currentQuad);
+      audioButton.addEventListener('click', function () {
+        isMuted = !isMuted;
+        if (isMuted) {
+          audio.mute();
+          audioButton.textContent = 'Mute the Deep';
+        } else {
+          audio.unmute();
+          audioButton.textContent = 'Listen to the Deep';
+        }
+      });
     });
   }
 
@@ -200,10 +219,10 @@
       polls.forEach(function (fn) {
         fn(stop.bind(this, fn));
       });
-      setTimeout(poll, 100);
+      setTimeout(poll, 500);
     }
 
-    setTimeout(poll, 100);
+    setTimeout(poll, 500);
 
     return function (fn) {
       polls.push(fn);
