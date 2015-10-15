@@ -52,9 +52,9 @@
 			</nav>
 			<div id="surface" class="zone">
 			 	<div class="segment" id="title">
-					<h1>Awesome Logo</h1>
-					<h2 class="subtitle">Possible Subtitle</h2>
-					<p>Explore the Darkest Place on Earth with FireFox Developer Edition’s Dev Tools. Uncover strange and exotic creatures who have never seen light from the sun. Visit an alien world at the bottom of the ocean from inside your browser.</p>
+					<h1>DevTools Challenger</h1>
+					<h2 class="subtitle">Explore the deepest secrets of the ocean with some of Firefox Developer Edition 44’s newest devtools.</h2>
+					<p class="notice">This expedition is best carried out with the world’s first fully submersible browser, Firefox Developer Edition. But other browsers can still enjoy the ride!</p>
 				</div>
 				<div class="waves">
 					<div class="wave wave-mid"></div>
@@ -64,28 +64,30 @@
 			</div>
 			<div class="zone" id="epipelagic">
 				<div class="segment" id="d0">
-					<h2>The Shallow Sea</h2>
-					<h3 class="subtitle">Epipelagic Zone</h3>
+					<h2>Your screen represents 200 meters of sea water.</h2>
 					<div class="content">
-						<p>Most of the biomass of the ocean lives here, in the uppermost 200 meters of the ocean, where sunlight powers the food chain. Humans lump everything below here under the term “deep sea.” Even in scuba gear, we can’t dive deeper than 100 meters safely.</p>
-						<p>This limitation has colored our perception of the ocean. For millennia, we’ve been oblivious to that which we could neither see nor touch. Two thousand years ago, Rome’s famous naturalist, Pliny, said, “The deep sea is an inferior world. All we know of it is all there is to be known.” A cocksure declaration coming from an animal who could, at best, dive no deeper than the bottom of your browser window.</p>
-						<p>Keep diving and see just how “barren” the deep really is.</p>
+						<blockquote>“The deep sea is an inferior world. All we know of it is all there is to be known.” <cite>Pliny</cite></blockquote>
+						<p>Before scuba gear, humans weren’t able to dive deeper than the bottom of your browser. For millenia, people assumed that there was no life below 200 meters of the ocean, oblivious to a hidden world we could neither see nor touch.</p>
 					</div>
 				</div>
 			</div>
 			<div class="zone" id="mesopelagic">
 				<div class="segment" id="d200">
 					<h2>Welcome to the Twilight Zone</h2>
-					<h3 class="subtitle">Mesopelagic</h3>
 					<div class="content">
-						<p>Over half of all species of sharks live here, below 200 meters. No photosynthesis can happen here. Most of the sunlight has been filtered out already, starting with the longer wavelengths, the reds and oranges. But there’s still plenty to eat. The creatures you encounter from here on are all scavengers, hunters, or play host to bacteria that get their energy from a process called chemosynthesis.</p>
-						<p>It’s a world very much unlike our own, a world once thought to be inhospitable to life as we know it. We are about to glimpse what life could be like on another planet.</p>
+						<p>Here in the mesophelagic zone, no photosynthesis happens; most of the sunlight has been filtered out already, starting with the longer wavelengths, the <span class="red">reds</span> and <span class="orange">oranges.</span></p>
+
+						<p>With no vegetables to eat, all the animals you are about to meet are either scavengers or hunters.</p>
+
+						<blockquote>“If we knew what was there we wouldn’t have to go.” <cite>Jacques Cousteau</cite></blockquote>
+
 					</div>
 				</div>
 				<div class="segment bottom" id="d400">
 					<h3>Flashlight Fish</h3>
 					<div class="facts">
-						<p>Flashlight fish are a tropical species that sometimes comes out of the deep at night. They have a bioluminescent pocket under their eye they use to communicate with each other, disorient predators, and hunt.</p>
+						<p>Often deepsea critters like these tropical flashlight fish migrate vertically to shallower waters at night to look for food.</p>
+						<p class="bonus">Flashlight fish have a bioluminescent pocket under their eye they use to communicate with each other, disorient predators, and hunt.</p>
 					</div>
 					<div class="puzzle" data-creature="flashlight-fish">
 						<div id="school_flashlight-fish_bg" class="schooling_flashlight-fish">
@@ -173,7 +175,12 @@
 						<div class="indicator">Start challenge</div>
 					</div>
 					<div class="challenge">
-						<p>Oh no! This little flashlight fish is having trouble keeping up with the others. Use your browser’s dev tools to unpause its swimming animation so it can catch up.</p>
+						<p>This little flashlight fish is having trouble keeping up with the others. Use your browser’s dev tools to unpause its swimming animation so it can catch up.</p>
+						<ol>
+							<li><p>Right click “inspect element” on the flashlight fish.</p></li>
+							<li><p>Navigate to the Animation Panel tab.</p></li>
+							<li><p>Press play to start the fish’s swimming animation.</p></li>
+						</ol>
 						<iframe width="420" height="315" class="video" src="https://www.youtube.com/embed/T2jykykN3yc" frameborder="0" allowfullscreen></iframe>
 					</div>
 				</div>
@@ -182,17 +189,27 @@
 					<div class="challenge_wrapper">
 						<div class="facts">
 							<p>There were once six families of Nautilaceae. But only one made it out of the Triassic. Here, 600 meters deep, modern descendants of these prehistoric molluscs still prowl. Other cephalopods like octopi have eight arms, but a nautilus can have ninety or so.</p>
-							<p>Nautili are long-lived for cephalopods, taking fifteen years to reach sexual maturity. Yet their shells are popular as curiosities and in jewelry, where they are made into bluish “Osmeña Pearls” Harvesting is unregulated most likely unsustainable. It is possible for an animal who outlived the dinosaurs to finally be driven extinct in the name of human vanity.</p>
+							<p>Nautili get around using jet propulsion. This coupled with their buoyant, air-filled shells, gives them their characteristic bobbing motion as they move through the water.</p>
+							<p class="bonus">Nautili are long-lived for cephalopods, taking fifteen years to reach sexual maturity. Yet their shells are popular as curiosities and in jewelry, where they are made into bluish “Osmeña Pearls.” Harvesting is unregulated most likely unsustainable. It would be a pity for an animal who outlived the dinosaurs to be driven to extinction not by a cataclysm but by humans fashion.</p>
 						</div>
 						<div class="challenge">
-							<p>Nautili get around using jet propulsion. This coupled with their buoyant, air-filled shells, gives them their characteristic bobbing motion as they move through the water.</p>
-							<p>These nautili are moving a little too smoothly through the water. Use your browser’s dev tools to adjust their easing to look more natural.</p>
+							<p>This nautilus is moving a little too smoothly through the water. Use your browser’s dev tools to adjust her movement to look more natural.</p>
+							<ol>
+								<li>Open the devtools with cmd/ctrl + alt/option + i.</li>
+								<li>Choose the element selector.</li>
+								<li>Click on the nautilus.</li>
+								<li>In devtools, click on the Rules tab.</li>
+								<li>Find the nautilus’s animation-timing-function.</li>
+								<li>Click the icon next to cubic-bezier.</li>
+								<li>Play with the handles.</li>
+								<li>Choose an easing curve with some bounce, like Backwards.</li>
+							</ol>
+
 							<iframe width="420" height="315" class="video" src="https://www.youtube.com/embed/T2jykykN3yc" frameborder="0" allowfullscreen></iframe>
 						</div>
 					</div>
 					<div class="puzzle" data-creature="nautilus">
 						<div class="creature creature_nautilus" id="creature_nautilus1">
-							<img src="img/bioluminescence/lumi_flashlight-fish.svg" class="lumi" />
 						</div>
 						<div class="indicator">Start challenge</div>
 					</div>
@@ -351,15 +368,14 @@
 				<div class="segment" id="d5200"></div>
 				<div class="segment" id="d5400"></div>
 				<div class="segment" id="d5600"></div>
-				<div class="segment" id="d5800"></div>
-				<div class="segment" id="d6000">
+				<div class="segment" id="d5800">
 					<div class="content">
 						<p>Welcome to the Abyssal Plain. It is wide, flat, and coated in a thick, grey ooze. This ooze comes from what is colorfully referred to as “marine snow”: the leftovers that constantly float down from sunnier waters.</p>
 						<p>The pressure here is intense. Most abyssal creatures have flabby, gelatinous bodies that explode when brought to the surface. Few fish live here, and those that do are often very small and very efficient.</p>
 						<p>On the bright side, if you like to eat grey ooze, living down here is fairly easy. And many soft, squishy creatures do just that. The ancient hagfish doesn’t seem to mind the ooze or the pressure.</p>
 					</div>
 				</div>
-				<div class="segment" id="d5800">
+				<div class="segment" id="d6000">
 					<div class="challenge">
 						<p>Where's the hagfish hiding? Search the DOM for “hagfish” to find it hiding behind a rock. Delete, move (transform, margin, position), or fade out (change opacity) to see the fish.</p>
 					</div>

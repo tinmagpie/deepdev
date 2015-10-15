@@ -2,11 +2,11 @@
     .right {
         .puzzle {
             float: right;
-            width: calc(50% - 2em);
+            width: 219.5px;
         }
         .challenge_wrapper {
             float: left;
-            width: calc(50% - 2em);
+            width: calc(100% - 2em - 219.5px);
         }
         .challenge, .facts {
             -moz-column-count: unset;
@@ -18,7 +18,7 @@
 }
 
 #d600 .puzzle {
-    height: 600px;
+    height: 100vh;
 }
 
 .creature_nautilus {

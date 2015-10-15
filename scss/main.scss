@@ -1,7 +1,7 @@
 @import "breakpoint";
 @import "config";
 @import "typography";
-$heightScreen: 80rem; // 100vh = height of screen = 200 meters of ocean
+$heightScreen:  100vh; // 100vh = height of screen = 200 meters of ocean
 
 .wrapper {
   overflow: hidden;
@@ -11,6 +11,16 @@ a {
   &:link { color: color(link) }
   &:visited { color: color(linkVisited) }
   &:hover, &:active, &:focus { color: color(linkHover) }
+}
+
+%clearfix:before,
+%clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+%clearfix:after {
+    clear: both;
 }
 
 /* Animations */
@@ -144,10 +154,11 @@ a {
 
 .segment {
   min-height: $heightScreen;
-  position: relative;
   padding: 2rem 4rem 2rem 2rem;
+  position: relative;
   @include padding-leader(7);
   @include padding-trailer(8);
+  @extend %clearfix;
   @include breakpoint($double_col){
     max-width: $maxSegmentWidth;
     margin: 0 auto;
@@ -181,10 +192,10 @@ a {
   opacity: 1;
 }
 
-.puzzle {
-  position: relative;
-  z-index: 1;
-}
+// .puzzle {
+//   position: relative;
+//   z-index: 1;
+// }
 
 .challenge {
   transition-duration: duration(timely);
@@ -209,6 +220,21 @@ a {
     @extend %content-hidden;
   }
 
+}
+
+.challenge {
+  ol, li {
+    margin: 0; padding: 0;
+  }
+  li {
+    @extend %fontSpartan;
+    @include padding-leader(3);
+    margin-left: rhythm(5);
+    padding-left: rhythm();
+  }
+  li p {
+    @extend %fontMerriweather;
+  }
 }
 
 .facts {
@@ -242,6 +268,7 @@ h1 {
 
 h2 {
   @extend %t-xlarge;
+  @include padding-trailer(6);
 }
 
 h3 {
@@ -284,7 +311,7 @@ li {
     -moz-column-gap: 2rem;
     column-count: 2;
     column-gap: 2rem;
-    ul {
+    ul, ol {
       page-break-inside: avoid;
       break-inside: avoid;
     }
@@ -294,6 +321,7 @@ li {
 blockquote {
   &:first-child {
       padding: 0;
+      margin: 0;
   }
   page-break-inside: avoid;
   break-inside: avoid;
@@ -302,7 +330,6 @@ blockquote {
   @extend %fontMerriweatherItalic;
   @include padding-leader();
   @include padding-trailer();
-  margin: 4rem;
   // &:before {
   //     content: "\201C";
   //     @extend %fontSpartan;
@@ -314,10 +341,13 @@ blockquote {
   // }
 }
 cite {
-  @extend %t-large;
+  @extend %t-medium;
+  @extend %fontMerriweatherItalic;
   font-style: normal;
   display: block;
-  margin: 0 4rem;
+  // margin: 0 4rem;
+  page-break-inside: avoid;
+  break-inside: avoid;
   text-align: right;
   &:before {content: "\2014"; }
 }
