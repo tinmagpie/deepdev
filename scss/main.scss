@@ -90,7 +90,8 @@ a {
     opacity: 1;
   }
   .completed {
-    color: #fff;
+    circle { fill: #fff; }
+    path { fill: $twilight; }
   }
   svg {
     color: $abyss;
@@ -213,13 +214,17 @@ a {
   }
 }
 
+.video {
+  display: block;
+  margin: 0 auto;
+  @include breakpoint($double_col){
+    margin: auto;
+  }
+}
+
 .challenge_wrapper {
   position:relative;
   z-index: 1;
-}
-
-#creature_flashlight-fish1 {
-  z-index: 2;
 }
 
 .challenge {

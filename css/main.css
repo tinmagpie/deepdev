@@ -128,8 +128,11 @@ a:hover, a:active, a:focus {
   display: block;
   opacity: 1;
 }
-.progress .completed {
-  color: #fff;
+.progress .completed circle {
+  fill: #fff;
+}
+.progress .completed path {
+  fill: #0b4a61;
 }
 .progress svg {
   color: #000c1c;
@@ -247,13 +250,19 @@ a:hover, a:active, a:focus {
   }
 }
 
+.video {
+  display: block;
+  margin: 0 auto;
+}
+@media (min-width: 54em) {
+  .video {
+    margin: auto;
+  }
+}
+
 .challenge_wrapper {
   position: relative;
   z-index: 1;
-}
-
-#creature_flashlight-fish1 {
-  z-index: 2;
 }
 
 .challenge {
@@ -502,12 +511,6 @@ cite:before {
     background-image: url('../img/objects2x-sdb35995763.png');
   }
 }
-#d400 .puzzle {
-  position: relative;
-  height: 400px;
-  margin-top: -2rem;
-}
-
 .creature_flashlight-fish {
   width: 181.5px;
   height: 94.5px;
@@ -529,6 +532,10 @@ cite:before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 2;
+}
+#creature_flashlight-fish1 .lumi {
+  pointer-events: none;
 }
 
 @keyframes swimmyFlashy {
@@ -696,14 +703,31 @@ cite:before {
     transform: translateX(0);
   }
 }
+#d400 .video {
+  margin-top: 10rem;
+}
+#d400 .puzzle {
+  position: relative;
+  height: 400px;
+  margin-top: -1rem;
+}
+
 @media (min-width: 54em) {
   #creature_flashlight-fish1 {
     top: 15%;
     left: 25%;
   }
 
+  #d400 .puzzle {
+    margin-top: -2rem;
+  }
+
   #d400 .challenge ol {
     margin-top: 6.66667rem;
+  }
+
+  .video {
+    margin-top: 0;
   }
 }
 @media (min-width: 54em) {

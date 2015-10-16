@@ -1,9 +1,3 @@
-#d400 .puzzle {
-    position:relative;
-    height: 400px;
-    margin-top: -(rhythm(6));
-}
-
 .creature_flashlight-fish {
     @include make-creature(flashlight-fish, 302, 116, 47, 37, $animation: false, $keyframes: 1, $biolumi: true);
 }
@@ -13,6 +7,8 @@
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 2;
+    .lumi { pointer-events: none; }
 }
 
 @keyframes swimmyFlashy {
@@ -153,11 +149,28 @@
     100% { transform: translateX(0); }
 }
 
+#d400 {
+    .video {
+        margin-top: rhythm(30)
+    }
+    .puzzle {
+        position:relative;
+        height: 400px;
+        margin-top: -(rhythm(3));
+    }
+}
+
 @include breakpoint($double_col){
-  #creature_flashlight-fish1 {
-    top: 15%; left: 25%;
-  }
-  #d400 .challenge ol {
-    @include margin-leader(20);
-  }
+    #creature_flashlight-fish1 {
+        top: 15%; left: 25%;
+    }
+    #d400 .puzzle {
+        margin-top: -(rhythm(6));
+    }
+    #d400 .challenge ol {
+        @include margin-leader(20);
+    }
+    .video {
+        margin-top: 0
+    }
 }
