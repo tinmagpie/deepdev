@@ -5,23 +5,23 @@
   font-weight: normal;
   font-style: normal;
 }
-.leagueSpartanRegular400 .challenge li, .challenge .leagueSpartanRegular400 li, .leagueSpartanRegular400 h1, .leagueSpartanRegular400 h2, .leagueSpartanRegular400 h3, .leagueSpartanRegular400 .featured {
+.leagueSpartanRegular400 .challenge li, .challenge .leagueSpartanRegular400 li, .leagueSpartanRegular400 h1, .leagueSpartanRegular400 h2, .leagueSpartanRegular400 h3, .leagueSpartanRegular400 .featured, .leagueSpartanRegular400 strong {
   font-family: "leagueSpartanRegular", sans-serif;
   font-weight: 400;
 }
 
-.Merriweather400 .challenge li p, .challenge li .Merriweather400 p, .Merriweather400 li, .Merriweather400 p, .Merriweather400 .followup, .Merriweather400 menu {
+.Merriweather400 .challenge li p, .challenge li .Merriweather400 p, .Merriweather400 p, .Merriweather400 .followup, .Merriweather400 menu {
   font-family: "Merriweather", serif;
   font-weight: 400;
 }
 
-.Merriweather700 .progress, .Merriweather700 .subtitle, .Merriweather700 em, .Merriweather700 .callout, .Merriweather700 blockquote, .Merriweather700 cite {
+.Merriweather700 .progress, .Merriweather700 .rediscover, .Merriweather700 .subtitle, .Merriweather700 em, .Merriweather700 .callout, .Merriweather700 blockquote, .Merriweather700 cite {
   font-family: "Merriweather", serif;
   font-weight: 700;
   font-style: italic;
 }
 
-.progress {
+.progress, .challenge .rediscover {
   font-size: 0.66667rem;
   line-height: 1rem;
 }
@@ -226,9 +226,18 @@ a:hover, a:active, a:focus {
   opacity: 0.6;
 }
 
-.content, .challenge {
-  padding: 1.33333rem 0;
+h3 + .content {
+  padding-top: 0;
 }
+
+.challenge_wrapper > h3 {
+  padding-top: 1rem;
+}
+
+.content {
+  padding: 1rem 0;
+}
+
 @media (min-width: 35em) {
   .content p, .challenge p {
     padding-bottom: 0;
@@ -253,11 +262,9 @@ a:hover, a:active, a:focus {
 .video {
   display: block;
   margin: 0 auto;
-}
-@media (min-width: 54em) {
-  .video {
-    margin: auto;
-  }
+  padding-top: 1rem;
+  max-width: 100%;
+  height: auto;
 }
 
 .challenge_wrapper {
@@ -266,31 +273,50 @@ a:hover, a:active, a:focus {
 }
 
 .challenge {
-  transition-duration: 300ms;
   position: absolute;
   top: 0;
   left: -1em;
   width: 100%;
+  transition-property: opacity, background;
   background: #0b4a61;
-  padding: 1.33333rem 1em;
+  padding: 1rem 1em;
+}
+.challenge .rediscover {
+  position: absolute;
+  top: 0.33333rem;
+  right: 0.33333rem;
+}
+.completed .challenge {
+  pointer-events: none;
+  background: transparent;
+}
+.completed .challenge h3, .completed .challenge p, .completed .challenge ol, .completed .challenge video {
+  opacity: 0;
 }
 .challenge ol, .challenge li {
   margin: 0;
   padding: 0;
 }
+.challenge ol {
+  padding-bottom: 1rem;
+}
 .challenge li {
-  padding-top: 1rem;
+  padding-top: 0.33333rem;
   margin-left: 1.66667rem;
   padding-left: 0.33333rem;
+}
+.challenge li p:first-child {
+  padding: 0;
+}
+
+.rediscover {
+  color: #56fddb;
+  text-decoration: underline;
 }
 
 body, h1, h2, h3, p, ul {
   margin: 0;
   padding: 0;
-}
-
-h1, h2, h3 {
-  padding-top: 0.33333rem;
 }
 
 h1 {
@@ -303,11 +329,6 @@ h2 {
 
 .subtitle {
   padding-bottom: 1rem;
-}
-
-li {
-  padding-bottom: 0.33333rem;
-  margin-left: 4em;
 }
 
 p {
@@ -527,12 +548,8 @@ cite:before {
 }
 
 #creature_flashlight-fish1 {
-  animation: swimmyFlashy 8.9s -4.45s linear infinite paused;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
+  animation: swimmyFlashy 5.5s -0.75s linear infinite paused;
+  margin: 1rem auto;
 }
 #creature_flashlight-fish1 .lumi {
   pointer-events: none;
@@ -541,7 +558,7 @@ cite:before {
 @keyframes swimmyFlashy {
   0% {
     opacity: 0;
-    transform: translate(-400%, -50%);
+    transform: translateX(-100%);
   }
   10% {
     opacity: 1;
@@ -551,7 +568,7 @@ cite:before {
   }
   100% {
     opacity: 0;
-    transform: translate(300%, -50%);
+    transform: translateX(400%);
   }
 }
 .school_flashlight-fish {
@@ -703,33 +720,12 @@ cite:before {
     transform: translateX(0);
   }
 }
-#d400 .video {
-  margin-top: 10rem;
-}
 #d400 .puzzle {
   position: relative;
   height: 400px;
-  margin-top: -1rem;
+  margin-top: 2rem;
 }
 
-@media (min-width: 54em) {
-  #creature_flashlight-fish1 {
-    top: 15%;
-    left: 25%;
-  }
-
-  #d400 .puzzle {
-    margin-top: -2rem;
-  }
-
-  #d400 .challenge ol {
-    margin-top: 6.66667rem;
-  }
-
-  .video {
-    margin-top: 0;
-  }
-}
 @media (min-width: 54em) {
   .right .puzzle {
     float: right;
@@ -738,12 +734,6 @@ cite:before {
   .right .challenge_wrapper {
     float: left;
     width: calc(100% - 2em - 219.5px);
-  }
-  .right .challenge, .right .facts {
-    -moz-column-count: unset;
-    -moz-column-gap: 2rem;
-    column-count: unset;
-    column-gap: 2rem;
   }
 }
 #d600 .puzzle {
@@ -1060,4 +1050,15 @@ menu {
 #d3200 .callout {
   transition-delay: 2.1s;
   transition-duration: 3.4s;
+}
+
+@media (min-width: 27.05556em) {
+  .challenge li, .content li {
+    padding-top: 0.66667rem;
+  }
+}
+@media (min-width: 35.44444em) {
+  .challenge li, .content li {
+    padding-top: 1rem;
+  }
 }

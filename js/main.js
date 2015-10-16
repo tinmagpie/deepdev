@@ -85,19 +85,18 @@
     });
   });
 
-  var indicators = document.getElementsByClassName('indicator');
-
-  Array.prototype.forEach.call(indicators, function(indicator) {
-    indicator.addEventListener('click', function(){
-      var parent = findParentBySelector(indicator, '.segment');
-      parent.classList.toggle('show-challenge');
-      // var challenge = parent.getElementsByClassName('challenge')[0];
-      var puzzle = findParentBySelector(indicator, '.puzzle');
-      $wrapper.animate({
-        scrollTop: $(puzzle).offset().top
-      }, 300);
-    });
+  // Toggle on the challenger tasks
+  $(".segment").on("click", ".rediscover", function(){
+    $(this).parents(".segment").toggleClass("completed");
   });
+
+  // Things to do after the challenge is completed.
+  var missionAccomplished = function(challenge) {
+    console.log(challenge)
+    $(challenge).find(".challenge").append('<div class="rediscover">Close</div>');
+    challenge.removeEventListener('transitionend', missionAccomplished);
+  }
+
 
   // Progress bar icons scroll to appropriate depth
   $("#progress_bar").find("a").each(function(a){
@@ -230,6 +229,7 @@
   })();
 
 
+
   GoalManager.addGoal({
     name: 'flashlight-fish',
     evaluate: function (complete) {
@@ -241,8 +241,12 @@
       creature.addEventListener('animationiteration', handler);
     },
     success: function () {
+      var challenge = document.getElementById('d400');
+      challenge.classList.add('completed');
       audio.playCue('discover');
-      document.querySelector('#challenge_flashlight-fish').classList.add('completed');
+      challenge.addEventListener('transitionend', missionAccomplished(challenge));
+      challenge.classList.add('completed');
+
     }
   });
 

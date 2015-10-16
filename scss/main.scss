@@ -13,6 +13,11 @@ a {
   &:hover, &:active, &:focus { color: color(linkHover) }
 }
 
+@function calc-em($px) {
+  @return ($px/$ms-base-value) * 1em;
+}
+
+
 %clearfix:before,
 %clearfix:after {
     content: " "; /* 1 */
@@ -191,8 +196,19 @@ a {
   }
 }
 
+h3 + .content {
+  padding-top: 0;
+}
+
+.challenge_wrapper > h3 {
+  padding-top: rhythm(3);
+}
+
+.content {
+  padding: rhythm(3) 0;
+}
+
 .content, .challenge {
-  padding: rhythm(4) 0;
   @include breakpoint($medium){
     p {
       padding-bottom: 0;
@@ -217,9 +233,9 @@ a {
 .video {
   display: block;
   margin: 0 auto;
-  @include breakpoint($double_col){
-    margin: auto;
-  }
+  padding-top:rhythm(3);
+  max-width: 100%;
+  height: auto;
 }
 
 .challenge_wrapper {
@@ -229,13 +245,17 @@ a {
 
 .challenge {
   @extend %content-hidden;
-  transition-duration: duration(timely);
   position: absolute;
   top: 0; left: -1em; width: 100%;
-
+  transition-property: opacity, background;
   // Appearance
   background: $twilight;
-  padding: rhythm(4) 1em;
+  padding: rhythm(3) 1em;
+  .rediscover {
+    position: absolute;
+    top: rhythm(1); right: rhythm(1);
+    @extend %t-small;
+  }
   // margin: rhythm(4) -1em;
 
   // opened/shown
@@ -244,23 +264,38 @@ a {
   //   @extend %content-revealed;
   // }
 
-  // // solved
-  // .solved & {
-  //   @extend %content-hidden;
-  // }
+  .completed & {
+    pointer-events: none;
+    background: transparent;
+    h3, p, ol, video {
+      opacity: 0;
+    }
+  }
 
   ol, li {
     margin: 0; padding: 0;
   }
+  ol {
+    @include padding-trailer(3);
+  }
   li {
     @extend %fontSpartan;
-    @include padding-leader(3);
+    @include padding-leader();
     margin-left: rhythm(5);
     padding-left: rhythm();
   }
   li p {
     @extend %fontMerriweather;
+    &:first-child {
+      padding: 0;
+    }
   }
+}
+
+.rediscover {
+  @extend %fontMerriweatherItalic;
+  color: color(link);
+  text-decoration: underline;
 }
 
 .bonus {
@@ -280,7 +315,6 @@ body, h1, h2, h3, p, ul {
 
 h1, h2, h3 {
   @extend %fontSpartan;
-  @include padding-leader();
 }
 
 h1 {
@@ -311,10 +345,8 @@ em {
   @extend %fontMerriweatherItalic;
 }
 
-li {
-  @extend %fontMerriweather;
-  @include padding-trailer();
-  margin-left: 4em;
+strong {
+  @extend %fontSpartan;
 }
 
 p {
@@ -511,4 +543,20 @@ menu {
 #d3200 .callout {
   transition-delay: duration(days);
   transition-duration: duration(weeks);
+}
+
+@include breakpoint(calc-em(487)){
+  .challenge, .content {
+    li {
+      @include padding-leader(2);
+    }
+  }
+}
+
+@include breakpoint(calc-em(638)){
+  .challenge, .content {
+    li {
+      @include padding-leader(3);
+    }
+  }
 }

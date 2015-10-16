@@ -3,18 +3,15 @@
 }
 
 #creature_flashlight-fish1 {
-    animation: swimmyFlashy duration(years) -4.45s linear infinite paused;
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
+    animation: swimmyFlashy duration(months) -.75s linear infinite paused;
+    margin: rhythm(3) auto;
     .lumi { pointer-events: none; }
 }
 
 @keyframes swimmyFlashy {
     0% {
         opacity: 0;
-        transform: translate(-400%, -50%);
+        transform: translateX(-100%);
     }
     10% {
         opacity: 1;
@@ -24,7 +21,7 @@
     }
     100% {
         opacity: 0;
-        transform: translate(300%, -50%);
+        transform: translateX(400%);
     }
 }
 
@@ -150,27 +147,9 @@
 }
 
 #d400 {
-    .video {
-        margin-top: rhythm(30)
-    }
     .puzzle {
         position:relative;
         height: 400px;
-        margin-top: -(rhythm(3));
-    }
-}
-
-@include breakpoint($double_col){
-    #creature_flashlight-fish1 {
-        top: 15%; left: 25%;
-    }
-    #d400 .puzzle {
-        margin-top: -(rhythm(6));
-    }
-    #d400 .challenge ol {
-        @include margin-leader(20);
-    }
-    .video {
-        margin-top: 0
+        margin-top: rhythm(6);
     }
 }

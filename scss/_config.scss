@@ -6,7 +6,8 @@ $super_wide: 2 * 50em + 4em + 2em;
 $medium: 35em;
 
 // Modular Scale
-$ms-base: 18px;
+$ms-base-value: 18;
+$ms-base: $ms-base-value * 1px;
 $base-font-size: $ms-base;
 
 // Widths

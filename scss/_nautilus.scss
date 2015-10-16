@@ -8,12 +8,6 @@
             float: left;
             width: calc(100% - 2em - 219.5px);
         }
-        .challenge, .facts {
-            -moz-column-count: unset;
-            -moz-column-gap: 2rem;
-            column-count: unset;
-            column-gap: 2rem;
-        }
     }
 }
 
