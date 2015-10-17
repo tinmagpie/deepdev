@@ -1,13 +1,24 @@
 @include breakpoint($double_col){
-    .right {
+    // #d600.in-view .puzzle {
+    //     position: fixed;
+    //     top: 0; right: 50%;
+    // }
+    #d600 {
+        .content, .challenge {
+            -moz-column-gap: calc(219.5px + 4rem);
+            column-gap: calc(219.5px + 4rem);
+        }
         .puzzle {
-            float: right;
+            position: absolute;
+            top: 0; right: 50%;
+            transform: translateX(40%);
             width: 219.5px;
+            z-index: 1;
         }
-        .challenge_wrapper {
-            float: left;
-            width: calc(100% - 2em - 219.5px);
-        }
+        // .challenge_wrapper {
+        //     float: left;
+        //     width: calc(100% - 2em - 219.5px);
+        // }
     }
 }
 
@@ -20,10 +31,14 @@
 }
 
 #creature_nautilus1 {
-    animation: nautyBounce linear duration(weeks) infinite alternate;
+    animation: nautyBounce duration(weeks) infinite alternate;
     &:before {
         animation: nautyRaspberry steps(1) duration(days) infinite;
     }
+}
+
+#creature_nautilus1 {
+    animation-timing-function: linear;
 }
 
 @keyframes nautyRaspberry {

@@ -113,7 +113,7 @@ a:hover, a:active, a:focus {
 .progress {
   width: 2rem;
   position: fixed;
-  right: 1rem;
+  right: .5rem;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
@@ -728,13 +728,17 @@ cite:before {
 }
 
 @media (min-width: 54em) {
-  .right .puzzle {
-    float: right;
-    width: 219.5px;
+  #d600 .content, #d600 .challenge {
+    -moz-column-gap: calc(219.5px + 4rem);
+    column-gap: calc(219.5px + 4rem);
   }
-  .right .challenge_wrapper {
-    float: left;
-    width: calc(100% - 2em - 219.5px);
+  #d600 .puzzle {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform: translateX(40%);
+    width: 219.5px;
+    z-index: 1;
   }
 }
 #d600 .puzzle {
@@ -752,10 +756,14 @@ cite:before {
 }
 
 #creature_nautilus1 {
-  animation: nautyBounce linear 3.4s infinite alternate;
+  animation: nautyBounce 3.4s infinite alternate;
 }
 #creature_nautilus1:before {
   animation: nautyRaspberry steps(1) 2.1s infinite;
+}
+
+#creature_nautilus1 {
+  animation-timing-function: linear;
 }
 
 @keyframes nautyRaspberry {

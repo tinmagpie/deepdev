@@ -82,7 +82,7 @@ a {
   @extend %t-small;
   width: 2rem;
   position: fixed;
-  right: 1rem; top: 50%;
+  right: .5rem; top: 50%;
   transform: translateY(-50%);
   z-index: 10;
   ul, li {
