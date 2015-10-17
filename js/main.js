@@ -289,6 +289,7 @@
     success: function () {
       audio.playCue('discover');
       document.querySelector('#challenge_orange-roughy').classList.add('completed');
+      document.querySelector('.orange-roughy-revelation').classList.remove('orange-roughy-revelation');
     }
   });
 

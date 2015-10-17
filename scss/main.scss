@@ -561,3 +561,7 @@ menu {
     }
   }
 }
+
+.creature, #creature_orange-roughy1 {
+  filter: $blueFilter;
+}

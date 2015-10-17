@@ -1,10 +1,39 @@
-#d1600 .puzzle {
-    height: 600px;
-    width: 1000px;
+#d1600 {
+    .puzzle {
+        break-after: always;
+        -moz-column-break-after: always;
+        @include padding-trailer(5);
+        position: relative;
+        height: 275px;
+    }
+    .keeptogether {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+@include breakpoint(max-width 1116px){
+    #d1600 {
+        .content, .challenge {
+            -moz-column-count: unset;
+            column-count: unset;
+        }
+    }
+}
+
+@include breakpoint($double_col){
+    #d1600 .content {
+        -moz-column-count: unset;
+        column-count: unset;
+        padding-right: calc(50% + 2rem)
+    }
 }
 
 .creature_orange-roughy {
     @include make-creature(orange-roughy, $animation: true, $keyframes: 2);
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translate(-50%, 0);
 }
 
 #creature_orange-roughy1 {
@@ -15,9 +44,13 @@
 }
 
 @keyframes gentlyHovering {
-    100% { transform: translateY(15%)}
+    100% { transform: translate(-50%, 15%)}
 }
 
 @keyframes roughSwimming {
-    50% { transform: translateY(-50%)}
+    50% { transform: translateY(-50%, -50%)}
+}
+
+.orange-roughy-revelation {
+    opacity: 0 !important;
 }

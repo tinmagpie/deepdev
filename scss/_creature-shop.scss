@@ -13,7 +13,6 @@ $creatures-sprite-width: sprite_width($creatures-sprites);
 // Creature basics
 .creature {
   @extend %sprited-thing;
-  filter: $blueFilter;
   // SVG lights
   .lumi {
     position: absolute;
