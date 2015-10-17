@@ -311,6 +311,7 @@ h3 + .content {
 
 .rediscover {
   color: #56fddb;
+  cursor: pointer;
   text-decoration: underline;
 }
 

@@ -92,8 +92,7 @@
 
   // Things to do after the challenge is completed.
   var missionAccomplished = function(challenge) {
-    console.log(challenge)
-    $(challenge).find(".challenge").append('<div class="rediscover">Close</div>');
+    $(challenge).find(".challenge").append('<p class="rediscover">Close</p>');
     challenge.removeEventListener('transitionend', missionAccomplished);
   }
 
@@ -242,11 +241,10 @@
     },
     success: function () {
       var challenge = document.getElementById('d400');
-      challenge.classList.add('completed');
-      audio.playCue('discover');
       challenge.addEventListener('transitionend', missionAccomplished(challenge));
       challenge.classList.add('completed');
-
+      audio.playCue('discover');
+      document.getElementById('challenge_flashlight-fish').classList.add('completed');
     }
   });
 
@@ -266,8 +264,11 @@
       });
     },
     success: function () {
+      var challenge = document.getElementById('d600');
+      challenge.addEventListener('transitionend', missionAccomplished(challenge));
+      challenge.classList.add('completed');
       audio.playCue('discover');
-      document.querySelector('#challenge_flashlight-fish').classList.add('completed');
+      document.querySelector('#challenge_nautilus').classList.add('completed');
     }
   });
 

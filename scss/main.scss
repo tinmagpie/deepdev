@@ -295,6 +295,7 @@ h3 + .content {
 .rediscover {
   @extend %fontMerriweatherItalic;
   color: color(link);
+  cursor: pointer;
   text-decoration: underline;
 }
 
