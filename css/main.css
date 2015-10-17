@@ -727,6 +727,19 @@ cite:before {
   margin-top: 2rem;
 }
 
+@media (max-width: 54em) {
+  #d600 .challenge ol {
+    float: left;
+    width: calc(100% - 219.5px - 2rem);
+  }
+  #d600 .puzzle {
+    width: 219.5px;
+    float: right;
+  }
+  #d600 .content {
+    padding-right: calc(219.5px + 2rem);
+  }
+}
 @media (min-width: 54em) {
   #d600 .content, #d600 .challenge {
     -moz-column-gap: calc(219.5px + 4rem);

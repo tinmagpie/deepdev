@@ -1,8 +1,21 @@
+@include breakpoint($single_col){
+    #d600 {
+        .challenge ol {
+            float: left;
+            width: calc(100% - 219.5px - 2rem);
+        }
+
+        .puzzle {
+            width: 219.5px;
+            float: right;
+        }
+        .content {
+            padding-right: calc(219.5px + 2rem);
+        }
+    }
+}
+
 @include breakpoint($double_col){
-    // #d600.in-view .puzzle {
-    //     position: fixed;
-    //     top: 0; right: 50%;
-    // }
     #d600 {
         .content, .challenge {
             -moz-column-gap: calc(219.5px + 4rem);
@@ -15,10 +28,6 @@
             width: 219.5px;
             z-index: 1;
         }
-        // .challenge_wrapper {
-        //     float: left;
-        //     width: calc(100% - 2em - 219.5px);
-        // }
     }
 }
 
