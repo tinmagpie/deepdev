@@ -30,9 +30,9 @@ a {
 
 /* Animations */
 %play-pause {
-  animation-play-state: paused;
+  animation-play-state: paused !important;
   .in-view & {
-    animation-play-state: running;
+    animation-play-state: running !important;
   }
 }
 

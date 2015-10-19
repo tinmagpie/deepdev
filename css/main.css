@@ -79,10 +79,10 @@ a:hover, a:active, a:focus {
 
 /* Animations */
 #school_flashlight-fish1, #school_flashlight-fish2, #school_flashlight-fish3, #school_flashlight-fish4 {
-  animation-play-state: paused;
+  animation-play-state: paused !important;
 }
 .in-view #school_flashlight-fish1, .in-view #school_flashlight-fish2, .in-view #school_flashlight-fish3, .in-view #school_flashlight-fish4 {
-  animation-play-state: running;
+  animation-play-state: running !important;
 }
 
 .segment, .challenge, .completed .challenge h3, .completed .challenge p, .completed .challenge ol, .completed .challenge video, .bonus {
