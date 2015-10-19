@@ -322,24 +322,20 @@
   (function () {
     var docEl = document.documentElement;
     var docHeight = docEl.scrollHeight;
-    var winHeight = window.innerHeight;
     var currentPosition = docEl.scrollTop;
     var pos;
 
-    docEl.addEventListener('scroll', function (e) {
+    window.addEventListener('scroll', function (e) {
       currentPosition = docEl.scrollTop;
     });
 
     window.addEventListener('load', function (e) {
-      var currentPosition = docEl.scrollTop;
+      currentPosition = docEl.scrollTop;
       docHeight = docEl.scrollHeight;
-      winHeight = window.innerHeight;
 
-      var raf;
       window.addEventListener('resize', function (e) {
         pos = currentPosition / docHeight;
         docHeight = docEl.scrollHeight;
-        winHeight = window.innerHeight;
         currentPosition = Math.round(pos * docHeight);
         docEl.scrollTop = currentPosition;
       });
