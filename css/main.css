@@ -525,18 +525,18 @@ cite:before {
 }
 /* Props */
 .objects2x-sprite {
-  background-image: url('../img/objects2x-sdb35995763.png');
+  background-image: url('../img/objects2x-s386e065297.png');
   background-repeat: no-repeat;
 }
 
 .objects-sprite, .luminous-spew:before {
-  background-image: url('../img/objects-s601abcb29a.png');
+  background-image: url('../img/objects-s960a7507d0.png');
   background-repeat: no-repeat;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6 / 2), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 124.8dpi), only screen and (min-resolution: 1.3dppx) {
   .object:before {
-    background-image: url('../img/objects2x-sdb35995763.png');
+    background-image: url('../img/objects2x-s386e065297.png');
   }
 }
 .creature_flashlight-fish {
@@ -870,8 +870,9 @@ cite:before {
 }
 
 #d5000 .puzzle {
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 270px;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -889,36 +890,27 @@ cite:before {
   position: absolute;
   top: 40%;
   left: 25%;
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 500ms 200ms, opacity cubic-bezier(0.215, 0.61, 0.355, 1) 500ms 200ms;
 }
 .in-view #creature_vomiting-shrimp1 {
-  animation: escapingGloriously cubic-bezier(0.215, 0.61, 0.355, 1) 500ms 200ms forwards;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+#creature_vomiting-shrimp1:before {
+  transition: steps(1) 300ms 1;
 }
 .in-view #creature_vomiting-shrimp1:before {
-  animation: tailTuck steps(1) 300ms 1 forwards;
+  transform: translateY(-50%);
 }
 
-@keyframes escapingGloriously {
-  60% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, -50%);
-    opacity: 0;
-  }
-}
-@keyframes tailTuck {
-  100% {
-    transform: translateY(-50%);
-  }
-}
 .luminous-spew {
+  pointer-events: none;
   width: 300px;
-  height: 269px;
+  height: 270px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  pointer-effects: none;
 }
 .luminous-spew:before {
   background-position: 0 0;
@@ -927,16 +919,14 @@ cite:before {
 }
 .luminous-spew:before {
   background-size: 100% 100%;
+  pointer-events: none;
+  transition: steps(3, end) 500ms;
 }
 .in-view .luminous-spew:before {
-  animation: glowingPuke steps(3, end) 500ms 1 forwards, incriminatingPuke cubic-bezier(0.645, 0.045, 0.355, 1) 2.1s 1.3s infinite alternate;
+  transform: translateY(-75%);
+  animation: incriminatingPuke cubic-bezier(0.645, 0.045, 0.355, 1) 2.1s 1.3s infinite alternate;
 }
 
-@keyframes glowingPuke {
-  100% {
-    transform: translateY(-75%);
-  }
-}
 @keyframes incriminatingPuke {
   100% {
     opacity: .8;
