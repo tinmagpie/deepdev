@@ -818,17 +818,20 @@ cite:before {
   width: 100%;
 }
 
-@media (max-width: 1116px) {
-  #d1600 .content, #d1600 .challenge {
-    -moz-column-count: unset;
-    column-count: unset;
-  }
-}
 @media (min-width: 54em) {
   #d1600 .content {
     -moz-column-count: unset;
     column-count: unset;
     padding-right: calc(50% + 2rem);
+  }
+}
+@media (max-width: 1116px) {
+  #d1600 .content, #d1600 .challenge {
+    -moz-column-count: unset;
+    column-count: unset;
+  }
+  #d1600 .content {
+    padding-right: 0;
   }
 }
 .creature_orange-roughy {

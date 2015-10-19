@@ -12,15 +12,6 @@
     }
 }
 
-@include breakpoint(max-width 1116px){
-    #d1600 {
-        .content, .challenge {
-            -moz-column-count: unset;
-            column-count: unset;
-        }
-    }
-}
-
 @include breakpoint($double_col){
     #d1600 .content {
         -moz-column-count: unset;
@@ -29,6 +20,15 @@
     }
 }
 
+@include breakpoint(max-width 1116px){
+    #d1600 {
+        .content, .challenge {
+            -moz-column-count: unset;
+            column-count: unset;
+        }
+        .content { padding-right: 0;}
+    }
+}
 .creature_orange-roughy {
     @include make-creature(orange-roughy, $animation: true, $keyframes: 2);
     position: absolute;
