@@ -11,13 +11,18 @@
   })*/
 
   var zoneListeners = [];
+  var currentZone;
   function zoneChanged(zoneEl) {
+    currentZone = zoneEl;
     zoneListeners.forEach(function (listener) {
       listener(zoneEl);
     });
   }
   function onZoneChanged(fn) {
     zoneListeners.push(fn);
+    if (currentZone) {
+      fn(currentZone);
+    }
   }
 
   var zones = document.getElementsByClassName('zone');
@@ -95,7 +100,7 @@
   var missionAccomplished = function(challenge) {
     $(challenge).find(".challenge").append('<p class="rediscover">Close</p>');
     challenge.removeEventListener('transitionend', missionAccomplished);
-  }
+  };
 
 
   // Progress bar icons scroll to appropriate depth
@@ -281,7 +286,7 @@
       pollPolitely(function (stop) {
         var val = window.getComputedStyle(creature).getPropertyValue('filter');
         // checking for negative values in a cubic bezier
-        if (val.indexOf('http://localhost:8080/img/blue-filter.svg#seafish') < 0) {
+        if (val.indexOf('/img/blue-filter.svg#seafish') < 0) {
           stop();
           complete();
         }
@@ -310,5 +315,32 @@
       document.querySelector('#challenge_vomiting-shrimp').classList.add('completed');
     }
   });
+
+  (function () {
+    var docEl = document.documentElement;
+    var docHeight = docEl.scrollHeight;
+    var winHeight = window.innerHeight;
+    var currentPosition = docEl.scrollTop;
+    var pos;
+
+    docEl.addEventListener('scroll', function (e) {
+      currentPosition = docEl.scrollTop;
+    });
+
+    window.addEventListener('load', function (e) {
+      var currentPosition = docEl.scrollTop;
+      docHeight = docEl.scrollHeight;
+      winHeight = window.innerHeight;
+
+      var raf;
+      window.addEventListener('resize', function (e) {
+        pos = currentPosition / docHeight;
+        docHeight = docEl.scrollHeight;
+        winHeight = window.innerHeight;
+        currentPosition = Math.round(pos * docHeight);
+        docEl.scrollTop = currentPosition;
+      });
+    });
+  })();
 
 })();

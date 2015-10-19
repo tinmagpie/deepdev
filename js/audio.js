@@ -45,7 +45,6 @@ Sound.prototype._play = function (loop) {
   }
   this.source = context.createBufferSource();
   this.source.buffer = this.buffer;
-  console.log(loop);
   if (loop) {
     this.source.loop = true;
   } else {
@@ -121,14 +120,6 @@ AudioManager.prototype.setBg = function (name) {
   this.active = sound;
   this.active.output.connect(this.bg);
   this.active.loop();
-};
-
-AudioManager.prototype.stopBg = function () {
-  if (!this.active) {
-    return;
-  }
-  this.active.fadeOut(2);
-  this.active = null;
 };
 
 AudioManager.prototype.playCue = function (name) {
