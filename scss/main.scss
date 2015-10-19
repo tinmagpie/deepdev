@@ -36,9 +36,11 @@ a {
   }
 }
 
+$howToHide: opacity duration(days) ease(Out);
+
 %content-hidden {
   opacity: 0;
-  transition: opacity duration(days) ease(Out);
+  transition: $howToHide;
 }
 
 %content-revealed {
@@ -180,14 +182,14 @@ a {
   }
   @extend %t-medium;
   // everything starts paused and transparent...
+  @extend %content-hidden;
   * {
-    @extend %content-hidden;
     animation-play-state: paused;
   }
   // ...until you scroll them into view
   &.in-view {
+    @extend %content-revealed;
     * {
-      @extend %content-revealed;
       animation-play-state: running;
     }
     .subtitle {
@@ -204,8 +206,15 @@ h3 + .content {
   padding-top: rhythm(3);
 }
 
-.content {
+.bonus {
+  opacity: 0;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
   padding: rhythm(3) 0;
+  .completed & {
+    opacity: 1;
+  }
 }
 
 .content, .challenge {
@@ -245,30 +254,28 @@ h3 + .content {
 
 .challenge {
   @extend %content-hidden;
-  position: absolute;
-  top: 0; left: -1em; width: 100%;
+  .in-view & {
+    @extend %content-revealed;
+  }
+  // position: absolute;
+  // top: 0; left: -1em; width: 100%;
   transition-property: opacity, background;
   // Appearance
-  background: $twilight;
+  // background: $twilight;
   padding: rhythm(3) 1em;
+  position: relative;
+  margin: 0 -1em;
   .rediscover {
     position: absolute;
     top: rhythm(1); right: rhythm(1);
     @extend %t-small;
   }
-  // margin: rhythm(4) -1em;
-
-  // opened/shown
-  // .solving &,
-  // .show-challenge & {
-  //   @extend %content-revealed;
-  // }
 
   .completed & {
     pointer-events: none;
-    background: transparent;
+    // background: transparent;
     h3, p, ol, video {
-      opacity: 0;
+      @extend %content-hidden;
     }
   }
 
@@ -344,6 +351,16 @@ h3 {
 
 em {
   @extend %fontMerriweatherItalic;
+}
+
+.red {
+  @extend %fontMerriweatherItalic;
+  color: $red;
+}
+
+.orange {
+  @extend %fontMerriweatherItalic;
+  color: #ff9100;
 }
 
 strong {
@@ -532,7 +549,11 @@ menu {
   bottom: 0; left: 0;
   width: 100%;
   line-height: 2em;
+  transition: background ease(In) duration(timely);
   z-index: 30;
+  .bathypelagic &, .abyssal & {
+    background: $epipelagic;
+  }
 }
 
 #d1200 em {

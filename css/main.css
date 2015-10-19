@@ -15,7 +15,7 @@
   font-weight: 400;
 }
 
-.Merriweather700 .progress, .Merriweather700 .rediscover, .Merriweather700 .subtitle, .Merriweather700 em, .Merriweather700 .callout, .Merriweather700 blockquote, .Merriweather700 cite {
+.Merriweather700 .progress, .Merriweather700 .rediscover, .Merriweather700 .subtitle, .Merriweather700 em, .Merriweather700 .red, .Merriweather700 .orange, .Merriweather700 .callout, .Merriweather700 blockquote, .Merriweather700 cite {
   font-family: "Merriweather", serif;
   font-weight: 700;
   font-style: italic;
@@ -85,12 +85,12 @@ a:hover, a:active, a:focus {
   animation-play-state: running;
 }
 
-.segment *, .challenge, .bonus {
+.segment, .challenge, .completed .challenge h3, .completed .challenge p, .completed .challenge ol, .completed .challenge video, .bonus {
   opacity: 0;
   transition: opacity 2.1s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.segment.in-view *, .solved .bonus {
+.segment.in-view, .in-view .challenge, .solved .bonus {
   opacity: 1;
 }
 
@@ -234,8 +234,16 @@ h3 + .content {
   padding-top: 1rem;
 }
 
-.content {
+.bonus {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   padding: 1rem 0;
+}
+.completed .bonus {
+  opacity: 1;
 }
 
 @media (min-width: 35em) {
@@ -273,13 +281,10 @@ h3 + .content {
 }
 
 .challenge {
-  position: absolute;
-  top: 0;
-  left: -1em;
-  width: 100%;
   transition-property: opacity, background;
-  background: #0b4a61;
   padding: 1rem 1em;
+  position: relative;
+  margin: 0 -1em;
 }
 .challenge .rediscover {
   position: absolute;
@@ -288,10 +293,6 @@ h3 + .content {
 }
 .completed .challenge {
   pointer-events: none;
-  background: transparent;
-}
-.completed .challenge h3, .completed .challenge p, .completed .challenge ol, .completed .challenge video {
-  opacity: 0;
 }
 .challenge ol, .challenge li {
   margin: 0;
@@ -330,6 +331,14 @@ h2 {
 
 .subtitle {
   padding-bottom: 1rem;
+}
+
+.red {
+  color: #c6244b;
+}
+
+.orange {
+  color: #ff9100;
 }
 
 p {
@@ -570,6 +579,8 @@ cite:before {
   }
 }
 .school_flashlight-fish {
+  opacity: 0;
+  transition: opacity cubic-bezier(0.55, 0.055, 0.675, 0.19) 500ms;
   position: absolute;
   top: 0;
   left: 0;
@@ -578,6 +589,9 @@ cite:before {
 }
 .school_flashlight-fish .creature_flashlight-fish {
   position: absolute;
+}
+.completed .school_flashlight-fish {
+  opacity: 1;
 }
 
 .schooling_flashlight-fish {
@@ -718,7 +732,7 @@ cite:before {
     transform: translateX(0);
   }
 }
-#d400 .puzzle {
+#d400 .schools {
   position: relative;
   height: 400px;
   margin-top: 2rem;
@@ -925,12 +939,9 @@ cite:before {
     opacity: .8;
   }
 }
-#d5800 .puzzle {
-  width: 100%;
-  height: 500px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+#d6000 {
+  padding-bottom: calc(140px + 2rem);
+  margin-bottom: -140px;
 }
 
 .creature_hagfish {
@@ -954,7 +965,13 @@ cite:before {
 }
 
 #creature_hagfish1 {
-  bottom: -150px;
+  position: absolute;
+  bottom: 105px;
+  right: 4rem;
+}
+
+#creature_hagfish1 {
+  bottom: 0;
 }
 
 @keyframes wrigglingAround {
@@ -968,6 +985,7 @@ cite:before {
   }
 }
 .ooze {
+  pointer-events: none;
   background: #12454b;
   height: 140px;
   width: 100%;
@@ -994,10 +1012,29 @@ cite:before {
 #d2600 .puzzle .lumi path {
   fill: transparent;
 }
+#d2600 .creature {
+  display: inline-block;
+  margin: 1rem;
+}
+#d2600 .content, #d2600 .challenge {
+  -moz-column-count: unset;
+  column-count: unset;
+}
+@media (min-width: 1153px) {
+  #d2600 .challenge_wrapper {
+    float: right;
+    width: calc(50% - 1rem);
+  }
+  #d2600 .puzzle {
+    float: left;
+    width: calc(50% - 1rem);
+  }
+}
 
 #creature_viperfish1 {
   width: 428px;
   height: 214px;
+  margin-right: 7em !important;
 }
 #creature_viperfish1:before {
   background-position: 0 93.10345%;
@@ -1013,6 +1050,7 @@ cite:before {
 #creature_gulper-eel1 {
   width: 278px;
   height: 498px;
+  float: right !important;
 }
 #creature_gulper-eel1:before {
   background-position: 0 37.34846%;
@@ -1031,6 +1069,7 @@ cite:before {
 #creature_dragonfish1 {
   width: 478px;
   height: 168px;
+  transform: scaleX(-1);
 }
 #creature_dragonfish1:before {
   background-position: 0 16.16413%;
@@ -1049,6 +1088,7 @@ cite:before {
 #creature_anglerfish1 {
   width: 208px;
   height: 196px;
+  transform: scaleX(-1);
 }
 #creature_anglerfish1:before {
   background-position: 0 0;
@@ -1062,6 +1102,8 @@ cite:before {
 #creature_bristlemouth1 {
   width: 278px;
   height: 62px;
+  transform: scaleX(-1);
+  margin: 8rem 0 3rem 2rem !important;
 }
 #creature_bristlemouth1:before {
   background-position: 0 11.49023%;
@@ -1086,7 +1128,11 @@ menu {
   left: 0;
   width: 100%;
   line-height: 2em;
+  transition: background cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
   z-index: 30;
+}
+.bathypelagic menu, .abyssal menu {
+  background: #007e84;
 }
 
 #d1200 em {

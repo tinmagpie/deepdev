@@ -1,8 +1,6 @@
-#d5800 .puzzle {
-    width: 100%;
-    height: 500px;
-    position: absolute;
-    bottom: 0; right: 0;
+#d6000 {
+    padding-bottom: calc(140px + 2rem);
+    margin-bottom: -140px;
 }
 
 .creature_hagfish {
@@ -22,7 +20,12 @@
 }
 
 #creature_hagfish1 {
-    bottom: -150px;
+    position: absolute;
+    bottom: 105px; right: 4rem;
+}
+
+#creature_hagfish1 {
+    bottom: 0;
 }
 
 @keyframes wrigglingAround {
@@ -36,6 +39,7 @@
 }
 
 .ooze {
+    pointer-events: none;
     background: $greyDark;
     height: 140px;
     width: 100%;

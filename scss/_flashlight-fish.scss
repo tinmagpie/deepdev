@@ -26,12 +26,17 @@
 }
 
 .school_flashlight-fish {
+    opacity: 0;
+    transition: opacity ease(In) duration(slow);
     position: absolute;
     top: 0; left: 0;
     width: 100%;
     height: 100%;
     .creature_flashlight-fish {
         position: absolute;
+    }
+    .completed & {
+        opacity: 1;
     }
 }
 
@@ -147,7 +152,7 @@
 }
 
 #d400 {
-    .puzzle {
+    .schools {
         position:relative;
         height: 400px;
         margin-top: rhythm(6);

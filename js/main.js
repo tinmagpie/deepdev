@@ -28,6 +28,7 @@
       enter: function(direction) {
         this.element.classList.add('in-zone');
         zoneChanged(this.element);
+        $("body").removeClass().addClass(this.element.id);
       },
       // entered: function(direction) {
       // },
@@ -62,9 +63,9 @@
 
   var $wrapper = $('.wrapper');
 
-  var puzzles = document.getElementsByClassName('puzzle');
+  var challenges = document.getElementsByClassName('challenge');
 
-  Array.prototype.forEach.call(puzzles, function(child) {
+  Array.prototype.forEach.call(challenges, function(child) {
     new Waypoint.Inview({
       element: child,
       enter: function(direction) {
