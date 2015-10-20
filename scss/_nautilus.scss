@@ -39,9 +39,11 @@
 }
 
 #creature_nautilus1 {
-    animation: nautyBounce duration(weeks) infinite alternate;
-    &:before {
-        animation: nautyRaspberry steps(1) duration(days) infinite;
+    .in-view & {
+        animation: nautyBounce duration(weeks) infinite alternate;
+        &:before {
+            animation: nautyRaspberry steps(1) duration(days) infinite;
+        }
     }
 }
 

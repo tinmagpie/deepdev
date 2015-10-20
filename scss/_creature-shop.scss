@@ -39,7 +39,7 @@ $creatures-sprite-width: sprite_width($creatures-sprites);
     @if $biolumi {
       .lumi {
         left: percentage(($lumiX * 1px)/$iWidth);
-        top: percentage(($lumiY * 1px)/$iHeight);
+        top: percentage(($lumiY + 4px)/$iHeight);
         width: percentage(($lumiW * 1px)/$iWidth);
       }
     }

@@ -171,10 +171,8 @@ $howToHide: opacity duration(days) ease(Out);
 
 .segment {
   min-height: $heightScreen;
-  padding: 2rem 4rem 2rem 2rem;
+  padding: rhythm(12) rhythm(12) rhythm(12) rhythm(6);
   position: relative;
-  @include padding-leader(7);
-  @include padding-trailer(8);
   @extend %clearfix;
   @include breakpoint($double_col){
     max-width: $maxSegmentWidth;
@@ -532,10 +530,11 @@ cite {
 @import "object-shop";
 @import "flashlight-fish";
 @import "nautilus";
+@import "humboldt-squid";
 @import "orange-roughy";
+@import "disco";
 @import "vomiting-shrimp";
 @import "hagfish";
-@import "disco";
 
 menu {
   background: $abyss;
@@ -581,6 +580,6 @@ menu {
   }
 }
 
-.creature, #creature_orange-roughy1 {
+#creature_orange-roughy1 {
   filter: $blueFilter;
 }

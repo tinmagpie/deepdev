@@ -34,9 +34,11 @@
 }
 
 #creature_orange-roughy1 {
-    animation: gentlyHovering ease(inOut) duration(months) infinite alternate;
-    &:before {
-        animation: roughSwimming steps(1) duration(months) alternate-reverse infinite;
+    .in-view & {
+        animation: gentlyHovering ease(inOut) duration(months) infinite alternate;
+        &:before {
+            animation: roughSwimming steps(1) duration(months) alternate-reverse infinite;
+        }
     }
 }
 

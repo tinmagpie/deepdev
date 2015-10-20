@@ -1,0 +1,58 @@
+#d800 {
+    .content, .challenge {
+        column-count: unset;
+    }
+    @include breakpoint(841px){
+        .challenge_wrapper {
+            float: left;
+            width: calc(50% - 1rem);
+        }
+        .puzzle{
+            float: right;
+            width: calc(50% - 1rem);
+        }
+    }
+}
+
+.creature_humboldt-squid {
+    @include make-creature(humboldt-squid_pale, $animation: true, $keyframes: 4, $biolumi: false);
+}
+
+.creature_humboldt-squid .darkening {
+    @extend .creature;
+    filter: none;
+    @include make-creature(humboldt-squid_dark, $animation: true, $keyframes: 4, $biolumi: false);
+    position: absolute; top: 0; left: 0;
+    .in-view & {
+        animation: excited 70ms infinite alternate linear;
+    }
+}
+
+.creature_humboldt-squid, .creature_humboldt-squid .darkening {
+    &:before {
+        .in-view & {
+            animation: hunting steps(3) duration(slowest) infinite alternate;
+        }
+    }
+}
+
+#creature_humboldt-squid1 {
+    transform: scale(-1) translateY(10%)
+}
+
+#creature_humboldt-squid2 {
+    transform: scale(.9) translate(5%, -41%)
+}
+
+
+@keyframes hunting {
+    100% {
+        transform: translateY(-75%);
+    }
+}
+
+@keyframes excited {
+    100% {
+        opacity: 0;
+    }
+}
