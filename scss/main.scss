@@ -364,6 +364,11 @@ em {
   color: #ff9100;
 }
 
+.biolumiColor {
+  @extend %fontMerriweatherItalic;
+  color: $biolumination;
+}
+
 strong {
   @extend %fontSpartan;
 }
@@ -563,6 +568,7 @@ small {
 @import "humboldt-squid";
 @import "orange-roughy";
 @import "disco";
+@import "alarm-jellyfish";
 @import "vomiting-shrimp";
 @import "hagfish";
 

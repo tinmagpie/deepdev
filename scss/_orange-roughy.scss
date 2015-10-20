@@ -31,9 +31,6 @@
     position: absolute;
     top: 0; left: 50%;
     transform: translate(-50%, 0);
-}
-
-#creature_orange-roughy1 {
     .in-view & {
         animation: gentlyHovering ease(inOut) duration(months) infinite alternate;
         &:before {
@@ -47,7 +44,7 @@
 }
 
 @keyframes roughSwimming {
-    50% { transform: translateY(-50%, -50%)}
+    50% { transform: translateY(-50%)}
 }
 
 .orange-roughy-revelation {

@@ -1,0 +1,97 @@
+#d4400 {
+    .puzzle {
+        display: inline-block;
+        width: 100%;
+        padding: rhythm(6) 0;
+        position: relative;
+        height: 181px;
+    }
+    .creature {
+        position: absolute;
+        top: 50%; left: 50%;
+    }
+}
+
+@include breakpoint($double_col){
+    #d4400 .content {
+        column-count: unset;
+        padding-right: calc(50% + 2rem)
+    }
+}
+
+@include breakpoint(max-width 1116px){
+    #d4400 {
+        .content, .challenge {
+            column-count: unset;
+        }
+        .content { padding-right: 0;}
+    }
+}
+
+.creature_alarm-jellyfish {
+    color: transparent;
+    transform: translate(-100%, -50%);
+    @include make-creature(alarm-jellyfish_body, $double: true, $secondImgName: alarm-jellyfish_tentacles, $lumiX: 7, $lumiY: 59, $lumiW: 175, $lumiH: 170, $keyframes: 1, $animation: false, $biolumi: true);
+    .st1{ fill: currentColor; }
+    .in-view & {
+        animation: alarmed duration(slower) infinite alternate ease(inOut);
+    }
+    &:before, &:after, .lumi {
+        pointer-events: none;
+    }
+}
+
+@keyframes alarmed {
+    100% { fill: $red; }
+}
+
+.creature_fangtooth {
+    @include make-creature(fangtooth, $animation: true, $keyframes: 2);
+    pointer-effects: none;
+    transform: translate(-25%, 30%) rotate(20deg);
+    transition:
+        transform duration(slowest) duration(timely) ease(In),
+        opacity duration(slower) duration(slowest) ease(In);
+    ;
+    .completed & {
+        opacity: 0;
+        transform: translate(-325%, -70%) rotate(10deg);
+    }
+    .in-view & {
+        &:before {
+            animation: snappingJaws steps(1) duration(slow) infinite;
+        }
+    }
+}
+
+@keyframes snappingJaws {
+    50% { transform: translateY(-50%)}
+}
+
+.creature_rattail {
+    @include make-creature(rattail, $animation: true, $keyframes: 4);
+    transform: translate(50%, 50%) rotate(30deg);
+    opacity: 0;
+    transition:
+        transform duration(days) ease(In),
+        opacity duration(fast) ease(In)
+    ;
+    .completed & {
+        animation: comeWithMe duration(slower) duration(slowest) ease(In) forwards;
+        transform: translate(-100%, -30%) rotate(5deg);
+        opacity: 1;
+    }
+    .in-view & {
+        &:before {
+            animation: whatSeemsToBeTheProblem steps(3) duration(slowest) alternate infinite;
+        }
+    }
+}
+
+@keyframes whatSeemsToBeTheProblem {
+    50% { transform: translateY(-75%)}
+}
+
+@keyframes comeWithMe {
+    100% { opacity: 0; }
+}

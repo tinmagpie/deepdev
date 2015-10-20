@@ -15,7 +15,7 @@
   font-weight: 400;
 }
 
-.Merriweather700 .progress, .Merriweather700 .rediscover, .Merriweather700 .subtitle, .Merriweather700 em, .Merriweather700 .red, .Merriweather700 .orange, .Merriweather700 .callout, .Merriweather700 blockquote, .Merriweather700 cite, .Merriweather700 small {
+.Merriweather700 .progress, .Merriweather700 .rediscover, .Merriweather700 .subtitle, .Merriweather700 em, .Merriweather700 .red, .Merriweather700 .orange, .Merriweather700 .biolumiColor, .Merriweather700 .callout, .Merriweather700 blockquote, .Merriweather700 cite, .Merriweather700 small {
   font-family: "Merriweather", serif;
   font-weight: 700;
   font-style: italic;
@@ -362,6 +362,10 @@ h2 {
   color: #ff9100;
 }
 
+.biolumiColor {
+  color: #56fddb;
+}
+
 p {
   padding-bottom: 1rem;
 }
@@ -584,12 +588,12 @@ footer {
 /* Challenges */
 /* Props */
 .creatures2x-sprite {
-  background-image: url('../img/creatures2x-s872c5288b6.png');
+  background-image: url('../img/creatures2x-s5090be7de5.png');
   background-repeat: no-repeat;
 }
 
-.creatures-sprite, .creature_flashlight-fish:before, .creature_nautilus:before, .creature_humboldt-squid:before, .creature_humboldt-squid .darkening:before, .creature_orange-roughy:before, #creature_viperfish1:before, #creature_gulper-eel1:before, #creature_dragonfish1:before, #creature_anglerfish1:before, #creature_bristlemouth1:before, .creature_vomiting-shrimp:before, .creature_hagfish:before {
-  background-image: url('../img/creatures-s8eda58af5c.png');
+.creatures-sprite, .creature_flashlight-fish:before, .creature_nautilus:before, .creature_humboldt-squid:before, .creature_humboldt-squid .darkening:before, .creature_orange-roughy:before, #creature_viperfish1:before, #creature_gulper-eel1:before, #creature_dragonfish1:before, #creature_anglerfish1:before, #creature_bristlemouth1:before, .creature_alarm-jellyfish:before, .creature_alarm-jellyfish:after, .creature_fangtooth:before, .creature_rattail:before, .creature_vomiting-shrimp:before, .creature_hagfish:before {
+  background-image: url('../img/creatures-s0e874f8f83.png');
   background-repeat: no-repeat;
 }
 
@@ -598,8 +602,8 @@ footer {
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 124.8dpi), only screen and (min-resolution: 1.3dppx) {
-  .creature:before, .creature_humboldt-squid .darkening:before {
-    background-image: url('../img/creatures2x-s872c5288b6.png');
+  .creature:before, .creature_humboldt-squid .darkening:before, .creature:after, .creature_humboldt-squid .darkening:after {
+    background-image: url('../img/creatures2x-s5090be7de5.png');
   }
 }
 /* Props */
@@ -623,14 +627,14 @@ footer {
   height: 94.5px;
 }
 .creature_flashlight-fish:before {
-  background-position: 0 3.30291%;
+  background-position: 0 4.74517%;
   background-size: 301.07527% auto;
   height: 100%;
 }
 .creature_flashlight-fish .lumi {
-  left: 82.47978%;
-  top: 63.49206%;
-  width: 12.66846%;
+  left: 32.34501%;
+  top: 26.98413%;
+  width: 9.97305%;
 }
 
 #creature_flashlight-fish1 {
@@ -941,7 +945,7 @@ footer {
   height: 209px;
 }
 .creature_nautilus:before {
-  background-position: 63.09524% 37.26444%;
+  background-position: 63.09524% 14.56234%;
   background-size: 250% auto;
   height: 200%;
 }
@@ -1022,7 +1026,7 @@ footer {
   height: 516px;
 }
 .creature_humboldt-squid:before {
-  background-position: 0 58.16782%;
+  background-position: 0 100%;
   background-size: 100% auto;
   height: 400%;
 }
@@ -1037,7 +1041,7 @@ footer {
   left: 0;
 }
 .creature_humboldt-squid .darkening:before {
-  background-position: 0 100%;
+  background-position: 0 65.58279%;
   background-size: 100% auto;
   height: 400%;
 }
@@ -1128,16 +1132,15 @@ footer {
           transform: translate(-50%, 0);
 }
 .creature_orange-roughy:before {
-  background-position: 0 29.49752%;
+  background-position: 0 20.38344%;
   background-size: 112.0% auto;
   height: 200%;
 }
-
-.in-view #creature_orange-roughy1 {
+.in-view .creature_orange-roughy {
   -webkit-animation: gentlyHovering cubic-bezier(0.645, 0.045, 0.355, 1) 5.5s infinite alternate;
           animation: gentlyHovering cubic-bezier(0.645, 0.045, 0.355, 1) 5.5s infinite alternate;
 }
-.in-view #creature_orange-roughy1:before {
+.in-view .creature_orange-roughy:before {
   -webkit-animation: roughSwimming steps(1) 5.5s alternate-reverse infinite;
           animation: roughSwimming steps(1) 5.5s alternate-reverse infinite;
 }
@@ -1157,14 +1160,14 @@ footer {
 }
 @-webkit-keyframes roughSwimming {
   50% {
-    -webkit-transform: translateY(-50%, -50%);
-            transform: translateY(-50%, -50%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 @keyframes roughSwimming {
   50% {
-    -webkit-transform: translateY(-50%, -50%);
-            transform: translateY(-50%, -50%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 .orange-roughy-revelation {
@@ -1200,7 +1203,7 @@ footer {
   margin-right: 7em !important;
 }
 #creature_viperfish1:before {
-  background-position: 0 5.19174%;
+  background-position: 0 7.12737%;
   background-size: 129.62963% auto;
   height: 100%;
 }
@@ -1216,7 +1219,7 @@ footer {
   float: right !important;
 }
 #creature_gulper-eel1:before {
-  background-position: 0 15.09497%;
+  background-position: 0 41.57113%;
   background-size: 198.58156% auto;
   height: 200%;
 }
@@ -1238,7 +1241,7 @@ footer {
           transform: scaleX(-1);
 }
 #creature_dragonfish1:before {
-  background-position: 0 8.55599%;
+  background-position: 0 10.05825%;
   background-size: 116.18257% auto;
   height: 200%;
 }
@@ -1260,7 +1263,7 @@ footer {
           transform: scaleX(-1);
 }
 #creature_anglerfish1:before {
-  background-position: 0 37.11777%;
+  background-position: 0 14.51297%;
   background-size: 264.15094% auto;
   height: 200%;
 }
@@ -1278,7 +1281,7 @@ footer {
   margin: 8rem 0 3rem 2rem !important;
 }
 #creature_bristlemouth1:before {
-  background-position: 66.90647% 3.31685%;
+  background-position: 0 0;
   background-size: 198.58156% auto;
   height: 200%;
 }
@@ -1292,6 +1295,178 @@ footer {
           animation: wriggle steps(1) 500ms infinite;
 }
 
+#d4400 .puzzle {
+  display: inline-block;
+  width: 100%;
+  padding: 2rem 0;
+  position: relative;
+  height: 181px;
+}
+#d4400 .creature, #d4400 .creature_humboldt-squid .darkening, .creature_humboldt-squid #d4400 .darkening {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@media (min-width: 54em) {
+  #d4400 .content {
+    -webkit-column-count: unset;
+       -moz-column-count: unset;
+            column-count: unset;
+    padding-right: calc(50% + 2rem);
+  }
+}
+@media (max-width: 1116px) {
+  #d4400 .content, #d4400 .challenge {
+    -webkit-column-count: unset;
+       -moz-column-count: unset;
+            column-count: unset;
+  }
+  #d4400 .content {
+    padding-right: 0;
+  }
+}
+.creature_alarm-jellyfish {
+  color: transparent;
+  -webkit-transform: translate(-100%, -50%);
+      -ms-transform: translate(-100%, -50%);
+          transform: translate(-100%, -50%);
+  width: 180.5px;
+  height: 181px;
+}
+.creature_alarm-jellyfish:before {
+  background-position: 49.07652% 4.79695%;
+  background-size: 309.39227% auto;
+  height: 100%;
+}
+.creature_alarm-jellyfish:after {
+  background-position: 44.85488% 1.90355%;
+  background-size: 309.39227% auto;
+  content: " ";
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.creature_alarm-jellyfish .lumi {
+  left: 3.04709%;
+  top: 17.40331%;
+  width: 48.47645%;
+}
+.creature_alarm-jellyfish .st1 {
+  fill: currentColor;
+}
+.in-view .creature_alarm-jellyfish {
+  -webkit-animation: alarmed 800ms infinite alternate cubic-bezier(0.645, 0.045, 0.355, 1);
+          animation: alarmed 800ms infinite alternate cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.creature_alarm-jellyfish:before, .creature_alarm-jellyfish:after, .creature_alarm-jellyfish .lumi {
+  pointer-events: none;
+}
+
+@-webkit-keyframes alarmed {
+  100% {
+    fill: #c6244b;
+  }
+}
+
+@keyframes alarmed {
+  100% {
+    fill: #c6244b;
+  }
+}
+.creature_fangtooth {
+  width: 143.5px;
+  height: 75px;
+  pointer-effects: none;
+  -webkit-transform: translate(-25%, 30%) rotate(20deg);
+      -ms-transform: translate(-25%, 30%) rotate(20deg);
+          transform: translate(-25%, 30%) rotate(20deg);
+  -webkit-transition: -webkit-transform 1.3s 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19), opacity 800ms 1.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          transition: transform 1.3s 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19), opacity 800ms 1.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.creature_fangtooth:before {
+  background-position: 67.78846% 0;
+  background-size: 388.88889% auto;
+  height: 200%;
+}
+.completed .creature_fangtooth {
+  opacity: 0;
+  -webkit-transform: translate(-325%, -70%) rotate(10deg);
+      -ms-transform: translate(-325%, -70%) rotate(10deg);
+          transform: translate(-325%, -70%) rotate(10deg);
+}
+.in-view .creature_fangtooth:before {
+  -webkit-animation: snappingJaws steps(1) 500ms infinite;
+          animation: snappingJaws steps(1) 500ms infinite;
+}
+
+@-webkit-keyframes snappingJaws {
+  50% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+}
+
+@keyframes snappingJaws {
+  50% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+}
+.creature_rattail {
+  width: 414px;
+  height: 214px;
+  -webkit-transform: translate(50%, 50%) rotate(30deg);
+      -ms-transform: translate(50%, 50%) rotate(30deg);
+          transform: translate(50%, 50%) rotate(30deg);
+  opacity: 0;
+  -webkit-transition: -webkit-transform 2.1s cubic-bezier(0.55, 0.055, 0.675, 0.19), opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          transition: transform 2.1s cubic-bezier(0.55, 0.055, 0.675, 0.19), opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.creature_rattail:before {
+  background-position: 0 28.88272%;
+  background-size: 135.2657% auto;
+  height: 400%;
+}
+.completed .creature_rattail {
+  -webkit-animation: comeWithMe 800ms 1.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+          animation: comeWithMe 800ms 1.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+  -webkit-transform: translate(-100%, -30%) rotate(5deg);
+      -ms-transform: translate(-100%, -30%) rotate(5deg);
+          transform: translate(-100%, -30%) rotate(5deg);
+  opacity: 1;
+}
+.in-view .creature_rattail:before {
+  -webkit-animation: whatSeemsToBeTheProblem steps(3) 1.3s alternate infinite;
+          animation: whatSeemsToBeTheProblem steps(3) 1.3s alternate infinite;
+}
+
+@-webkit-keyframes whatSeemsToBeTheProblem {
+  50% {
+    -webkit-transform: translateY(-75%);
+            transform: translateY(-75%);
+  }
+}
+
+@keyframes whatSeemsToBeTheProblem {
+  50% {
+    -webkit-transform: translateY(-75%);
+            transform: translateY(-75%);
+  }
+}
+@-webkit-keyframes comeWithMe {
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes comeWithMe {
+  100% {
+    opacity: 0;
+  }
+}
 #d5000 .puzzle {
   width: 500px;
   height: 500px;
@@ -1303,7 +1478,7 @@ footer {
   height: 114px;
 }
 .creature_vomiting-shrimp:before {
-  background-position: 52.30769% 0;
+  background-position: 0 1.91498%;
   background-size: 329.41176% auto;
   height: 200%;
 }
@@ -1407,7 +1582,7 @@ footer {
   z-index: 1;
 }
 .creature_hagfish:before {
-  background-position: 0 0;
+  background-position: 79.21348% 37.25739%;
   background-size: 274.5098% auto;
   height: 200%;
 }

@@ -22,7 +22,7 @@ $creatures-sprite-width: sprite_width($creatures-sprites);
 }
 
 // Make a creature
-@mixin make-creature($imgName, $lumiX: 0, $lumiY: 0, $lumiW: 0, $lumiH: 0, $keyframes: 2, $biolumi: false, $animation:false) {
+@mixin make-creature($imgName, $secondImgName: none, $lumiX: 0, $lumiY: 0, $lumiW: 0, $lumiH: 0, $keyframes: 2, $biolumi: false, $animation:false, $double: false) {
   $iWidth: image-width(sprite-file($creatures2x-sprites, #{$imgName}));
   width: $iWidth/2;
 
@@ -33,6 +33,19 @@ $creatures-sprite-width: sprite_width($creatures-sprites);
       height: $keyframes * 100%;
     } @else {
       height: 100%
+    }
+  }
+  @if $double {
+    &:after {
+      @include creatures-sprite(#{$secondImgName});
+      @include set-bg-width($creatures-sprite-width, $creatures-sprites, #{$secondImgName});
+      content: " ";
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   }
   @if $animation {
@@ -71,7 +84,7 @@ $creatures-sprite-width: sprite_width($creatures-sprites);
        only screen and ( min-resolution: 1.3dppx ) {
 
       .creature {
-        &:before {
+        &:before, &:after {
           background-image: sprite-url($creatures2x-sprites);
         }
       }
