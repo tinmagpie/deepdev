@@ -12,7 +12,6 @@
         margin: rhythm(3);
     }
     .content, .challenge {
-        -moz-column-count: unset;
         column-count: unset;
     }
     @include breakpoint(1153px){

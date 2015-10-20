@@ -1,7 +1,6 @@
 #d1600 {
     .puzzle {
         break-after: always;
-        -moz-column-break-after: always;
         @include padding-trailer(5);
         position: relative;
         height: 275px;
@@ -14,7 +13,6 @@
 
 @include breakpoint($double_col){
     #d1600 .content {
-        -moz-column-count: unset;
         column-count: unset;
         padding-right: calc(50% + 2rem)
     }
@@ -23,7 +21,6 @@
 @include breakpoint(max-width 1116px){
     #d1600 {
         .content, .challenge {
-            -moz-column-count: unset;
             column-count: unset;
         }
         .content { padding-right: 0;}

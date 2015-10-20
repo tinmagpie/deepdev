@@ -79,15 +79,18 @@ a:hover, a:active, a:focus {
 
 /* Animations */
 #school_flashlight-fish1, #school_flashlight-fish2, #school_flashlight-fish3, #school_flashlight-fish4 {
-  animation-play-state: paused !important;
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
 }
 .in-view #school_flashlight-fish1, .in-view #school_flashlight-fish2, .in-view #school_flashlight-fish3, .in-view #school_flashlight-fish4 {
-  animation-play-state: running !important;
+  -webkit-animation-play-state: running !important;
+          animation-play-state: running !important;
 }
 
 .segment, .challenge, .completed .challenge h3, .completed .challenge p, .completed .challenge ol, .completed .challenge video, .bonus {
   opacity: 0;
-  transition: opacity 2.1s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition: opacity 2.1s cubic-bezier(0.215, 0.61, 0.355, 1);
+          transition: opacity 2.1s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .segment.in-view, .in-view .challenge, .solved .bonus {
@@ -115,7 +118,9 @@ a:hover, a:active, a:focus {
   position: fixed;
   right: .5rem;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
   z-index: 10;
 }
 .progress ul, .progress li {
@@ -144,7 +149,8 @@ a:hover, a:active, a:focus {
 }
 .progress svg circle {
   fill: #56fddb;
-  transition: fill cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
+  -webkit-transition: fill cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
+          transition: fill cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
 }
 .progress svg path {
   fill: currentColor;
@@ -156,7 +162,8 @@ a:hover, a:active, a:focus {
 .progress li {
   display: none;
   opacity: 0;
-  transition: opacity cubic-bezier(0.215, 0.61, 0.355, 1) 200ms;
+  -webkit-transition: opacity cubic-bezier(0.215, 0.61, 0.355, 1) 200ms;
+          transition: opacity cubic-bezier(0.215, 0.61, 0.355, 1) 200ms;
   position: relative;
 }
 .progress li:not(:first-child) {
@@ -175,7 +182,8 @@ a:hover, a:active, a:focus {
   left: -1rem;
   padding-right: .5rem;
   opacity: 0;
-  transition: opacity cubic-bezier(0.68, -0.55, 0.265, 1.55) 200ms 200ms, transform cubic-bezier(0.68, -0.55, 0.265, 1.55) 500ms 200ms;
+  -webkit-transition: opacity cubic-bezier(0.68, -0.55, 0.265, 1.55) 200ms 200ms, -webkit-transform cubic-bezier(0.68, -0.55, 0.265, 1.55) 500ms 200ms;
+          transition: opacity cubic-bezier(0.68, -0.55, 0.265, 1.55) 200ms 200ms, transform cubic-bezier(0.68, -0.55, 0.265, 1.55) 500ms 200ms;
   width: 15rem;
   padding: 0.66667rem;
   z-index: 1;
@@ -195,7 +203,9 @@ a:hover, a:active, a:focus {
   margin-top: -.5rem;
 }
 .progress li a:hover span {
-  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
   opacity: 1;
 }
 
@@ -217,10 +227,12 @@ a:hover, a:active, a:focus {
   }
 }
 .segment * {
-  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
 }
 .segment.in-view * {
-  animation-play-state: running;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 .segment.in-view .subtitle {
   opacity: 0.6;
@@ -256,14 +268,17 @@ h3 + .content {
 }
 @media (min-width: 54em) {
   .content, .challenge {
-    -moz-column-count: 2;
-    -moz-column-gap: 2rem;
-    column-count: 2;
-    column-gap: 2rem;
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 2rem;
+       -moz-column-gap: 2rem;
+            column-gap: 2rem;
   }
   .content ul, .content ol, .challenge ul, .challenge ol {
     page-break-inside: avoid;
-    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+            break-inside: avoid;
   }
 }
 
@@ -281,7 +296,8 @@ h3 + .content {
 }
 
 .challenge {
-  transition-property: opacity, background;
+  -webkit-transition-property: opacity, background;
+          transition-property: opacity, background;
   padding: 1rem 1em;
   position: relative;
   margin: 0 -1em;
@@ -349,14 +365,16 @@ p {
   padding-top: 0.33333rem;
   padding-bottom: 0.33333rem;
   text-align: center;
-  transition-duration: 1.3s;
+  -webkit-transition-duration: 1.3s;
+          transition-duration: 1.3s;
 }
 
 .followup {
   padding-top: 0.33333rem;
   padding-bottom: 0.33333rem;
   text-align: center;
-  transition-delay: 500ms;
+  -webkit-transition-delay: 500ms;
+          transition-delay: 500ms;
 }
 
 .standalone {
@@ -369,7 +387,8 @@ p {
 
 blockquote {
   page-break-inside: avoid;
-  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+          break-inside: avoid;
   opacity: .7;
   padding-top: 0.33333rem;
   padding-bottom: 0.33333rem;
@@ -383,7 +402,8 @@ cite {
   font-style: normal;
   display: block;
   page-break-inside: avoid;
-  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+          break-inside: avoid;
   text-align: right;
 }
 cite:before {
@@ -422,14 +442,20 @@ cite:before {
   height: 130px;
 }
 .in-zone .wave {
-  animation-name: oceanSurge;
-  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+  -webkit-animation-name: oceanSurge;
+          animation-name: oceanSurge;
+  -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+          animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
 }
 .wave:before {
   content: " ";
-  transform: scale(1.1) translateX(-20px);
+  -webkit-transform: scale(1.1) translateX(-20px);
+      -ms-transform: scale(1.1) translateX(-20px);
+          transform: scale(1.1) translateX(-20px);
   position: absolute;
   left: 0;
   bottom: 0;
@@ -438,27 +464,37 @@ cite:before {
   height: 120px;
 }
 .in-zone .wave:before {
-  animation-name: oceanMotion;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+  -webkit-animation-name: oceanMotion;
+          animation-name: oceanMotion;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
 }
 
 .wave-close {
-  animation-duration: 3.4s;
+  -webkit-animation-duration: 3.4s;
+          animation-duration: 3.4s;
 }
 .wave-close:before {
   background: url("../img/wave-close.svg") repeat-x 100% 100%;
-  animation-duration: 2.1s;
+  -webkit-animation-duration: 2.1s;
+          animation-duration: 2.1s;
 }
 
 .wave-near {
-  animation-duration: 5.5s;
+  -webkit-animation-duration: 5.5s;
+          animation-duration: 5.5s;
 }
 .wave-near:before {
   background: url("../img/wave-near.svg") repeat-x 100% 100%;
-  animation-duration: 3.4s;
-  transform: translateY(-10px);
+  -webkit-animation-duration: 3.4s;
+          animation-duration: 3.4s;
+  -webkit-transform: translateY(-10px);
+      -ms-transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 .wave-mid {
@@ -468,26 +504,44 @@ cite:before {
 .wave-mid:before {
   background: url("../img/wave-mid.svg") repeat-x 0 10px;
   background-size: 305px 120px;
-  animation-duration: 5.5s;
+  -webkit-animation-duration: 5.5s;
+          animation-duration: 5.5s;
+}
+
+@-webkit-keyframes oceanMotion {
+  100% {
+    -webkit-transform: scale(1.1) translateX(30px);
+            transform: scale(1.1) translateX(30px);
+  }
 }
 
 @keyframes oceanMotion {
   100% {
-    transform: scale(1.1) translateX(30px);
+    -webkit-transform: scale(1.1) translateX(30px);
+            transform: scale(1.1) translateX(30px);
+  }
+}
+@-webkit-keyframes oceanSurge {
+  100% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
   }
 }
 @keyframes oceanSurge {
   100% {
-    transform: translateY(10px);
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
   }
 }
 /* Zones */
 #epipelagic {
+  background: -webkit-linear-gradient(top, #39dbb4 0%, #007e84 50%, #0b4960 100%);
   background: linear-gradient(to bottom, #39dbb4 0%, #007e84 50%, #0b4960 100%);
   color: #06191b;
 }
 
 #mesopelagic {
+  background: -webkit-linear-gradient(top, #0b4960 0%, #0b4960 33%, #002351 67%, #000c1c 100%);
   background: linear-gradient(to bottom, #0b4960 0%, #0b4960 33%, #002351 67%, #000c1c 100%);
   color: #c6f3c7;
 }
@@ -518,7 +572,7 @@ cite:before {
   position: absolute;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6 / 2), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 124.8dpi), only screen and (min-resolution: 1.3dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 124.8dpi), only screen and (min-resolution: 1.3dppx) {
   .creature:before {
     background-image: url('../img/creatures2x-s9c2e841a7d.png');
   }
@@ -534,7 +588,7 @@ cite:before {
   background-repeat: no-repeat;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6 / 2), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 124.8dpi), only screen and (min-resolution: 1.3dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 124.8dpi), only screen and (min-resolution: 1.3dppx) {
   .object:before {
     background-image: url('../img/objects2x-s386e065297.png');
   }
@@ -555,17 +609,19 @@ cite:before {
 }
 
 #creature_flashlight-fish1 {
-  animation: swimmyFlashy 5.5s -0.75s linear infinite paused;
+  -webkit-animation: swimmyFlashy 5.5s -0.75s linear infinite paused;
+          animation: swimmyFlashy 5.5s -0.75s linear infinite paused;
   margin: 1rem auto;
 }
 #creature_flashlight-fish1 .lumi {
   pointer-events: none;
 }
 
-@keyframes swimmyFlashy {
+@-webkit-keyframes swimmyFlashy {
   0% {
     opacity: 0;
-    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
   }
   10% {
     opacity: 1;
@@ -575,12 +631,33 @@ cite:before {
   }
   100% {
     opacity: 0;
-    transform: translateX(400%);
+    -webkit-transform: translateX(400%);
+            transform: translateX(400%);
+  }
+}
+
+@keyframes swimmyFlashy {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(400%);
+            transform: translateX(400%);
   }
 }
 .school_flashlight-fish {
   opacity: 0;
-  transition: opacity cubic-bezier(0.55, 0.055, 0.675, 0.19) 500ms;
+  -webkit-transition: opacity cubic-bezier(0.55, 0.055, 0.675, 0.19) 500ms;
+          transition: opacity cubic-bezier(0.55, 0.055, 0.675, 0.19) 500ms;
   position: absolute;
   top: 0;
   left: 0;
@@ -603,16 +680,26 @@ cite:before {
   position: absolute;
 }
 .schooling_flashlight-fish .lumi {
-  animation: winking steps(1) infinite 500ms;
+  -webkit-animation: winking steps(1) infinite 500ms;
+          animation: winking steps(1) infinite 500ms;
 }
 .schooling_flashlight-fish .creature_flashlight-fish:nth-child(odd) .lumi {
-  animation-duration: 300ms;
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
 }
 .schooling_flashlight-fish .creature_flashlight-fish:nth-child(3) .lumi {
-  animation-delay: 200ms;
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
 }
 .schooling_flashlight-fish .creature_flashlight-fish:nth-child(4) .lumi {
-  animation-duration: 800ms;
+  -webkit-animation-duration: 800ms;
+          animation-duration: 800ms;
+}
+
+@-webkit-keyframes winking {
+  50% {
+    opacity: 0;
+  }
 }
 
 @keyframes winking {
@@ -649,16 +736,22 @@ cite:before {
   left: 90%;
 }
 #school_flashlight-fish_bg .creature_flashlight-fish:nth-child(odd) {
-  transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+          transform: scale(0.5);
 }
 #school_flashlight-fish_bg .creature_flashlight-fish:nth-child(odd):before {
-  filter: url("../img/blue-filter.svg#seafish") brightness(20%) saturate(20%);
+  -webkit-filter: url("../img/blue-filter.svg#seafish") brightness(20%) saturate(20%);
+          filter: url("../img/blue-filter.svg#seafish") brightness(20%) saturate(20%);
 }
 #school_flashlight-fish_bg .creature_flashlight-fish:nth-child(even) {
-  transform: scale(0.7);
+  -webkit-transform: scale(0.7);
+      -ms-transform: scale(0.7);
+          transform: scale(0.7);
 }
 #school_flashlight-fish_bg .creature_flashlight-fish:nth-child(even):before {
-  filter: url("../img/blue-filter.svg#seafish") brightness(30%) saturate(30%);
+  -webkit-filter: url("../img/blue-filter.svg#seafish") brightness(30%) saturate(30%);
+          filter: url("../img/blue-filter.svg#seafish") brightness(30%) saturate(30%);
 }
 
 #school_flashlight-fish_fg .creature_flashlight-fish:nth-child(0n+1) {
@@ -682,54 +775,100 @@ cite:before {
   right: 0%;
 }
 #school_flashlight-fish_fg .creature_flashlight-fish:nth-child(odd) {
-  transform: scale(-0.85, 0.85);
+  -webkit-transform: scale(-0.85, 0.85);
+      -ms-transform: scale(-0.85, 0.85);
+          transform: scale(-0.85, 0.85);
 }
 #school_flashlight-fish_fg .creature_flashlight-fish:nth-child(odd):before {
-  filter: url("../img/blue-filter.svg#seafish") brightness(40%) saturate(40%);
+  -webkit-filter: url("../img/blue-filter.svg#seafish") brightness(40%) saturate(40%);
+          filter: url("../img/blue-filter.svg#seafish") brightness(40%) saturate(40%);
 }
 #school_flashlight-fish_fg .creature_flashlight-fish:nth-child(even) {
-  transform: scale(-0.9, 0.9);
+  -webkit-transform: scale(-0.9, 0.9);
+      -ms-transform: scale(-0.9, 0.9);
+          transform: scale(-0.9, 0.9);
 }
 #school_flashlight-fish_fg .creature_flashlight-fish:nth-child(even):before {
-  filter: url("../img/blue-filter.svg#seafish") brightness(50%) saturate(50%);
+  -webkit-filter: url("../img/blue-filter.svg#seafish") brightness(50%) saturate(50%);
+          filter: url("../img/blue-filter.svg#seafish") brightness(50%) saturate(50%);
 }
 
 #school_flashlight-fish1 {
-  animation: flashlight-swim linear infinite 5.5s;
+  -webkit-animation: flashlight-swim linear infinite 5.5s;
+          animation: flashlight-swim linear infinite 5.5s;
+}
+
+@-webkit-keyframes flashlight-swim {
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
 }
 
 @keyframes flashlight-swim {
   100% {
-    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
   }
 }
 #school_flashlight-fish2 {
-  animation: flashlight-swim2 linear infinite 5.5s;
-  transform: translate(-100%);
+  -webkit-animation: flashlight-swim2 linear infinite 5.5s;
+          animation: flashlight-swim2 linear infinite 5.5s;
+  -webkit-transform: translate(-100%);
+      -ms-transform: translate(-100%);
+          transform: translate(-100%);
+}
+
+@-webkit-keyframes flashlight-swim2 {
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 
 @keyframes flashlight-swim2 {
   100% {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 #school_flashlight-fish3 {
-  animation: flashlight-swim3 linear infinite 5.5s;
+  -webkit-animation: flashlight-swim3 linear infinite 5.5s;
+          animation: flashlight-swim3 linear infinite 5.5s;
+}
+
+@-webkit-keyframes flashlight-swim3 {
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
 }
 
 @keyframes flashlight-swim3 {
   100% {
-    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
   }
 }
 #school_flashlight-fish4 {
-  animation: flashlight-swim4 linear infinite 5.5s;
-  transform: translate(100%);
+  -webkit-animation: flashlight-swim4 linear infinite 5.5s;
+          animation: flashlight-swim4 linear infinite 5.5s;
+  -webkit-transform: translate(100%);
+      -ms-transform: translate(100%);
+          transform: translate(100%);
+}
+
+@-webkit-keyframes flashlight-swim4 {
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 
 @keyframes flashlight-swim4 {
   100% {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 #d400 .schools {
@@ -753,14 +892,17 @@ cite:before {
 }
 @media (min-width: 54em) {
   #d600 .content, #d600 .challenge {
-    -moz-column-gap: calc(219.5px + 4rem);
-    column-gap: calc(219.5px + 4rem);
+    -webkit-column-gap: calc(219.5px + 4rem);
+       -moz-column-gap: calc(219.5px + 4rem);
+            column-gap: calc(219.5px + 4rem);
   }
   #d600 .puzzle {
     position: absolute;
     top: 0;
     right: 50%;
-    transform: translateX(40%);
+    -webkit-transform: translateX(40%);
+        -ms-transform: translateX(40%);
+            transform: translateX(40%);
     width: 219.5px;
     z-index: 1;
   }
@@ -780,35 +922,64 @@ cite:before {
 }
 
 #creature_nautilus1 {
-  animation: nautyBounce 3.4s infinite alternate;
+  -webkit-animation: nautyBounce 3.4s infinite alternate;
+          animation: nautyBounce 3.4s infinite alternate;
 }
 #creature_nautilus1:before {
-  animation: nautyRaspberry steps(1) 2.1s infinite;
+  -webkit-animation: nautyRaspberry steps(1) 2.1s infinite;
+          animation: nautyRaspberry steps(1) 2.1s infinite;
 }
 
 #creature_nautilus1 {
-  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes nautyRaspberry {
+  25% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  35% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  45% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
 }
 
 @keyframes nautyRaspberry {
   25% {
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
   35% {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   45% {
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+}
+@-webkit-keyframes nautyBounce {
+  100% {
+    -webkit-transform: translateY(50vh);
+            transform: translateY(50vh);
   }
 }
 @keyframes nautyBounce {
   100% {
-    transform: translateY(50vh);
+    -webkit-transform: translateY(50vh);
+            transform: translateY(50vh);
   }
 }
 #d1600 .puzzle {
-  break-after: always;
-  -moz-column-break-after: always;
+  -webkit-break-after: always;
+     -moz-break-after: always;
+          break-after: always;
   padding-bottom: 1.66667rem;
   position: relative;
   height: 275px;
@@ -820,15 +991,17 @@ cite:before {
 
 @media (min-width: 54em) {
   #d1600 .content {
-    -moz-column-count: unset;
-    column-count: unset;
+    -webkit-column-count: unset;
+       -moz-column-count: unset;
+            column-count: unset;
     padding-right: calc(50% + 2rem);
   }
 }
 @media (max-width: 1116px) {
   #d1600 .content, #d1600 .challenge {
-    -moz-column-count: unset;
-    column-count: unset;
+    -webkit-column-count: unset;
+       -moz-column-count: unset;
+            column-count: unset;
   }
   #d1600 .content {
     padding-right: 0;
@@ -840,7 +1013,9 @@ cite:before {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
 }
 .creature_orange-roughy:before {
   background-position: 0 85.01499%;
@@ -849,20 +1024,37 @@ cite:before {
 }
 
 #creature_orange-roughy1 {
-  animation: gentlyHovering cubic-bezier(0.645, 0.045, 0.355, 1) 5.5s infinite alternate;
+  -webkit-animation: gentlyHovering cubic-bezier(0.645, 0.045, 0.355, 1) 5.5s infinite alternate;
+          animation: gentlyHovering cubic-bezier(0.645, 0.045, 0.355, 1) 5.5s infinite alternate;
 }
 #creature_orange-roughy1:before {
-  animation: roughSwimming steps(1) 5.5s alternate-reverse infinite;
+  -webkit-animation: roughSwimming steps(1) 5.5s alternate-reverse infinite;
+          animation: roughSwimming steps(1) 5.5s alternate-reverse infinite;
+}
+
+@-webkit-keyframes gentlyHovering {
+  100% {
+    -webkit-transform: translate(-50%, 15%);
+            transform: translate(-50%, 15%);
+  }
 }
 
 @keyframes gentlyHovering {
   100% {
-    transform: translate(-50%, 15%);
+    -webkit-transform: translate(-50%, 15%);
+            transform: translate(-50%, 15%);
+  }
+}
+@-webkit-keyframes roughSwimming {
+  50% {
+    -webkit-transform: translateY(-50%, -50%);
+            transform: translateY(-50%, -50%);
   }
 }
 @keyframes roughSwimming {
   50% {
-    transform: translateY(-50%, -50%);
+    -webkit-transform: translateY(-50%, -50%);
+            transform: translateY(-50%, -50%);
   }
 }
 .orange-roughy-revelation {
@@ -890,17 +1082,23 @@ cite:before {
   position: absolute;
   top: 40%;
   left: 25%;
-  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 500ms 200ms, opacity cubic-bezier(0.215, 0.61, 0.355, 1) 500ms 200ms;
+  -webkit-transition: -webkit-transform cubic-bezier(0.215, 0.61, 0.355, 1) 500ms 200ms, opacity cubic-bezier(0.215, 0.61, 0.355, 1) 500ms 200ms;
+          transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 500ms 200ms, opacity cubic-bezier(0.215, 0.61, 0.355, 1) 500ms 200ms;
 }
 .in-view #creature_vomiting-shrimp1 {
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   opacity: 0;
 }
 #creature_vomiting-shrimp1:before {
-  transition: steps(1) 300ms 1;
+  -webkit-transition: steps(1) 300ms 1;
+          transition: steps(1) 300ms 1;
 }
 .in-view #creature_vomiting-shrimp1:before {
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .luminous-spew {
@@ -910,7 +1108,9 @@ cite:before {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 .luminous-spew:before {
   background-position: 0 0;
@@ -920,11 +1120,21 @@ cite:before {
 .luminous-spew:before {
   background-size: 100% 100%;
   pointer-events: none;
-  transition: steps(3, end) 500ms;
+  -webkit-transition: steps(3, end) 500ms;
+          transition: steps(3, end) 500ms;
 }
 .in-view .luminous-spew:before {
-  transform: translateY(-75%);
-  animation: incriminatingPuke cubic-bezier(0.645, 0.045, 0.355, 1) 2.1s 1.3s infinite alternate;
+  -webkit-transform: translateY(-75%);
+      -ms-transform: translateY(-75%);
+          transform: translateY(-75%);
+  -webkit-animation: incriminatingPuke cubic-bezier(0.645, 0.045, 0.355, 1) 2.1s 1.3s infinite alternate;
+          animation: incriminatingPuke cubic-bezier(0.645, 0.045, 0.355, 1) 2.1s 1.3s infinite alternate;
+}
+
+@-webkit-keyframes incriminatingPuke {
+  100% {
+    opacity: .8;
+  }
 }
 
 @keyframes incriminatingPuke {
@@ -951,10 +1161,12 @@ cite:before {
   height: 200%;
 }
 .in-view .creature_hagfish {
-  animation: wrigglingAround cubic-bezier(0.645, 0.045, 0.355, 1) 300ms infinite;
+  -webkit-animation: wrigglingAround cubic-bezier(0.645, 0.045, 0.355, 1) 300ms infinite;
+          animation: wrigglingAround cubic-bezier(0.645, 0.045, 0.355, 1) 300ms infinite;
 }
 .in-view .creature_hagfish:before {
-  animation: wriggle steps(1) 300ms infinite;
+  -webkit-animation: wriggle steps(1) 300ms infinite;
+          animation: wriggle steps(1) 300ms infinite;
 }
 
 #creature_hagfish1 {
@@ -967,14 +1179,29 @@ cite:before {
   bottom: 0;
 }
 
+@-webkit-keyframes wrigglingAround {
+  50% {
+    -webkit-transform: translate(-1%, -1%);
+            transform: translate(-1%, -1%);
+  }
+}
+
 @keyframes wrigglingAround {
   50% {
-    transform: translate(-1%, -1%);
+    -webkit-transform: translate(-1%, -1%);
+            transform: translate(-1%, -1%);
+  }
+}
+@-webkit-keyframes wriggle {
+  50% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 @keyframes wriggle {
   50% {
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 .ooze {
@@ -1010,8 +1237,9 @@ cite:before {
   margin: 1rem;
 }
 #d2600 .content, #d2600 .challenge {
-  -moz-column-count: unset;
-  column-count: unset;
+  -webkit-column-count: unset;
+     -moz-column-count: unset;
+          column-count: unset;
 }
 @media (min-width: 1153px) {
   #d2600 .challenge_wrapper {
@@ -1056,13 +1284,16 @@ cite:before {
   width: 20.68345%;
 }
 .in-view #creature_gulper-eel1:before {
-  animation: wriggle steps(1) 500ms infinite;
+  -webkit-animation: wriggle steps(1) 500ms infinite;
+          animation: wriggle steps(1) 500ms infinite;
 }
 
 #creature_dragonfish1 {
   width: 478px;
   height: 168px;
-  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+      -ms-transform: scaleX(-1);
+          transform: scaleX(-1);
 }
 #creature_dragonfish1:before {
   background-position: 0 16.16413%;
@@ -1075,13 +1306,16 @@ cite:before {
   width: 84.62343%;
 }
 .in-view #creature_dragonfish1:before {
-  animation: wriggle steps(1) 500ms infinite;
+  -webkit-animation: wriggle steps(1) 500ms infinite;
+          animation: wriggle steps(1) 500ms infinite;
 }
 
 #creature_anglerfish1 {
   width: 208px;
   height: 196px;
-  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+      -ms-transform: scaleX(-1);
+          transform: scaleX(-1);
 }
 #creature_anglerfish1:before {
   background-position: 0 0;
@@ -1089,13 +1323,16 @@ cite:before {
   height: 200%;
 }
 .in-view #creature_anglerfish1:before {
-  animation: wriggle steps(1) 500ms infinite;
+  -webkit-animation: wriggle steps(1) 500ms infinite;
+          animation: wriggle steps(1) 500ms infinite;
 }
 
 #creature_bristlemouth1 {
   width: 278px;
   height: 62px;
-  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+      -ms-transform: scaleX(-1);
+          transform: scaleX(-1);
   margin: 8rem 0 3rem 2rem !important;
 }
 #creature_bristlemouth1:before {
@@ -1109,7 +1346,8 @@ cite:before {
   width: 66.18705%;
 }
 .in-view #creature_bristlemouth1:before {
-  animation: wriggle steps(1) 500ms infinite;
+  -webkit-animation: wriggle steps(1) 500ms infinite;
+          animation: wriggle steps(1) 500ms infinite;
 }
 
 menu {
@@ -1121,7 +1359,8 @@ menu {
   left: 0;
   width: 100%;
   line-height: 2em;
-  transition: background cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
+  -webkit-transition: background cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
+          transition: background cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
   z-index: 30;
 }
 .bathypelagic menu, .abyssal menu {
@@ -1134,8 +1373,10 @@ menu {
 }
 
 #d3200 .callout {
-  transition-delay: 2.1s;
-  transition-duration: 3.4s;
+  -webkit-transition-delay: 2.1s;
+          transition-delay: 2.1s;
+  -webkit-transition-duration: 3.4s;
+          transition-duration: 3.4s;
 }
 
 @media (min-width: 27.05556em) {
@@ -1149,5 +1390,6 @@ menu {
   }
 }
 .creature, #creature_orange-roughy1 {
-  filter: url("../img/blue-filter.svg#seafish");
+  -webkit-filter: url("../img/blue-filter.svg#seafish");
+          filter: url("../img/blue-filter.svg#seafish");
 }

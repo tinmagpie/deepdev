@@ -1,6 +1,13 @@
-require 'compass/import-once/activate'
-require 'breakpoint'
 # Require any additional compass plugins here.
+require 'breakpoint'
+require 'autoprefixer-rails'
+
+on_stylesheet_saved do |file|
+  css = File.read(file)
+  File.open(file, 'w') do |io|
+    io << AutoprefixerRails.process(css, browsers: ['last 2 version', '> 1%'])
+  end
+end
 
 # Set this to the root of your project when deployed:
 http_path = "/"

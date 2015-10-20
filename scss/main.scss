@@ -228,8 +228,6 @@ h3 + .content {
   }
 
   @include breakpoint($double_col){
-    -moz-column-count: 2;
-    -moz-column-gap: 2rem;
     column-count: 2;
     column-gap: 2rem;
     ul, ol {
