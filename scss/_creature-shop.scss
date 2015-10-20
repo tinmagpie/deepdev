@@ -1,12 +1,14 @@
 /* Props */
 $creatures2x-use-percentages: true;
-$creatures2x-spacing: 4px;
+//$creatures2x-spacing: 4px;
+$creatures2x-layout: smart;
 @import "creatures2x/*.png";
 $creatures2x-sprite-width: sprite_width($creatures2x-sprites);
 $creatures2x-sprite-height: sprite_height($creatures2x-sprites);
 
 $creatures-use-percentages: true;
-$creatures-spacing: 2px;
+//$creatures-spacing: 2px;
+$creatures-layout: smart;
 @import "creatures/*.png";
 $creatures-sprite-width: sprite_width($creatures-sprites);
 
@@ -38,7 +40,7 @@ $creatures-sprite-width: sprite_width($creatures-sprites);
     height: $iHeight/2;
     @if $biolumi {
       .lumi {
-        left: percentage(($lumiX * 1px)/$iWidth);
+        left: percentage(($lumiX + 4px)/$iWidth);
         top: percentage(($lumiY + 4px)/$iHeight);
         width: percentage(($lumiW * 1px)/$iWidth);
       }
@@ -48,8 +50,8 @@ $creatures-sprite-width: sprite_width($creatures-sprites);
     height: $iHeight/2;
     @if $biolumi {
       .lumi {
-        left: percentage(($lumiX * 1px)/$iWidth);
-        top: percentage(($lumiY * 1px)/$iHeight);
+        left: percentage(($lumiX + 4px)/$iWidth);
+        top: percentage(($lumiY + 4px)/$iHeight);
         width: percentage(($lumiW * 1px)/$iWidth);
       }
     }

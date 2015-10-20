@@ -3,10 +3,12 @@
 @import "typography";
 $heightScreen:  100vh; // 100vh = height of screen = 200 meters of ocean
 
+
 .wrapper {
   overflow: hidden;
 }
 
+.addthis_sharing_toolbox {display: none;}
 a {
   &:link { color: color(link) }
   &:visited { color: color(linkVisited) }
@@ -324,6 +326,9 @@ h1, h2, h3 {
 h1 {
   @extend %t-xxlarge;
   color: color(titleCopy);
+  img {
+    height: 50vh;
+  }
 }
 
 h2 {
@@ -505,6 +510,31 @@ cite {
   100% { transform: translateY(10px); }
 }
 
+/* Footer */
+footer {
+  background: linear-gradient(to bottom, $greyLight 0%, darken($greyLight, 10%) 100%);
+  color: $greyMedium;
+  @include padding-trailer(15);
+  text-align: center;
+}
+
+small {
+  @extend %fontMerriweatherItalic;
+  @extend %t-small;
+}
+
+.version {
+  display: block;
+  @extend %t-medium;
+}
+
+.wordmark {
+  display: block;
+  margin: 0 auto;
+  height: rhythm(9);
+  padding: rhythm(1)
+}
+
 /* Zones */
 #epipelagic {
   background: linear-gradient(to bottom, $surface 0%, #007e84 50%, #0b4960 100%);
@@ -580,6 +610,6 @@ menu {
   }
 }
 
-#creature_orange-roughy1 {
+.creature#creature_orange-roughy1 {
   filter: $blueFilter;
 }
