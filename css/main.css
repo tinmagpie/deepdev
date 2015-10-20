@@ -1293,9 +1293,8 @@ footer {
 }
 
 #d5000 .puzzle {
-  width: 300px;
-  height: 270px;
-  margin: 0 auto;
+  width: 500px;
+  height: 500px;
   position: relative;
 }
 
@@ -1313,27 +1312,50 @@ footer {
   position: absolute;
   top: 40%;
   left: 25%;
-  -webkit-transition: -webkit-transform cubic-bezier(0.215, 0.61, 0.355, 1) 500ms 200ms, opacity cubic-bezier(0.215, 0.61, 0.355, 1) 500ms 200ms;
-          transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 500ms 200ms, opacity cubic-bezier(0.215, 0.61, 0.355, 1) 500ms 200ms;
 }
 .in-view #creature_vomiting-shrimp1 {
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  opacity: 0;
-}
-#creature_vomiting-shrimp1:before {
-  -webkit-transition: steps(1) 300ms 1;
-          transition: steps(1) 300ms 1;
+  -webkit-animation: escapingGloriously cubic-bezier(0.215, 0.61, 0.355, 1) 500ms 200ms forwards;
+          animation: escapingGloriously cubic-bezier(0.215, 0.61, 0.355, 1) 500ms 200ms forwards;
 }
 .in-view #creature_vomiting-shrimp1:before {
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -webkit-animation: tailTuck steps(1) 300ms 1 forwards;
+          animation: tailTuck steps(1) 300ms 1 forwards;
 }
 
+@-webkit-keyframes escapingGloriously {
+  60% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+@keyframes escapingGloriously {
+  60% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes tailTuck {
+  100% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+}
+@keyframes tailTuck {
+  100% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+}
 .luminous-spew {
-  pointer-events: none;
   width: 300px;
   height: 270px;
   position: absolute;
@@ -1342,6 +1364,9 @@ footer {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  pointer-effects: none;
+  -webkit-animation: incriminatingPuke cubic-bezier(0.645, 0.045, 0.355, 1) 2.1s 1.3s infinite alternate;
+          animation: incriminatingPuke cubic-bezier(0.645, 0.045, 0.355, 1) 2.1s 1.3s infinite alternate;
 }
 .luminous-spew:before {
   background-position: 0 0;
@@ -1350,16 +1375,10 @@ footer {
 }
 .luminous-spew:before {
   background-size: 100% 100%;
-  pointer-events: none;
-  -webkit-transition: steps(3, end) 500ms;
-          transition: steps(3, end) 500ms;
 }
 .in-view .luminous-spew:before {
-  -webkit-transform: translateY(-75%);
-      -ms-transform: translateY(-75%);
-          transform: translateY(-75%);
-  -webkit-animation: incriminatingPuke cubic-bezier(0.645, 0.045, 0.355, 1) 2.1s 1.3s infinite alternate;
-          animation: incriminatingPuke cubic-bezier(0.645, 0.045, 0.355, 1) 2.1s 1.3s infinite alternate;
+  -webkit-transition: -webkit-transform steps(4, end) 500ms;
+          transition: transform steps(4, end) 500ms;
 }
 
 @-webkit-keyframes incriminatingPuke {
@@ -1445,12 +1464,12 @@ footer {
 }
 
 .ooze_near {
-  background: url('../img/ooze_near.svg?1445324238') repeat-x 0 30px;
+  background: url('../img/ooze_near.svg?1445360730') repeat-x 0 30px;
   z-index: 2;
 }
 
 .ooze_far {
-  background: url('../img/ooze_far.svg?1445324245') repeat-x 0 10px;
+  background: url('../img/ooze_far.svg?1445360730') repeat-x 0 10px;
 }
 
 .ooze_far, .ooze_near {

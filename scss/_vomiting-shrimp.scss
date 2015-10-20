@@ -1,7 +1,6 @@
 #d5000 .puzzle {
-    width: 300px;
-    height: 270px;
-    margin: 0 auto;
+    width: 500px;
+    height: 500px;
     position: relative;
 }
 
@@ -10,37 +9,44 @@
 }
 
 #creature_vomiting-shrimp1 {
+    .in-view & {
+    animation: escapingGloriously ease(Out) duration(slow) duration(fast) forwards;
+    }
     position: absolute;
     top: 40%; left: 25%;
-    transition:
-        transform ease(Out) duration(slow) duration(fast),
-        opacity ease(Out) duration(slow) duration(fast);
-    .in-view & {
-        transform: translate(-50%, -50%);
-        opacity: 0;
-    }
     &:before {
-        transition: steps(1) duration(timely) 1;
         .in-view & {
-            transform: translateY(-50%);
+            animation: tailTuck steps(1) duration(timely) 1 forwards;
         }
     }
 }
 
+@keyframes escapingGloriously {
+    60% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+}
+
+@keyframes tailTuck {
+    100% { transform: translateY(-50%); }
+}
+
 .luminous-spew {
-    pointer-events: none;
     @include make-object(spew, $animation: true, $keyframes: 4);
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
+    pointer-effects: none;
+    animation:
+        incriminatingPuke ease(inOut) duration(days) duration(slowest) infinite alternate;
     &:before {
         background-size: 100% 100%;
-        pointer-events: none;
-        transition: steps(3, end) duration(slow);
         .in-view & {
-            transform: translateY(-75%);
-            animation:
-                incriminatingPuke ease(inOut) duration(days) duration(slowest) infinite alternate;
+            transition: transform steps(4, end) duration(slow);
         }
     }
 }
