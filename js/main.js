@@ -319,6 +319,25 @@
     }
   });
 
+  GoalManager.addGoal({
+    name: 'hagfish',
+    evaluate: function (complete) {
+      var creature = document.querySelector('#creature_hagfish1');
+      pollPolitely(function (stop) {
+        var val = window.getComputedStyle(creature).getPropertyValue('bottom');
+        // checking for negative values in a cubic bezier
+        if (parseInt(val) > 100) {
+          stop();
+          complete();
+        }
+      });
+    },
+    success: function () {
+      audio.playCue('discover');
+      document.querySelector('#challenge_hagfish').classList.add('completed');
+    }
+  });
+
   (function () {
     var docEl = document.documentElement;
     var docHeight = docEl.scrollHeight;
