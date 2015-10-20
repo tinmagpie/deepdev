@@ -296,7 +296,7 @@
       var challenge = document.getElementById('d1600');
       challenge.addEventListener('transitionend', missionAccomplished(challenge));
       challenge.classList.add('completed');
-      document.querySelector('.orange-roughy-revelation').classList.remove('orange-roughy-revelation');
+      $('.orange-roughy-revelation').removeClass('orange-roughy-revelation');
       document.querySelector('#challenge_orange-roughy').classList.add('completed');
       audio.playCue('discover');
     }
