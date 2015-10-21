@@ -26,12 +26,12 @@
     }
 }
 
-#creature_viperfish1 {
+.creature_viperfish {
     @include make-creature(viperfish, $lumiX: 139, $lumiY: 2, $lumiW: 612, $lumiH: 397, $keyframes: 1, $animation: false, $biolumi: true);
     margin-right: 7em !important;
 }
 
-#creature_gulper-eel1 {
+.creature_gulper-eel {
     @include make-creature(gulper-eel, $lumiX: 26, $lumiY: 491, $lumiW: 115, $lumiH: 87, $keyframes: 2, $animation: true, $biolumi: true);
     float: right !important;
     &:before {
@@ -41,7 +41,7 @@
     }
 }
 
-#creature_dragonfish1 {
+.creature_dragonfish {
     @include make-creature(dragonfish, $lumiX: 80, $lumiY: 17, $lumiW: 809, $lumiH: 254, $keyframes: 2, $animation: true, $biolumi: true);
     transform: scaleX(-1);
     &:before {
@@ -51,7 +51,7 @@
     }
 }
 
-#creature_anglerfish1 {
+.creature_anglerfish {
     @include make-creature(anglerfish, $keyframes: 2, $animation: true, $biolumi: false);
     transform: scaleX(-1);
     &:before {
@@ -61,7 +61,7 @@
     }
 }
 
-#creature_bristlemouth1 {
+.creature_bristlemouth {
     @include make-creature(bristlemouth, $lumiX: 12, $lumiY: 50, $lumiW: 368, $lumiH: 50, $keyframes: 2, $animation: true, $biolumi: true);
     transform: scaleX(-1);
     margin: 8rem 0 3rem 2rem !important ;

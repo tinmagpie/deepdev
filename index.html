@@ -208,9 +208,11 @@
 							</div>
 
 							<ol>
-								<li><p><strong>Right-click “inspect element”</strong> on the flashlight fish.</p></li>
+								<li><p>On the flashlight fish above, <strong>right-click “inspect element”.</strong></p></li>
 								<li><p>In the developer tools, navigate to the <strong>Animation Panel tab.</strong></p></li>
-								<li><p><strong>Press play</strong> to start the fish’s swimming animation.</p></li>
+								<li><p><strong>Press play</strong>
+								<img srcset="img/icon_play.png, img/icon_play2x.png 2x" height="17" width="17" alt="rewind icon">
+								to start the fish’s swimming animation.</p></li>
 							</ol>
 							<video class="video" controls src="videos/flashlight.mp4"></video>
 						</div>
@@ -233,10 +235,13 @@
 								<div class="creature creature_nautilus" id="creature_nautilus1"></div>
 							</div>
 							<ol>
-								<li><p><strong>Right-click “inspect element”</strong> on the nautilus.</p></li>
+								<li><p>On the nautilus, <strong>right-click “inspect element.”</strong></p></li>
 								<li><p>In the developer tools, click on <strong>the Rules tab.</strong></p></li>
 								<li><p>Find the nautilus’s <code>animation-timing-function.</code></p></li>
-								<li><p>Click the icon next to <code>linear</code> to open the cubic-bezier editor.</p></li>
+								<li><p>Click the
+								<picture>
+									<img srcset="img/icon_bezier.png, img/icon_bezier2x.png 2x" height="17" width="17" alt="cubic-bezier editor icon">
+								</picture> next to <code>linear</code> to open the cubic-bezier editor.</p></li>
 								<li><p><strong>Optional:</strong> Play with the handles.</p></li>
 								<li><p>Choose a curve with some bounce, like <strong>Backwards.</strong></p></li>
 							</ol>
@@ -261,7 +266,7 @@
 							<p>These <span class="featured">Humboldt squid</span> are on the hunt! When Humboldt squid feed, they rapidly flash light and dark.</p>
 							<p>But how are they changing colors so quickly? <span class="featured">Scrub the Animation panel’s timeline</span> to see what’s really going on.</p>
 							<ol>
-								<li><p><strong>Right-click “inspect element”</strong> on a squid.</p></li>
+								<li><p>On one of the squid, <strong>right-click “inspect element.”</strong></p></li>
 								<li><p>In the developer tools, click on <strong>the Animations tab.</strong></p></li>
 								<li><p>Click and drag <strong>anywhere inside the timeline</strong> to scrub through the animation.</p></li>
 							</ol>
@@ -314,9 +319,9 @@
 							<h3>Editing CSS Filters</h3>
 							<p>Why is this <span class="featured">orange roughy</span> black? The fish is wearing a CSS filter that screens out all of its red hues, just like ocean water would. <span class="featured">Edit the fish’s filters</span> with your developer tools to see what it really looks like.</p>
 							<ol>
-								<li><p><strong>Right-click “inspect element”</strong> on the fish.</p></li>
+								<li><p>On the fish, <strong>right-click “inspect element.”</strong></p></li>
 								<li><p>Navigate to the <strong>Rules tab.</strong></p></li>
-								<li><p>Find the Orange Roughy’s <code>filter</code> property.</p></li>
+								<li><p>Find the orange roughy’s <code>filter</code> property.</p></li>
 								<li><p>Click on <strong>the icon next to the filter</strong> to explore other CSS filters.</p></li>
 								<li><p><strong>Click the x</strong> next to the custom filter to remove it.</p></li>
 								<li><p><strong>Optional:</strong> Try adding a greyscale filter. How do the two differ?</p></li>
@@ -337,12 +342,12 @@
 				</div>
 				<div class="segment orange-roughy-revelation" id="d2200">
 					<div class="standalone">
-						<p>Orange Roughy stocks around the world collapsed as catch rates exceeded the rate at which the fish could repopulate.</p>
+						<p>Orange roughy stocks around the world collapsed as catch rates exceeded the rate at which the fish could repopulate.</p>
 					</div>
 				</div>
 				<div class="segment orange-roughy-revelation" id="d2400">
 					<div class="standalone">
-						<p>To this day the future of the Orange Roughy remains uncertain.</p>
+						<p>To this day the future of the orange roughy remains uncertain.</p>
 					</div>
 				</div>
 				<div class="segment focus top" id="d2600">
@@ -352,7 +357,7 @@
 							<p>A little dark down here, isn’t it? Many creatures of the deep create their own light, called <span class="featured">bioluminesence,</span> but it often requires special optics to pick up on film.</p>
 							<p>Use the <span class="featured">eyedropper tool</span> to “calibrate” your browser to view this secret disco scene.</p>
 							<ol>
-								<li><p><strong>Right-click “inspect element”</strong> on the dragonfish’s photophore.</p></li>
+								<li><p>On the dragonfish’s photophore above, <strong>right-click “inspect element.”</strong></p></li>
 								<li><p>In the <strong>Rules panel,</strong> click the icon next to the <code>fill</code> property's color.</p></li>
 								<li><p>In the color picker, click the <strong>eyedropper icon.</strong></p></li>
 								<li><p>Click the <strong>flashlight fish’s bioluminescent patch</strong> to sample its color.</p></li>
@@ -435,13 +440,10 @@
 							<p>Oh no! A <span class="featured">fangtooth</span> is hassling this jellyfish! But this is no defenseless jellyfish. The bioluminescent <span class="featured">alarm jellyfish</span> can change the color and pattern of its glow to bring even bigger predators to its rescue.</p>
 							<p>To save the jelly, <span class="featured">change the colors in its <code>@keyframes</code></span> like so:</p>
 							<ol>
-								<li><p>Right-click <strong>inspect the jellyfish.</strong></p></li>
+								<li><p>On the jellyfish, <strong>right-click “inspect element”.</strong></p></li>
 								<li><p>In the developer tools, <strong>open the Rules tab</strong>.</p></li>
 								<li><p>Find the <strong>alarmed <code>keyframes</code></strong> by scrolling to the bottom of the Rules panel.</p></li>
-								<li><p>Under <code>100%</code>, <strong>uncheck the <code>fill</code> property.</strong></p></li>
-								<li><p><strong>Click inside <code>100%</code></strong> to enter a new property.</strong></p></li>
-								<li><p>Enter <code>color</code>.</p></li>
-								<li><p>Give it a value of <span class="biolumiColor">#56fddb</span>.</p></li>
+								<li><p>Under <code>100%</code>, <strong>replace</strong> <code>fill</code> with <code>color</code>, and <span class="red">#c6244b</span> with <span class="biolumiColor">#56fddb</span>.</p></li>
 							</ol>
 							<div class="puzzle" data-creature="alarm-jellyfish">
 								<div class="creature_alarm-jellyfish creature" id="creature_alarm-jellyfish1">
@@ -473,10 +475,16 @@
 								<div class="luminous-spew object"></div>
 							</div>
 							<ol>
-								<li><p><strong>Right-click “inspect element”</strong> on the glowing fluid.</p></li>
+								<li><p>On the glowing fluid below, <strong>right-click “inspect element”.</strong></p></li>
 								<li><p>Navigate to the <strong>Animations tab.</strong></p></li>
-								<li><p>Click the <strong>rewind icon</strong> to go back to the beginning of the timeline.</p></li>
-								<li><p>Click the <strong>play icon</strong> to replay the transition.</p></li>
+								<li><p>Click <strong>rewind</strong>
+									<picture>
+										<img srcset="img/icon_rewind.png, img/icon_rewind2x.png 2x" height="17" width="17" alt="rewind icon">
+									</picture>
+									to go back to the beginning of the timeline.</p></li>
+								<li><p>Click <strong>play</strong>
+								<img srcset="img/icon_play.png, img/icon_play2x.png 2x" height="17" width="17" alt="rewind icon">
+								to replay the transition.</p></li>
 							</ol>
 							<video class="video" controls src="videos/shrimp.mp4"></video>
 						</div>
@@ -510,7 +518,7 @@
 							<p>Where’s the <span class="featured">hagfish</span> hiding? It’s moving around, hiding in the ooze. Use the <span class="featured">Animation Panel</span> to detect it’s location and bring it to light.</p>
 							<video class="video" controls src="videos/hagfish.mp4"></video>
 							<ol>
-								<li><p><strong>Right-click “inspect element”</strong> on the ocean floor.</p></li>
+								<li><p>On the ocean floor, <strong>right-click “inspect element.”</strong></p></li>
 								<li><p>In the developer tools, <strong>open the Animation tab</strong> to see what elements are animating.</p></li>
 								<li><p><strong>Hover over the name</strong> of the element that is <em>wriggling around</em> to see where it is on the page.</p></li>
 								<li><p>Click to <strong>select the animated element.</strong></p></li>

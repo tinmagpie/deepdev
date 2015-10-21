@@ -27,7 +27,7 @@
 }
 
 .progress, .challenge .rediscover, small {
-  font-size: 0.66667rem;
+  font-size: 0.8rem;
   line-height: 1rem;
 }
 
@@ -47,7 +47,7 @@ h2 {
 }
 
 html {
-  font-size: 112.5%;
+  font-size: 93.75%;
   line-height: 0.33333em;
 }
 
@@ -272,7 +272,7 @@ h1 img {
     -webkit-transform: translateX(50%);
         -ms-transform: translateX(50%);
             transform: translateX(50%);
-    height: 22.22222em;
+    height: 26.66667em;
     margin: 0;
   }
 
@@ -285,9 +285,9 @@ h1 img {
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
-    background: url('../img/svg/sub.svg?1445392874') no-repeat 0 0/auto 22.22222em;
-    width: 35.55556em;
-    height: 22.22222em;
+    background: url('../img/svg/sub.svg?1445458507') no-repeat 0 0/auto 26.66667em;
+    width: 42.66667em;
+    height: 26.66667em;
   }
 
   #surface .segment {
@@ -634,7 +634,7 @@ footer {
   background-repeat: no-repeat;
 }
 
-.creatures-sprite, .creature_flashlight-fish:before, .creature_nautilus:before, .creature_humboldt-squid:before, .creature_humboldt-squid .darkening:before, .creature_orange-roughy:before, #creature_viperfish1:before, #creature_gulper-eel1:before, #creature_dragonfish1:before, #creature_anglerfish1:before, #creature_bristlemouth1:before, .creature_alarm-jellyfish:before, .creature_alarm-jellyfish:after, .creature_fangtooth:before, .creature_rattail:before, .creature_vomiting-shrimp:before, .creature_hagfish:before {
+.creatures-sprite, .creature_flashlight-fish:before, .creature_nautilus:before, .creature_humboldt-squid:before, .creature_humboldt-squid .darkening:before, .creature_orange-roughy:before, .creature_viperfish:before, .creature_gulper-eel:before, .creature_dragonfish:before, .creature_anglerfish:before, .creature_bristlemouth:before, .creature_alarm-jellyfish:before, .creature_alarm-jellyfish:after, .creature_fangtooth:before, .creature_rattail:before, .creature_vomiting-shrimp:before, .creature_hagfish:before {
   background-image: url('../img/creatures-s0e874f8f83.png');
   background-repeat: no-repeat;
 }
@@ -1001,7 +1001,7 @@ footer {
           animation: nautyRaspberry steps(1) 2.1s infinite;
 }
 
-#creature_nautilus1 {
+.in-view #creature_nautilus1 {
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
 }
@@ -1239,82 +1239,82 @@ footer {
   }
 }
 
-#creature_viperfish1 {
+.creature_viperfish {
   width: 432px;
   height: 214px;
   margin-right: 7em !important;
 }
-#creature_viperfish1:before {
+.creature_viperfish:before {
   background-position: 0 7.12737%;
   background-size: 129.62963% auto;
   height: 100%;
 }
-#creature_viperfish1 .lumi {
+.creature_viperfish .lumi {
   left: 16.55093%;
   top: 1.40187%;
   width: 70.83333%;
 }
 
-#creature_gulper-eel1 {
+.creature_gulper-eel {
   width: 282px;
   height: 498px;
   float: right !important;
 }
-#creature_gulper-eel1:before {
+.creature_gulper-eel:before {
   background-position: 0 41.57113%;
   background-size: 198.58156% auto;
   height: 200%;
 }
-#creature_gulper-eel1 .lumi {
+.creature_gulper-eel .lumi {
   left: 5.31915%;
   top: 49.6988%;
   width: 20.39007%;
 }
-.in-view #creature_gulper-eel1:before {
+.in-view .creature_gulper-eel:before {
   -webkit-animation: wriggle steps(1) 500ms infinite;
           animation: wriggle steps(1) 500ms infinite;
 }
 
-#creature_dragonfish1 {
+.creature_dragonfish {
   width: 482px;
   height: 168px;
   -webkit-transform: scaleX(-1);
       -ms-transform: scaleX(-1);
           transform: scaleX(-1);
 }
-#creature_dragonfish1:before {
+.creature_dragonfish:before {
   background-position: 0 10.05825%;
   background-size: 116.18257% auto;
   height: 200%;
 }
-#creature_dragonfish1 .lumi {
+.creature_dragonfish .lumi {
   left: 8.71369%;
   top: 6.25%;
   width: 83.92116%;
 }
-.in-view #creature_dragonfish1:before {
+.in-view .creature_dragonfish:before {
   -webkit-animation: wriggle steps(1) 500ms infinite;
           animation: wriggle steps(1) 500ms infinite;
 }
 
-#creature_anglerfish1 {
+.creature_anglerfish {
   width: 212px;
   height: 196px;
   -webkit-transform: scaleX(-1);
       -ms-transform: scaleX(-1);
           transform: scaleX(-1);
 }
-#creature_anglerfish1:before {
+.creature_anglerfish:before {
   background-position: 0 14.51297%;
   background-size: 264.15094% auto;
   height: 200%;
 }
-.in-view #creature_anglerfish1:before {
+.in-view .creature_anglerfish:before {
   -webkit-animation: wriggle steps(1) 500ms infinite;
           animation: wriggle steps(1) 500ms infinite;
 }
 
-#creature_bristlemouth1 {
+.creature_bristlemouth {
   width: 282px;
   height: 62px;
   -webkit-transform: scaleX(-1);
@@ -1322,17 +1322,17 @@ footer {
           transform: scaleX(-1);
   margin: 8rem 0 3rem 2rem !important;
 }
-#creature_bristlemouth1:before {
+.creature_bristlemouth:before {
   background-position: 0 0;
   background-size: 198.58156% auto;
   height: 200%;
 }
-#creature_bristlemouth1 .lumi {
+.creature_bristlemouth .lumi {
   left: 2.83688%;
   top: 43.54839%;
   width: 65.24823%;
 }
-.in-view #creature_bristlemouth1:before {
+.in-view .creature_bristlemouth:before {
   -webkit-animation: wriggle steps(1) 500ms infinite;
           animation: wriggle steps(1) 500ms infinite;
 }
@@ -1510,8 +1510,8 @@ footer {
   }
 }
 #d5000 .puzzle {
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 270px;
   position: relative;
 }
 
@@ -1581,7 +1581,7 @@ footer {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  pointer-effects: none;
+  pointer-events: none;
   -webkit-animation: incriminatingPuke cubic-bezier(0.645, 0.045, 0.355, 1) 2.1s 1.3s infinite alternate;
           animation: incriminatingPuke cubic-bezier(0.645, 0.045, 0.355, 1) 2.1s 1.3s infinite alternate;
 }
@@ -1592,6 +1592,7 @@ footer {
 }
 .luminous-spew:before {
   background-size: 100% 100%;
+  pointer-events: none;
 }
 .in-view .luminous-spew:before {
   -webkit-transition: -webkit-transform steps(4, end) 500ms;
@@ -1726,12 +1727,12 @@ menu {
           transition-duration: 3.4s;
 }
 
-@media (min-width: 27.05556em) {
+@media (min-width: 32.46667em) {
   .challenge li, .content li {
     padding-top: 0.66667rem;
   }
 }
-@media (min-width: 35.44444em) {
+@media (min-width: 42.53333em) {
   .challenge li, .content li {
     padding-top: 1rem;
   }
