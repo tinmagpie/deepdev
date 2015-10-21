@@ -41,13 +41,16 @@ $base-font-color: color(copy);
 
 $colors: (
   copy: $greyLight,
-  altCopy: $black,
+  altCopy: $abyss,
   titleCopy: $abyss,
   altTitleCopy: $greyDark,
+  sky: $skyLight,
   link: $biolumination,
   linkVisited: $skyMedium,
   linkHover: $skyLight,
-  sky: $skyLight,
+  linkAlt: $twilight,
+  linkAltVisited: $midnight,
+  linkAltHover: $epipelagic,
 );
 
 // Now, getting colors...
@@ -100,4 +103,48 @@ $durations: (
 
   @warn "Unknown `#{$key}` in $durations.";
   @return null;
+}
+
+@mixin buttonator($button-color: color(link), $alt-color: color(linkHover), $border-radius: .5em) {
+  background: $button-color;
+  border-radius: $border-radius;
+  color: adjust-lightness($button-color, 50%) !important;
+  text-decoration: none;
+  padding: $border-radius $border-radius*3;
+  transition:
+    transform duration(fast) ease(Out),
+    background duration(fast) ease(Out),
+    color duration(fast) ease(Out);
+  &:hover, &:active, &:focus {
+    // transform: translate(2px, 2px);
+    background: $alt-color;
+    color: adjust-lightness($alt-color, 50%) !important;
+  }
+}
+
+// Retina media queries
+@mixin retina {
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+%clearfix:before,
+%clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+%clearfix:after {
+    clear: both;
+}
+
+@function calc-em($px) {
+  @return ($px/$ms-base-value) * 1em;
 }

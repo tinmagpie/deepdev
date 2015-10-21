@@ -16,18 +16,6 @@ $fontWeights: (
   bold: 700
 );
 
-@font-face {
-    font-family: 'leagueSpartanRegular';
-    src: url('../fonts/leaguespartan-bold-webfont.eot');
-    src: url('../fonts/leaguespartan-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/leaguespartan-bold-webfont.woff2') format('woff2'),
-         url('../fonts/leaguespartan-bold-webfont.woff') format('woff'),
-         url('../fonts/leaguespartan-bold-webfont.ttf') format('truetype'),
-         url('../fonts/leaguespartan-bold-webfont.svg#league_spartanregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
 // Bah, no fonts loaded. Just show the text.
 .default-fonts %fontSpartan,
 .default-fonts %fontMerriweather,
@@ -109,5 +97,3 @@ $xxlarge-font-leading: 12;
 %t-xxlarge {
  @include typeSize(xxlarge);
 }
-
-@include establish-baseline;

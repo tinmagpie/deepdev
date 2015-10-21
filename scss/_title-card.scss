@@ -1,0 +1,145 @@
+/* Heading stuff. */
+
+#surface .segment {
+  padding-right: rhythm(6);
+}
+
+h1 img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: rhythm(48);
+  max-height: 20vh;
+}
+
+.sub {
+  max-width: calc(100% + rhythm(9));
+  margin: rhythm(6) (rhythm(9) * -1);
+}
+
+#surface {
+  background: color(sky);
+  color: color(altCopy);
+  position: relative;
+  z-index: 20;
+  h1, .subtitle {
+    @extend %t-medium;
+    @extend %fontMerriweather;
+    @include padding-trailer(3);
+  }
+}
+
+#title {
+  box-sizing: border-box;
+  padding-bottom: 190px;
+  min-height: 100vh;
+  a {
+    &:link { color: color(linkAlt) }
+    &:visited { color: color(linkAltVisited) }
+    &:hover, &:active, &:focus { color: color(linkAltHover) }
+  }
+
+}
+
+.title-card_wrapper {
+  @extend %t-medium;
+}
+
+.waves {
+  background: $surface;
+  height: 120px;
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%;
+  padding-bottom: 60px;
+}
+
+.wave {
+  position: absolute;
+  left: 0; bottom: 60px;
+  width: 100%;
+  height: 130px;
+  .in-zone & {
+    animation-name: oceanSurge;
+    animation-timing-function: ease(inOut);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  &:before {
+    content: " ";
+    transform: scale(1.1) translateX(-20px);
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%;
+    padding: 0 40px;
+    height: 120px;
+    .in-zone & {
+      animation-name: oceanMotion;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+  }
+}
+
+.wave-close {
+  animation-duration: duration(weeks);
+  &:before {
+    background: url("../img/wave-close.svg") repeat-x 100% 100%;
+    animation-duration: duration(days);
+  }
+}
+
+.wave-near {
+  animation-duration: duration(months);
+  &:before {
+    background: url("../img/wave-near.svg") repeat-x 100% 100%;
+    animation-duration: duration(weeks);
+    transform: translateY(-10px);
+  }
+}
+
+.wave-mid {
+  background: $midnight;
+  height: 130px;
+  &:before {
+    background: url("../img/wave-mid.svg") repeat-x 0 10px;
+    background-size: 305px 120px;
+    animation-duration: duration(months);
+  }
+}
+
+@keyframes oceanMotion {
+  100% { transform: scale(1.1) translateX(30px); }
+}
+
+@keyframes oceanSurge {
+  100% { transform: translateY(10px); }
+}
+
+@include breakpoint(68em) {
+  .title-card_wrapper {
+    max-width: 30em;
+    margin: 0 auto rhythm(6);
+  }
+  .sub {
+    position: absolute;
+    right: 0; top: 20vh;
+    transform: translateX(50%);
+    height: calc-em(400); // width: 640
+    margin: 0;
+  }
+  #surface:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0; top: 20vh;
+    transform: translateX(-50%);
+    background: image-url("svg/sub.svg") no-repeat 0 0 / auto calc-em(400);
+    width: calc-em(640); height: calc-em(400);
+  }
+  #surface .segment {
+    padding-left: 320px;
+    padding-right: 320px;
+  }
+}

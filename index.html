@@ -10,6 +10,7 @@
  -->
 		<link href='https://fonts.googleapis.com/css?family=Merriweather:400,700italic' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/browsers.css">
 	</head>
 	<body>
 		<script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-561ff7d5e4c14cf7" async="async"></script>
@@ -66,13 +67,22 @@
 			</nav>
 			<div id="surface" class="zone">
 			 	<div class="segment" id="title">
-					<h1><img src="img/mozilla-dev-tools-challenger_logo.svg" alt="DevTools Challenger"></h1>
-					<!-- <div id="for-browsers">
-						<p>This expedition is best carried out with the world’s first fully submersible browser, Firefox Developer Edition.</p>
-						<p><a href="https://www.mozilla.org/en-US/firefox/developer/">Download yours today</a></p>
-					</div> -->
-
-					<h2 class="subtitle">Explore the deepest secrets of the ocean with some of Firefox Developer Edition 44’s newest devtools designed to take the pain out of CSS animations.</h2>
+					<div class="title-card_wrapper">
+						<h1><img src="img/svg/logo_devtools-challenger.svg" alt="DevTools Challenger"></h1>
+						<img src="img/svg/sub.svg" alt="Firefox Developer Edition 44 features Play/Pause Animations and Transitions, Rewind, a CSS Filter Editor, Timeline Scrubbing, a Cubic Bezier Editor, Animation Detection, Eyedropper, and Editable Keyframes." class="sub">
+						<h2 class="subtitle">Explore the deepest secrets of the ocean with some of <a href="https://www.mozilla.org/en-US/firefox/developer/">Firefox Developer Edition 44’s</a> newest tools designed to take the pain out of tweaking animations and transitions in the browser.</h2>
+						<div id="for-browsers">
+							<p><a href="https://www.mozilla.org/en-US/firefox/developer/">Firefox Developer Edition</a> comes fully equipped with all the animation tools your crew will need on your expedition!</p>
+							<div class="call-to-dive">
+								<a href="https://www.mozilla.org/en-US/firefox/developer/">
+									<picture>
+										<img srcset="img/logo_dev-ed.png, img/logo_dev-ed2x.png 2x" height="84" width="220" alt="Firefox Developer Edition">
+									</picture>
+								</a>
+								<a class="button" href="https://www.mozilla.org/en-US/firefox/developer/">Download and get diving!</a>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="waves">
 					<div class="wave wave-mid"></div>
@@ -198,8 +208,8 @@
 							</div>
 
 							<ol>
-								<li><p><strong>Right click “inspect element”</strong> on the flashlight fish.</p></li>
-								<li><p>In devtools, navigate to the <strong>Animation Panel tab.</strong></p></li>
+								<li><p><strong>Right-click “inspect element”</strong> on the flashlight fish.</p></li>
+								<li><p>In the developer tools, navigate to the <strong>Animation Panel tab.</strong></p></li>
 								<li><p><strong>Press play</strong> to start the fish’s swimming animation.</p></li>
 							</ol>
 							<video class="video" controls src="videos/flashlight.mp4"></video>
@@ -223,8 +233,8 @@
 								<div class="creature creature_nautilus" id="creature_nautilus1"></div>
 							</div>
 							<ol>
-								<li><p><strong>Right click “inspect element”</strong> on the nautilus.</p></li>
-								<li><p>In devtools, click on <strong>the Rules tab.</strong></p></li>
+								<li><p><strong>Right-click “inspect element”</strong> on the nautilus.</p></li>
+								<li><p>In the developer tools, click on <strong>the Rules tab.</strong></p></li>
 								<li><p>Find the nautilus’s <code>animation-timing-function.</code></p></li>
 								<li><p>Click the icon next to <code>linear</code> to open the cubic-bezier editor.</p></li>
 								<li><p><strong>Optional:</strong> Play with the handles.</p></li>
@@ -251,8 +261,8 @@
 							<p>These <span class="featured">Humboldt Squid</span> are on the hunt! When Humboldt squid feed, they rapidly flash light and dark.</p>
 							<p>But how are they changing colors so quickly? Scrub the Animation panel’s timeline to see what’s really going on.</p>
 							<ol>
-								<li><p><strong>Right click “inspect element”</strong> on a squid.</p></li>
-								<li><p>In the devtools, click on <strong>the Animations tab.</strong></p></li>
+								<li><p><strong>Right-click “inspect element”</strong> on a squid.</p></li>
+								<li><p>In the developer tools, click on <strong>the Animations tab.</strong></p></li>
 								<li><p>Click and drag <strong>anywhere inside the timeline</strong> to scrub through the animation.</p></li>
 							</ol>
 							<video class="video" controls src="videos/nautilus.mp4"></video>
@@ -304,7 +314,7 @@
 							<h3>Editing CSS Filters</h3>
 							<p>Why is this <span class="featured">Orange Roughy</span> black? The fish is wearing a CSS filter that screens out all of its red hues, just like ocean water would. Edit the fish’s filters with your dev tools to see what it really looks like.</p>
 							<ol>
-								<li><p><strong>Right click “inspect element”</strong> on the fish.</p></li>
+								<li><p><strong>right-click “inspect element”</strong> on the fish.</p></li>
 								<li><p>Navigate to the <strong>Rules tab.</strong></p></li>
 								<li><p>Find the Orange Roughy’s <code>filter</code> property.</p></li>
 								<li><p>Click on <strong>the icon next to the filter</strong> to explore other CSS filters.</p></li>
@@ -425,7 +435,7 @@
 							<p>Oh no! A <span class="featured">fangtooth</span> is hassling this jellyfish! But this is no defenseless jellyfish. The bioluminescent <span class="featured">“Alarm Jellyfish”</span> can change the color and pattern of its glow to bring even bigger predators to its rescue.</p>
 							<p>To save the jelly, change the colors in its <code>@keyframes</code> like so.</p>
 							<ol>
-								<li><p>Right click <strong>inspect the jellyfish.</strong></p></li>
+								<li><p>right-click <strong>inspect the jellyfish.</strong></p></li>
 								<li><p>In the dev tools, <strong>open the Rules tab</strong>.</p></li>
 								<li><p>Find the <strong>alarmed <code>keyframes</code></strong> by scrolling to the bottom of the Rules panel.</p></li>
 								<li><p>Under <code>100%</code>, <strong>uncheck the <code>fill</code> property.</strong></p></li>
@@ -463,7 +473,7 @@
 								<div class="luminous-spew object"></div>
 							</div>
 							<ol>
-								<li><p><strong>Right click “inspect element”</strong> on the glowing fluid.</p></li>
+								<li><p><strong>right-click “inspect element”</strong> on the glowing fluid.</p></li>
 								<li><p>Navigate to the <strong>Animations tab.</strong></p></li>
 								<li><p>Click the <strong>rewind icon</strong> to go back to the beginning of the timeline.</p></li>
 								<li><p>Click the <strong>play icon</strong> to replay the transition.</p></li>
@@ -500,7 +510,7 @@
 							<p>Where's the hagfish hiding? There’s a hagfish moving around, hiding in the ooze. Use the Animation Panel to detect it’s location and bring it to light.</p>
 							<video class="video" controls src="videos/hagfish.mp4"></video>
 							<ol>
-								<li><p>Right click <strong>inspect the ooze</strong> area.</p></li>
+								<li><p>right-click <strong>inspect the ooze</strong> area.</p></li>
 								<li><p>In the dev tools, <strong>open the Animation tab</strong> to see what elements are animating.</p></li>
 								<li><p><strong>Hover over the name</strong> of the element that is <em>wriggling around</em> to see where it is on the page.</p></li>
 								<li><p>Click to <strong>select the animated element.</strong></p></li>
@@ -515,7 +525,7 @@
 							<p>Red alert… A massive anomoly has been detected at 2200 meters below surface… New coordinates: <span id="bloop-depth">X</span> pixels deep. Execute reconnaissance mission.</p>
 							<p>Use your browser’s rulers to go to exactly <span id="bloop-depth">X</span> pixels deep to observe whatever has caused this disturbance.</p>
 							<ol>
-								<li><p>Open devtools</p></li>
+								<li><p>Open developer tools</p></li>
 								<li><p>Go to settings.</p></li>
 								<li><p>Enable ruler button.</p></li>
 								<li><p>Click ruler button.</p></li>

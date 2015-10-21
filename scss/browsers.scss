@@ -1,2 +1,46 @@
 @import "breakpoint";
 @import "config";
+@import "typography";
+
+#for-browsers {
+    padding: rhythm(3) 0;
+    margin: 0 auto rhythm(3);
+    text-align: center;
+    @extend %fontMerriweatherItalic;
+    p {
+        //@extend %t-small;
+        text-align: left;
+    }
+    picture {
+        display: block;
+        margin: rhythm(3) 0;
+    }
+    .call-to-dive {
+        @extend %clearfix;
+        text-align: center;
+        a { display: block;}
+        .button {
+            @include buttonator($button-color: $midnight, $alt-color: $twilight, $border-radius: rhythm(1));
+            @extend %fontMerriweather;
+            display: inline-block;
+            margin: 0 0 rhythm(3) 0;
+        }
+    }
+}
+
+@include breakpoint(68em) {
+    #for-browsers {
+        .call-to-dive {
+            min-width: calc(15em + 232px);
+            margin: rhythm(3) auto rhythm(3) rhythm(6) * -1;
+        }
+        a { display: inline-block !important;}
+        picture {
+            margin: 0 rhythm(1);
+        }
+        .button {
+            margin: 0 rhythm(1);
+            transform: translateY(-(rhythm(5)));
+        }
+    }
+}
