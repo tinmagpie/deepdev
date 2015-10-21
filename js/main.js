@@ -338,6 +338,54 @@
     }
   });
 
+
+  GoalManager.addGoal({
+    name: 'squid',
+    evaluate: function (complete) {
+      var creature1 = document.querySelector('#creature_humboldt-squid1');
+      var creature2 = document.querySelector('#creature_humboldt-squid2');
+      var count1 = 0;
+      var count2 = 0;
+      var ocount1 = 0;
+      var ocount2 = 0;
+
+      function cleanup() {
+        creature1.removeEventListener('animationiteration', increment1);
+        creature2.removeEventListener('animationiteration', increment2);
+      }
+
+      pollPolitely(function (stop) {
+        if (ocount1 === count1 || ocount2 === count2) {
+          stop();
+          cleanup();
+          complete();
+        }
+        ocount1 = count1;
+        ocount2 = count2;
+      });
+
+      function increment1 (e) {
+        if (e.animationName === 'excited') {
+          count1++;
+        }
+      }
+
+      function increment2 (e) {
+        if (e.animationName === 'excited') {
+          count2++;
+        }
+      }
+
+      creature1.addEventListener('animationiteration', increment1);
+      creature2.addEventListener('animationiteration', increment2);
+    },
+    success: function () {
+      audio.playCue('discover');
+      document.querySelector('#challenge_humboldt-squid').classList.add('completed');
+    }
+  });
+
+
   (function () {
     var docEl = document.documentElement;
     var docHeight = docEl.scrollHeight;
