@@ -1,5 +1,5 @@
 .creature_flashlight-fish {
-    @include make-creature(flashlight-fish, 302, 116, 47, 37, $animation: false, $keyframes: 1, $biolumi: true);
+    @include make-creature(flashlight-fish, $lumiX: 302, $lumiY: 116, $lumiW: 47, $lumiH: 37, $animation: false, $keyframes: 1, $biolumi: true);
 }
 
 #creature_flashlight-fish1 {
