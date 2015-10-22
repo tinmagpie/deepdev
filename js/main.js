@@ -319,7 +319,6 @@
       pollPolitely(function (stop) {
         var val = window.getComputedStyle(creature).getPropertyValue('fill');
         // checking for negative values in a cubic bezier
-        console.log(val);
         if (val !== 'rgb(0, 0, 0)') {
           stop();
           complete();
