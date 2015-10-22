@@ -43,6 +43,11 @@ h1, .subtitle {
   @include padding-trailer(3);
 }
 
+.subtitle em {
+  @extend %t-large;
+  color: $twilight;
+}
+
 #title {
   box-sizing: border-box;
   padding-bottom: 190px;

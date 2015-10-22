@@ -36,7 +36,7 @@ h1, .subtitle, .title-card_wrapper, .segment, .followup, .standalone p, cite, .v
   line-height: 2rem;
 }
 
-h3, .callout, blockquote, #d1200 em {
+.subtitle em, h3, .callout, blockquote, #d1200 em {
   font-size: 2rem;
   line-height: 2.66667rem;
 }
@@ -148,6 +148,10 @@ h1 img {
 
 h1, .subtitle {
   padding-bottom: 1rem;
+}
+
+.subtitle em {
+  color: #0b4a61;
 }
 
 #title {
