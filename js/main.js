@@ -421,6 +421,7 @@
   (function () {
     var docEl = document.documentElement;
     var docHeight = docEl.scrollHeight;
+    var winHeight = window.innerHeight;
     var currentPosition = docEl.scrollTop;
     var pos;
 
@@ -431,11 +432,13 @@
     window.addEventListener('load', function (e) {
       currentPosition = docEl.scrollTop;
       docHeight = docEl.scrollHeight;
+      winHeight = window.innerHeight;
 
       window.addEventListener('resize', function (e) {
-        pos = currentPosition / docHeight;
+        pos = currentPosition / (docHeight + winHeight);
+        winHeight = window.innerHeight;
         docHeight = docEl.scrollHeight;
-        currentPosition = Math.round(pos * docHeight);
+        currentPosition = Math.round(pos * (docHeight + winHeight));
         docEl.scrollTop = currentPosition;
       });
     });
