@@ -17,6 +17,9 @@
 
 $heightScreen:  100vh; // 100vh = height of screen = 200 meters of ocean
 
+body, h1, h2, h3, p, ul {
+  margin: 0; padding: 0;
+}
 
 .wrapper {
   overflow: hidden;
@@ -292,10 +295,6 @@ h3 + .content {
   .solved & {
     @extend %content-revealed;
   }
-}
-
-body, h1, h2, h3, p, ul {
-  margin: 0; padding: 0;
 }
 
 h1, h2, h3 {

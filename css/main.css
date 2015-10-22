@@ -15,7 +15,7 @@
   font-weight: 400;
 }
 
-.Merriweather400 #surface h1, #surface .Merriweather400 h1, .Merriweather400 #surface .subtitle, #surface .Merriweather400 .subtitle, .Merriweather400 .challenge li p, .challenge li .Merriweather400 p, .Merriweather400 p, .Merriweather400 .followup, .Merriweather400 menu {
+.Merriweather400 h1, .Merriweather400 .subtitle, .Merriweather400 .challenge li p, .challenge li .Merriweather400 p, .Merriweather400 p, .Merriweather400 .followup, .Merriweather400 menu {
   font-family: "Merriweather", serif;
   font-weight: 400;
 }
@@ -31,7 +31,7 @@
   line-height: 1rem;
 }
 
-#surface h1, #surface .subtitle, .title-card_wrapper, .segment, .followup, .standalone p, cite, .version, menu {
+h1, .subtitle, .title-card_wrapper, .segment, .followup, .standalone p, cite, .version, menu {
   font-size: 1rem;
   line-height: 2rem;
 }
@@ -58,6 +58,11 @@ html {
   font-weight: normal;
   font-style: normal;
 }
+body, h1, h2, h3, p, ul {
+  margin: 0;
+  padding: 0;
+}
+
 .wrapper {
   overflow: hidden;
 }
@@ -99,10 +104,6 @@ a:hover, a:active, a:focus {
 }
 
 /* Heading stuff. */
-#surface .segment {
-  padding-right: 2rem;
-}
-
 h1 img {
   display: block;
   margin: 0 auto;
@@ -111,8 +112,30 @@ h1 img {
   max-height: 20vh;
 }
 
+.officialness {
+  background: #002351;
+  border-radius: .5em;
+  -webkit-transition: background 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          transition: background 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19), transform 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  display: block;
+  padding: 1rem;
+  margin: 0 auto 2rem;
+  width: 220px;
+  height: 84;
+}
+.officialness img {
+  width: 100%;
+  height: 100%;
+}
+.officialness:hover, .officialness:active, .officialness:focus {
+  background: #000c1c;
+  -webkit-transform: translateY(0.33333rem);
+      -ms-transform: translateY(0.33333rem);
+          transform: translateY(0.33333rem);
+}
+
 .sub {
-  max-width: calc(100% + rhythm(9));
+  max-width: calc(100% + 3rem);
   margin: 2rem -3rem;
 }
 
@@ -122,7 +145,8 @@ h1 img {
   position: relative;
   z-index: 20;
 }
-#surface h1, #surface .subtitle {
+
+h1, .subtitle {
   padding-bottom: 1rem;
 }
 
@@ -250,40 +274,57 @@ h1 img {
             transform: translateY(10px);
   }
 }
-@media (min-width: 68em) {
+@media (min-width: 54em) {
+  h1 img {
+    margin: 0;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 30vh;
+  }
+
+  h1 {
+    padding-bottom: 4vh;
+  }
+
+  h1, .subtitle {
+    width: calc(50% - 2rem);
+    float: left;
+  }
+
   .title-card_wrapper {
-    max-width: 30em;
-    margin: 0 auto 2rem;
+    padding-top: 20vh;
+  }
+
+  .subtitle {
+    margin-bottom: 2rem;
   }
 
   .sub {
-    position: absolute;
-    right: 0;
-    top: 20vh;
-    -webkit-transform: translateX(50%);
-        -ms-transform: translateX(50%);
-            transform: translateX(50%);
-    height: 26.66667em;
-    margin: 0;
+    max-width: auto;
+    margin: -1rem 0 3rem;
+    max-height: 80vh;
+    float: right;
+    width: calc(50%);
   }
 
-  #surface:after {
-    content: " ";
-    display: block;
+  .officialness {
+    border-radius: 0;
     position: absolute;
-    left: 0;
-    top: 20vh;
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
-    background: url('../img/svg/sub.svg?1445458507') no-repeat 0 0/auto 26.66667em;
-    width: 42.66667em;
-    height: 26.66667em;
+    top: 0;
+    left: 1rem;
+    width: 83px;
+    height: 122px;
+    padding: 1.33333rem 1rem 1rem 1rem;
+    -webkit-transform: translateY(-0.33333rem);
+        -ms-transform: translateY(-0.33333rem);
+            transform: translateY(-0.33333rem);
   }
-
-  #surface .segment {
-    padding-left: 320px;
-    padding-right: 320px;
+  .officialness:hover, .officialness:active, .officialness:focus {
+    background: #000c1c;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
   }
 }
 /* UI */
@@ -499,11 +540,6 @@ h3 + .content {
   color: #56fddb;
   cursor: pointer;
   text-decoration: underline;
-}
-
-body, h1, h2, h3, p, ul {
-  margin: 0;
-  padding: 0;
 }
 
 h2 {
