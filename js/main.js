@@ -395,6 +395,29 @@
   });
 
 
+  GoalManager.addGoal({
+    name: 'jellyfish',
+    evaluate: function (complete) {
+      var creature = document.querySelector('#creature_alarm-jellyfish1');
+
+      pollPolitely(function (stop) {
+        var style = getComputedStyle(creature);
+        var fill = style.getPropertyValue('fill');
+        var color = style.getPropertyValue('color');
+        console.log(fill === 'rgb(0, 0, 0)', color !== 'transparent');
+        if (!fill && color) {
+          stop();
+          complete();
+        }
+      });
+    },
+    success: function () {
+      audio.playCue('discover');
+      document.querySelector('#challenge_alarm-jellyfish').classList.add('completed');
+    }
+  });
+
+
   (function () {
     var docEl = document.documentElement;
     var docHeight = docEl.scrollHeight;
