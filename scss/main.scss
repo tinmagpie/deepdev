@@ -25,7 +25,6 @@ body, h1, h2, h3, p, ul {
   overflow: hidden;
 }
 
-.addthis_sharing_toolbox {display: none;}
 a {
   &:link { color: color(link) }
   &:visited { color: color(linkVisited) }
@@ -153,6 +152,9 @@ $howToHide: opacity duration(days) ease(Out);
     }
   }
 }
+
+.addthis_sharing_toolbox {display: none;}
+
 
 #challenge_orange-roughy svg { color: $red; }
 
@@ -452,8 +454,10 @@ small {
 
 menu {
   background: $abyss;
+  box-sizing: border-box;
   @extend %fontMerriweather;
   @extend %t-medium;
+  @extend %clearfix;
   color: color(copy);
   margin: 0;
   position: fixed;
@@ -467,12 +471,43 @@ menu {
   }
 }
 
-.toggle, {
+.controls {
+  float: left;
+}
+
+.tabs {
+  float: right;
+}
+
+.tab, .toggle {
   color: #fff;
   cursor: pointer;
   display: inline-block;
   margin-right: rhythm(1);
-  transform: translateY(.5em);
+  &:hover, &:active, &:focus {
+    color: $skyMedium;
+  }
+}
+
+.tab {
+  svg {
+    width: rhythm(4); height: rhythm(4);
+  }
+}
+
+#share_tab path {
+  stroke: currentColor;
+  stroke-width:2;
+  fill: none;
+}
+
+#crew_tab path {
+  fill: currentColor;
+}
+
+
+.toggle, {
+  //transform: translateY(.5em);
   &.activated {
     color: $skyMedium;
   }
@@ -515,7 +550,6 @@ menu {
     }
   }
 }
-
 .toggle_button {
   width: 24px; height: 24px;
   position: absolute; top: 0; left: 0;

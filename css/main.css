@@ -1,12 +1,13 @@
-.segment:before,
-.segment:after {
+.segment:before, menu:before,
+.segment:after,
+menu:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
 
-.segment:after {
+.segment:after, menu:after {
   clear: both;
 }
 
@@ -65,10 +66,6 @@ body, h1, h2, h3, p, ul {
 
 .wrapper {
   overflow: hidden;
-}
-
-.addthis_sharing_toolbox {
-  display: none;
 }
 
 a:link {
@@ -426,6 +423,10 @@ h1, .subtitle {
       -ms-transform: translateX(-100%);
           transform: translateX(-100%);
   opacity: 1;
+}
+
+.addthis_sharing_toolbox {
+  display: none;
 }
 
 #challenge_orange-roughy svg {
@@ -1836,6 +1837,7 @@ footer {
 
 menu {
   background: #000c1c;
+  box-sizing: border-box;
   color: #c6f3c7;
   margin: 0;
   position: fixed;
@@ -1851,15 +1853,39 @@ menu {
   background: #007e84;
 }
 
-.toggle {
+.controls {
+  float: left;
+}
+
+.tabs {
+  float: right;
+}
+
+.tab, .toggle {
   color: #fff;
   cursor: pointer;
   display: inline-block;
   margin-right: 0.33333rem;
-  -webkit-transform: translateY(0.5em);
-      -ms-transform: translateY(0.5em);
-          transform: translateY(0.5em);
 }
+.tab:hover, .tab:active, .tab:focus, .toggle:hover, .toggle:active, .toggle:focus {
+  color: #4ed9f2;
+}
+
+.tab svg {
+  width: 1.33333rem;
+  height: 1.33333rem;
+}
+
+#share_tab path {
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+#crew_tab path {
+  fill: currentColor;
+}
+
 .toggle.activated {
   color: #4ed9f2;
 }
