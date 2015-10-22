@@ -15,9 +15,26 @@ $creatures-sprite-width: sprite_width($creatures-sprites);
 // Creature basics
 .creature {
   @extend %sprited-thing;
+
   // SVG lights
   .lumi {
     position: absolute;
+  }
+}
+
+@include non-retina {
+  .creature {
+    &:before, &:after {
+      background-image: sprite-url($creatures-sprites);
+    }
+  }
+}
+
+@include retina {
+  .creature {
+    &:before, &:after {
+      background-image: sprite-url($creatures2x-sprites);
+    }
   }
 }
 
@@ -27,8 +44,11 @@ $creatures-sprite-width: sprite_width($creatures-sprites);
   width: $iWidth/2;
 
   &:before {
-    @include creatures-sprite(#{$imgName});
+    background-position: sprite-position($creatures2x-sprites, #{$imgName}, $offset-x: 0, $offset-y: 0, $use-percentages: true);
     @include set-bg-width($creatures-sprite-width, $creatures-sprites, #{$imgName});
+    @include retina {
+      @include set-bg-width($creatures2x-sprite-width, $creatures2x-sprites, #{$imgName});
+    }
     @if $animation {
       height: $keyframes * 100%;
     } @else {
@@ -37,8 +57,11 @@ $creatures-sprite-width: sprite_width($creatures-sprites);
   }
   @if $double {
     &:after {
-      @include creatures-sprite(#{$secondImgName});
-      @include set-bg-width($creatures-sprite-width, $creatures-sprites, #{$secondImgName});
+      background-position: sprite-position($creatures2x-sprites, #{$secondImgName}, $offset-x: 0, $offset-y: 0, $use-percentages: true);
+        @include set-bg-width($creatures-sprite-width, $creatures-sprites, #{$secondImgName});
+        @include retina {
+          @include set-bg-width($creatures2x-sprite-width, $creatures2x-sprites, #{$secondImgName});
+        }
       content: " ";
       width: 100%;
       height: 100%;
@@ -74,18 +97,4 @@ $creatures-sprite-width: sprite_width($creatures-sprites);
 @mixin set-bg-width($sprites-width, $sprite, $sprite-image) {
     $spriteX: percentage($sprites-width / image-width(sprite-file($sprite, $sprite-image)));
     background-size: $spriteX auto;
-}
-
-@media only screen and ( -webkit-min-device-pixel-ratio: 1.3 ),
-       only screen and (    min--moz-device-pixel-ratio: 1.3 ),
-       only screen and (      -o-min-device-pixel-ratio: 2.6/2 ),
-       only screen and (         min-device-pixel-ratio: 1.3 ),
-       only screen and ( min-resolution: 124.8dpi ),
-       only screen and ( min-resolution: 1.3dppx ) {
-
-      .creature {
-        &:before, &:after {
-          background-image: sprite-url($creatures2x-sprites);
-        }
-      }
 }

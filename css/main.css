@@ -77,15 +77,6 @@ a:hover, a:active, a:focus {
 }
 
 /* Animations */
-#school_flashlight-fish1, #school_flashlight-fish2, #school_flashlight-fish3, #school_flashlight-fish4 {
-  -webkit-animation-play-state: paused !important;
-          animation-play-state: paused !important;
-}
-.in-view #school_flashlight-fish1, .in-view #school_flashlight-fish2, .in-view #school_flashlight-fish3, .in-view #school_flashlight-fish4 {
-  -webkit-animation-play-state: running !important;
-          animation-play-state: running !important;
-}
-
 .segment, .challenge, .completed .challenge h3, .completed .challenge p, .completed .challenge ol, .completed .challenge video, .bonus {
   opacity: 0;
   -webkit-transition: opacity 2.1s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -630,12 +621,12 @@ footer {
 /* Challenges */
 /* Props */
 .creatures2x-sprite {
-  background-image: url('../img/creatures2x-s576883a6f3.png');
+  background-image: url('../img/creatures2x-se72ffc52e8.png');
   background-repeat: no-repeat;
 }
 
-.creatures-sprite, .creature_flashlight-fish:before, .creature_nautilus:before, .creature_humboldt-squid:before, .creature_humboldt-squid .darkening:before, .creature_orange-roughy:before, .creature_viperfish:before, .creature_gulper-eel:before, .creature_dragonfish:before, .creature_anglerfish:before, .creature_bristlemouth:before, .creature_alarm-jellyfish:before, .creature_alarm-jellyfish:after, .creature_fangtooth:before, .creature_rattail:before, .creature_vomiting-shrimp:before, .creature_hagfish:before {
-  background-image: url('../img/creatures-s069ff9a996.png');
+.creatures-sprite {
+  background-image: url('../img/creatures-sc597b66127.png');
   background-repeat: no-repeat;
 }
 
@@ -643,9 +634,14 @@ footer {
   position: absolute;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 124.8dpi), only screen and (min-resolution: 1.3dppx) {
+@media (max-device-pixel-ratio: 1), (-webkit-max-device-pixel-ratio: 2), (max-resolution: 192dpi) {
   .creature:before, .creature_humboldt-squid .darkening:before, .creature:after, .creature_humboldt-squid .darkening:after {
-    background-image: url('../img/creatures2x-s576883a6f3.png');
+    background-image: url('../img/creatures-sc597b66127.png');
+  }
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .creature:before, .creature_humboldt-squid .darkening:before, .creature:after, .creature_humboldt-squid .darkening:after {
+    background-image: url('../img/creatures2x-se72ffc52e8.png');
   }
 }
 /* Props */
@@ -665,18 +661,23 @@ footer {
   }
 }
 .creature_flashlight-fish {
-  width: 185.5px;
-  height: 94.5px;
+  width: 186px;
+  height: 96px;
 }
 .creature_flashlight-fish:before {
-  background-position: 0 4.74398%;
+  background-position: 0 4.74636%;
   background-size: 301.07527% auto;
   height: 100%;
 }
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .creature_flashlight-fish:before {
+    background-size: 301.07527% auto;
+  }
+}
 .creature_flashlight-fish .lumi {
-  left: 82.47978%;
-  top: 63.49206%;
-  width: 12.66846%;
+  left: 82.25806%;
+  top: 63.54167%;
+  width: 12.63441%;
 }
 
 #creature_flashlight-fish1 {
@@ -751,8 +752,12 @@ footer {
   position: absolute;
 }
 .schooling_flashlight-fish .lumi {
-  -webkit-animation: winking steps(1) infinite 500ms;
-          animation: winking steps(1) infinite 500ms;
+  -webkit-animation: winking steps(1) paused infinite 500ms;
+          animation: winking steps(1) paused infinite 500ms;
+}
+.in-view.completed .schooling_flashlight-fish .lumi {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 .schooling_flashlight-fish .creature_flashlight-fish:nth-child(odd) .lumi {
   -webkit-animation-duration: 300ms;
@@ -865,8 +870,12 @@ footer {
 }
 
 #school_flashlight-fish1 {
-  -webkit-animation: flashlight-swim linear infinite 5.5s;
-          animation: flashlight-swim linear infinite 5.5s;
+  -webkit-animation: flashlight-swim paused linear infinite 5.5s;
+          animation: flashlight-swim paused linear infinite 5.5s;
+}
+.completed.in-view #school_flashlight-fish1 {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 
 @-webkit-keyframes flashlight-swim {
@@ -883,11 +892,15 @@ footer {
   }
 }
 #school_flashlight-fish2 {
-  -webkit-animation: flashlight-swim2 linear infinite 5.5s;
-          animation: flashlight-swim2 linear infinite 5.5s;
+  -webkit-animation: flashlight-swim2 paused linear infinite 5.5s;
+          animation: flashlight-swim2 paused linear infinite 5.5s;
   -webkit-transform: translate(-100%);
       -ms-transform: translate(-100%);
           transform: translate(-100%);
+}
+.completed.in-view #school_flashlight-fish2 {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 
 @-webkit-keyframes flashlight-swim2 {
@@ -904,8 +917,12 @@ footer {
   }
 }
 #school_flashlight-fish3 {
-  -webkit-animation: flashlight-swim3 linear infinite 5.5s;
-          animation: flashlight-swim3 linear infinite 5.5s;
+  -webkit-animation: flashlight-swim3 paused linear infinite 5.5s;
+          animation: flashlight-swim3 paused linear infinite 5.5s;
+}
+.completed.in-view #school_flashlight-fish3 {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 
 @-webkit-keyframes flashlight-swim3 {
@@ -922,11 +939,15 @@ footer {
   }
 }
 #school_flashlight-fish4 {
-  -webkit-animation: flashlight-swim4 linear infinite 5.5s;
-          animation: flashlight-swim4 linear infinite 5.5s;
+  -webkit-animation: flashlight-swim4 paused linear infinite 5.5s;
+          animation: flashlight-swim4 paused linear infinite 5.5s;
   -webkit-transform: translate(100%);
       -ms-transform: translate(100%);
           transform: translate(100%);
+}
+.completed.in-view #school_flashlight-fish4 {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 
 @-webkit-keyframes flashlight-swim4 {
@@ -987,9 +1008,14 @@ footer {
   height: 210px;
 }
 .creature_nautilus:before {
-  background-position: 63.09524% 14.56234%;
+  background-position: 63.09524% 14.5288%;
   background-size: 250% auto;
   height: 200%;
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .creature_nautilus:before {
+    background-size: 250% auto;
+  }
 }
 
 .in-view #creature_nautilus1 {
@@ -1072,6 +1098,11 @@ footer {
   background-size: 100% auto;
   height: 400%;
 }
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .creature_humboldt-squid:before {
+    background-size: 100% auto;
+  }
+}
 
 .creature_humboldt-squid .darkening {
   -webkit-filter: none;
@@ -1083,9 +1114,14 @@ footer {
   left: 0;
 }
 .creature_humboldt-squid .darkening:before {
-  background-position: 0 65.59427%;
+  background-position: 0 65.57705%;
   background-size: 100% auto;
   height: 400%;
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .creature_humboldt-squid .darkening:before {
+    background-size: 100% auto;
+  }
 }
 .in-view .creature_humboldt-squid .darkening {
   -webkit-animation: excited 70ms infinite alternate linear;
@@ -1174,9 +1210,14 @@ footer {
           transform: translate(-50%, 0);
 }
 .creature_orange-roughy:before {
-  background-position: 0 20.40463%;
+  background-position: 0 20.37284%;
   background-size: 112.0% auto;
   height: 200%;
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .creature_orange-roughy:before {
+    background-size: 112.0% auto;
+  }
 }
 .in-view .creature_orange-roughy {
   -webkit-animation: gentlyHovering cubic-bezier(0.645, 0.045, 0.355, 1) 5.5s infinite alternate;
@@ -1245,9 +1286,14 @@ footer {
   margin-right: 7em !important;
 }
 .creature_viperfish:before {
-  background-position: 0 7.12556%;
+  background-position: 0 7.13739%;
   background-size: 129.62963% auto;
   height: 100%;
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .creature_viperfish:before {
+    background-size: 129.62963% auto;
+  }
 }
 .creature_viperfish .lumi {
   left: 16.55093%;
@@ -1261,9 +1307,14 @@ footer {
   float: right !important;
 }
 .creature_gulper-eel:before {
-  background-position: 0 41.58766%;
+  background-position: 0 41.56285%;
   background-size: 198.58156% auto;
   height: 200%;
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .creature_gulper-eel:before {
+    background-size: 198.58156% auto;
+  }
 }
 .creature_gulper-eel .lumi {
   left: 5.31915%;
@@ -1283,9 +1334,14 @@ footer {
           transform: scaleX(-1);
 }
 .creature_dragonfish:before {
-  background-position: 0 10.05565%;
+  background-position: 0 10.02071%;
   background-size: 116.18257% auto;
   height: 200%;
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .creature_dragonfish:before {
+    background-size: 116.18257% auto;
+  }
 }
 .creature_dragonfish .lumi {
   left: 8.71369%;
@@ -1305,9 +1361,14 @@ footer {
           transform: scaleX(-1);
 }
 .creature_anglerfish:before {
-  background-position: 0 14.50919%;
+  background-position: 0 14.47574%;
   background-size: 264.15094% auto;
   height: 200%;
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .creature_anglerfish:before {
+    background-size: 264.15094% auto;
+  }
 }
 .in-view .creature_anglerfish:before {
   -webkit-animation: wriggle steps(1) 500ms infinite;
@@ -1326,6 +1387,11 @@ footer {
   background-position: 0 0;
   background-size: 198.58156% auto;
   height: 200%;
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .creature_bristlemouth:before {
+    background-size: 198.58156% auto;
+  }
 }
 .creature_bristlemouth .lumi {
   left: 2.83688%;
@@ -1373,17 +1439,22 @@ footer {
   -webkit-transform: translate(-100%, -50%);
       -ms-transform: translate(-100%, -50%);
           transform: translate(-100%, -50%);
-  width: 180.5px;
-  height: 181px;
+  width: 182px;
+  height: 182px;
 }
 .creature_alarm-jellyfish:before {
-  background-position: 49.07652% 4.79574%;
-  background-size: 309.39227% auto;
+  background-position: 49.20635% 4.79817%;
+  background-size: 307.69231% auto;
   height: 100%;
 }
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .creature_alarm-jellyfish:before {
+    background-size: 307.69231% auto;
+  }
+}
 .creature_alarm-jellyfish:after {
-  background-position: 44.85488% 1.90307%;
-  background-size: 309.39227% auto;
+  background-position: 44.97354% 1.90404%;
+  background-size: 307.69231% auto;
   content: " ";
   width: 100%;
   height: 100%;
@@ -1392,10 +1463,15 @@ footer {
   top: 0;
   left: 0;
 }
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .creature_alarm-jellyfish:after {
+    background-size: 307.69231% auto;
+  }
+}
 .creature_alarm-jellyfish .lumi {
-  left: 3.04709%;
-  top: 17.40331%;
-  width: 48.47645%;
+  left: 3.2967%;
+  top: 17.85714%;
+  width: 48.07692%;
 }
 .creature_alarm-jellyfish .st1 {
   fill: currentColor;
@@ -1420,7 +1496,7 @@ footer {
   }
 }
 .creature_fangtooth {
-  width: 143.5px;
+  width: 144px;
   height: 75px;
   pointer-effects: none;
   -webkit-transform: translate(-25%, 30%) rotate(20deg);
@@ -1433,6 +1509,11 @@ footer {
   background-position: 67.78846% 0;
   background-size: 388.88889% auto;
   height: 200%;
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .creature_fangtooth:before {
+    background-size: 388.88889% auto;
+  }
 }
 .completed .creature_fangtooth {
   opacity: 0;
@@ -1469,9 +1550,14 @@ footer {
           transition: transform 2.1s cubic-bezier(0.55, 0.055, 0.675, 0.19), opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .creature_rattail:before {
-  background-position: 0 28.90246%;
+  background-position: 0 28.87285%;
   background-size: 135.2657% auto;
   height: 400%;
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .creature_rattail:before {
+    background-size: 135.2657% auto;
+  }
 }
 .completed .creature_rattail {
   -webkit-animation: comeWithMe 800ms 1.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
@@ -1520,9 +1606,14 @@ footer {
   height: 114px;
 }
 .creature_vomiting-shrimp:before {
-  background-position: 0 1.91449%;
+  background-position: 0 1.91522%;
   background-size: 329.41176% auto;
   height: 200%;
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .creature_vomiting-shrimp:before {
+    background-size: 329.41176% auto;
+  }
 }
 
 #creature_vomiting-shrimp1 {
@@ -1625,9 +1716,14 @@ footer {
   z-index: 1;
 }
 .creature_hagfish:before {
-  background-position: 79.21348% 37.2733%;
+  background-position: 79.21348% 37.24943%;
   background-size: 274.5098% auto;
   height: 200%;
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .creature_hagfish:before {
+    background-size: 274.5098% auto;
+  }
 }
 .in-view .creature_hagfish {
   -webkit-animation: wrigglingAround cubic-bezier(0.645, 0.045, 0.355, 1) 300ms infinite;

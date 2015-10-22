@@ -31,7 +31,7 @@
 .creature_alarm-jellyfish {
     color: transparent;
     transform: translate(-100%, -50%);
-    @include make-creature(alarm-jellyfish_body, $double: true, $secondImgName: alarm-jellyfish_tentacles, $lumiX: 7, $lumiY: 59, $lumiW: 175, $lumiH: 170, $keyframes: 1, $animation: false, $biolumi: true);
+    @include make-creature(alarm-jellyfish_body, $double: true, $secondImgName: alarm-jellyfish_tentacles, $lumiX: 8, $lumiY: 61, $lumiW: 175, $lumiH: 170, $keyframes: 1, $animation: false, $biolumi: true);
     .st1{ fill: currentColor; }
     .in-view & {
         animation: alarmed duration(slower) infinite alternate ease(inOut);

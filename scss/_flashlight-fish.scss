@@ -1,5 +1,5 @@
 .creature_flashlight-fish {
-    @include make-creature(flashlight-fish, $lumiX: 302, $lumiY: 116, $lumiW: 47, $lumiH: 37, $animation: false, $keyframes: 1, $biolumi: true);
+    @include make-creature(flashlight-fish, $lumiX: 302, $lumiY: 118, $lumiW: 47, $lumiH: 37, $animation: false, $keyframes: 1, $biolumi: true);
 }
 
 #creature_flashlight-fish1 {
@@ -48,7 +48,10 @@
     height: 100%;
     position: absolute;
     .lumi {
-        animation: winking steps(1) infinite duration(slow);
+        animation: winking steps(1) paused infinite duration(slow);
+        .in-view.completed & {
+            animation-play-state: running;
+        }
     }
     .creature_flashlight-fish:nth-child(odd) {
         .lumi {
@@ -114,8 +117,10 @@
 }
 
 #school_flashlight-fish1 {
-    animation: flashlight-swim linear infinite duration(months);
-    @extend %play-pause;
+    animation: flashlight-swim paused linear infinite duration(months);
+    .completed.in-view & {
+        animation-play-state: running
+    }
 }
 
 @keyframes flashlight-swim {
@@ -123,9 +128,11 @@
 }
 
 #school_flashlight-fish2 {
-    animation: flashlight-swim2 linear infinite duration(months);
+    animation: flashlight-swim2 paused linear infinite duration(months);
     transform: translate(-100%);
-    @extend %play-pause;
+    .completed.in-view & {
+        animation-play-state: running
+    }
 }
 
 @keyframes flashlight-swim2 {
@@ -133,8 +140,10 @@
 }
 
 #school_flashlight-fish3 {
-    animation: flashlight-swim3 linear infinite duration(months);
-    @extend %play-pause;
+    animation: flashlight-swim3 paused linear infinite duration(months);
+    .completed.in-view & {
+        animation-play-state: running
+    }
 }
 
 @keyframes flashlight-swim3 {
@@ -142,9 +151,11 @@
 }
 
 #school_flashlight-fish4 {
-    animation: flashlight-swim4 linear infinite duration(months);
+    animation: flashlight-swim4 paused linear infinite duration(months);
     transform: translate(100%);
-    @extend %play-pause;
+    .completed.in-view & {
+        animation-play-state: running
+    }
 }
 
 @keyframes flashlight-swim4 {
