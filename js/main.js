@@ -336,12 +336,19 @@
   GoalManager.addGoal({
     name: 'shrimp',
     evaluate: function (complete) {
-      var vomitingShrimp = document.querySelector('#creature_vomiting-shrimp1');
-      function onAnimationStart(e) {
-        complete();
-        vomitingShrimp.removeEventListener('animationstart', onAnimationStart);
-      }
-      vomitingShrimp.addEventListener('animationstart', onAnimationStart);
+      var creature = document.querySelector('#creature_vomiting-shrimp1');
+      var segment = $(creature).parents('.segment')[0];
+
+      pollPolitely(function (stop) {
+        var style = window.getComputedStyle(creature);
+        var val = style.getPropertyValue('transform');
+
+        if (segment.classList.contains('in-view') && val === 'none') {
+          stop();
+          complete();
+        }
+      });
+
     },
     success: function () {
       audio.playCue('discover');
