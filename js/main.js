@@ -381,6 +381,9 @@
     evaluate: function (complete) {
       var creature1 = document.querySelector('#creature_humboldt-squid1');
       var creature2 = document.querySelector('#creature_humboldt-squid2');
+
+      var segment = $(creature1).parents('.segment')[0];
+
       var count1 = 0;
       var count2 = 0;
       var ocount1 = 0;
@@ -392,10 +395,12 @@
       }
 
       pollPolitely(function (stop) {
-        if (ocount1 === count1 || ocount2 === count2) {
-          stop();
-          cleanup();
-          complete();
+        if (segment.classList.contains('in-view')) {
+          if (ocount1 === count1 || ocount2 === count2) {
+            stop();
+            cleanup();
+            complete();
+          }
         }
         ocount1 = count1;
         ocount2 = count2;
