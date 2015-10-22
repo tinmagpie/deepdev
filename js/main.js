@@ -437,8 +437,7 @@
         var style = getComputedStyle(creature);
         var fill = style.getPropertyValue('fill');
         var color = style.getPropertyValue('color');
-        console.log(fill === 'rgb(0, 0, 0)', color !== 'transparent');
-        if (!fill && color) {
+        if (fill === 'rgb(0, 0, 0)', color !== 'transparent') {
           stop();
           complete();
         }
