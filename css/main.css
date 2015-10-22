@@ -10,7 +10,7 @@
   clear: both;
 }
 
-.leagueSpartanRegular400 .challenge li, .challenge .leagueSpartanRegular400 li, .leagueSpartanRegular400 h1, .leagueSpartanRegular400 h2, .leagueSpartanRegular400 h3, .leagueSpartanRegular400 .featured, .leagueSpartanRegular400 strong {
+.leagueSpartanRegular400 .challenge li, .challenge .leagueSpartanRegular400 li, .leagueSpartanRegular400 h1, .leagueSpartanRegular400 h2, .leagueSpartanRegular400 h3, .leagueSpartanRegular400 .featured, .leagueSpartanRegular400 strong, .leagueSpartanRegular400 .toggle_bg {
   font-family: "leagueSpartanRegular", sans-serif;
   font-weight: 400;
 }
@@ -1852,6 +1852,7 @@ menu {
 }
 
 .toggle {
+  color: #fff;
   cursor: pointer;
   display: inline-block;
   margin-right: 0.33333rem;
@@ -1859,15 +1860,44 @@ menu {
       -ms-transform: translateY(0.5em);
           transform: translateY(0.5em);
 }
+.toggle.activated {
+  color: #4ed9f2;
+}
 
 .toggle_bg {
+  text-transform: uppercase;
   position: relative;
   width: 53px;
   height: 24px;
 }
+.toggle_bg:before, .toggle_bg:after {
+  font-size: 10px;
+  display: block;
+  position: absolute;
+  top: -3px;
+}
+.animated .toggle_bg:before, .animated .toggle_bg:after {
+  -webkit-transition: opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          transition: opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.toggle_bg:before {
+  content: "off";
+  left: 26px;
+}
+.toggle_bg:after {
+  content: "on";
+  left: 8px;
+  opacity: 0;
+}
 .toggle_bg path, .toggle_bg circle {
-  stroke: #4ed9f2;
+  stroke: currentColor;
   stroke-width: 2;
+}
+.activated .toggle_bg:before {
+  opacity: 0;
+}
+.activated .toggle_bg:after {
+  opacity: 1;
 }
 
 .toggle_button {
@@ -1876,6 +1906,13 @@ menu {
   position: absolute;
   top: 0;
   left: 0;
+}
+.toggle_button svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .activated .toggle_button {
   -webkit-transform: translateX(120%);
@@ -1886,8 +1923,12 @@ menu {
   -webkit-transition: -webkit-transform 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
           transition: transform 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
-.toggle_button circle {
+.toggle_button .nob circle {
   stroke: #A9DDF2;
+}
+.toggle_button .icon path, .toggle_button .icon circle {
+  fill: #A9DDF2;
+  stroke: none;
 }
 
 #d1200 em {

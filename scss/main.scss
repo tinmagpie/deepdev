@@ -468,32 +468,75 @@ menu {
 }
 
 .toggle, {
+  color: #fff;
   cursor: pointer;
   display: inline-block;
   margin-right: rhythm(1);
   transform: translateY(.5em);
+  &.activated {
+    color: $skyMedium;
+  }
 }
 
 .toggle_bg {
+  &:before, &:after {
+    font-size: 10px;
+    display: block;
+    position: absolute;
+    top: -3px;
+    .animated & {
+      transition: opacity duration(fast) ease(In);
+    }
+  }
+
+  &:before {
+    content: "off";
+    left: 26px;
+  }
+  &:after {
+    content: "on";
+    left: 8px;
+    opacity: 0;
+  }
+  text-transform: uppercase;
+  @extend %fontSpartan;
   position: relative;
   width: 53px; height: 24px;
   path, circle {
-    stroke: $skyMedium;
+    stroke: currentColor;
     stroke-width:2;
+  }
+  .activated & {
+    &:before {
+      opacity: 0;
+    }
+    &:after {
+      opacity: 1;
+    }
   }
 }
 
 .toggle_button {
   width: 24px; height: 24px;
   position: absolute; top: 0; left: 0;
+  svg {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
   .activated & {
     transform: translateX(120%);
   }
   .animated & {
     transition: transform duration(timely) ease(In);
   }
-  circle {
+  .nob circle {
     stroke: $skyLight;
+  }
+  .icon {
+    path, circle {
+      fill: $skyLight;
+      stroke: none;
+    }
   }
 }
 
