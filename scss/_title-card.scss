@@ -1,9 +1,5 @@
 /* Heading stuff. */
 
-#surface .segment {
-  padding-right: rhythm(6);
-}
-
 h1 img {
   display: block;
   margin: 0 auto;
@@ -12,8 +8,25 @@ h1 img {
   max-height: 20vh;
 }
 
+.officialness {
+  background: $midnight;
+  border-radius: .5em;
+  transition:
+    background duration(fast) ease(In),
+    transform duration(timely) ease(In);
+  display: block;
+  padding: rhythm(3);
+  margin: 0 auto rhythm(6);
+  width: 220px; height: 84;
+  img { width: 100%; height: 100%;}
+  &:hover, &:active, &:focus {
+    background: $abyss;
+    transform: translateY(rhythm(1));
+  }
+}
+
 .sub {
-  max-width: calc(100% + rhythm(9));
+  max-width: calc(100% + #{rhythm(9)});
   margin: rhythm(6) (rhythm(9) * -1);
 }
 
@@ -22,11 +35,17 @@ h1 img {
   color: color(altCopy);
   position: relative;
   z-index: 20;
-  h1, .subtitle {
-    @extend %t-medium;
-    @extend %fontMerriweather;
-    @include padding-trailer(3);
-  }
+}
+
+h1, .subtitle {
+  @extend %t-medium;
+  @extend %fontMerriweather;
+  @include padding-trailer(3);
+}
+
+.subtitle em {
+  @extend %t-large;
+  color: $twilight;
 }
 
 #title {
@@ -117,29 +136,56 @@ h1 img {
   100% { transform: translateY(10px); }
 }
 
-@include breakpoint(68em) {
-  .title-card_wrapper {
-    max-width: 30em;
-    margin: 0 auto rhythm(6);
-  }
-  .sub {
-    position: absolute;
-    right: 0; top: 20vh;
-    transform: translateX(50%);
-    height: calc-em(400); // width: 640
+@include breakpoint($double_col) {
+  // .title-card_wrapper {
+  //   @extend %clearfix;
+  // }
+  h1 img {
     margin: 0;
+    //max-width: 100%;
+    // height: rhythm(36);
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 30vh;
   }
-  #surface:after {
-    content: " ";
-    display: block;
+  h1 {
+    padding-bottom: 4vh;
+  }
+  h1, .subtitle {
+    width: calc(50% - 2rem);
+    float: left;
+  }
+  .title-card_wrapper {
+    // padding-right: calc(50% + 2rem);
+    padding-top: 20vh;
+  }
+  .subtitle {
+    margin-bottom: rhythm(6);
+  }
+
+  .sub {
+    max-width: auto;
+    margin: -(rhythm(3)) 0 rhythm(9);
+    //height: 50vh;
+    // position: absolute;
+    // right: rhythm(6); top: 122px;
+    max-height: 80vh;
+    float: right;
+    width: calc(50%);
+  }
+
+  .officialness {
+    border-radius: 0;
     position: absolute;
-    left: 0; top: 20vh;
-    transform: translateX(-50%);
-    background: image-url("svg/sub.svg") no-repeat 0 0 / auto calc-em(400);
-    width: calc-em(640); height: calc-em(400);
+    top: 0; left: rhythm(3);
+    width: 83px; height: 122px;
+    padding: rhythm(4) rhythm(3) rhythm(3) rhythm(3);
+    transform: translateY((rhythm(1) * -1));
+    &:hover, &:active, &:focus {
+      background: $abyss;
+      transform: none;
+    }
   }
-  #surface .segment {
-    padding-left: 320px;
-    padding-right: 320px;
-  }
+
 }
