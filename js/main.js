@@ -66,6 +66,15 @@
     });
   });
 
+  /* Control Toggles */
+  $(".toggle").on("click", function(){
+    $(this).toggleClass("activated");
+  });
+
+  $("#animation").on("click", function(){
+    $("html").toggleClass("animated");
+  });
+
   var $wrapper = $('.wrapper');
 
   var challenges = document.getElementsByClassName('challenge');
@@ -197,10 +206,10 @@
         isMuted = !isMuted;
         if (isMuted) {
           audio.mute();
-          audioButton.textContent = 'Mute the Deep';
+          // audioButton.textContent = 'Mute the Deep';
         } else {
           audio.unmute();
-          audioButton.textContent = 'Listen to the Deep';
+          // audioButton.textContent = 'Listen to the Deep';
         }
       });
     });

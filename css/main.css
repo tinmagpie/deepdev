@@ -186,7 +186,7 @@ h1, .subtitle {
   width: 100%;
   height: 130px;
 }
-.in-zone .wave {
+.animated .in-zone .wave {
   -webkit-animation-name: oceanSurge;
           animation-name: oceanSurge;
   -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -208,7 +208,7 @@ h1, .subtitle {
   padding: 0 40px;
   height: 120px;
 }
-.in-zone .wave:before {
+.animated .in-zone .wave:before {
   -webkit-animation-name: oceanMotion;
           animation-name: oceanMotion;
   -webkit-animation-timing-function: linear;
@@ -1842,13 +1842,52 @@ menu {
   bottom: 0;
   left: 0;
   width: 100%;
-  line-height: 2em;
+  padding: 1rem 2rem;
   -webkit-transition: background cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
           transition: background cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
   z-index: 30;
 }
 .bathypelagic menu, .abyssal menu {
   background: #007e84;
+}
+
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.33333rem;
+  -webkit-transform: translateY(0.5em);
+      -ms-transform: translateY(0.5em);
+          transform: translateY(0.5em);
+}
+
+.toggle_bg {
+  position: relative;
+  width: 53px;
+  height: 24px;
+}
+.toggle_bg path, .toggle_bg circle {
+  stroke: #4ed9f2;
+  stroke-width: 2;
+}
+
+.toggle_button {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.activated .toggle_button {
+  -webkit-transform: translateX(120%);
+      -ms-transform: translateX(120%);
+          transform: translateX(120%);
+}
+.animated .toggle_button {
+  -webkit-transition: -webkit-transform 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          transition: transform 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.toggle_button circle {
+  stroke: #A9DDF2;
 }
 
 #d1200 em {

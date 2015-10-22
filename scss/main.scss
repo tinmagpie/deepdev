@@ -459,11 +459,41 @@ menu {
   position: fixed;
   bottom: 0; left: 0;
   width: 100%;
-  line-height: 2em;
+  padding: rhythm(3) rhythm(6);
   transition: background ease(In) duration(timely);
   z-index: 30;
   .bathypelagic &, .abyssal & {
     background: $epipelagic;
+  }
+}
+
+.toggle, {
+  cursor: pointer;
+  display: inline-block;
+  margin-right: rhythm(1);
+  transform: translateY(.5em);
+}
+
+.toggle_bg {
+  position: relative;
+  width: 53px; height: 24px;
+  path, circle {
+    stroke: $skyMedium;
+    stroke-width:2;
+  }
+}
+
+.toggle_button {
+  width: 24px; height: 24px;
+  position: absolute; top: 0; left: 0;
+  .activated & {
+    transform: translateX(120%);
+  }
+  .animated & {
+    transition: transform duration(timely) ease(In);
+  }
+  circle {
+    stroke: $skyLight;
   }
 }
 
