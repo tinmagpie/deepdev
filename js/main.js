@@ -91,6 +91,9 @@
         var creature = this.element.getAttribute('data-creature');
         var indicator = document.querySelector('.progress [data-creature="' + creature + '"]');
         if (indicator) {
+          if (!indicator.classList.contains('visited')) {
+            audio.playCue('visit');
+          }
           indicator.classList.add('visited');
         }
       },
@@ -200,7 +203,8 @@
       {name: 'quad2', url: 'audio/quad2.ogg'},
       {name: 'quad3', url: 'audio/quad3.ogg'},
       {name: 'quad4', url: 'audio/quad4.ogg'},
-      {name: 'discover', url: 'audio/discover.ogg'}
+      {name: 'discover', url: 'audio/discover.ogg'},
+      {name: 'visit', url: 'audio/visit.ogg'}
     ];
 
     audio.addSounds(sounds, function () {
