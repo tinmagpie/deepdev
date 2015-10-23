@@ -21,13 +21,13 @@ menu:after {
   font-weight: 400;
 }
 
-.Merriweather700 .progress, .Merriweather700 .rediscover, .Merriweather700 em, .Merriweather700 .red, .Merriweather700 .orange, .Merriweather700 .biolumiColor, .Merriweather700 .callout, .Merriweather700 blockquote, .Merriweather700 cite, .Merriweather700 small, .Merriweather700 .photophores figcaption, .photophores .Merriweather700 figcaption {
+.Merriweather700 .progress, .Merriweather700 .rediscover, .Merriweather700 em, .Merriweather700 .red, .Merriweather700 .orange, .Merriweather700 .biolumiColor, .Merriweather700 .callout, .Merriweather700 blockquote, .Merriweather700 cite, .Merriweather700 small, .Merriweather700 .photophores label, .photophores .Merriweather700 label, .Merriweather700 .photophores figcaption, .photophores .Merriweather700 figcaption {
   font-family: "Merriweather", serif;
   font-weight: 700;
   font-style: italic;
 }
 
-.progress, .challenge .rediscover, small, .photophores figcaption {
+.progress, .challenge .rediscover, small, .photophores label, .photophores figcaption {
   font-size: 0.8rem;
   line-height: 1rem;
 }
@@ -1376,60 +1376,66 @@ footer {
 }
 
 .specimen_flashlight-fish {
-  width: 226px;
-  height: 226px;
   float: right;
 }
-.specimen_flashlight-fish:before {
+
+.specimen_dragonfish {
+  float: left;
+}
+
+.dish_flashlight-fish {
+  width: 226px;
+  height: 226px;
+}
+.dish_flashlight-fish:before {
   background-position: 67.66467% 9.64782%;
   background-size: 247.78761% auto;
   height: 100%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .specimen_flashlight-fish:before {
+  .dish_flashlight-fish:before {
     background-size: 247.78761% auto;
     background-position: 67.66467% 9.60298%;
   }
 }
-.specimen_flashlight-fish .lumi {
+.dish_flashlight-fish .lumi {
   left: 19.46903%;
   top: 38.71681%;
   width: 40.48673%;
 }
-.specimen_flashlight-fish .lumi {
+.dish_flashlight-fish .lumi {
   fill: #56fddb;
   -webkit-transform: scaleX(-1);
       -ms-transform: scaleX(-1);
           transform: scaleX(-1);
 }
-.specimen_flashlight-fish:before {
+.dish_flashlight-fish:before {
   right: -2px;
   top: -2px;
   position: relative;
 }
 
-.specimen_dragonfish {
+.dish_dragonfish {
   width: 226px;
   height: 226px;
-  float: left;
 }
-.specimen_dragonfish:before {
+.dish_dragonfish:before {
   background-position: 0 9.64782%;
   background-size: 247.78761% auto;
   height: 100%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .specimen_dragonfish:before {
+  .dish_dragonfish:before {
     background-size: 247.78761% auto;
     background-position: 0 9.60298%;
   }
 }
-.specimen_dragonfish .lumi {
+.dish_dragonfish .lumi {
   left: 56.63717%;
   top: 44.69027%;
   width: 19.9115%;
 }
-.specimen_dragonfish:before {
+.dish_dragonfish:before {
   left: -2px;
   position: relative;
 }

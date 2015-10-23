@@ -43,6 +43,10 @@
     width: 500px;
     margin: rhythm(3) auto 0;
     position: relative;
+    label {
+        @extend %fontMerriweatherItalic;
+        @extend %t-small;
+    }
     figcaption {
         @extend %fontMerriweatherItalic;
         @extend %t-small;
@@ -70,8 +74,15 @@
 }
 
 .specimen_flashlight-fish {
-    @include make-creature(specimen_flashlight-fish, $lumiX: 84, $lumiY: 171, $lumiW: 183, $lumiH: 145, $keyframes: 1, $animation: false, $biolumi: true);
     float: right;
+}
+
+.specimen_dragonfish {
+    float: left;
+}
+
+.dish_flashlight-fish {
+    @include make-creature(specimen_flashlight-fish, $lumiX: 84, $lumiY: 171, $lumiW: 183, $lumiH: 145, $keyframes: 1, $animation: false, $biolumi: true);
     .lumi {
         fill: $biolumination;
         transform: scaleX(-1);
@@ -81,9 +92,8 @@
         position: relative;
     }
 }
-.specimen_dragonfish {
+.dish_dragonfish {
     @include make-creature(specimen_dragonfish, $lumiX: 252, $lumiY: 198, $lumiW: 90, $lumiH: 38, $keyframes: 1, $animation: false, $biolumi: true);
-    float: left;
     &:before {
         left: -2px;
         position: relative;
