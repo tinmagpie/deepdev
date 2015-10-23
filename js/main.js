@@ -1,6 +1,11 @@
 (function(){
   'use strict';
 
+  // Detect Firefox 4x
+  if (!window.navigator.userAgent.match(/Gecko\/\d+ Firefox\/4/i)) {
+    document.querySelector('#title').classList.add('non-ff');
+  }
+
   var currentDepth;
   /*
   var waypoint = new Waypoint({
