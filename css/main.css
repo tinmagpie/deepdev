@@ -138,38 +138,18 @@ h1, .subtitle {
 
 #for-browsers {
   display: none;
-  float: left;
-  width: 100%;
 }
 #for-browsers p {
   font-size: 0.9rem;
   line-height: 1.4rem;
   font-style: normal;
-  width: calc(40%);
-}
-#for-browsers .content {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  max-width: 460px;
 }
 #for-browsers .content img, #for-browsers .content a {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   display: inline-block;
 }
 #for-browsers .content img {
   border-radius: 0;
   height: 70px;
-  margin-right: 30px;
 }
 #for-browsers .content a {
   background-color: #14c329;
@@ -180,10 +160,6 @@ h1, .subtitle {
   text-align: center;
   margin: auto 0;
   font-weight: bold;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 160px;
-      -ms-flex: 0 0 160px;
-          flex: 0 0 160px;
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
 }
 
