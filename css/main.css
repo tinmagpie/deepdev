@@ -781,7 +781,7 @@ footer {
   -webkit-animation: winking steps(1) paused infinite 500ms;
           animation: winking steps(1) paused infinite 500ms;
 }
-.in-view.completed .schooling_flashlight-fish .lumi {
+.animated .in-view.completed .schooling_flashlight-fish .lumi {
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
@@ -899,7 +899,7 @@ footer {
   -webkit-animation: flashlight-swim paused linear infinite 5.5s;
           animation: flashlight-swim paused linear infinite 5.5s;
 }
-.completed.in-view #school_flashlight-fish1 {
+.animated .completed.in-view #school_flashlight-fish1 {
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
@@ -924,7 +924,7 @@ footer {
       -ms-transform: translate(-100%);
           transform: translate(-100%);
 }
-.completed.in-view #school_flashlight-fish2 {
+.animated .completed.in-view #school_flashlight-fish2 {
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
@@ -946,7 +946,7 @@ footer {
   -webkit-animation: flashlight-swim3 paused linear infinite 5.5s;
           animation: flashlight-swim3 paused linear infinite 5.5s;
 }
-.completed.in-view #school_flashlight-fish3 {
+.animated .completed.in-view #school_flashlight-fish3 {
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
@@ -971,7 +971,7 @@ footer {
       -ms-transform: translate(100%);
           transform: translate(100%);
 }
-.completed.in-view #school_flashlight-fish4 {
+.animated .completed.in-view #school_flashlight-fish4 {
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }

@@ -49,7 +49,7 @@
     position: absolute;
     .lumi {
         animation: winking steps(1) paused infinite duration(slow);
-        .in-view.completed & {
+        .animated .in-view.completed & {
             animation-play-state: running;
         }
     }
@@ -118,7 +118,7 @@
 
 #school_flashlight-fish1 {
     animation: flashlight-swim paused linear infinite duration(months);
-    .completed.in-view & {
+    .animated .completed.in-view & {
         animation-play-state: running
     }
 }
@@ -130,7 +130,7 @@
 #school_flashlight-fish2 {
     animation: flashlight-swim2 paused linear infinite duration(months);
     transform: translate(-100%);
-    .completed.in-view & {
+    .animated .completed.in-view & {
         animation-play-state: running
     }
 }
@@ -141,7 +141,7 @@
 
 #school_flashlight-fish3 {
     animation: flashlight-swim3 paused linear infinite duration(months);
-    .completed.in-view & {
+    .animated .completed.in-view & {
         animation-play-state: running
     }
 }
@@ -153,7 +153,7 @@
 #school_flashlight-fish4 {
     animation: flashlight-swim4 paused linear infinite duration(months);
     transform: translate(100%);
-    .completed.in-view & {
+    .animated .completed.in-view & {
         animation-play-state: running
     }
 }
