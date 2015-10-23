@@ -179,11 +179,12 @@ h1, .subtitle {
   border-radius: 3px;
   text-align: center;
   margin: auto 0;
+  font-weight: bold;
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 160px;
       -ms-flex: 0 0 160px;
           flex: 0 0 160px;
-  font-family: "Fira Sans", sans-serif;
+  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
 }
 
 .non-ff #for-browsers {
@@ -2020,7 +2021,8 @@ menu .download {
   border: 2px solid #fff;
   border-radius: 3px;
   color: #fff;
-  font-family: "Fira Sans", sans-serif;
+  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+  font-weight: bold;
   text-decoration: none;
   padding: 0 15px;
   font-size: 0.9rem;
