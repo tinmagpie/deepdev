@@ -478,7 +478,7 @@ menu {
     margin-top: -6px;
   }
   .logo {
-    height: 40px;
+    height: 35px;
     float: left;
     display: inline-block;
     padding-right: 10px;
@@ -487,6 +487,7 @@ menu {
     float: right;
   }
   .download {
+    display: none;
     border: 2px solid #fff;
     border-radius: 3px;
     color: #fff;
@@ -497,12 +498,15 @@ menu {
     font-size: 0.9rem;
     line-height: 1.55rem;
     margin: 4px 5px;
-    display: inline-block;
   }
   .download:hover {
     background-color: $ffGreen;
     border: 2px solid $ffGreen;
   }
+}
+
+.non-ff .download {
+  display: inline-block;
 }
 
 .controls {

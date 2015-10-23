@@ -44,31 +44,7 @@ h1, .subtitle {
 
   p {
     font-size: 0.9rem;
-    line-height: 1.4rem;
-    font-style: normal;
-  }
-
-  .content {
-    img, a {
-      display: inline-block;
-    }
-
-    img {
-      border-radius: 0;
-      height: 70px;
-    }
-
-    a {
-      background-color: $ffGreen;
-      color: #fff;
-      font-style: normal;
-      text-decoration: none;
-      border-radius: 3px;
-      text-align: center;
-      margin: auto 0;
-      font-weight: bold;
-      font-family: $fontFiraSans;
-    }
+    float: right;
   }
 }
 
