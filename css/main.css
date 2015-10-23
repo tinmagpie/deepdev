@@ -138,38 +138,18 @@ h1, .subtitle {
 
 #for-browsers {
   display: none;
-  float: left;
-  width: 100%;
 }
 #for-browsers p {
   font-size: 0.9rem;
   line-height: 1.4rem;
   font-style: normal;
-  width: calc(40%);
-}
-#for-browsers .content {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  max-width: 460px;
 }
 #for-browsers .content img, #for-browsers .content a {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   display: inline-block;
 }
 #for-browsers .content img {
   border-radius: 0;
   height: 70px;
-  margin-right: 30px;
 }
 #for-browsers .content a {
   background-color: #14c329;
@@ -179,11 +159,8 @@ h1, .subtitle {
   border-radius: 3px;
   text-align: center;
   margin: auto 0;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 160px;
-      -ms-flex: 0 0 160px;
-          flex: 0 0 160px;
-  font-family: "Fira Sans", sans-serif;
+  font-weight: bold;
+  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
 }
 
 .non-ff #for-browsers {
@@ -2020,7 +1997,8 @@ menu .download {
   border: 2px solid #fff;
   border-radius: 3px;
   color: #fff;
-  font-family: "Fira Sans", sans-serif;
+  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+  font-weight: bold;
   text-decoration: none;
   padding: 0 15px;
   font-size: 0.9rem;

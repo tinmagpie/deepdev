@@ -1,7 +1,7 @@
 @import "compass/typography/vertical_rhythm";
 $fontSpartan: 'leagueSpartanRegular', sans-serif;
 $fontMerriweather: 'Merriweather', serif;
-$fontFiraSans: 'Fira Sans', sans-serif;
+$fontFiraSans: 'Fira Sans', Helvetica, Arial, sans-serif;
 
 @function fontWeight($key) {
   @if map-has-key($fontWeights, $key) {
