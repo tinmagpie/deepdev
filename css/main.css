@@ -11,7 +11,7 @@ menu:after {
   clear: both;
 }
 
-.leagueSpartanRegular400 .challenge li, .challenge .leagueSpartanRegular400 li, .leagueSpartanRegular400 h1, .leagueSpartanRegular400 h2, .leagueSpartanRegular400 h3, .leagueSpartanRegular400 .featured, .leagueSpartanRegular400 strong, .leagueSpartanRegular400 .toggle_bg {
+.leagueSpartanRegular400 .challenge li, .challenge .leagueSpartanRegular400 li, .leagueSpartanRegular400 h1, .leagueSpartanRegular400 h2, .leagueSpartanRegular400 h3, .leagueSpartanRegular400 .featured, .leagueSpartanRegular400 strong, .leagueSpartanRegular400 .tab, .leagueSpartanRegular400 .toggle {
   font-family: "leagueSpartanRegular", sans-serif;
   font-weight: 400;
 }
@@ -1865,12 +1865,16 @@ menu {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  margin-right: 0.33333rem;
+  text-transform: uppercase;
 }
 .tab:hover, .tab:active, .tab:focus, .toggle:hover, .toggle:active, .toggle:focus {
   color: #4ed9f2;
 }
 
+.tab {
+  letter-spacing: .1em;
+  margin-right: 0.66667rem;
+}
 .tab svg {
   width: 1.33333rem;
   height: 1.33333rem;
@@ -1886,12 +1890,14 @@ menu {
   fill: currentColor;
 }
 
+.toggle {
+  margin-right: 0.33333rem;
+}
 .toggle.activated {
   color: #4ed9f2;
 }
 
 .toggle_bg {
-  text-transform: uppercase;
   position: relative;
   width: 53px;
   height: 24px;
@@ -1899,6 +1905,7 @@ menu {
 .toggle_bg:before, .toggle_bg:after {
   font-size: 10px;
   display: block;
+  letter-spacing: 0;
   position: absolute;
   top: -3px;
 }

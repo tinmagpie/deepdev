@@ -483,13 +483,16 @@ menu {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  margin-right: rhythm(1);
+  text-transform: uppercase;
+  @extend %fontSpartan;
   &:hover, &:active, &:focus {
     color: $skyMedium;
   }
 }
 
 .tab {
+  letter-spacing: .1em;
+  margin-right: rhythm(2);
   svg {
     width: rhythm(4); height: rhythm(4);
   }
@@ -508,6 +511,7 @@ menu {
 
 .toggle, {
   //transform: translateY(.5em);
+  margin-right: rhythm(1);
   &.activated {
     color: $skyMedium;
   }
@@ -517,6 +521,7 @@ menu {
   &:before, &:after {
     font-size: 10px;
     display: block;
+    letter-spacing: 0;
     position: absolute;
     top: -3px;
     .animated & {
@@ -533,8 +538,6 @@ menu {
     left: 8px;
     opacity: 0;
   }
-  text-transform: uppercase;
-  @extend %fontSpartan;
   position: relative;
   width: 53px; height: 24px;
   path, circle {
