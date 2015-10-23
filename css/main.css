@@ -21,18 +21,18 @@ menu:after {
   font-weight: 400;
 }
 
-.Merriweather700 .progress, .Merriweather700 .rediscover, .Merriweather700 em, .Merriweather700 .red, .Merriweather700 .orange, .Merriweather700 .biolumiColor, .Merriweather700 .callout, .Merriweather700 blockquote, .Merriweather700 cite, .Merriweather700 small {
+.Merriweather700 .progress, .Merriweather700 .rediscover, .Merriweather700 em, .Merriweather700 .red, .Merriweather700 .orange, .Merriweather700 .biolumiColor, .Merriweather700 .callout, .Merriweather700 blockquote, .Merriweather700 cite, .Merriweather700 small, .Merriweather700 .photophores figcaption, .photophores .Merriweather700 figcaption {
   font-family: "Merriweather", serif;
   font-weight: 700;
   font-style: italic;
 }
 
-.progress, .challenge .rediscover, small {
+.progress, .challenge .rediscover, small, .photophores figcaption {
   font-size: 0.8rem;
   line-height: 1rem;
 }
 
-h1, .subtitle, .title-card_wrapper, .segment, .followup, .standalone p, cite, .version, menu {
+h1, .subtitle, .title-card_wrapper, .segment, .followup, .standalone p, cite, .version, .photophores figcaption strong, menu {
   font-size: 1rem;
   line-height: 2rem;
 }
@@ -515,6 +515,7 @@ h3 + .content {
           transition-property: opacity, background;
   padding: 1rem 1em;
   position: relative;
+  z-index: 1;
   margin: 0 -1em;
 }
 .challenge .rediscover {
@@ -524,6 +525,7 @@ h3 + .content {
 }
 .completed .challenge {
   pointer-events: none;
+  z-index: 0;
 }
 .challenge ol, .challenge li {
   margin: 0;
@@ -662,12 +664,12 @@ footer {
 /* Challenges */
 /* Props */
 .creatures2x-sprite {
-  background-image: url('../img/creatures2x-se72ffc52e8.png');
+  background-image: url('../img/creatures2x-sbdfc2a3e3c.png');
   background-repeat: no-repeat;
 }
 
 .creatures-sprite {
-  background-image: url('../img/creatures-sc597b66127.png');
+  background-image: url('../img/creatures-sd6102f5e9f.png');
   background-repeat: no-repeat;
 }
 
@@ -677,12 +679,12 @@ footer {
 
 @media (max-device-pixel-ratio: 1), (-webkit-max-device-pixel-ratio: 2), (max-resolution: 192dpi) {
   .creature:before, .creature_humboldt-squid .darkening:before, .creature:after, .creature_humboldt-squid .darkening:after {
-    background-image: url('../img/creatures-sc597b66127.png');
+    background-image: url('../img/creatures-sd6102f5e9f.png');
   }
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature:before, .creature_humboldt-squid .darkening:before, .creature:after, .creature_humboldt-squid .darkening:after {
-    background-image: url('../img/creatures2x-se72ffc52e8.png');
+    background-image: url('../img/creatures2x-sbdfc2a3e3c.png');
   }
 }
 /* Props */
@@ -706,13 +708,14 @@ footer {
   height: 96px;
 }
 .creature_flashlight-fish:before {
-  background-position: 0 4.74636%;
+  background-position: 0 4.61313%;
   background-size: 301.07527% auto;
   height: 100%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_flashlight-fish:before {
     background-size: 301.07527% auto;
+    background-position: 0 4.61538%;
   }
 }
 .creature_flashlight-fish .lumi {
@@ -1049,13 +1052,14 @@ footer {
   height: 210px;
 }
 .creature_nautilus:before {
-  background-position: 63.09524% 14.5288%;
+  background-position: 63.09524% 17.02668%;
   background-size: 250% auto;
   height: 200%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_nautilus:before {
     background-size: 250% auto;
+    background-position: 63.09524% 16.98449%;
   }
 }
 
@@ -1135,13 +1139,14 @@ footer {
   height: 516px;
 }
 .creature_humboldt-squid:before {
-  background-position: 0 100%;
+  background-position: 0 66.8487%;
   background-size: 100% auto;
   height: 400%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_humboldt-squid:before {
     background-size: 100% auto;
+    background-position: 0 66.82739%;
   }
 }
 
@@ -1155,13 +1160,14 @@ footer {
   left: 0;
 }
 .creature_humboldt-squid .darkening:before {
-  background-position: 0 65.57705%;
+  background-position: 0 100%;
   background-size: 100% auto;
   height: 400%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_humboldt-squid .darkening:before {
     background-size: 100% auto;
+    background-position: 0 100%;
   }
 }
 .in-view .creature_humboldt-squid .darkening {
@@ -1251,13 +1257,14 @@ footer {
           transform: translate(-50%, 0);
 }
 .creature_orange-roughy:before {
-  background-position: 0 20.37284%;
+  background-position: 0 22.73902%;
   background-size: 112.0% auto;
   height: 200%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_orange-roughy:before {
     background-size: 112.0% auto;
+    background-position: 0 22.69907%;
   }
 }
 .in-view .creature_orange-roughy {
@@ -1298,12 +1305,26 @@ footer {
   opacity: 0 !important;
 }
 
-#d2600 .puzzle .lumi path {
-  fill: transparent;
+.animated .in-view.completed#d2600 .puzzle .lumi {
+  -webkit-animation: winking steps(1) infinite 500ms;
+          animation: winking steps(1) infinite 500ms;
 }
-#d2600 .creature, #d2600 .creature_humboldt-squid .darkening, .creature_humboldt-squid #d2600 .darkening {
-  display: inline-block;
-  margin: 1rem;
+
+#d2600 .puzzle {
+  position: relative;
+  height: 800px;
+  max-width: 716px;
+  margin: 4rem auto 0;
+  height: 800px;
+}
+#d2600 .puzzle .creature, #d2600 .puzzle .creature_humboldt-squid .darkening, .creature_humboldt-squid #d2600 .puzzle .darkening {
+  position: absolute;
+}
+#d2600 .puzzle .lumi path, #d2600 .specimen_dragonfish .lumi path {
+  fill: #12454b;
+}
+#d2600 .video {
+  margin-bottom: 2rem;
 }
 #d2600 .content, #d2600 .challenge {
   -webkit-column-count: unset;
@@ -1321,19 +1342,113 @@ footer {
   }
 }
 
+.photophores {
+  padding: 0;
+  text-align: center;
+  width: 500px;
+  margin: 1rem auto 0;
+  position: relative;
+}
+.photophores figcaption {
+  clear: both;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.photophores figcaption strong {
+  display: block;
+}
+.photophores .dish {
+  background: #fff;
+  border-radius: 100%;
+  position: relative;
+}
+.photophores .pointer {
+  width: 151px;
+  height: 145px;
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -18%);
+      -ms-transform: translate(-50%, -18%);
+          transform: translate(-50%, -18%);
+}
+
+.specimen_flashlight-fish {
+  width: 226px;
+  height: 226px;
+  float: right;
+}
+.specimen_flashlight-fish:before {
+  background-position: 67.66467% 9.64782%;
+  background-size: 247.78761% auto;
+  height: 100%;
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .specimen_flashlight-fish:before {
+    background-size: 247.78761% auto;
+    background-position: 67.66467% 9.60298%;
+  }
+}
+.specimen_flashlight-fish .lumi {
+  left: 19.46903%;
+  top: 38.71681%;
+  width: 40.48673%;
+}
+.specimen_flashlight-fish .lumi {
+  fill: #56fddb;
+  -webkit-transform: scaleX(-1);
+      -ms-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+.specimen_flashlight-fish:before {
+  right: -2px;
+  top: -2px;
+  position: relative;
+}
+
+.specimen_dragonfish {
+  width: 226px;
+  height: 226px;
+  float: left;
+}
+.specimen_dragonfish:before {
+  background-position: 0 9.64782%;
+  background-size: 247.78761% auto;
+  height: 100%;
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .specimen_dragonfish:before {
+    background-size: 247.78761% auto;
+    background-position: 0 9.60298%;
+  }
+}
+.specimen_dragonfish .lumi {
+  left: 56.63717%;
+  top: 44.69027%;
+  width: 19.9115%;
+}
+.specimen_dragonfish:before {
+  left: -2px;
+  position: relative;
+}
+
 .creature_viperfish {
   width: 432px;
   height: 214px;
-  margin-right: 7em !important;
+  top: 450px;
+  left: -20%;
 }
 .creature_viperfish:before {
-  background-position: 0 7.13739%;
+  background-position: 0 6.93756%;
   background-size: 129.62963% auto;
   height: 100%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_viperfish:before {
     background-size: 129.62963% auto;
+    background-position: 0 6.93756%;
   }
 }
 .creature_viperfish .lumi {
@@ -1345,22 +1460,28 @@ footer {
 .creature_gulper-eel {
   width: 282px;
   height: 498px;
-  float: right !important;
+  right: 0;
+  top: 0;
 }
 .creature_gulper-eel:before {
-  background-position: 0 41.56285%;
+  background-position: 0 43.40554%;
   background-size: 198.58156% auto;
   height: 200%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_gulper-eel:before {
     background-size: 198.58156% auto;
+    background-position: 0 43.37449%;
   }
 }
 .creature_gulper-eel .lumi {
   left: 5.31915%;
   top: 49.6988%;
   width: 20.39007%;
+}
+.creature_gulper-eel .lumi {
+  -webkit-animation-delay: 300ms !important;
+          animation-delay: 300ms !important;
 }
 .in-view .creature_gulper-eel:before {
   -webkit-animation: wriggle steps(1) 500ms infinite;
@@ -1370,18 +1491,18 @@ footer {
 .creature_dragonfish {
   width: 482px;
   height: 168px;
-  -webkit-transform: scaleX(-1);
-      -ms-transform: scaleX(-1);
-          transform: scaleX(-1);
+  left: 10%;
+  top: -81px;
 }
 .creature_dragonfish:before {
-  background-position: 0 10.02071%;
+  background-position: 0 12.62258%;
   background-size: 116.18257% auto;
   height: 200%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_dragonfish:before {
     background-size: 116.18257% auto;
+    background-position: 0 12.57862%;
   }
 }
 .creature_dragonfish .lumi {
@@ -1400,16 +1521,24 @@ footer {
   -webkit-transform: scaleX(-1);
       -ms-transform: scaleX(-1);
           transform: scaleX(-1);
+  top: 138px;
+  left: 16%;
+  z-index: 1;
 }
 .creature_anglerfish:before {
-  background-position: 0 14.47574%;
+  background-position: 0 16.96632%;
   background-size: 264.15094% auto;
   height: 200%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_anglerfish:before {
     background-size: 264.15094% auto;
+    background-position: 0 16.92425%;
   }
+}
+.creature_anglerfish .lumi {
+  -webkit-animation: none !important;
+          animation: none !important;
 }
 .in-view .creature_anglerfish:before {
   -webkit-animation: wriggle steps(1) 500ms infinite;
@@ -1419,10 +1548,8 @@ footer {
 .creature_bristlemouth {
   width: 282px;
   height: 62px;
-  -webkit-transform: scaleX(-1);
-      -ms-transform: scaleX(-1);
-          transform: scaleX(-1);
-  margin: 8rem 0 3rem 2rem !important;
+  top: 370px;
+  left: 10%;
 }
 .creature_bristlemouth:before {
   background-position: 0 0;
@@ -1432,12 +1559,17 @@ footer {
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_bristlemouth:before {
     background-size: 198.58156% auto;
+    background-position: 0 0;
   }
 }
 .creature_bristlemouth .lumi {
   left: 2.83688%;
   top: 43.54839%;
   width: 65.24823%;
+}
+.creature_bristlemouth .lumi {
+  -webkit-animation-delay: 200ms !important;
+          animation-delay: 200ms !important;
 }
 .in-view .creature_bristlemouth:before {
   -webkit-animation: wriggle steps(1) 500ms infinite;
@@ -1484,17 +1616,18 @@ footer {
   height: 182px;
 }
 .creature_alarm-jellyfish:before {
-  background-position: 49.20635% 4.79817%;
+  background-position: 44.97354% 1.85002%;
   background-size: 307.69231% auto;
   height: 100%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_alarm-jellyfish:before {
     background-size: 307.69231% auto;
+    background-position: 44.97354% 1.85094%;
   }
 }
 .creature_alarm-jellyfish:after {
-  background-position: 44.97354% 1.90404%;
+  background-position: 49.20635% 4.66206%;
   background-size: 307.69231% auto;
   content: " ";
   width: 100%;
@@ -1507,6 +1640,7 @@ footer {
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_alarm-jellyfish:after {
     background-size: 307.69231% auto;
+    background-position: 49.20635% 4.66436%;
   }
 }
 .creature_alarm-jellyfish .lumi {
@@ -1554,6 +1688,7 @@ footer {
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_fangtooth:before {
     background-size: 388.88889% auto;
+    background-position: 67.78846% 0;
   }
 }
 .completed .creature_fangtooth {
@@ -1591,13 +1726,14 @@ footer {
           transition: transform 2.1s cubic-bezier(0.55, 0.055, 0.675, 0.19), opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .creature_rattail:before {
-  background-position: 0 28.87285%;
+  background-position: 0 31.07345%;
   background-size: 135.2657% auto;
   height: 400%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_rattail:before {
     background-size: 135.2657% auto;
+    background-position: 0 31.03634%;
   }
 }
 .completed .creature_rattail {
@@ -1647,13 +1783,14 @@ footer {
   height: 114px;
 }
 .creature_vomiting-shrimp:before {
-  background-position: 0 1.91522%;
+  background-position: 0 1.86058%;
   background-size: 329.41176% auto;
   height: 200%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_vomiting-shrimp:before {
     background-size: 329.41176% auto;
+    background-position: 0 1.8615%;
   }
 }
 
@@ -1757,13 +1894,14 @@ footer {
   z-index: 1;
 }
 .creature_hagfish:before {
-  background-position: 79.21348% 37.24943%;
+  background-position: 79.21348% 39.0286%;
   background-size: 274.5098% auto;
   height: 200%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_hagfish:before {
     background-size: 274.5098% auto;
+    background-position: 79.21348% 38.99852%;
   }
 }
 .in-view .creature_hagfish {
@@ -1844,7 +1982,7 @@ menu {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 0.33333rem 2rem;
   -webkit-transition: background cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
           transition: background cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
   z-index: 30;
@@ -1854,6 +1992,7 @@ menu {
 }
 
 .controls {
+  margin-top: 0.66667rem;
   float: left;
 }
 
@@ -1862,6 +2001,7 @@ menu {
 }
 
 .tab, .toggle {
+  margin-right: 0.33333rem;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -1873,7 +2013,11 @@ menu {
 
 .tab {
   letter-spacing: .1em;
-  margin-right: 0.66667rem;
+  padding: 0.33333rem 1rem;
+  border-radius: .25em;
+}
+.tab:hover, .tab:active, .tab:focus {
+  background: rgba(0, 12, 28, 0.4);
 }
 .tab svg {
   width: 1.33333rem;
@@ -1890,9 +2034,6 @@ menu {
   fill: currentColor;
 }
 
-.toggle {
-  margin-right: 0.33333rem;
-}
 .toggle.activated {
   color: #4ed9f2;
 }
@@ -1923,6 +2064,7 @@ menu {
   opacity: 0;
 }
 .toggle_bg path, .toggle_bg circle {
+  fill: rgba(0, 12, 28, 0.4);
   stroke: currentColor;
   stroke-width: 2;
 }

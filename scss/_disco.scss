@@ -1,15 +1,25 @@
+.animated .in-view.completed#d2600 .puzzle .lumi {
+    animation: winking steps(1) infinite duration(slow);
+}
+
 #d2600 {
     .puzzle {
-        .lumi {
-            //animation: winking steps(1) infinite duration(slow);
-            path {
-                fill: transparent;
-            }
+        position: relative;
+        height: 800px;
+        max-width: 716px;
+        margin: rhythm(12) auto 0;
+        height: 800px;
+        .creature {
+            position: absolute;
         }
     }
-    .creature {
-        display: inline-block;
-        margin: rhythm(3);
+    .puzzle .lumi, .specimen_dragonfish .lumi {
+        path {
+            fill: $greyDark;
+        }
+    }
+    .video {
+        margin-bottom: rhythm(6);
     }
     .content, .challenge {
         column-count: unset;
@@ -26,14 +36,69 @@
     }
 }
 
+
+.photophores {
+    padding: 0;
+    text-align: center;
+    width: 500px;
+    margin: rhythm(3) auto 0;
+    position: relative;
+    figcaption {
+        @extend %fontMerriweatherItalic;
+        @extend %t-small;
+        clear: both;
+        width: 80%;
+        margin: 0 auto;
+        @include padding-leader(3);
+        @include padding-trailer(3);
+        strong {
+            display: block;
+            @extend %t-medium;
+        }
+    }
+    .dish {
+        background: #fff;
+        border-radius: 100%;
+        position:relative;
+    }
+    .pointer {
+        width: 151px; height: 145px;
+        position: absolute;
+        top: 44%; left: 50%;
+        transform: translate(-50%, -18%);
+    }
+}
+
+.specimen_flashlight-fish {
+    @include make-creature(specimen_flashlight-fish, $lumiX: 84, $lumiY: 171, $lumiW: 183, $lumiH: 145, $keyframes: 1, $animation: false, $biolumi: true);
+    float: right;
+    .lumi {
+        fill: $biolumination;
+        transform: scaleX(-1);
+    }
+    &:before {
+        right: -2px; top: -2px;
+        position: relative;
+    }
+}
+.specimen_dragonfish {
+    @include make-creature(specimen_dragonfish, $lumiX: 252, $lumiY: 198, $lumiW: 90, $lumiH: 38, $keyframes: 1, $animation: false, $biolumi: true);
+    float: left;
+    &:before {
+        left: -2px;
+        position: relative;
+    }
+}
+
 .creature_viperfish {
     @include make-creature(viperfish, $lumiX: 139, $lumiY: 2, $lumiW: 612, $lumiH: 397, $keyframes: 1, $animation: false, $biolumi: true);
-    margin-right: 7em !important;
+    top: 450px; left: -20%;
 }
 
 .creature_gulper-eel {
     @include make-creature(gulper-eel, $lumiX: 26, $lumiY: 491, $lumiW: 115, $lumiH: 87, $keyframes: 2, $animation: true, $biolumi: true);
-    float: right !important;
+    right: 0; top: 0;
+    .lumi { animation-delay: duration(timely) !important; }
     &:before {
         .in-view & {
             animation: wriggle steps(1) duration(slow) infinite;
@@ -43,7 +108,7 @@
 
 .creature_dragonfish {
     @include make-creature(dragonfish, $lumiX: 80, $lumiY: 17, $lumiW: 809, $lumiH: 254, $keyframes: 2, $animation: true, $biolumi: true);
-    transform: scaleX(-1);
+    left: 10%; top: -81px;
     &:before {
         .in-view & {
             animation: wriggle steps(1) duration(slow) infinite;
@@ -54,6 +119,9 @@
 .creature_anglerfish {
     @include make-creature(anglerfish, $keyframes: 2, $animation: true, $biolumi: false);
     transform: scaleX(-1);
+    top: 138px; left: 16%;
+    z-index:1;
+    .lumi { animation: none !important; }
     &:before {
         .in-view & {
             animation: wriggle steps(1) duration(slow) infinite;
@@ -63,8 +131,8 @@
 
 .creature_bristlemouth {
     @include make-creature(bristlemouth, $lumiX: 12, $lumiY: 50, $lumiW: 368, $lumiH: 50, $keyframes: 2, $animation: true, $biolumi: true);
-    transform: scaleX(-1);
-    margin: 8rem 0 3rem 2rem !important ;
+    top: 370px; left: 10%;
+    .lumi { animation-delay: duration(fast) !important; }
     &:before {
         .in-view & {
             animation: wriggle steps(1) duration(slow) infinite;

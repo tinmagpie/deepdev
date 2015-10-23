@@ -246,6 +246,7 @@ h3 + .content {
   // background: $twilight;
   padding: rhythm(3) 1em;
   position: relative;
+  z-index: 1;
   margin: 0 -1em;
   .rediscover {
     position: absolute;
@@ -259,6 +260,7 @@ h3 + .content {
     h3, p, ol, video {
       @extend %content-hidden;
     }
+    z-index: 0;
   }
 
   ol, li {
@@ -463,7 +465,7 @@ menu {
   position: fixed;
   bottom: 0; left: 0;
   width: 100%;
-  padding: rhythm(3) rhythm(6);
+  padding: rhythm(1) rhythm(6);
   transition: background ease(In) duration(timely);
   z-index: 30;
   .bathypelagic &, .abyssal & {
@@ -472,6 +474,7 @@ menu {
 }
 
 .controls {
+  margin-top: rhythm(2);
   float: left;
 }
 
@@ -480,6 +483,7 @@ menu {
 }
 
 .tab, .toggle {
+  margin-right: rhythm(1);
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -492,7 +496,11 @@ menu {
 
 .tab {
   letter-spacing: .1em;
-  margin-right: rhythm(2);
+  padding: rhythm(1) rhythm(3);
+  border-radius: .25em;
+  &:hover, &:active, &:focus {
+    background: rgba($abyss, .4);
+  }
   svg {
     width: rhythm(4); height: rhythm(4);
   }
@@ -510,8 +518,6 @@ menu {
 
 
 .toggle, {
-  //transform: translateY(.5em);
-  margin-right: rhythm(1);
   &.activated {
     color: $skyMedium;
   }
@@ -541,6 +547,7 @@ menu {
   position: relative;
   width: 53px; height: 24px;
   path, circle {
+    fill: rgba($abyss, .4);
     stroke: currentColor;
     stroke-width:2;
   }

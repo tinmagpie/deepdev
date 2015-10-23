@@ -326,6 +326,8 @@
       });
     },
     success: function () {
+      var challenge = document.getElementById('d2600');
+      challenge.addEventListener('transitionend', missionAccomplished(challenge));
       document.querySelector('#challenge_anglerfish').classList.add('completed');
       audio.playCue('discover');
     }
@@ -350,6 +352,8 @@
 
     },
     success: function () {
+      var challenge = document.getElementById('d5000');
+      challenge.addEventListener('transitionend', missionAccomplished(challenge));
       audio.playCue('discover');
       document.querySelector('#challenge_vomiting-shrimp').classList.add('completed');
     }
@@ -369,6 +373,8 @@
       });
     },
     success: function () {
+      var challenge = document.getElementById('d6000');
+      challenge.addEventListener('transitionend', missionAccomplished(challenge));
       audio.playCue('discover');
       document.querySelector('#challenge_hagfish').classList.add('completed');
     }
@@ -421,6 +427,8 @@
       creature2.addEventListener('animationiteration', increment2);
     },
     success: function () {
+      var challenge = document.getElementById('d800');
+      challenge.addEventListener('transitionend', missionAccomplished(challenge));
       audio.playCue('discover');
       document.querySelector('#challenge_humboldt-squid').classList.add('completed');
     }
@@ -443,6 +451,8 @@
       });
     },
     success: function () {
+      var challenge = document.getElementById('d4400');
+      challenge.addEventListener('transitionend', missionAccomplished(challenge));
       audio.playCue('discover');
       document.querySelector('#challenge_alarm-jellyfish').classList.add('completed');
     }

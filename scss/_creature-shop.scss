@@ -44,10 +44,11 @@ $creatures-sprite-width: sprite_width($creatures-sprites);
   width: $iWidth/2;
 
   &:before {
-    background-position: sprite-position($creatures2x-sprites, #{$imgName}, $offset-x: 0, $offset-y: 0, $use-percentages: true);
+    background-position: sprite-position($creatures-sprites, #{$imgName}, $offset-x: 0, $offset-y: 0, $use-percentages: true);
     @include set-bg-width($creatures-sprite-width, $creatures-sprites, #{$imgName});
     @include retina {
       @include set-bg-width($creatures2x-sprite-width, $creatures2x-sprites, #{$imgName});
+      background-position: sprite-position($creatures2x-sprites, #{$imgName}, $offset-x: 0, $offset-y: 0, $use-percentages: true);
     }
     @if $animation {
       height: $keyframes * 100%;
@@ -57,10 +58,11 @@ $creatures-sprite-width: sprite_width($creatures-sprites);
   }
   @if $double {
     &:after {
-      background-position: sprite-position($creatures2x-sprites, #{$secondImgName}, $offset-x: 0, $offset-y: 0, $use-percentages: true);
+      background-position: sprite-position($creatures-sprites, #{$secondImgName}, $offset-x: 0, $offset-y: 0, $use-percentages: true);
         @include set-bg-width($creatures-sprite-width, $creatures-sprites, #{$secondImgName});
         @include retina {
           @include set-bg-width($creatures2x-sprite-width, $creatures2x-sprites, #{$secondImgName});
+          background-position: sprite-position($creatures2x-sprites, #{$secondImgName}, $offset-x: 0, $offset-y: 0, $use-percentages: true);
         }
       content: " ";
       width: 100%;
