@@ -323,8 +323,8 @@
       var creature = document.querySelector('#creature_dragonfish1 .lumi path');
       pollPolitely(function (stop) {
         var val = window.getComputedStyle(creature).getPropertyValue('fill');
-        // checking for negative values in a cubic bezier
-        if (val !== 'rgb(0, 0, 0)') {
+        console.log(val);
+        if (val === 'rgb(86, 253, 219)') {
           stop();
           complete();
         }
