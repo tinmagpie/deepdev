@@ -464,12 +464,43 @@ menu {
   margin: 0;
   position: fixed;
   bottom: 0; left: 0;
-  width: 100%;
-  padding: rhythm(1) rhythm(6);
+  right: 0;
+  padding: rhythm(1) rhythm(3);
   transition: background ease(In) duration(timely);
   z-index: 30;
   .bathypelagic &, .abyssal & {
     background: $epipelagic;
+  }
+  .ff-download {
+    display: inline-block;
+    float: left;
+    margin-right: 30px;
+    margin-top: -6px;
+  }
+  .logo {
+    height: 40px;
+    float: left;
+    display: inline-block;
+    padding-right: 10px;
+  }
+  .actions {
+    float: right;
+  }
+  .download {
+    border: 2px solid #fff;
+    border-radius: 3px;
+    color: #fff;
+    font-family: $fontFiraSans;
+    text-decoration: none;
+    padding: 0 15px;
+    font-size: 0.9rem;
+    line-height: 1.55rem;
+    margin: 4px 5px;
+    display: inline-block;
+  }
+  .download:hover {
+    background-color: $ffGreen;
+    border: 2px solid $ffGreen;
   }
 }
 
