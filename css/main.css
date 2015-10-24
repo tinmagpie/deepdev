@@ -1,22 +1,22 @@
-.segment:before, menu:before,
-.segment:after,
-menu:after {
+.menu_options:before, .segment:before,
+.menu_options:after,
+.segment:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
 
-.segment:after, menu:after {
+.menu_options:after, .segment:after {
   clear: both;
 }
 
-.leagueSpartanRegular400 .challenge li, .challenge .leagueSpartanRegular400 li, .leagueSpartanRegular400 h1, .leagueSpartanRegular400 h2, .leagueSpartanRegular400 h3, .leagueSpartanRegular400 .featured, .leagueSpartanRegular400 strong, .leagueSpartanRegular400 .tab, .leagueSpartanRegular400 .toggle {
+.leagueSpartanRegular400 .tab, .leagueSpartanRegular400 .toggle, .leagueSpartanRegular400 .challenge li, .challenge .leagueSpartanRegular400 li, .leagueSpartanRegular400 h1, .leagueSpartanRegular400 h2, .leagueSpartanRegular400 h3, .leagueSpartanRegular400 .featured, .leagueSpartanRegular400 strong {
   font-family: "leagueSpartanRegular", sans-serif;
   font-weight: 400;
 }
 
-.Merriweather400 h1, .Merriweather400 .subtitle, .Merriweather400 .challenge li p, .challenge li .Merriweather400 p, .Merriweather400 p, .Merriweather400 .followup, .Merriweather400 menu {
+.Merriweather400 h1, .Merriweather400 .subtitle, .Merriweather400 .menu, .Merriweather400 .challenge li p, .challenge li .Merriweather400 p, .Merriweather400 p, .Merriweather400 .followup {
   font-family: "Merriweather", serif;
   font-weight: 400;
 }
@@ -27,12 +27,12 @@ menu:after {
   font-style: italic;
 }
 
-.for-browsers, .progress, .challenge .rediscover, small, .photophores label, .photophores figcaption, menu .download {
+.for-browsers, .menu .download, .progress, .challenge .rediscover, small, .photophores label, .photophores figcaption {
   font-size: 0.8rem;
   line-height: 1rem;
 }
 
-h1, .subtitle, .title-card_wrapper, .segment, .followup, .standalone p, cite, .version, .photophores figcaption strong, menu {
+h1, .subtitle, .title-card_wrapper, .menu, .segment, .followup, .standalone p, cite, .version, .photophores figcaption strong {
   font-size: 1rem;
   line-height: 2rem;
 }
@@ -305,6 +305,194 @@ h1, .subtitle {
   }
 }
 /* UI */
+.panel {
+  overflow: auto;
+}
+.panel:not(#crew_panel) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.dashboard {
+  position: relative;
+  height: 100%;
+}
+
+#crew_panel {
+  height: 600px;
+}
+
+.menu {
+  background: #000c1c;
+  box-sizing: border-box;
+  color: #c6f3c7;
+  max-height: 100vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.33333rem 1rem;
+  -webkit-transition: background cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms -webkit-transform cubic-bezier(0.55, 0.055, 0.675, 0.19) 500ms;
+          transition: background cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms transform cubic-bezier(0.55, 0.055, 0.675, 0.19) 500ms;
+  z-index: 30;
+}
+.bathypelagic .menu, .abyssal .menu {
+  background: #007e84;
+}
+.menu .ff-download {
+  margin-top: 0.33333rem;
+  float: left;
+}
+.menu .logo {
+  height: 35px;
+  float: left;
+  margin-right: 0.66667rem;
+}
+.menu .actions {
+  float: right;
+}
+.menu .download {
+  display: none;
+  border: 2px solid #fff;
+  border-radius: .25em;
+  color: #fff;
+  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.33333rem 1rem;
+  -webkit-transition: background-color 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19), border-color 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          transition: background-color 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19), border-color 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.non-ff .menu .download {
+  display: inline-block;
+}
+.menu .download:hover {
+  background-color: #007e84;
+  border: 2px solid #007e84;
+}
+
+.menu_options {
+  text-align: center;
+}
+
+.controls {
+  display: inline-block;
+  margin-top: 0.66667rem;
+}
+
+.tabs {
+  float: right;
+}
+
+.tab, .toggle {
+  margin-right: 0.33333rem;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  text-transform: uppercase;
+}
+.tab:hover, .tab:active, .tab:focus, .toggle:hover, .toggle:active, .toggle:focus {
+  color: #4ed9f2;
+}
+
+.tab {
+  letter-spacing: .1em;
+  padding: 0.33333rem 1rem;
+  border-radius: .25em;
+  margin-top: 0.33333rem;
+}
+.tab:hover, .tab:active, .tab:focus {
+  background: rgba(0, 12, 28, 0.4);
+}
+.tab svg {
+  width: 1.33333rem;
+  height: 1.33333rem;
+}
+
+#share_tab path {
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+#crew_tab path {
+  fill: currentColor;
+}
+
+.toggle.activated {
+  color: #4ed9f2;
+}
+
+.toggle_bg {
+  position: relative;
+  width: 53px;
+  height: 24px;
+}
+.toggle_bg:before, .toggle_bg:after {
+  font-size: 10px;
+  display: block;
+  letter-spacing: 0;
+  position: absolute;
+  top: -3px;
+}
+.animated .toggle_bg:before, .animated .toggle_bg:after {
+  -webkit-transition: opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          transition: opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.toggle_bg:before {
+  content: "off";
+  left: 26px;
+}
+.toggle_bg:after {
+  content: "on";
+  left: 8px;
+  opacity: 0;
+}
+.toggle_bg path, .toggle_bg circle {
+  fill: rgba(0, 12, 28, 0.4);
+  stroke: currentColor;
+  stroke-width: 2;
+}
+.activated .toggle_bg:before {
+  opacity: 0;
+}
+.activated .toggle_bg:after {
+  opacity: 1;
+}
+
+.toggle_button {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.toggle_button svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.activated .toggle_button {
+  -webkit-transform: translateX(120%);
+      -ms-transform: translateX(120%);
+          transform: translateX(120%);
+}
+.animated .toggle_button {
+  -webkit-transition: -webkit-transform 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          transition: transform 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.toggle_button .nob circle {
+  stroke: #A9DDF2;
+}
+.toggle_button .icon path, .toggle_button .icon circle {
+  fill: #A9DDF2;
+  stroke: none;
+}
+
 .progress {
   width: 2rem;
   position: fixed;
@@ -399,10 +587,6 @@ h1, .subtitle {
       -ms-transform: translateX(-100%);
           transform: translateX(-100%);
   opacity: 1;
-}
-
-.addthis_sharing_toolbox {
-  display: none;
 }
 
 #challenge_orange-roughy svg {
@@ -1958,172 +2142,6 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-menu {
-  background: #000c1c;
-  box-sizing: border-box;
-  color: #c6f3c7;
-  margin: 0;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 0.33333rem 1rem;
-  -webkit-transition: background cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
-          transition: background cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
-  text-align: center;
-  z-index: 30;
-}
-.bathypelagic menu, .abyssal menu {
-  background: #007e84;
-}
-menu .ff-download {
-  margin-top: 0.33333rem;
-  float: left;
-}
-menu .logo {
-  height: 35px;
-  float: left;
-  margin-right: 0.66667rem;
-}
-menu .actions {
-  float: right;
-}
-menu .download {
-  display: none;
-  border: 2px solid #fff;
-  border-radius: .25em;
-  color: #fff;
-  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  text-decoration: none;
-  padding: 0.33333rem 1rem;
-  -webkit-transition: background-color 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19), border-color 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-          transition: background-color 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19), border-color 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.non-ff menu .download {
-  display: inline-block;
-}
-menu .download:hover {
-  background-color: #007e84;
-  border: 2px solid #007e84;
-}
-
-.controls {
-  display: inline-block;
-  margin-top: 0.66667rem;
-}
-
-.tabs {
-  float: right;
-}
-
-.tab, .toggle {
-  margin-right: 0.33333rem;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  text-transform: uppercase;
-}
-.tab:hover, .tab:active, .tab:focus, .toggle:hover, .toggle:active, .toggle:focus {
-  color: #4ed9f2;
-}
-
-.tab {
-  letter-spacing: .1em;
-  padding: 0.33333rem 1rem;
-  border-radius: .25em;
-  margin-top: 0.33333rem;
-}
-.tab:hover, .tab:active, .tab:focus {
-  background: rgba(0, 12, 28, 0.4);
-}
-.tab svg {
-  width: 1.33333rem;
-  height: 1.33333rem;
-}
-
-#share_tab path {
-  stroke: currentColor;
-  stroke-width: 2;
-  fill: none;
-}
-
-#crew_tab path {
-  fill: currentColor;
-}
-
-.toggle.activated {
-  color: #4ed9f2;
-}
-
-.toggle_bg {
-  position: relative;
-  width: 53px;
-  height: 24px;
-}
-.toggle_bg:before, .toggle_bg:after {
-  font-size: 10px;
-  display: block;
-  letter-spacing: 0;
-  position: absolute;
-  top: -3px;
-}
-.animated .toggle_bg:before, .animated .toggle_bg:after {
-  -webkit-transition: opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-          transition: opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.toggle_bg:before {
-  content: "off";
-  left: 26px;
-}
-.toggle_bg:after {
-  content: "on";
-  left: 8px;
-  opacity: 0;
-}
-.toggle_bg path, .toggle_bg circle {
-  fill: rgba(0, 12, 28, 0.4);
-  stroke: currentColor;
-  stroke-width: 2;
-}
-.activated .toggle_bg:before {
-  opacity: 0;
-}
-.activated .toggle_bg:after {
-  opacity: 1;
-}
-
-.toggle_button {
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.toggle_button svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.activated .toggle_button {
-  -webkit-transform: translateX(120%);
-      -ms-transform: translateX(120%);
-          transform: translateX(120%);
-}
-.animated .toggle_button {
-  -webkit-transition: -webkit-transform 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-          transition: transform 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.toggle_button .nob circle {
-  stroke: #A9DDF2;
-}
-.toggle_button .icon path, .toggle_button .icon circle {
-  fill: #A9DDF2;
-  stroke: none;
 }
 
 #d1200 em {

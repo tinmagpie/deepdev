@@ -1,0 +1,187 @@
+.panel {
+  &:not(#crew_panel) {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+  }
+  overflow: auto;
+}
+
+.dashboard {
+  position: relative;
+  height: 100%;
+}
+
+#crew_panel { height: 600px;}
+
+.menu {
+  background: $abyss;
+  box-sizing: border-box;
+  @extend %fontMerriweather;
+  @extend %t-medium;
+  color: color(copy);
+  max-height: 100vh;
+  position: fixed;
+  bottom: 0; left: 0;
+  right: 0;
+  padding: rhythm(1) rhythm(3);
+  transition:
+    background ease(In) duration(timely)
+    transform ease(In) duration(slow)
+  ;
+  //transform: translateY(calc(100% - #{rhythm(11)}));
+  z-index: 30;
+  .bathypelagic &, .abyssal & {
+    background: $epipelagic;
+  }
+  .ff-download {
+    margin-top: rhythm(1);
+    float: left;
+  }
+  .logo {
+    height: 35px;
+    float: left;
+    margin-right: rhythm(2);
+  }
+  .actions {
+    float: right;
+  }
+  .download {
+    display: none;
+    border: 2px solid #fff;
+    border-radius: .25em;
+    color: #fff;
+    font-family: $fontFiraSans;
+    font-weight: fontWeight(bold);
+    text-decoration: none;
+    padding: rhythm(1) rhythm(3);
+    transition:
+      background-color duration(fast) ease(In),
+      border-color duration(fast) ease(In);
+    @extend %t-small;
+    .non-ff & {
+      display: inline-block;
+    }
+    &:hover {
+      background-color: $epipelagic;
+      border: 2px solid $epipelagic;
+    }
+  }
+}
+
+.menu_options {
+  text-align: center;
+  @extend %clearfix;
+}
+
+.controls {
+  display: inline-block;
+  margin-top: rhythm(2);
+}
+
+.tabs {
+  float: right;
+}
+
+.tab, .toggle {
+  margin-right: rhythm(1);
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  text-transform: uppercase;
+  @extend %fontSpartan;
+  &:hover, &:active, &:focus {
+    color: $skyMedium;
+  }
+}
+
+.tab {
+  letter-spacing: .1em;
+  padding: rhythm(1) rhythm(3);
+  border-radius: .25em;
+  margin-top: rhythm(1);
+  &:hover, &:active, &:focus {
+    background: rgba($abyss, .4);
+  }
+  svg {
+    width: rhythm(4); height: rhythm(4);
+  }
+}
+
+#share_tab path {
+  stroke: currentColor;
+  stroke-width:2;
+  fill: none;
+}
+
+#crew_tab path {
+  fill: currentColor;
+}
+
+
+.toggle, {
+  &.activated {
+    color: $skyMedium;
+  }
+}
+
+.toggle_bg {
+  &:before, &:after {
+    font-size: 10px;
+    display: block;
+    letter-spacing: 0;
+    position: absolute;
+    top: -3px;
+    .animated & {
+      transition: opacity duration(fast) ease(In);
+    }
+  }
+
+  &:before {
+    content: "off";
+    left: 26px;
+  }
+  &:after {
+    content: "on";
+    left: 8px;
+    opacity: 0;
+  }
+  position: relative;
+  width: 53px; height: 24px;
+  path, circle {
+    fill: rgba($abyss, .4);
+    stroke: currentColor;
+    stroke-width:2;
+  }
+  .activated & {
+    &:before {
+      opacity: 0;
+    }
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+.toggle_button {
+  width: 24px; height: 24px;
+  position: absolute; top: 0; left: 0;
+  svg {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+  .activated & {
+    transform: translateX(120%);
+  }
+  .animated & {
+    transition: transform duration(timely) ease(In);
+  }
+  .nob circle {
+    stroke: $skyLight;
+  }
+  .icon {
+    path, circle {
+      fill: $skyLight;
+      stroke: none;
+    }
+  }
+}
