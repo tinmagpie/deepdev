@@ -73,17 +73,26 @@
 
 						<img src="img/svg/sub.svg" alt="Firefox Developer Edition 44 features Play/Pause Animations and Transitions, Rewind, a CSS Filter Editor, Timeline Scrubbing, a Cubic Bezier Editor, Animation Detection, Eyedropper, and Editable Keyframes." class="sub">
 
-						<h2 class="subtitle"><em>Explore the deepest secrets of the ocean</em> with some of <a href="https://www.mozilla.org/en-US/firefox/developer/">Firefox Developer Edition 44’s</a> newest tools, designed to take the pain out of tweaking CSS animations and transitions in the browser.</h2>
+						<h2 class="subtitle"><em>Explore the deepest secrets of the ocean</em> <span>with some of <a href="https://www.mozilla.org/en-US/firefox/developer/">Firefox Developer Edition 44’s</a> newest tools, designed to take the pain out of <abbr title="Cascading Stylesheet">CSS</abbr> animation.</span></h2>
+<!--
+						<div class="notice">
+							<h3>Attention!</h3>
+							<p>This dive is outfitted with sonar equipment best appreciated with the music turned on.</p>
+							<p>If you suffer from epilepsy or vestibular disorders, you can reduce animation to make the dive more comfortable.</p>
+							<p>You may turn these features on or off at any time using the ever present menu bar below. Thank you for your attention before departure.</p>
+						</div> -->
 
-						<div id="for-browsers">
-							<p>This is best experienced in Firefox DevEdition.</p>
+						<div class="for-browsers">
+							<p>Firefox DevEdition is the only browser certified to travel deep. So <a href="https://www.mozilla.org/en-US/firefox/developer/">download it</a> and dive in!</p>
 						</div>
 					</div>
 				</div>
-				<div class="waves">
-					<div class="wave wave-mid"></div>
-					<div class="wave wave-near"></div>
-					<div class="wave wave-close"></div>
+				<div class="waves_wrapper">
+					<div class="waves">
+						<div class="wave wave-mid"></div>
+						<div class="wave wave-near"></div>
+						<div class="wave wave-close"></div>
+					</div>
 				</div>
 			</div>
 			<div class="zone" id="epipelagic" data-audio="quad1">
@@ -204,8 +213,8 @@
 							</div>
 
 							<ol>
-								<li><p>On the flashlight fish above, <strong>right-click “inspect element”.</strong></p></li>
-								<li><p>In the developer tools, navigate to the <strong>Animation Panel tab.</strong></p></li>
+								<li><p>On the flashlight fish above, <strong>right-click “inspect element.”</strong></p></li>
+								<li><p>In the developer tools, navigate to the <strong>Animation tab.</strong></p></li>
 								<li><p><strong>Press play</strong>
 								<img srcset="img/icon_play.png, img/icon_play2x.png 2x" height="17" width="17" alt="rewind icon">
 								to start the fish’s swimming animation.</p></li>
@@ -219,14 +228,14 @@
 						<div class="bonus">
 							<h3>The Nautilus</h3>
 							<div class="content">
-								<p>There were once six families of Nautilaceae. But only one made it out of the Triassic. Here, 600 meters deep, modern descendants of these prehistoric molluscs still prowl. Other cephalopods like octopi have eight arms, but a <span class="featured">nautilus</span> can have ninety or so.</p>
+								<p>There were once six families of Nautilaceae. But only one made it out of the Triassic Period. Here, 600 meters deep, modern descendants of these prehistoric molluscs still prowl. Other cephalopods like octopi have eight arms, but a <span class="featured">nautilus</span> can have 90 or so.</p>
 								<p>Nautili get around using jet propulsion. This couples with their buoyant, air-filled shells to give them their characteristic bobbing motion as they move through the water.</p>
 								<p>Nautili are long-lived for cephalopods, taking 15 years to reach sexual maturity. Yet their shells are popular as curiosities and jewelry, where they are made into bluish ‘Osme&ntilde;a Pearls.’ Harvesting is unregulated and most likely unsustainable. This animal that outlived the dinosaurs is more likely to be driven to extinction by the whims of human fashion. <span class="rediscover">Rediscover the cubic-bezier editor.</span></p>
 							</div>
 						</div>
 						<div class="challenge" data-creature="nautilus">
 							<h3>Editing Cubic-Beziers</h3>
-							<p>This <span class="featured">nautilus</span> is moving a little too smoothly through the water. Use your the <span class="featured">cubic-bezier editor</span> in your browser’s developer tools to adjust her movement to look more bouncy.</p>
+							<p>This <span class="featured">nautilus</span> is moving a little too smoothly through the water. Use the <span class="featured">cubic-bezier editor</span> in your browser’s developer tools to adjust her movement to look more bouncy.</p>
 							<div class="puzzle">
 								<div class="creature creature_nautilus" id="creature_nautilus1"></div>
 							</div>
@@ -281,9 +290,9 @@
 			</div>
 			<div class="zone" id="bathypelagic" data-audio="quad3">
 				<div class="segment" id="d1000">
-					<h2>Now Entering: the Midnight Zone</h2>
+					<h2>Now Entering: The Midnight Zone</h2>
 					<div class="standalone">
-						<blockquote>(A)dventuring under the sea is an unearthly experience, and in all except one sense we are actually entering a new world&hellip;
+						<blockquote>“(A)dventuring under the sea is an unearthly experience, and in all except one sense we are actually entering a new world&hellip;”
 						<cite>William Beebe, <em>Half Mile Down</em></cite>
 						</blockquote>
 					</div>
@@ -292,7 +301,7 @@
 					<div class="standalone">
 						<p>Darker than dark. Blacker than black. Even a moonless night sky has the stars, but at noon under a clear sky, not a single ray of sunlight can penetrate the darkness of <em>the Bathypelagic Zone.</em></p>
 
-						<p>There is little oxygen. The temperature hovers near freezing. The weight of hundreds of pounds of water crush down from above.</p>
+						<p>There is little oxygen. The temperature hovers near freezing. The weight of hundreds of pounds of water crushes down from above.</p>
 
 						<p>Yet life finds a way.</p>
 					</div>
@@ -378,6 +387,7 @@
 							<video class="video" controls src="videos/roughy.mp4"></video>
 						</div>
 						<div class="bonus">
+							<h3>Biolumination</h3>
 							<p>Sound is not the dominant communication method on this planet. More creatures use light to communicate than sound. The deep may be a quiet place acoustically, but it is lousy with light noise from everything from sparking plankton to glowing coral. Creatures here use their own light to communicate, hunt, mate, hide, and escape from one another.</p>
 
 							<p>They produce bioluminescence in three different ways:</p>
@@ -443,7 +453,7 @@
 						<div class="bonus">
 							<h3>The Alarm Jellyfish</h3>
 							<div class="content">
-								<p>The alarm jellyfish, scientifically known as <span class="featured">Atolla wyvillei</span>, has evolved a special feature to shake off would-be attackers. Normally it glows <span class="red">red,</span> a color not many deep sea creatures can see. But when attacked, it switches over to a highly visible blue display that attracts bigger predators like Humboldt Squid, who are more interested in the attacker than the jelly.</p>
+								<p>The alarm jellyfish, scientifically known as <span class="featured">Atolla wyvillei</span>, has evolved a special feature to shake off would-be attackers. Normally it glows <span class="red">red,</span> a color not many deep-sea creatures can see. But when attacked, it switches over to a highly visible blue display that attracts bigger predators like Humboldt squid, who are more interested in the attacker than the jelly.</p>
 								<p>This display is so visually loud that it has been compared to a car alarm going off across the deep, attracting concerned&mdash;and hungry&mdash;citizens to intervene. It is so effective that scientists have used LED panels that imitate the distress signal to attract animals to cameras!</p>
 								<p class="rediscover">Rediscover how to edit keyframes.</p>
 							</div>
@@ -453,7 +463,7 @@
 							<p>Oh no! A <span class="featured">fangtooth</span> is hassling this jellyfish! But this is no defenseless jellyfish. The bioluminescent <span class="featured">alarm jellyfish</span> can change the color and pattern of its glow to bring even bigger predators to its rescue.</p>
 							<p>To save the jelly, <span class="featured">change the colors in its <code>@keyframes</code></span> like so:</p>
 							<ol>
-								<li><p>On the jellyfish, <strong>right-click “inspect element”.</strong></p></li>
+								<li><p>On the jellyfish, <strong>right-click “inspect element.”</strong></p></li>
 								<li><p>In the developer tools, <strong>open the Rules tab</strong>.</p></li>
 								<li><p>Find the <strong>alarmed <code>keyframes</code></strong> by scrolling to the bottom of the Rules panel.</p></li>
 								<li><p>Under <code>100%</code>, <strong>replace</strong> <code>fill</code> with <code>color</code>, and <span class="red">#c6244b</span> with <span class="biolumiColor">#56fddb</span>.</p></li>
@@ -488,7 +498,7 @@
 								<div class="luminous-spew object"></div>
 							</div>
 							<ol>
-								<li><p>On the glowing fluid below, <strong>right-click “inspect element”.</strong></p></li>
+								<li><p>On the glowing fluid below, <strong>right-click “inspect element.”</strong></p></li>
 								<li><p>Navigate to the <strong>Animations tab.</strong></p></li>
 								<li><p>Click <strong>rewind</strong>
 									<picture>
@@ -528,7 +538,7 @@
 						</div>
 						<div class="challenge" data-creature="hagfish">
 							<h3>Detecting Obscured Animations</h3>
-							<p>Where’s the <span class="featured">hagfish</span> hiding? It’s moving around, hiding in the ooze. Use the <span class="featured">Animation Panel</span> to detect it’s location and bring it to light.</p>
+							<p>Where’s the <span class="featured">hagfish</span> hiding? It’s moving around, hiding in the ooze. Use the <span class="featured">Animation panel</span> to detect its location and bring it to light.</p>
 							<video class="video" controls src="videos/hagfish.mp4"></video>
 							<ol>
 								<li><p>On the ocean floor, <strong>right-click “inspect element.”</strong></p></li>
@@ -549,7 +559,7 @@
 						</div>
 					</div>
 					<div id="ending">
-						<p>Congratulations! You’ve traveled deeper than most browsers and seen things most people will never see. You’re a hardened mariner of solid repute. We can tell you like uncovering deep sea mysteries and finding clever workarounds to complex problems. Next time, try taking <a href="https://www.mozilla.org/en-US/firefox/developer/">Firefox Developer Edition</a> for a spin, and see what leviathans you might encounter.</p>
+						<p>Congratulations! You’ve traveled deeper than most browsers and seen things most people will never see. You’re a hardened mariner of solid repute. We can tell you like uncovering deep-sea mysteries and finding clever workarounds to complex problems. Next time, try taking <a href="https://www.mozilla.org/en-US/firefox/developer/">Firefox Developer Edition</a> for a spin, and see what leviathans you might encounter.</p>
 						<p><a href="https://www.mozilla.org/en-US/firefox/developer/">Download FireFox Developer Edition</a></p>
 						<iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3Arachelnabors%3Aplaylist%3A2wkYBklNLW4i3iNJ7qhNXU" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
 					</div>
@@ -562,16 +572,15 @@
 			</div>
 		</div>
 		<menu>
-
+			<div class="ff-download">
+				<a href="https://www.mozilla.org/firefox/developer/">
+					<picture>
+						<img class="logo" srcset="img/logo_dev-ed-white.png, img/logo_dev-ed-white2x.png 2x" alt="Firefox DevEdition">
+					</picture>
+				</a>
+				<a class="download" href="https://www.mozilla.org/firefox/developer/">Free download »</a>
+			</div>
 			<div class="controls">
-				<div class="ff-download">
-					<a href="https://www.mozilla.org/firefox/developer/">
-						<picture>
-							<img class="logo" srcset="img/logo_dev-ed-white.png, img/logo_dev-ed-white2x.png 2x" alt="Firefox DevEdition">
-						</picture>
-					</a>
-					<a class="download" href="https://www.mozilla.org/firefox/developer/">Free download »</a>
-				</div>
 	<!-- 			<label for="animation">Motion sick?</label> -->
 				<div class="toggle activated" role="button" id="animation">
 					<div class="toggle_bg">

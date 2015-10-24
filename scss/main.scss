@@ -426,6 +426,7 @@ small {
 #epipelagic {
   background: linear-gradient(to bottom, $surface 0%, #007e84 50%, #0b4960 100%);
   color: color(altCopy);
+  padding-top: calc(180px + #{rhythm(6)});
 }
 #mesopelagic {
   background: linear-gradient(to bottom, #0b4960 0%, #0b4960 33%, #002351 67%, $abyss 100%);
@@ -467,21 +468,19 @@ menu {
   right: 0;
   padding: rhythm(1) rhythm(3);
   transition: background ease(In) duration(timely);
+  text-align: center;
   z-index: 30;
   .bathypelagic &, .abyssal & {
     background: $epipelagic;
   }
   .ff-download {
-    display: inline-block;
+    margin-top: rhythm(1);
     float: left;
-    margin-right: 30px;
-    margin-top: -6px;
   }
   .logo {
     height: 35px;
     float: left;
-    display: inline-block;
-    padding-right: 10px;
+    margin-right: rhythm(2);
   }
   .actions {
     float: right;
@@ -489,29 +488,29 @@ menu {
   .download {
     display: none;
     border: 2px solid #fff;
-    border-radius: 3px;
+    border-radius: .25em;
     color: #fff;
     font-family: $fontFiraSans;
-    font-weight: bold;
+    font-weight: fontWeight(bold);
     text-decoration: none;
-    padding: 0 15px;
-    font-size: 0.9rem;
-    line-height: 1.55rem;
-    margin: 4px 5px;
+    padding: rhythm(1) rhythm(3);
+    transition:
+      background-color duration(fast) ease(In),
+      border-color duration(fast) ease(In);
+    @extend %t-small;
+    .non-ff & {
+      display: inline-block;
+    }
+    &:hover {
+      background-color: $epipelagic;
+      border: 2px solid $epipelagic;
+    }
   }
-  .download:hover {
-    background-color: $ffGreen;
-    border: 2px solid $ffGreen;
-  }
-}
-
-.non-ff .download {
-  display: inline-block;
 }
 
 .controls {
+  display: inline-block;
   margin-top: rhythm(2);
-  float: left;
 }
 
 .tabs {
@@ -534,6 +533,7 @@ menu {
   letter-spacing: .1em;
   padding: rhythm(1) rhythm(3);
   border-radius: .25em;
+  margin-top: rhythm(1);
   &:hover, &:active, &:focus {
     background: rgba($abyss, .4);
   }

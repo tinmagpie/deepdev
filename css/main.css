@@ -21,13 +21,13 @@ menu:after {
   font-weight: 400;
 }
 
-.Merriweather700 .progress, .Merriweather700 .rediscover, .Merriweather700 em, .Merriweather700 .red, .Merriweather700 .orange, .Merriweather700 .biolumiColor, .Merriweather700 .callout, .Merriweather700 blockquote, .Merriweather700 cite, .Merriweather700 small, .Merriweather700 .photophores label, .photophores .Merriweather700 label, .Merriweather700 .photophores figcaption, .photophores .Merriweather700 figcaption {
+.Merriweather700 .for-browsers, .Merriweather700 .progress, .Merriweather700 .rediscover, .Merriweather700 em, .Merriweather700 .red, .Merriweather700 .orange, .Merriweather700 .biolumiColor, .Merriweather700 .callout, .Merriweather700 blockquote, .Merriweather700 cite, .Merriweather700 small, .Merriweather700 .photophores label, .photophores .Merriweather700 label, .Merriweather700 .photophores figcaption, .photophores .Merriweather700 figcaption {
   font-family: "Merriweather", serif;
   font-weight: 700;
   font-style: italic;
 }
 
-.progress, .challenge .rediscover, small, .photophores label, .photophores figcaption {
+.for-browsers, .progress, .challenge .rediscover, small, .photophores label, .photophores figcaption, menu .download {
   font-size: 0.8rem;
   line-height: 1rem;
 }
@@ -136,16 +136,22 @@ h1, .subtitle {
   color: #007e84;
 }
 
-#for-browsers {
+.for-browsers {
   display: none;
 }
-#for-browsers p {
-  font-size: 0.9rem;
-  float: right;
+.non-ff .for-browsers {
+  display: block;
 }
 
-.non-ff #for-browsers {
-  display: block;
+.waves_wrapper {
+  background: -webkit-linear-gradient(top, #39dbb4 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to bottom, #39dbb4 0%, rgba(0, 0, 0, 0) 100%);
+  height: 120px;
+  position: absolute;
+  left: 0;
+  bottom: -180px;
+  width: 100%;
+  padding-bottom: 60px;
 }
 
 .waves {
@@ -153,9 +159,8 @@ h1, .subtitle {
   height: 120px;
   position: absolute;
   left: 0;
-  bottom: 0;
+  top: -120px;
   width: 100%;
-  padding-bottom: 60px;
 }
 
 .wave {
@@ -270,9 +275,14 @@ h1, .subtitle {
     padding-bottom: 4vh;
   }
 
-  h1, .subtitle {
+  h1, .subtitle, .for-browsers {
     width: calc(50% - 2rem);
     float: left;
+  }
+
+  .for-browsers {
+    clear: both;
+    margin-bottom: 2rem;
   }
 
   .title-card_wrapper {
@@ -281,6 +291,9 @@ h1, .subtitle {
 
   .subtitle {
     margin-bottom: 2rem;
+  }
+  .non-ff .subtitle {
+    margin-bottom: 0;
   }
 
   .sub {
@@ -606,6 +619,7 @@ footer {
   background: -webkit-linear-gradient(top, #39dbb4 0%, #007e84 50%, #0b4960 100%);
   background: linear-gradient(to bottom, #39dbb4 0%, #007e84 50%, #0b4960 100%);
   color: #000c1c;
+  padding-top: calc(180px + 2rem);
 }
 
 #mesopelagic {
@@ -1958,22 +1972,20 @@ menu {
   padding: 0.33333rem 1rem;
   -webkit-transition: background cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
           transition: background cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
+  text-align: center;
   z-index: 30;
 }
 .bathypelagic menu, .abyssal menu {
   background: #007e84;
 }
 menu .ff-download {
-  display: inline-block;
+  margin-top: 0.33333rem;
   float: left;
-  margin-right: 30px;
-  margin-top: -6px;
 }
 menu .logo {
   height: 35px;
   float: left;
-  display: inline-block;
-  padding-right: 10px;
+  margin-right: 0.66667rem;
 }
 menu .actions {
   float: right;
@@ -1981,28 +1993,26 @@ menu .actions {
 menu .download {
   display: none;
   border: 2px solid #fff;
-  border-radius: 3px;
+  border-radius: .25em;
   color: #fff;
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: none;
-  padding: 0 15px;
-  font-size: 0.9rem;
-  line-height: 1.55rem;
-  margin: 4px 5px;
+  padding: 0.33333rem 1rem;
+  -webkit-transition: background-color 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19), border-color 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          transition: background-color 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19), border-color 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.non-ff menu .download {
+  display: inline-block;
 }
 menu .download:hover {
-  background-color: #14c329;
-  border: 2px solid #14c329;
-}
-
-.non-ff .download {
-  display: inline-block;
+  background-color: #007e84;
+  border: 2px solid #007e84;
 }
 
 .controls {
+  display: inline-block;
   margin-top: 0.66667rem;
-  float: left;
 }
 
 .tabs {
@@ -2024,6 +2034,7 @@ menu .download:hover {
   letter-spacing: .1em;
   padding: 0.33333rem 1rem;
   border-radius: .25em;
+  margin-top: 0.33333rem;
 }
 .tab:hover, .tab:active, .tab:focus {
   background: rgba(0, 12, 28, 0.4);
