@@ -23,8 +23,11 @@
     filter: none;
     @include make-creature(humboldt-squid_dark, $animation: true, $keyframes: 4, $biolumi: false);
     position: absolute; top: 0; left: 0;
-    .in-view & {
+    .animated .in-view & {
         animation: excited 70ms infinite alternate linear;
+    }
+    .in-view & {
+        animation: excited 500ms infinite alternate linear;
     }
 }
 

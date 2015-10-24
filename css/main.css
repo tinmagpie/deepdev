@@ -1133,9 +1133,13 @@ footer {
     background-position: 0 100%;
   }
 }
-.in-view .creature_humboldt-squid .darkening {
+.animated .in-view .creature_humboldt-squid .darkening {
   -webkit-animation: excited 70ms infinite alternate linear;
           animation: excited 70ms infinite alternate linear;
+}
+.in-view .creature_humboldt-squid .darkening {
+  -webkit-animation: excited 500ms infinite alternate linear;
+          animation: excited 500ms infinite alternate linear;
 }
 
 .in-view .creature_humboldt-squid:before, .in-view .creature_humboldt-squid .darkening:before {
@@ -1926,12 +1930,12 @@ footer {
 }
 
 .ooze_near {
-  background: url('../img/ooze_near.svg?1445546832') repeat-x 0 30px;
+  background: url('../img/ooze_near.svg?1445360730') repeat-x 0 30px;
   z-index: 2;
 }
 
 .ooze_far {
-  background: url('../img/ooze_far.svg?1445546832') repeat-x 0 10px;
+  background: url('../img/ooze_far.svg?1445360730') repeat-x 0 10px;
 }
 
 .ooze_far, .ooze_near {
