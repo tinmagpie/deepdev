@@ -29,7 +29,7 @@
     background ease(In) duration(timely)
     transform ease(In) duration(slow)
   ;
-  //transform: translateY(calc(100% - #{rhythm(11)}));
+  transform: translateY(calc(100% - #{rhythm(12)}));
   z-index: 30;
   .bathypelagic &, .abyssal & {
     background: $epipelagic;

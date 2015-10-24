@@ -336,6 +336,9 @@ h1, .subtitle {
   padding: 0.33333rem 1rem;
   -webkit-transition: background cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms -webkit-transform cubic-bezier(0.55, 0.055, 0.675, 0.19) 500ms;
           transition: background cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms transform cubic-bezier(0.55, 0.055, 0.675, 0.19) 500ms;
+  -webkit-transform: translateY(calc(100% - 4rem));
+      -ms-transform: translateY(calc(100% - 4rem));
+          transform: translateY(calc(100% - 4rem));
   z-index: 30;
 }
 .bathypelagic .menu, .abyssal .menu {
