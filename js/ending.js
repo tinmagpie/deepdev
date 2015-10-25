@@ -41,12 +41,21 @@
     return navigator.userAgent.search(/refo/i) !== -1;
   }
 
+  var bloopNeedsLoaded = true;
+
   GoalManager.onGoalComplete(function() {
-   if (GoalManager.goalsCompleted >= GoalManager.goalCount / 2) {
-      if (shouldShowBloop()) {
+    if (GoalManager.goalsCompleted >= GoalManager.goalCount) {
+      $("#bonus-challenge-tab, #bonus-challenge, #the-bloop").removeClass("shh");
+      $("#bonus-challenge-tab").addClass("active");
+      $("#bonus-challenge").addClass("in-focus");
+      var dashboardOpen = true;
+      moveDashboard($("#dashboard").find(".in-focus"));
+    } else if (GoalManager.goalsCompleted >= GoalManager.goalCount / 2) {
+      if (shouldShowBloop() && bloopNeedsLoaded) {
         loadBloop();
         loadSonarTab();
         loadSonarPanel();
+        bloopNeedsLoaded = false;
       }
     }
   });

@@ -84,6 +84,13 @@ $bloop-sprite-width: sprite_width($bloop-sprites);
   }
 }
 
+.shh {
+  opacity: 0;
+}
+
+#bonus-challenge-tab, #bonus-challenge, #the-bloop {
+  transition: opacity duration(timely) easing(Out);
+}
 
 .bloop_bits {
   position: absolute;

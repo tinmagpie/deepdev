@@ -6,15 +6,6 @@
     $('html').addClass('non-ff');
   }
 
-  // opening and closing panels in the dashboard
-  // track open or closed
-  var dashboardOpen = false;
-
-  var moveDashboard = function(panel) {
-    var $dashBoardHeight = $("#menu_options").outerHeight() + panel.outerHeight();
-    $("#control-panel").css({ transform: 'translateY(calc(100% - ' + $dashBoardHeight + 'px))'});
-  }
-
   var closeDashboard = function(){
     dashboardOpen = false;
     $("#tabs").children(".tab").removeClass("active");
@@ -540,3 +531,11 @@
   })();
 
 })();
+var dashboardOpen = false;
+// opening and closing panels in the dashboard
+// track open or closed
+
+var moveDashboard = function(panel) {
+  var $dashBoardHeight = $("#menu_options").outerHeight() + panel.outerHeight();
+  $("#control-panel").css({ transform: 'translateY(calc(100% - ' + $dashBoardHeight + 'px))'});
+}
