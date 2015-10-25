@@ -22,7 +22,7 @@
     $("#control-panel").removeAttr("style");
   }
 
-  $("#tabs").children(".tab").on("click", function(){
+  $("#tabs").on("click", ".tab", function(){
     var $pair = $(this).attr("data-panel");
     var $panel = $("#dashboard").find("[data-panel='" + $pair + "']");
 

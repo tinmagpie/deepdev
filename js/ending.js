@@ -12,18 +12,26 @@
     request.send();
   }
 
-  function loadSonar() {
+  function loadSonarTab() {
     var request = new XMLHttpRequest();
-    request.open('GET', 'snippets/sonar.html');
+    request.open('GET', 'snippets/sonar_tab.html');
     request.onload = function() {
-      var dashboard = document.getElementById('dashboard');
-      dashboard.innerHTML = $($.parseHTML(request.response)).filter("#bonus-challenge");
-
-      var tabs = document.getElementById('tabs');
-      dashboard.innerHTML = $($.parseHTML(request.response)).filter("#bonus-challenge-tab");
+      $('#tabs').prepend(request.response);
     };
     request.onerror = function() {
-      console.error('Sonar: XHR error');
+      console.error('Sonar Tab: XHR error');
+    };
+    request.send();
+  }
+
+  function loadSonarPanel() {
+    var request = new XMLHttpRequest();
+    request.open('GET', 'snippets/sonar_panel.html');
+    request.onload = function() {
+      $('#dashboard').prepend(request.response);
+    };
+    request.onerror = function() {
+      console.error('Sonar Panel: XHR error');
     };
     request.send();
   }
@@ -34,9 +42,11 @@
   }
 
   GoalManager.onGoalComplete(function() {
-    if (GoalManager.goalsCompleted >= GoalManager.goalCount / 2) {
+   if (GoalManager.goalsCompleted >= GoalManager.goalCount / 2) {
       if (shouldShowBloop()) {
         loadBloop();
+        loadSonarTab();
+        loadSonarPanel();
       }
     }
   });
