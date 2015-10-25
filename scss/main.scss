@@ -68,7 +68,10 @@ $howToHide: opacity duration(days) ease(Out);
 @import "menu";
 @import "progress-bar";
 
-#challenge_orange-roughy svg { color: $red; }
+.addthis_sharing_toolbox {
+  display: inline-block;
+  margin: 0 auto;
+}
 
 .segment {
   min-height: $heightScreen;

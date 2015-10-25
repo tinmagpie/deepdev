@@ -1,18 +1,29 @@
 .panel {
-  &:not(#crew_panel) {
+  &:not(.crew) {
     position: absolute;
     top: 0; left: 0;
     width: 100%;
   }
+  max-height: calc(100vh - #{rhythm(11)});
+  opacity: 0;
   overflow: auto;
+  transition: opacity duration(fast) ease(In);
+  z-index: 0;
+  &.in-focus {
+    opacity: 1;
+    z-index: 1;
+  }
 }
 
-.dashboard {
+#dashboard {
   position: relative;
-  height: 100%;
 }
 
-#crew_panel { height: 600px;}
+.crew { height: 600px;}
+
+#menu_options {
+  margin: 0; padding: rhythm(1) 0;
+}
 
 .menu {
   background: $abyss;
@@ -24,12 +35,12 @@
   position: fixed;
   bottom: 0; left: 0;
   right: 0;
-  padding: rhythm(1) rhythm(3);
+  padding: 0 rhythm(3);
   transition:
-    background ease(In) duration(timely)
-    transform ease(In) duration(slow)
+    background ease(In) duration(timely),
+    transform ease(inOut) duration(slow)
   ;
-  //transform: translateY(calc(100% - #{rhythm(11)}));
+  transform: translateY(calc(100% - #{rhythm(11)}));
   z-index: 30;
   .bathypelagic &, .abyssal & {
     background: $epipelagic;
@@ -69,7 +80,7 @@
   }
 }
 
-.menu_options {
+#menu_options {
   text-align: center;
   @extend %clearfix;
 }
@@ -79,7 +90,7 @@
   margin-top: rhythm(2);
 }
 
-.tabs {
+#tabs {
   float: right;
 }
 
@@ -90,7 +101,7 @@
   display: inline-block;
   text-transform: uppercase;
   @extend %fontSpartan;
-  &:hover, &:active, &:focus {
+  &:hover, &:active, &:focus, &.active {
     color: $skyMedium;
   }
 }
@@ -100,8 +111,12 @@
   padding: rhythm(1) rhythm(3);
   border-radius: .25em;
   margin-top: rhythm(1);
-  &:hover, &:active, &:focus {
+  transition:
+    background duration(fast) ease(Out),
+    color duration(fast) ease(Out);
+  &:hover, &:active, &:focus, &.active {
     background: rgba($abyss, .4);
+    transition-timing-function: ease(In), ease(In);
   }
   svg {
     width: rhythm(4); height: rhythm(4);

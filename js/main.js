@@ -6,14 +6,39 @@
     $('html').addClass('non-ff');
   }
 
-  var currentDepth;
-  /*
-  var waypoint = new Waypoint({
-    element: document.getElementById('mesopelagic'),
-    handler: function() {
-      console.log('Basic waypoint triggered')
+  // opening and closing panels in the dashboard
+  // track open or closed
+  var dashboardOpen = false;
+
+  var moveDashboard = function(panel) {
+    var $dashBoardHeight = $("#menu_options").height() + panel.height();
+    $("#control-panel").css({ transform: 'translateY(calc(100% - ' + $dashBoardHeight + 'px))'});
+  }
+
+  $("#tabs").children(".tab").on("click", function(){
+    var $pair = $(this).attr("data-panel");
+    var $panel = $("#dashboard").find("[data-panel='" + $pair + "']");
+
+    if ($(this).hasClass("active")) {
+      // close it out
+      dashboardOpen = false;
+      $("#tabs").children(".tab").removeClass("active");
+      $("#dashboard").find(".panel").removeClass("in-focus");
+      $("#control-panel").removeAttr("style");
+    } else {
+      // assume nothing or anything is open
+      dashboardOpen = true;
+
+      $("#tabs").children(".tab").removeClass("active");
+      $(this).addClass("active");
+
+      $("#dashboard").find(".panel").removeClass("in-focus");
+      $panel.addClass("in-focus");
+
+      moveDashboard($panel);
     }
-  })*/
+  });
+
 
   var zoneListeners = [];
   var currentZone;
@@ -51,6 +76,9 @@
   });
 
   var segments = document.getElementsByClassName('segment');
+
+  // Track current depth for calculating scroll animations
+  var currentDepth;
 
   Array.prototype.forEach.call(segments, function(child) {
     new Waypoint.Inview({
@@ -490,6 +518,10 @@
         docHeight = docEl.scrollHeight;
         currentPosition = Math.round(pos * (docHeight + winHeight));
         docEl.scrollTop = currentPosition;
+
+        if (dashboardOpen) {
+          moveDashboard($("#dashboard").find(".in-focus"));
+        }
       });
     });
   })();
