@@ -3,18 +3,31 @@
     var request = new XMLHttpRequest();
     request.open('GET', 'snippets/bloop.html');
     request.onload = function() {
-      var target = document.querySelector('#d2200');
+      var target = document.getElementById('d2200');
       target.innerHTML = request.response;
-
-      var bloopDepth = document.querySelector('#bloop-depth');
-      var depth = $(target).find('#the-bloop').offset().top;
-      bloopDepth.textContent = '' + depth + '-';
     };
     request.onerror = function() {
       console.error('Bloop: XHR error');
     };
     request.send();
   }
+
+  function loadSonar() {
+    var request = new XMLHttpRequest();
+    request.open('GET', 'snippets/sonar.html');
+    request.onload = function() {
+      var dashboard = document.getElementById('dashboard');
+      dashboard.innerHTML = $($.parseHTML(request.response)).filter("#bonus-challenge");
+
+      var tabs = document.getElementById('tabs');
+      dashboard.innerHTML = $($.parseHTML(request.response)).filter("#bonus-challenge-tab");
+    };
+    request.onerror = function() {
+      console.error('Sonar: XHR error');
+    };
+    request.send();
+  }
+
 
   function shouldShowBloop() {
     return navigator.userAgent.search(/refo/i) !== -1;

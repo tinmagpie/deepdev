@@ -234,3 +234,72 @@ $bloop-sprite-width: sprite_width($bloop-sprites);
     background-image: sprite-url($bloop2x-sprites);
   }
 }
+
+/* For the control panel */
+
+.sonar {
+  @include breakpoint($double_col){
+    .sonar_wrapper {
+      float: left;
+      width: calc(50% - 2em);
+    }
+    .sonar-panel {
+      float: right;
+    }
+    .alarm {
+      position: absolute;
+      top: 50%; right: 0;
+      width: calc(50% - 2em);
+      transform: translateY(-50%);
+    }
+  }
+  .sonar-panel {
+    margin: 0 auto rhythm(6);
+    overflow: hidden;
+    height: 24rem; width: 24rem;
+    position: relative;
+    img {
+      width: auto; height: 100%;
+      position: absolute;
+      top: 0; left: 0;
+    }
+    .sonar_bloop {
+      top: 36%; left: 16%;
+      height: 25px;
+    }
+  }
+}
+
+.animated .in-focus .sonar_beam {
+  animation: searching duration(months) linear infinite;
+}
+
+.animated .in-focus .sonar_bloop {
+  animation: finding duration(months) ease(inOut) infinite;
+}
+
+@keyframes searching {
+  100% { transform: rotate(360deg);}
+}
+
+@keyframes finding {
+  90% { transform: scale(.9);}
+  95% { transform: scale(1.1);}
+  100% { transform: scale(.9);}
+}
+
+.sonar_tab {
+  circle {
+    stroke: currentColor;
+    stroke-width:1;
+    fill: none;
+  }
+  path {
+    stroke: currentColor;
+    stroke-width:1;
+    fill: none;
+  }
+  svg {
+    transform: translateY(3px);
+  }
+}

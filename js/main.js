@@ -11,8 +11,15 @@
   var dashboardOpen = false;
 
   var moveDashboard = function(panel) {
-    var $dashBoardHeight = $("#menu_options").height() + panel.height();
+    var $dashBoardHeight = $("#menu_options").outerHeight() + panel.outerHeight();
     $("#control-panel").css({ transform: 'translateY(calc(100% - ' + $dashBoardHeight + 'px))'});
+  }
+
+  var closeDashboard = function(){
+    dashboardOpen = false;
+    $("#tabs").children(".tab").removeClass("active");
+    $("#dashboard").find(".panel").removeClass("in-focus");
+    $("#control-panel").removeAttr("style");
   }
 
   $("#tabs").children(".tab").on("click", function(){
@@ -21,10 +28,8 @@
 
     if ($(this).hasClass("active")) {
       // close it out
-      dashboardOpen = false;
-      $("#tabs").children(".tab").removeClass("active");
-      $("#dashboard").find(".panel").removeClass("in-focus");
-      $("#control-panel").removeAttr("style");
+      closeDashboard();
+
     } else {
       // assume nothing or anything is open
       dashboardOpen = true;
@@ -160,10 +165,18 @@
     });
   });
 
-  // Scroll to nearest in-view puzzle when devtools are opened.
-  // window.addEventListener('devtoolschange', function (e) {
-  // });
-
+  // Listen for anomoly link
+  $("#dashboard").on("click", "a", function(){
+    if ($(this).parents(".alarm")) {
+      var section = $(this).attr('href');
+      var newDepth = section.slice(2);
+      var time = Math.round(Math.abs((newDepth - currentDepth)));
+      closeDashboard();
+      $('html, body').animate({
+        scrollTop: $(section).offset().top
+      }, time);
+    }
+  });
 
   // Debouncing on rezize
   // http://davidwalsh.name/javascript-debounce-function

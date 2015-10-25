@@ -2,21 +2,30 @@
   &:not(.crew) {
     position: absolute;
     top: 0; left: 0;
-    width: 100%;
   }
-  max-height: calc(100vh - #{rhythm(11)});
+  width: 100%;
+  max-height: calc(100vh - #{rhythm(35)});
   opacity: 0;
   overflow: auto;
+  padding: rhythm(12) 0;
+  @extend %clearfix;
   transition: opacity duration(fast) ease(In);
   z-index: 0;
   &.in-focus {
     opacity: 1;
     z-index: 1;
   }
+  @include breakpoint($double_col){
+    width: calc(100% - #{rhythm(6)});
+  }
 }
 
 #dashboard {
   position: relative;
+  @include breakpoint($double_col){
+    max-width: $maxSegmentWidth;
+    margin: 0 auto;
+  }
 }
 
 .crew { height: 600px;}
@@ -32,10 +41,11 @@
   @extend %t-medium;
   color: color(copy);
   max-height: 100vh;
+  overflow: hidden;
   position: fixed;
   bottom: 0; left: 0;
   right: 0;
-  padding: 0 rhythm(3);
+  padding: 0 rhythm(6);
   transition:
     background ease(In) duration(timely),
     transform ease(inOut) duration(slow)
@@ -73,9 +83,9 @@
     .non-ff & {
       display: inline-block;
     }
-    &:hover {
-      background-color: $epipelagic;
-      border: 2px solid $epipelagic;
+    &:hover, &:active, &:focus {
+      background-color: $surface;
+      border: 2px solid $surface;
     }
   }
 }
@@ -95,7 +105,7 @@
 }
 
 .tab, .toggle {
-  margin-right: rhythm(1);
+  margin-left: rhythm(1);
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -123,18 +133,17 @@
   }
 }
 
-#share_tab path {
+.share_tab path {
   stroke: currentColor;
   stroke-width:2;
   fill: none;
 }
 
-#crew_tab path {
+.crew_tab path {
   fill: currentColor;
 }
 
-
-.toggle, {
+.toggle {
   &.activated {
     color: $skyMedium;
   }

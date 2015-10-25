@@ -1,4 +1,5 @@
-#menu_options:before, .segment:before,
+.panel:before, #menu_options:before, .segment:before,
+.panel:after,
 #menu_options:after,
 .segment:after {
   content: " ";
@@ -7,7 +8,7 @@
   /* 2 */
 }
 
-#menu_options:after, .segment:after {
+.panel:after, #menu_options:after, .segment:after {
   clear: both;
 }
 
@@ -306,9 +307,11 @@ h1, .subtitle {
 }
 /* UI */
 .panel {
-  max-height: calc(100vh - 3.66667rem);
+  width: 100%;
+  max-height: calc(100vh - 11.66667rem);
   opacity: 0;
   overflow: auto;
+  padding: 4rem 0;
   -webkit-transition: opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
           transition: opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
   z-index: 0;
@@ -317,15 +320,25 @@ h1, .subtitle {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
 }
 .panel.in-focus {
   opacity: 1;
   z-index: 1;
 }
+@media (min-width: 54em) {
+  .panel {
+    width: calc(100% - 2rem);
+  }
+}
 
 #dashboard {
   position: relative;
+}
+@media (min-width: 54em) {
+  #dashboard {
+    max-width: 102rem;
+    margin: 0 auto;
+  }
 }
 
 .crew {
@@ -342,11 +355,12 @@ h1, .subtitle {
   box-sizing: border-box;
   color: #c6f3c7;
   max-height: 100vh;
+  overflow: hidden;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 0 1rem;
+  padding: 0 2rem;
   -webkit-transition: background cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms, -webkit-transform cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
           transition: background cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms, transform cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
   -webkit-transform: translateY(calc(100% - 3.66667rem));
@@ -384,9 +398,9 @@ h1, .subtitle {
 .non-ff .menu .download {
   display: inline-block;
 }
-.menu .download:hover {
-  background-color: #007e84;
-  border: 2px solid #007e84;
+.menu .download:hover, .menu .download:active, .menu .download:focus {
+  background-color: #39dbb4;
+  border: 2px solid #39dbb4;
 }
 
 #menu_options {
@@ -403,7 +417,7 @@ h1, .subtitle {
 }
 
 .tab, .toggle {
-  margin-right: 0.33333rem;
+  margin-left: 0.33333rem;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -431,13 +445,13 @@ h1, .subtitle {
   height: 1.33333rem;
 }
 
-#share_tab path {
+.share_tab path {
   stroke: currentColor;
   stroke-width: 2;
   fill: none;
 }
 
-#crew_tab path {
+.crew_tab path {
   fill: currentColor;
 }
 
