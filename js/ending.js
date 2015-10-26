@@ -36,6 +36,19 @@
     request.send();
   }
 
+  function loadCongratsPanel() {
+    var request = new XMLHttpRequest();
+    request.open('GET', 'snippets/congrats.html');
+    request.onload = function() {
+      var target = document.getElementById('certificate');
+      target.innerHTML = request.response;
+    };
+    request.onerror = function() {
+      console.error('Congrats Panel: XHR error');
+    };
+    request.send();
+  }
+
 
   function shouldShowBloop() {
     return navigator.userAgent.search(/refo/i) !== -1;
@@ -55,13 +68,18 @@
         moveDashboard($("#dashboard").find(".in-focus"));
       } else {
         // For future browsers and CSS animation rock stars
-
+        $("#congrats-tab, #congrats-panel").removeClass("shh");
+        $("#congrats-tab").addClass("active");
+        $("#congrats-panel").addClass("in-focus");
+        var dashboardOpen = true;
+        moveDashboard($("#dashboard").find(".in-focus"));
       }
     } else if (GoalManager.goalsCompleted >= GoalManager.goalCount / 2) {
       if (shouldShowBloop() && bloopNeedsLoaded) {
         loadBloop();
         loadSonarTab();
         loadSonarPanel();
+        loadCongratsPanel();
         bloopNeedsLoaded = false;
       }
     }

@@ -536,6 +536,6 @@ var dashboardOpen = false;
 // track open or closed
 
 var moveDashboard = function(panel) {
-  var $dashBoardHeight = $("#menu_options").outerHeight() + panel.outerHeight();
+  var $dashBoardHeight = $("#menu_options").get(0).offsetHeight + panel.get(0).offsetHeight;
   $("#control-panel").css({ transform: 'translateY(calc(100% - ' + $dashBoardHeight + 'px))'});
 }

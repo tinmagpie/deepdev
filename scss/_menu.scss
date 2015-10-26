@@ -3,20 +3,18 @@
     position: absolute;
     top: 0; left: 0;
   }
+  box-sizing: border-box;
   width: 100%;
   max-height: calc(100vh - #{rhythm(35)});
   opacity: 0;
   overflow: auto;
-  padding: rhythm(12) 0;
+  padding: rhythm(12) rhythm(12) rhythm(12) rhythm(6);
   @extend %clearfix;
   transition: opacity duration(fast) ease(In);
   z-index: 0;
   &.in-focus {
     opacity: 1;
     z-index: 1;
-  }
-  @include breakpoint($double_col){
-    width: calc(100% - #{rhythm(6)});
   }
 }
 
@@ -30,10 +28,6 @@
 
 .crew { height: 600px;}
 
-#menu_options {
-  margin: 0; padding: rhythm(1) 0;
-}
-
 .menu {
   background: $abyss;
   box-sizing: border-box;
@@ -45,7 +39,6 @@
   position: fixed;
   bottom: 0; left: 0;
   right: 0;
-  padding: 0 rhythm(6);
   transition:
     background ease(In) duration(timely),
     transform ease(inOut) duration(slow)
@@ -54,10 +47,6 @@
   z-index: 30;
   .bathypelagic &, .abyssal & {
     background: $epipelagic;
-  }
-  .ff-download {
-    margin-top: rhythm(1);
-    float: left;
   }
   .logo {
     height: 35px;
@@ -91,8 +80,14 @@
 }
 
 #menu_options {
+  margin: 0;
+  padding: rhythm(1) rhythm(12) rhythm(1) rhythm(6);
   text-align: center;
   @extend %clearfix;
+  .ff-download {
+    margin-top: rhythm(1);
+    float: left;
+  }
 }
 
 .controls {
@@ -111,7 +106,7 @@
   display: inline-block;
   text-transform: uppercase;
   @extend %fontSpartan;
-  &:hover, &:active, &:focus, &.active {
+  &:hover, &:active, &:focus {
     color: $skyMedium;
   }
 }
@@ -127,6 +122,9 @@
   &:hover, &:active, &:focus, &.active {
     background: rgba($abyss, .4);
     transition-timing-function: ease(In), ease(In);
+  }
+  &.active {
+    color: $red;
   }
   svg {
     width: rhythm(4); height: rhythm(4);
@@ -208,4 +206,76 @@
       stroke: none;
     }
   }
+}
+
+.ending {
+  // background: image-url("svg/bg_tentacles.svg") fixed no-repeat 109% rhythm(45) / auto 77%;
+}
+
+.ending {
+  @include breakpoint($double_col){
+    .accolades, .rewards {
+      float: left;
+      width: calc(50% - 1em);
+    }
+    .rewards {
+      float: right;
+    }
+  }
+}
+
+.rewards {
+  text-align: center;
+  @include breakpoint($double_col){
+    padding-top: rhythm(9);
+  }
+  a {
+    display: inline-block;
+    @extend %clearfix;
+    @extend %fontSpartan;
+    path {fill: currentColor;}
+    padding: rhythm(3);
+    border-radius: rhythm(1);
+    text-align: left;
+    transition:
+      transform duration(timely) ease(In),
+      background duration(fast) ease(In),
+      color duration(fast) ease(In);
+    width: rhythm(39);
+    margin: 0 rhythm(3) rhythm(3);
+    svg {
+      width: rhythm(9);
+      float: left;
+    }
+    span {
+      width: rhythm(27);
+      float: right;
+    }
+    &:link, &:visited {
+      background: $biolumination;
+      color: $epipelagic;
+    }
+    &:hover, &:active, &:focus {
+      background: $skyMedium;
+      color: $abyss;
+      transform: translate(1px, 1px);
+    }
+  }
+}
+
+.join-the-deep {
+  display: none;
+  a { display: inline-block;}
+  .non-ff & {
+    display: block;
+  }
+  .ff-download {
+    display:inline-block;
+  }
+  .download {
+    margin-top: rhythm(3);
+    transform: translateY(-(rhythm(3)));
+  }
+  text-align: center;
+  margin: rhythm(3) 0;
 }

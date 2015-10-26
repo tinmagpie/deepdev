@@ -84,10 +84,6 @@ $bloop-sprite-width: sprite_width($bloop-sprites);
   }
 }
 
-.shh {
-  opacity: 0;
-}
-
 #bonus-challenge-tab, #bonus-challenge, #the-bloop {
   transition: opacity duration(timely) easing(Out);
 }
@@ -248,7 +244,7 @@ $bloop-sprite-width: sprite_width($bloop-sprites);
   @include breakpoint($double_col){
     .sonar_wrapper {
       float: left;
-      width: calc(50% - 2em);
+      width: calc(50% - 1em);
     }
     .sonar-panel {
       float: right;
@@ -256,7 +252,7 @@ $bloop-sprite-width: sprite_width($bloop-sprites);
     .alarm {
       position: absolute;
       top: 50%; right: 0;
-      width: calc(50% - 2em);
+      width: calc(50% - 1em);
       transform: translateY(-50%);
     }
   }

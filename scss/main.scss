@@ -116,7 +116,7 @@ h3 + .content {
   }
 }
 
-.content, .challenge {
+.content, .challenge, .panel {
   @include breakpoint($medium){
     p {
       padding-bottom: 0;
@@ -125,7 +125,9 @@ h3 + .content {
       }
     }
   }
+}
 
+.content, .challenge {
   @include breakpoint($double_col){
     column-count: 2;
     column-gap: 2rem;
@@ -401,4 +403,9 @@ small {
 
 .creature#creature_orange-roughy1 {
   filter: $blueFilter;
+}
+
+.shh {
+  display: none;
+  opacity: 0;
 }

@@ -76,10 +76,6 @@
             transform: translate(100%, -50%);
   }
 }
-.shh {
-  opacity: 0;
-}
-
 #bonus-challenge-tab, #bonus-challenge, #the-bloop {
   -webkit-transition: opacity 300ms easing(Out);
           transition: opacity 300ms easing(Out);
@@ -405,7 +401,7 @@
 @media (min-width: 54em) {
   .sonar .sonar_wrapper {
     float: left;
-    width: calc(50% - 2em);
+    width: calc(50% - 1em);
   }
   .sonar .sonar-panel {
     float: right;
@@ -414,7 +410,7 @@
     position: absolute;
     top: 50%;
     right: 0;
-    width: calc(50% - 2em);
+    width: calc(50% - 1em);
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);

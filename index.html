@@ -543,11 +543,6 @@
 						</div>
 					</div>
 					<div class="creature_hagfish creature" id="creature_hagfish1"></div>
-<!-- 					<div id="ending">
-						<p>Congratulations! You’ve traveled deeper than most browsers and seen things most people will never see. You’re a hardened mariner of solid repute. We can tell you like uncovering deep-sea mysteries and finding clever workarounds to complex problems. Next time, try taking <a href="https://www.mozilla.org/en-US/firefox/developer/">Firefox Developer Edition</a> for a spin, and see what leviathans you might encounter.</p>
-						<p><a href="https://www.mozilla.org/en-US/firefox/developer/">Download FireFox Developer Edition</a></p>
-						<iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3Arachelnabors%3Aplaylist%3A2wkYBklNLW4i3iNJ7qhNXU" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-					</div> -->
 				</div>
 				</div>
 				<div class="ooze">
@@ -567,7 +562,6 @@
 					<a class="download" href="https://www.mozilla.org/firefox/developer/">Free download »</a>
 				</div>
 				<div class="controls">
-		<!-- 			<label for="animation">Motion sick?</label> -->
 					<div class="toggle activated" role="button" id="animation">
 						<div class="toggle_bg">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.7 23.5"><path d="M11.7 22.4H41c5.9 0 10.7-4.8 10.7-10.7C51.7 5.8 46.9 1 41 1H11.7C5.8 1.1 1 5.9 1 11.8c0 5.8 4.8 10.6 10.7 10.6z"/></svg>
@@ -578,8 +572,7 @@
 						</div>
 					</div>
 
-		<!-- 			<label for="audio">Headphones on?</label>
-		 -->	<div class="toggle" role="button" id="audio">
+					<div class="toggle" role="button" id="audio">
 						<div class="toggle_bg">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.7 23.5"><path d="M11.7 22.4H41c5.9 0 10.7-4.8 10.7-10.7C51.7 5.8 46.9 1 41 1H11.7C5.8 1.1 1 5.9 1 11.8c0 5.8 4.8 10.6 10.7 10.6z"/></svg>
 							<div class="toggle_button">
@@ -598,6 +591,10 @@
 						Share
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16 12v3.9c0 1.9-1.5 3.1-3.4 3.1H4.1C2.2 19 1 17.8 1 15.9V7.4C1 5.5 2.2 4 4.1 4H8m2-3h6.1C18 1 19 2 19 3.9V10M5.7 14.3L18.5 1.5"/></svg>
 					</span>
+					<span class="tab shh certificate_tab" id="congrats-tab" data-panel="ending_panel">
+						Mission Accomplished
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16 12v3.9c0 1.9-1.5 3.1-3.4 3.1H4.1C2.2 19 1 17.8 1 15.9V7.4C1 5.5 2.2 4 4.1 4H8m2-3h6.1C18 1 19 2 19 3.9V10M5.7 14.3L18.5 1.5"/></svg>
+					</span>
 				</div>
 			</menu>
 			<div id="dashboard">
@@ -612,6 +609,36 @@
 				</div>
 				<div class="panel crew" data-panel="crew_panel">
 					DA CREW
+				</div>
+				<div class="panel ending shh" id="congrats-panel" data-panel="ending_panel">
+					<div id="certificate" class="accolades">
+						<h3>Congratulations!</h3>
+						<p>You’ve traveled deeper than most browsers and seen things most people will never see. You’re a hardened mariner of solid repute. We can tell you like uncovering deep-sea mysteries and finding clever workarounds to complex problems.</p>
+						<p>The crew is impressed.</p>
+						<p>Next time, try taking <a href="https://www.mozilla.org/en-US/firefox/developer/">Firefox Developer Edition</a> for a spin, and see what leviathans you might encounter.</p>
+						<div class="join-the-deep">
+							<div class="ff-download">
+								<a href="https://www.mozilla.org/firefox/developer/">
+									<picture>
+										<img class="logo" srcset="img/logo_dev-ed-white.png, img/logo_dev-ed-white2x.png 2x" alt="Firefox DevEdition">
+									</picture>
+								</a>
+								<a class="download" href="https://www.mozilla.org/firefox/developer/">Take Firefox Developer Edition for a dive »</a>
+							</div>
+						</div>
+						<div class="addthis_sharing_toolbox" data-url="http://mzl.la/devtoolschallenger" data-title="DevTools Challenger"></div>
+					</div>
+
+					<div class="rewards">
+						<a class="spotify" target="_blank" href="https://open.spotify.com/user/rachelnabors/playlist/2wkYBklNLW4i3iNJ7qhNXU">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path class="st0" d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31.1 0 20 0zm9.2 28.9c-.4.6-1.1.8-1.7.4-4.7-2.9-10.6-3.5-17.6-1.9-.7.2-1.3-.3-1.5-.9-.2-.7.3-1.3.9-1.5 7.6-1.7 14.2-1 19.4 2.2.7.3.8 1.1.5 1.7zm2.4-5.5c-.5.7-1.4 1-2.1.5-5.4-3.3-13.6-4.3-19.9-2.3-.8.2-1.7-.2-1.9-1-.2-.8.2-1.7 1-1.9 7.3-2.2 16.3-1.1 22.5 2.7.6.3.9 1.3.4 2zm.2-5.6c-6.4-3.8-17.1-4.2-23.2-2.3-1 .3-2-.3-2.3-1.2-.3-1 .3-2 1.2-2.3 7.1-2.1 18.8-1.7 26.2 2.7.9.5 1.2 1.7.7 2.6-.5.7-1.7 1-2.6.5z"/></svg>
+						<span>Enjoy the Playlist on Spotify</span></a>
+
+						<a class="github" href="https://github.com/tinmagpie/deepdev/" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120.8 117.8"><path class="st0" d="M60.4 0C27 0 0 27 0 60.4c0 26.7 17.3 49.3 41.3 57.3 3 .6 4.1-1.3 4.1-2.9 0-1.4-.1-6.2-.1-11.2-16.8 3.6-20.3-7.2-20.3-7.2-2.7-7-6.7-8.8-6.7-8.8-5.5-3.7.4-3.7.4-3.7 6.1.4 9.3 6.2 9.3 6.2 5.4 9.2 14.1 6.6 17.6 5 .5-3.9 2.1-6.6 3.8-8.1-13.4-1.4-27.5-6.6-27.5-29.8 0-6.6 2.4-12 6.2-16.2-.6-1.5-2.7-7.7.6-16 0 0 5.1-1.6 16.6 6.2 4.8-1.3 10-2 15.1-2s10.3.7 15.1 2C87 23.4 92.1 25 92.1 25c3.3 8.3 1.2 14.5.6 16 3.9 4.2 6.2 9.6 6.2 16.2 0 23.2-14.1 28.3-27.6 29.8 2.2 1.9 4.1 5.5 4.1 11.2 0 8.1-.1 14.6-.1 16.6 0 1.6 1.1 3.5 4.1 2.9 24-8 41.3-30.6 41.3-57.3C120.8 27 93.7 0 60.4 0z"/><path d="M22.9 86.7c-.1.3-.6.4-1 .2s-.7-.6-.5-.9c.1-.3.6-.4 1-.2s.6.6.5.9zm-.8-.5M25.3 89.4c-.3.3-.9.1-1.2-.3-.4-.4-.5-1-.2-1.3.3-.3.8-.1 1.2.3.4.5.5 1.1.2 1.3zm-.6-.6M27.7 92.9c-.4.3-1 0-1.3-.5-.4-.5-.4-1.2 0-1.4.4-.3 1 0 1.3.5.4.5.4 1.1 0 1.4zm0 0M31 96.3c-.3.4-1 .3-1.6-.2-.5-.5-.7-1.2-.3-1.5.3-.4 1-.3 1.6.2.5.4.6 1.1.3 1.5zm0 0M35.5 98.2c-.1.5-.8.7-1.5.5-.7-.2-1.1-.8-1-1.2.1-.5.8-.7 1.5-.5.7.2 1.1.7 1 1.2zm0 0M40.4 98.6c0 .5-.6.9-1.3.9-.7 0-1.3-.4-1.3-.9s.6-.9 1.3-.9c.7 0 1.3.4 1.3.9zm0 0M45 97.8c.1.5-.4 1-1.1 1.1-.7.1-1.3-.2-1.4-.7-.1-.5.4-1 1.1-1.1.7-.1 1.3.2 1.4.7zm0 0"/></svg>
+						<span>Explore the code on Github</span></a>
+					</div>
+
 				</div>
 			</div>
 		</div>
