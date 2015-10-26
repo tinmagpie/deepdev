@@ -171,7 +171,7 @@ BufferLoader.prototype.loadBuffer = function(url, index) {
       request.response,
       function(buffer) {
         if (!buffer) {
-          alert('error decoding file data: ' + url);
+          cosole.error('error decoding file data: ' + url);
           return;
         }
         loader.bufferList[index] = buffer;
@@ -185,7 +185,7 @@ BufferLoader.prototype.loadBuffer = function(url, index) {
   };
 
   request.onerror = function() {
-    alert('BufferLoader: XHR error');
+    console.error('BufferLoader: XHR error');
   };
 
   request.send();
