@@ -68,6 +68,7 @@
         moveDashboard($("#dashboard").find(".in-focus"));
       } else {
         // For future browsers and CSS animation rock stars
+        $("html").addClass("won");
         $("#congrats-tab, #congrats-panel").removeClass("shh");
         $("#congrats-tab").addClass("active");
         $("#congrats-panel").addClass("in-focus");

@@ -352,12 +352,19 @@ h1, .subtitle {
   bottom: 0;
   left: 0;
   right: 0;
-  -webkit-transition: background cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms, -webkit-transform cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
-          transition: background cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms, transform cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
+  -webkit-transition: background-color cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms, -webkit-transform cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
+          transition: background-color cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms, transform cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
   -webkit-transform: translateY(calc(100% - 3.66667rem));
       -ms-transform: translateY(calc(100% - 3.66667rem));
           transform: translateY(calc(100% - 3.66667rem));
   z-index: 30;
+}
+.won .menu {
+  background-image: url('../img/svg/bg_tentacles.svg?1445821437');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: 135% 0;
+  background-size: auto 100%;
 }
 .bathypelagic .menu, .abyssal .menu {
   background: #007e84;

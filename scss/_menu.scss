@@ -30,6 +30,13 @@
 
 .menu {
   background: $abyss;
+  .won & {
+    background-image: image-url("svg/bg_tentacles.svg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 135% 0;
+    background-size: auto 100%;
+  }
   box-sizing: border-box;
   @extend %fontMerriweather;
   @extend %t-medium;
@@ -40,7 +47,7 @@
   bottom: 0; left: 0;
   right: 0;
   transition:
-    background ease(In) duration(timely),
+    background-color ease(In) duration(timely),
     transform ease(inOut) duration(slow)
   ;
   transform: translateY(calc(100% - #{rhythm(11)}));
@@ -206,10 +213,6 @@
       stroke: none;
     }
   }
-}
-
-.ending {
-  // background: image-url("svg/bg_tentacles.svg") fixed no-repeat 109% rhythm(45) / auto 77%;
 }
 
 .ending {
