@@ -9,6 +9,7 @@
   opacity: 0;
   overflow: auto;
   padding: rhythm(12) rhythm(12) rhythm(12) rhythm(6);
+  position: relative;
   @extend %clearfix;
   transition: opacity duration(fast) ease(In);
   z-index: 0;
@@ -25,8 +26,6 @@
     margin: 0 auto;
   }
 }
-
-.crew { height: 600px;}
 
 .menu {
   background: $abyss;
@@ -281,4 +280,90 @@
   }
   text-align: center;
   margin: rhythm(3) 0;
+}
+
+.crew li, .crew ul {
+  padding: 0; margin: 0;
+  list-style: none ;
+}
+
+.crew ul {
+  text-align: center;
+}
+
+.sound-off {
+  li {
+    display:inline-block;
+    width: 120px;
+    margin: rhythm(3) rhythm(6);
+    vertical-align:top;
+  }
+  .name {
+    margin: rhythm(6) 0 rhythm(1);
+    @extend %fontSpartan;
+  }
+}
+
+
+.crew {
+  h3 { @include margin-trailer(3); }
+  a { text-decoration: none;}
+  picture {
+    position: relative;
+    display: block;
+    img { border-radius: 100%; }
+    &:before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: -10%; left: -10%;
+      width: 120%; height: 120%;
+      background: image-url("svg/porthole.svg") 0 0 / 100% 100%;
+    }
+  }
+  .nautical, .irl {
+    transition: opacity duration(fast) ease(In);
+  }
+  .irl {
+    position: relative;
+    opacity: 0;
+  }
+  .nautical {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+  }
+  li:hover {
+    .irl {
+      opacity: 1;
+      z-index: 1;
+    }
+    .nautical { opacity: 0;}
+  }
+  .name {
+    margin: rhythm(6) 0 rhythm(1);
+    @extend %fontSpartan;
+  }
+  strong {
+    @extend %fontMerriweatherItalic;
+  }
+  .title {
+    position: relative;
+    @extend %fontMerriweatherItalic;
+    @extend %t-small;
+  }
+}
+
+.thanks {
+  @include padding-trailer(6);
+  h4 {
+    @extend %fontMerriweatherItalic;
+    @extend %t-large;
+    text-align: center;
+  }
+  li {
+    display: inline-block;
+    margin: 0 rhythm(3);
+  }
+  .title { text-align: left;}
 }
