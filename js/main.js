@@ -11,7 +11,7 @@
     $("#tabs").children(".tab").removeClass("active");
     $("#dashboard").find(".panel").removeClass("in-focus");
     $("#control-panel").removeAttr("style");
-  }
+  };
 
   $("#tabs").on("click", ".tab", function(){
     var $pair = $(this).attr("data-panel");
@@ -116,7 +116,9 @@
         var indicator = document.querySelector('.progress [data-creature="' + creature + '"]');
         if (indicator) {
           if (!indicator.classList.contains('visited')) {
-            audio.playCue('visit');
+            audio.doneLoading(function () {
+              audio.playCue('visit');
+            });
           }
           indicator.classList.add('visited');
         }
@@ -537,4 +539,4 @@ var dashboardOpen = false;
 var moveDashboard = function(panel) {
   var $dashBoardHeight = $("#menu_options").get(0).offsetHeight + panel.get(0).offsetHeight;
   $("#control-panel").css({ transform: 'translateY(calc(100% - ' + $dashBoardHeight + 'px))'});
-}
+};
