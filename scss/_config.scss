@@ -153,6 +153,11 @@ $durations: (
     clear: both;
 }
 
+%noScroll {
+  overflow: hidden;
+  position:fixed;
+}
+
 @function calc-em($px) {
   @return ($px/$ms-base-value) * 1em;
 }

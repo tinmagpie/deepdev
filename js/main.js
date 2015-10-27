@@ -1,6 +1,10 @@
 (function(){
   'use strict';
 
+  $( document ).ready(function() {
+    // $("html").addClass("loaded").removeClass(".loading");
+  });
+
   // Detect Firefox 4x
   if (!window.navigator.userAgent.match(/Gecko\/\d+ Firefox\/4/i)) {
     $('html').addClass('non-ff');
@@ -11,7 +15,12 @@
     $("#tabs").children(".tab").removeClass("active");
     $("#dashboard").find(".panel").removeClass("in-focus");
     $("#control-panel").removeAttr("style");
+    $("html").removeClass("dashOpen");
   }
+
+  $("#tabs").on( "mouseenter mouseleave", ".tab", function(){
+    $("#control-panel").toggleClass("hovered");
+  });
 
   $("#tabs").on("click", ".tab", function(){
     var $pair = $(this).attr("data-panel");
@@ -23,7 +32,6 @@
 
     } else {
       // assume nothing or anything is open
-      dashboardOpen = true;
 
       $("#tabs").children(".tab").removeClass("active");
       $(this).addClass("active");
@@ -535,6 +543,8 @@ var dashboardOpen = false;
 // track open or closed
 
 var moveDashboard = function(panel) {
+  dashboardOpen = true;
   var $dashBoardHeight = $("#menu_options").get(0).offsetHeight + panel.get(0).offsetHeight;
   $("#control-panel").css({ transform: 'translateY(calc(100% - ' + $dashBoardHeight + 'px))'});
+  $("html").addClass("dashOpen");
 }

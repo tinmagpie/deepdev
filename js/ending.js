@@ -64,7 +64,6 @@
         $("#bonus-challenge-tab").addClass("active");
         $("#bonus-challenge").addClass("in-focus");
         $("#challenge_bloop").addClass("visited");
-        var dashboardOpen = true;
         moveDashboard($("#dashboard").find(".in-focus"));
       } else {
         // For future browsers and CSS animation rock stars
@@ -72,7 +71,6 @@
         $("#congrats-tab, #congrats-panel").removeClass("shh");
         $("#congrats-tab").addClass("active");
         $("#congrats-panel").addClass("in-focus");
-        var dashboardOpen = true;
         moveDashboard($("#dashboard").find(".in-focus"));
       }
     } else if (GoalManager.goalsCompleted >= GoalManager.goalCount / 2) {
