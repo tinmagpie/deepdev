@@ -1,8 +1,9 @@
 (function(){
   'use strict';
 
+
   $( document ).ready(function() {
-    // $("html").addClass("loaded").removeClass(".loading");
+    $("html").addClass("loaded").delay(5000).removeClass("loading");
   });
 
   // Detect Firefox 4x

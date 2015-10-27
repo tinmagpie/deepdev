@@ -5,13 +5,6 @@
   margin: rhythm(6) (rhythm(9) * -1);
 }
 
-#surface {
-  background: color(sky);
-  color: color(altCopy);
-  position: relative;
-  z-index: 20;
-}
-
 h1, .subtitle {
   @extend %t-medium;
   @extend %fontMerriweather;
@@ -56,13 +49,13 @@ h1, .subtitle {
 
 .get-a-move-on {
   opacity: 0;
-  transition: opacity ease(Out) duration(timely) duration(months);
   height: rhythm(15);
   position: absolute;
   transform: translate(-50%, 50%);
   left: 50%; bottom: 190px;
   z-index: 1;
   .loaded & {
+    transition: opacity ease(Out) duration(timely) duration(months);
     opacity: 1;
   }
   .loaded.animated & {
@@ -116,85 +109,7 @@ h1, .subtitle {
 //   }
 // }
 
-.waves_wrapper {
-  background: linear-gradient(to bottom, $surface 0%, transparent 100%);
-  height: 120px;
-  position: absolute;
-  left: 0; bottom: -180px;
-  width: 100%;
-  padding-bottom: 60px;
-}
 
-.waves {
-  background: $surface;
-  height: 120px;
-  position: absolute;
-  left: 0; top: -120px;
-  width: 100%;
-}
-
-.wave {
-  position: absolute;
-  left: 0; bottom: 60px;
-  width: 100%;
-  height: 130px;
-  .animated .in-zone & {
-    animation-name: oceanSurge;
-    animation-timing-function: ease(inOut);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-  }
-  &:before {
-    content: " ";
-    transform: scale(1.1) translateX(-20px);
-    position: absolute;
-    left: 0; bottom: 0;
-    width: 100%;
-    padding: 0 40px;
-    height: 120px;
-    .animated .in-zone & {
-      animation-name: oceanMotion;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      animation-direction: alternate;
-    }
-  }
-}
-
-.wave-close {
-  animation-duration: duration(weeks);
-  &:before {
-    background: url("../img/wave-close.svg") repeat-x 100% 100%;
-    animation-duration: duration(days);
-  }
-}
-
-.wave-near {
-  animation-duration: duration(months);
-  &:before {
-    background: url("../img/wave-near.svg") repeat-x 100% 100%;
-    animation-duration: duration(weeks);
-    transform: translateY(-10px);
-  }
-}
-
-.wave-mid {
-  background: $midnight;
-  height: 130px;
-  &:before {
-    background: url("../img/wave-mid.svg") repeat-x 0 10px;
-    background-size: 305px 120px;
-    animation-duration: duration(months);
-  }
-}
-
-@keyframes oceanMotion {
-  100% { transform: scale(1.1) translateX(30px); }
-}
-
-@keyframes oceanSurge {
-  100% { transform: translateY(10px); }
-}
 
 @include breakpoint($double_col) {
   h1 img {

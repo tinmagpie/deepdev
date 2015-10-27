@@ -6,6 +6,8 @@ $super_wide: 2 * 50em + 4em + 2em;
 
 $medium: 35em;
 
+$heightScreen:  100vh; // 100vh = height of screen = 200 meters of ocean
+
 // Modular Scale
 $ms-base-value: 15;
 $ms-base: $ms-base-value * 1px;
@@ -108,6 +110,75 @@ $durations: (
   @return null;
 }
 
+/* Animations */
+%play-pause {
+  animation-play-state: paused !important;
+  .in-view & {
+    animation-play-state: running !important;
+  }
+}
+
+$howToHide: opacity duration(days) ease(Out);
+
+%content-hidden {
+  opacity: 0;
+  transition: $howToHide;
+}
+
+%content-revealed {
+  opacity: 1;
+}
+
+%sprited-thing {
+  overflow: hidden;
+  position: relative;
+  // image that might animate
+  &:before {
+    content: " ";
+    width: 100%;
+    height: 100%; // non-animating default
+    display: block;
+  }
+}
+
+//
+//  Function to create an optimized svg url
+//
+@function svg-url($svg){
+    //
+    //  Chunk up string in order to avoid
+    //  "stack level too deep" error
+    //
+    $encoded:'';
+    $slice: 2000;
+    $index: 0;
+    $loops: ceil(str-length($svg)/$slice);
+    @for $i from 1 through $loops {
+        $chunk: str-slice($svg, $index, $index + $slice - 1);
+        //
+        //   Encode (may need a few extra replacements)
+        //
+        $chunk: str-replace($chunk,'"','\'');
+        $chunk: str-replace($chunk,'<','%3C');
+        $chunk: str-replace($chunk,'>','%3E');
+        $chunk: str-replace($chunk,'&','%26');
+        $chunk: str-replace($chunk,'#','%23');
+        $encoded: #{$encoded}#{$chunk};
+        $index: $index + $slice;
+    }
+    @return url("data:image/svg+xml;charset=utf8,#{$encoded}");
+}
+
+//  Helper function to replace characters in a string
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace +
+            str-replace(str-slice($string, $index +
+            str-length($search)), $search, $replace);
+    }
+    @return $string;
+}
 @mixin buttonator($button-color: color(link), $alt-color: color(linkHover), $border-radius: .5em) {
   background: $button-color;
   border-radius: $border-radius;

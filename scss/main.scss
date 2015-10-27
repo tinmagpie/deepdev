@@ -15,8 +15,6 @@
     font-style: normal;
 }
 
-$heightScreen:  100vh; // 100vh = height of screen = 200 meters of ocean
-
 body, h1, h2, h3, h4, p, ul {
   margin: 0; padding: 0;
 }
@@ -31,37 +29,6 @@ a {
   &:hover, &:active, &:focus { color: color(linkHover) }
 }
 
-/* Animations */
-%play-pause {
-  animation-play-state: paused !important;
-  .in-view & {
-    animation-play-state: running !important;
-  }
-}
-
-$howToHide: opacity duration(days) ease(Out);
-
-%content-hidden {
-  opacity: 0;
-  transition: $howToHide;
-}
-
-%content-revealed {
-  opacity: 1;
-}
-
-%sprited-thing {
-  overflow: hidden;
-  position: relative;
-  // image that might animate
-  &:before {
-    content: " ";
-    width: 100%;
-    height: 100%; // non-animating default
-    display: block;
-  }
-}
-
 @import "title-card";
 
 /* UI */
@@ -74,9 +41,9 @@ $howToHide: opacity duration(days) ease(Out);
 }
 
 .segment {
-  min-height: $heightScreen;
-  padding: rhythm(12) rhythm(12) rhythm(12) rhythm(6);
-  position: relative;
+  // min-height: $heightScreen;
+  // padding: rhythm(12) rhythm(12) rhythm(12) rhythm(6);
+  // position: relative;
   @extend %clearfix;
   @include breakpoint($double_col){
     max-width: $maxSegmentWidth;
@@ -84,7 +51,6 @@ $howToHide: opacity duration(days) ease(Out);
   }
   @extend %t-medium;
   // everything starts paused and transparent...
-  @extend %content-hidden;
   * {
     animation-play-state: paused;
   }

@@ -1,0 +1,185 @@
+/* Animations */
+.segment {
+  opacity: 0;
+  -webkit-transition: opacity 2.1s cubic-bezier(0.215, 0.61, 0.355, 1);
+          transition: opacity 2.1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.loading body {
+  overflow: hidden;
+  position: fixed;
+}
+
+/* Loading Screen */
+.loading #title * {
+  display: none;
+  opacity: 0;
+}
+.loading .boat {
+  background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 92'%3E%3Cstyle%3Epath {fill:%23002351;}%3C/style%3E%3Cpath d='M67.6 59.8h15.7l9.2-22.1-9.2-21.1H33.1v23L57.3 46v31.7H0L1 46l25.2-6.9V9.2l64.4-.5 26.2 51.6h13.4L204.7 0H264l18.4 22.1h16.1v14.7L500 14l-78.7 78H83.7z'/%3E%3C/svg%3E");
+  width: 12.5%;
+  position: absolute;
+  left: 0;
+  bottom: 189px;
+  -webkit-animation: boating infinite cubic-bezier(0.39, 0.575, 0.565, 1) 14.4s;
+          animation: boating infinite cubic-bezier(0.39, 0.575, 0.565, 1) 14.4s;
+}
+.loading .boat:before {
+  content: " ";
+  display: block;
+  padding-top: 18.4%;
+}
+
+#surface {
+  background: #A9DDF2;
+  color: #000c1c;
+  position: relative;
+  z-index: 20;
+}
+
+@-webkit-keyframes boating {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(800%);
+            transform: translateX(800%);
+  }
+}
+
+@keyframes boating {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(800%);
+            transform: translateX(800%);
+  }
+}
+.segment {
+  min-height: 100vh;
+  padding: 4rem 4rem 4rem 2rem;
+  position: relative;
+}
+
+.waves_wrapper {
+  background: -webkit-linear-gradient(top, #39dbb4 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to bottom, #39dbb4 0%, rgba(0, 0, 0, 0) 100%);
+  height: 120px;
+  position: absolute;
+  left: 0;
+  bottom: -180px;
+  width: 100%;
+  padding-bottom: 60px;
+}
+
+.waves {
+  background: #39dbb4;
+  height: 120px;
+  position: absolute;
+  left: 0;
+  top: -120px;
+  width: 100%;
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  bottom: 60px;
+  width: 100%;
+  height: 130px;
+}
+.animated .in-zone .wave {
+  -webkit-animation-name: oceanSurge;
+          animation-name: oceanSurge;
+  -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+          animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+.wave:before {
+  content: " ";
+  -webkit-transform: scale(1.1) translateX(-20px);
+      -ms-transform: scale(1.1) translateX(-20px);
+          transform: scale(1.1) translateX(-20px);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 0 40px;
+  height: 120px;
+}
+.animated .in-zone .wave:before {
+  -webkit-animation-name: oceanMotion;
+          animation-name: oceanMotion;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+.wave-close {
+  -webkit-animation-duration: 3.4s;
+          animation-duration: 3.4s;
+}
+.wave-close:before {
+  background: url("../img/wave-close.svg") repeat-x 100% 100%;
+  -webkit-animation-duration: 2.1s;
+          animation-duration: 2.1s;
+}
+
+.wave-near {
+  -webkit-animation-duration: 5.5s;
+          animation-duration: 5.5s;
+}
+.wave-near:before {
+  background: url("../img/wave-near.svg") repeat-x 100% 100%;
+  -webkit-animation-duration: 3.4s;
+          animation-duration: 3.4s;
+  -webkit-transform: translateY(-10px);
+      -ms-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.wave-mid {
+  background: #002351;
+  height: 130px;
+}
+.wave-mid:before {
+  background: url("../img/wave-mid.svg") repeat-x 0 10px;
+  background-size: 305px 120px;
+  -webkit-animation-duration: 5.5s;
+          animation-duration: 5.5s;
+}
+
+@-webkit-keyframes oceanMotion {
+  100% {
+    -webkit-transform: scale(1.1) translateX(30px);
+            transform: scale(1.1) translateX(30px);
+  }
+}
+
+@keyframes oceanMotion {
+  100% {
+    -webkit-transform: scale(1.1) translateX(30px);
+            transform: scale(1.1) translateX(30px);
+  }
+}
+@-webkit-keyframes oceanSurge {
+  100% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+}
+@keyframes oceanSurge {
+  100% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+}
