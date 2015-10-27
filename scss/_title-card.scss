@@ -55,17 +55,24 @@ h1, .subtitle {
   left: 50%; bottom: 190px;
   z-index: 1;
   transition: opacity ease(Out) duration(timely);
-  transition-delay: duration(months);
   .loaded & {
-    // opacity: 1;
+    opacity: 1;
   }
   .loaded.animated & {
-    animation: letsGo infinite alternate duration(slow) ease(bounceOut);
+    animation:
+      letsGo infinite alternate duration(slow) ease(bounceOut),
+      rightNow ease(Out) duration(timely) duration(months) both
+      ;
   }
 }
 
 @keyframes letsGo {
   100% { transform: translate(-50%, 25%); }
+}
+
+@keyframes rightNow {
+  0% { opacity: 1 }
+  100% { opacity: 1 }
 }
 
 // .for-browsers {

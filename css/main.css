@@ -160,12 +160,13 @@ h1, .subtitle {
   z-index: 1;
   -webkit-transition: opacity cubic-bezier(0.215, 0.61, 0.355, 1) 300ms;
           transition: opacity cubic-bezier(0.215, 0.61, 0.355, 1) 300ms;
-  -webkit-transition-delay: 5.5s;
-          transition-delay: 5.5s;
+}
+.loaded .get-a-move-on {
+  opacity: 1;
 }
 .loaded.animated .get-a-move-on {
-  -webkit-animation: letsGo infinite alternate 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-          animation: letsGo infinite alternate 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-animation: letsGo infinite alternate 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275), rightNow cubic-bezier(0.215, 0.61, 0.355, 1) 300ms 5.5s both;
+          animation: letsGo infinite alternate 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275), rightNow cubic-bezier(0.215, 0.61, 0.355, 1) 300ms 5.5s both;
 }
 
 @-webkit-keyframes letsGo {
@@ -179,6 +180,22 @@ h1, .subtitle {
   100% {
     -webkit-transform: translate(-50%, 25%);
             transform: translate(-50%, 25%);
+  }
+}
+@-webkit-keyframes rightNow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rightNow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
   }
 }
 @media (min-width: 54em) {
