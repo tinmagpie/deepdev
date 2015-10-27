@@ -1,9 +1,49 @@
 (function(){
   'use strict';
 
-
   $( document ).ready(function() {
     $("html").addClass("loaded").delay(5000).removeClass("loading");
+  });
+
+  // GA download menu actions
+  $('#menu_options .download').click(function() {
+    ga('send', {
+      hitType: 'event',
+      eventCategory: 'Firefox Download',
+      eventAction: 'click',
+      eventLabel: 'Download Firefox from non-Firefox browser'
+    });
+  });
+
+  $('#menu_options .ff-download a').click(function() {
+    ga('send', {
+      hitType: 'event',
+      eventCategory: 'Firefox Download',
+      eventAction: 'click',
+      eventLabel: 'Download Firefox from Firefox browser'
+    });
+  });
+
+  // GA right click
+  $(document).click(function(e) {
+    if (e.button === 2) {
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'Keyboard',
+        eventAction: 'click',
+        eventLabel: 'Right click activated'
+      });
+    }
+  });
+
+  // GA video click
+  $('video').click(function(e) {
+    ga('send', {
+      hitType: 'event',
+      eventCategory: 'Keyboard',
+      eventAction: 'click',
+      eventLabel: 'Video click activated'
+    });
   });
 
   // Detect Firefox 4x
@@ -107,6 +147,13 @@
   /* Control Toggles */
   $(".toggle").on("click", function(){
     $(this).toggleClass("activated");
+    // GA toggle animation / audio
+    ga('send', {
+      hitType: 'event',
+      eventCategory: 'Toggle ' + this.id,
+      eventAction: 'click',
+      eventLabel: 'Toggle ' + this.id
+    });
   });
 
   $("#animation").on("click", function(){
@@ -133,12 +180,28 @@
           }
           indicator.classList.add('visited');
         }
+
+        // GA in-view
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'In-view',
+          eventAction: 'click',
+          eventLabel: 'Enter challenge: ' + creature
+        });
       },
       entered: function(direction) {
         // this.element.classList.add('viz-focus');
       },
       exit: function(direction) {
+        var creature = this.element.getAttribute('data-creature');
         // this.element.classList.remove('viz-focus');
+        // GA exit-view
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'Exit-view',
+          eventAction: 'click',
+          eventLabel: 'Exit challenge: ' + creature
+        });
       },
       exited: function(direction) {
       }
@@ -154,6 +217,13 @@
   var missionAccomplished = function(challenge) {
     $(challenge).find(".challenge").append('<p class="rediscover">Close</p>');
     challenge.removeEventListener('transitionend', missionAccomplished);
+    // GA completed challenges
+    ga('send', {
+      hitType: 'event',
+      eventCategory: 'Complete',
+      eventAction: 'click',
+      eventLabel: 'Completed challenges'
+    });
   };
 
 
@@ -315,6 +385,13 @@
       challenge.classList.add('completed');
       audio.playCue('discover');
       document.getElementById('challenge_flashlight-fish').classList.add('completed');
+      // GA complete
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'Complete',
+        eventAction: 'click',
+        eventLabel: 'Completed flashlight fish'
+      });
     }
   });
 
@@ -339,6 +416,13 @@
       challenge.classList.add('completed');
       audio.playCue('discover');
       document.querySelector('#challenge_nautilus').classList.add('completed');
+      // GA complete
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'Complete',
+        eventAction: 'click',
+        eventLabel: 'Completed nautilus'
+      });
     }
   });
 
@@ -363,6 +447,13 @@
       $('.orange-roughy-revelation').removeClass('orange-roughy-revelation');
       document.querySelector('#challenge_orange-roughy').classList.add('completed');
       audio.playCue('discover');
+      // GA complete
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'Complete',
+        eventAction: 'click',
+        eventLabel: 'Completed orange roughy'
+      });
     }
   });
 
@@ -384,6 +475,13 @@
       challenge.addEventListener('transitionend', missionAccomplished(challenge));
       document.querySelector('#challenge_anglerfish').classList.add('completed');
       audio.playCue('discover');
+      // GA complete
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'Complete',
+        eventAction: 'click',
+        eventLabel: 'Completed anglerfish'
+      });
     }
   });
 
@@ -421,6 +519,13 @@
       challenge.addEventListener('transitionend', missionAccomplished(challenge));
       audio.playCue('discover');
       document.querySelector('#challenge_vomiting-shrimp').classList.add('completed');
+      // GA complete
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'Complete',
+        eventAction: 'click',
+        eventLabel: 'Completed vomiting shrimp'
+      });
     }
   });
 
@@ -442,6 +547,13 @@
       challenge.addEventListener('transitionend', missionAccomplished(challenge));
       audio.playCue('discover');
       document.querySelector('#challenge_hagfish').classList.add('completed');
+      // GA complete
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'Complete',
+        eventAction: 'click',
+        eventLabel: 'Completed hagfish'
+      });
     }
   });
 
@@ -499,9 +611,15 @@
       challenge.addEventListener('transitionend', missionAccomplished(challenge));
       audio.playCue('discover');
       document.querySelector('#challenge_humboldt-squid').classList.add('completed');
+      // GA complete
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'Complete',
+        eventAction: 'click',
+        eventLabel: 'Completed humboldt squid'
+      });
     }
   });
-
 
   // GoalManager.addGoal({
   //   name: 'jellyfish',
@@ -523,9 +641,15 @@
   //     challenge.addEventListener('transitionend', missionAccomplished(challenge));
   //     audio.playCue('discover');
   //     document.querySelector('#challenge_alarm-jellyfish').classList.add('completed');
+  //     // GA complete
+  //     ga('send', {
+  //       hitType: 'event',
+  //       eventCategory: 'Complete',
+  //       eventAction: 'click',
+  //       eventLabel: 'Completed alarm jellyfish'
+  //     });
   //   }
   // });
-
 
   (function () {
     var docEl = document.documentElement;
