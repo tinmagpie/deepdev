@@ -23,6 +23,10 @@ h1, .subtitle {
   color: $twilight;
 }
 
+.subtitle {
+  margin-bottom: rhythm(15);
+}
+
 #title {
   box-sizing: border-box;
   padding-bottom: 190px;
@@ -43,11 +47,31 @@ h1, .subtitle {
   @extend %t-small;
   @extend %fontMerriweatherItalic;
   opacity: .8;
-  margin-bottom: rhythm(12);
+  margin-bottom: rhythm(15);
   display: none;
   .non-ff & {
     display: block;
   }
+}
+
+.get-a-move-on {
+  opacity: 0;
+  transition: opacity ease(Out) duration(timely) duration(months);
+  height: rhythm(15);
+  position: absolute;
+  transform: translate(-50%, 50%);
+  left: 50%; bottom: 190px;
+  z-index: 1;
+  .loaded & {
+    opacity: 1;
+  }
+  .loaded.animated & {
+    animation: letsGo infinite alternate duration(slow) ease(bounceOut);
+  }
+}
+
+@keyframes letsGo {
+  100% { transform: translate(-50%, 25%); }
 }
 
 // .for-browsers {
@@ -204,7 +228,6 @@ h1, .subtitle {
     padding-top: 5vh;
   }
   .subtitle {
-    margin-bottom: rhythm(6);
     .non-ff & { margin-bottom: 0;}
   }
 
