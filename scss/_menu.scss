@@ -46,9 +46,14 @@
     transform: translateY(calc(100% - #{rhythm(11)}));
   }
   transition:
-    background-color ease(In) duration(timely),
-    transform ease(inOut) duration(slow)
+    background-color ease(In) duration(timely)
   ;
+  .animated & {
+    transition:
+      background-color ease(In) duration(timely),
+      transform ease(inOut) duration(slow)
+    ;
+  }
   .bathypelagic &, .abyssal & {
     background: $epipelagic;
   }

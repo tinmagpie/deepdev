@@ -249,8 +249,8 @@ h1, .subtitle {
 }
 
 .menu {
-  -webkit-transition: background-color cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms, -webkit-transform cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
-          transition: background-color cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms, transform cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
+  -webkit-transition: background-color cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
+          transition: background-color cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
 }
 .menu.hovered {
   -webkit-transform: translateY(calc(100% - 4rem));
@@ -268,6 +268,10 @@ h1, .subtitle {
   -webkit-transform: translateY(calc(100% - 3.66667rem));
       -ms-transform: translateY(calc(100% - 3.66667rem));
           transform: translateY(calc(100% - 3.66667rem));
+}
+.animated .menu {
+  -webkit-transition: background-color cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms, -webkit-transform cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
+          transition: background-color cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms, transform cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
 }
 .bathypelagic .menu, .abyssal .menu {
   background: #007e84;
@@ -923,12 +927,12 @@ footer {
 /* Challenges */
 /* Props */
 .creatures2x-sprite {
-  background-image: url('../img/creatures2x-sbdfc2a3e3c.png');
+  background-image: url('../img/creatures2x-sfc53ee98d9.png');
   background-repeat: no-repeat;
 }
 
 .creatures-sprite {
-  background-image: url('../img/creatures-sd6102f5e9f.png');
+  background-image: url('../img/creatures-s69452c976c.png');
   background-repeat: no-repeat;
 }
 
@@ -938,12 +942,12 @@ footer {
 
 @media (max-device-pixel-ratio: 1), (-webkit-max-device-pixel-ratio: 2), (max-resolution: 192dpi) {
   .creature:before, .creature_humboldt-squid .darkening:before, .creature:after, .creature_humboldt-squid .darkening:after {
-    background-image: url('../img/creatures-sd6102f5e9f.png');
+    background-image: url('../img/creatures-s69452c976c.png');
   }
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature:before, .creature_humboldt-squid .darkening:before, .creature:after, .creature_humboldt-squid .darkening:after {
-    background-image: url('../img/creatures2x-sbdfc2a3e3c.png');
+    background-image: url('../img/creatures2x-sfc53ee98d9.png');
   }
 }
 /* Props */
@@ -967,7 +971,7 @@ footer {
   height: 96px;
 }
 .creature_flashlight-fish:before {
-  background-position: 0 4.61313%;
+  background-position: 0 4.61538%;
   background-size: 301.07527% auto;
   height: 100%;
 }
@@ -1311,7 +1315,7 @@ footer {
   height: 210px;
 }
 .creature_nautilus:before {
-  background-position: 63.09524% 17.02668%;
+  background-position: 63.09524% 16.98449%;
   background-size: 250% auto;
   height: 200%;
 }
@@ -1398,7 +1402,7 @@ footer {
   height: 516px;
 }
 .creature_humboldt-squid:before {
-  background-position: 0 66.8487%;
+  background-position: 0 66.82739%;
   background-size: 100% auto;
   height: 400%;
 }
@@ -1520,7 +1524,7 @@ footer {
           transform: translate(-50%, 0);
 }
 .creature_orange-roughy:before {
-  background-position: 0 22.73902%;
+  background-position: 0 22.69907%;
   background-size: 112.0% auto;
   height: 200%;
 }
@@ -1651,7 +1655,7 @@ footer {
   height: 226px;
 }
 .dish_flashlight-fish:before {
-  background-position: 67.66467% 9.64782%;
+  background-position: 67.66467% 9.60298%;
   background-size: 247.78761% auto;
   height: 100%;
 }
@@ -1683,7 +1687,7 @@ footer {
   height: 226px;
 }
 .dish_dragonfish:before {
-  background-position: 0 9.64782%;
+  background-position: 0 9.60298%;
   background-size: 247.78761% auto;
   height: 100%;
 }
@@ -1733,7 +1737,7 @@ footer {
   top: 0;
 }
 .creature_gulper-eel:before {
-  background-position: 0 43.40554%;
+  background-position: 0 43.37449%;
   background-size: 198.58156% auto;
   height: 200%;
 }
@@ -1764,7 +1768,7 @@ footer {
   top: -81px;
 }
 .creature_dragonfish:before {
-  background-position: 0 12.62258%;
+  background-position: 0 12.57862%;
   background-size: 116.18257% auto;
   height: 200%;
 }
@@ -1795,7 +1799,7 @@ footer {
   z-index: 1;
 }
 .creature_anglerfish:before {
-  background-position: 0 16.96632%;
+  background-position: 0 16.92425%;
   background-size: 264.15094% auto;
   height: 200%;
 }
@@ -1856,7 +1860,7 @@ footer {
   height: 114px;
 }
 .creature_vomiting-shrimp:before {
-  background-position: 0 1.86058%;
+  background-position: 0 1.8615%;
   background-size: 329.41176% auto;
   height: 200%;
 }
@@ -1967,7 +1971,7 @@ footer {
   z-index: 1;
 }
 .creature_hagfish:before {
-  background-position: 79.21348% 39.0286%;
+  background-position: 79.21348% 38.99852%;
   background-size: 274.5098% auto;
   height: 200%;
 }
