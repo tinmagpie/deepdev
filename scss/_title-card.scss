@@ -42,11 +42,55 @@ h1, .subtitle {
 .for-browsers {
   @extend %t-small;
   @extend %fontMerriweatherItalic;
+  opacity: .8;
+  margin-bottom: rhythm(12);
   display: none;
   .non-ff & {
     display: block;
   }
 }
+
+// .for-browsers {
+//   p { margin: 0;}
+//   background: rgba($midnight, .5);
+//   color: $skyLight;
+//   border-radius: rhythm(1);
+//   padding: rhythm(3);
+//   margin-left: -(rhythm(3));
+//   display: none;
+//   margin-bottom: rhythm(6);
+//   @extend %clearfix;
+//   .non-ff & {
+//     display: block;
+//   }
+//   picture {
+//     display: block;
+//     margin: 0 auto rhythm(3);
+//     text-align: center;
+//     img {
+//       height: 46px;
+//     }
+//   }
+//   .download {
+//     @extend %fontMerriweatherItalic;
+//     display: block;
+//     background: $surface;
+//     color: $epipelagic;
+//     border-radius: rhythm(1);
+//     text-decoration: none;
+//     text-align: center;
+//     padding: .33em 1em;
+//     transition:
+//       transform duration(fast) ease(Out),
+//       background duration(fast) ease(Out),
+//       color duration(fast) ease(Out);
+//     &:hover, &:active, &:focus {
+//       //transform: translate(2px, 2px);
+//       background: $skyLight;
+//       color: $abyss !important;
+//     }
+//   }
+// }
 
 .waves_wrapper {
   background: linear-gradient(to bottom, $surface 0%, transparent 100%);
@@ -139,14 +183,23 @@ h1, .subtitle {
   h1 {
     padding-bottom: 4vh;
   }
-  h1, .subtitle, .for-browsers {
+  h1, .title-wrapper {
     width: calc(50% - 2rem);
     float: left;
   }
-  .for-browsers {
-    clear: both;
-    margin-bottom: rhythm(6);
-  }
+  // .for-browsers {
+  //   .ff-download {
+  //     text-align: center;
+  //   }
+  //   picture, .download {
+  //     display: inline-block;
+  //     margin: rhythm(3);
+  //   }
+  //   .download {
+  //     position: relative;
+  //     top: -1em; left: 0;
+  //   }
+  // }
   .title-card_wrapper {
     padding-top: 5vh;
   }

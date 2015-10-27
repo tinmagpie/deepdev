@@ -139,6 +139,8 @@ h1, .subtitle {
 }
 
 .for-browsers {
+  opacity: .8;
+  margin-bottom: 4rem;
   display: none;
 }
 .non-ff .for-browsers {
@@ -277,14 +279,9 @@ h1, .subtitle {
     padding-bottom: 4vh;
   }
 
-  h1, .subtitle, .for-browsers {
+  h1, .title-wrapper {
     width: calc(50% - 2rem);
     float: left;
-  }
-
-  .for-browsers {
-    clear: both;
-    margin-bottom: 2rem;
   }
 
   .title-card_wrapper {
@@ -640,7 +637,7 @@ h1, .subtitle {
   left: -10%;
   width: 120%;
   height: 120%;
-  background: url('../img/svg/porthole.svg?1445883651') 0 0/100% 100%;
+  background: url('../img/svg/porthole.svg?1445900344') 0 0/100% 100%;
 }
 .crew .nautical, .crew .irl {
   -webkit-transition: opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
