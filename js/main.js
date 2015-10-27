@@ -241,8 +241,9 @@
   });
 
   // Listen for anomoly link
-  $("#dashboard").on("click", "a", function(){
+  $("#dashboard").on("click", "a", function(e){
     if ($(this).parents(".alarm")) {
+      e.preventDefault();
       var section = $(this).attr('href');
       var newDepth = section.slice(2);
       var time = Math.round(Math.abs((newDepth - currentDepth)));

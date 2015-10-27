@@ -1,10 +1,13 @@
 (function() {
   function loadBloop() {
     var request = new XMLHttpRequest();
-    request.open('GET', 'snippets/bloop.html');
+    request.open('GET', 'snippets/bloop.html?' + Date.now());
     request.onload = function() {
       var target = document.getElementById('d2400');
       target.innerHTML = request.response;
+      var script = document.createElement('script');
+      script.src = 'js/bloop.js';
+      document.body.appendChild(script);
     };
     request.onerror = function() {
       console.error('Bloop: XHR error');
