@@ -116,9 +116,11 @@
         var indicator = document.querySelector('.progress [data-creature="' + creature + '"]');
         if (indicator) {
           if (!indicator.classList.contains('visited')) {
-            audio.doneLoading(function () {
-              audio.playCue('visit');
-            });
+            if (window.audio) {
+              audio.doneLoading(function () {
+                audio.playCue('visit');
+              });
+            }
           }
           indicator.classList.add('visited');
         }
@@ -243,7 +245,7 @@
 
     audio.addSounds(sounds, function () {
       var isMuted = true;
-      var audioButton = document.querySelector('#audio');
+      var audioButton = document.querySelector('#audio-toggle');
       audio.setBg(currentQuad);
       audioButton.addEventListener('click', function () {
         isMuted = !isMuted;
