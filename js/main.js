@@ -609,6 +609,7 @@
     success: function () {
       var challenge = document.getElementById('d800');
       challenge.addEventListener('transitionend', missionAccomplished(challenge));
+      challenge.classList.add('completed');
       audio.playCue('discover');
       document.querySelector('#challenge_humboldt-squid').classList.add('completed');
       // GA complete
