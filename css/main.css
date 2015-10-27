@@ -276,7 +276,7 @@ h1, .subtitle {
           transform: translateY(calc(100% - 4rem));
 }
 .won .menu {
-  background-image: url('../img/svg/bg_tentacles.svg?1445931486');
+  background-image: url('../img/svg/bg_tentacles.svg?1445988425');
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: 135% 0;
@@ -568,7 +568,7 @@ h1, .subtitle {
   left: -10%;
   width: 120%;
   height: 120%;
-  background: url('../img/svg/porthole.svg?1445933038') 0 0/100% 100%;
+  background: url('../img/svg/porthole.svg?1445988425') 0 0/100% 100%;
 }
 .crew .nautical, .crew .irl {
   -webkit-transition: opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -1600,6 +1600,9 @@ footer {
 #d2600 .puzzle .creature, #d2600 .puzzle .creature_humboldt-squid .darkening, .creature_humboldt-squid #d2600 .puzzle .darkening {
   position: absolute;
 }
+#d2600 .jump {
+  padding-top: calc(226px + 8.33333rem );
+}
 #d2600 .puzzle .lumi path, #d2600 .specimen_dragonfish .lumi path {
   fill: #12454b;
 }
@@ -1823,8 +1826,20 @@ footer {
   }
 }
 .creature_anglerfish .lumi {
+  width: 100%;
+  height: 200%;
+  top: 0;
+  left: 0;
   -webkit-animation: none !important;
           animation: none !important;
+}
+.in-view .creature_anglerfish .lumi {
+  -webkit-animation: wriggle steps(1) 500ms infinite !important;
+          animation: wriggle steps(1) 500ms infinite !important;
+}
+.animated .in-view.completed#d2600 .puzzle .creature_anglerfish .lumi {
+  -webkit-animation: winking steps(1) infinite 500ms, wriggle steps(1) 500ms infinite !important;
+          animation: winking steps(1) infinite 500ms, wriggle steps(1) 500ms infinite !important;
 }
 .in-view .creature_anglerfish:before {
   -webkit-animation: wriggle steps(1) 500ms infinite;

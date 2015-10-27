@@ -9,6 +9,9 @@
             position: absolute;
         }
     }
+    .jump {
+        padding-top: calc(226px + #{rhythm(25)} );
+    }
     .puzzle .lumi, .specimen_dragonfish .lumi {
         path {
             fill: $greyDark;
@@ -127,7 +130,19 @@
     transform: scaleX(-1);
     top: 138px; left: 16%;
     z-index:1;
-    .lumi { animation: none !important; }
+    .lumi {
+        width: 100%; height: 200%;
+        top: 0; left: 0;
+        animation: none !important;
+        .in-view & {
+            animation: wriggle steps(1) duration(slow) infinite !important;
+        }
+        .animated .in-view.completed#d2600 .puzzle & {
+            animation:
+                winking steps(1) infinite duration(slow),
+                wriggle steps(1) duration(slow) infinite !important;
+        }
+    }
     &:before {
         .in-view & {
             animation: wriggle steps(1) duration(slow) infinite;
