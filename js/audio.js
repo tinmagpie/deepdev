@@ -101,7 +101,6 @@ AudioManager.prototype.doneLoading = function (fn) {
 };
 
 AudioManager.prototype.setBg = function (name) {
-  console.log('new zone', name);
   var sound = this.sounds[name];
   if (!sound) {
     console.log('bg sound not found: "' + name + '". bailing');
