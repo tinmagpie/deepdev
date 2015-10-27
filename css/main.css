@@ -128,6 +128,7 @@ h1, .subtitle {
   box-sizing: border-box;
   padding-bottom: 190px;
   min-height: 100vh;
+  opacity: 1;
 }
 #title a:link {
   color: #0b4a61;
