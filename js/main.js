@@ -394,7 +394,18 @@
       var creature = document.querySelector('#creature_vomiting-shrimp1');
       var segment = $(creature).parents('.segment')[0];
 
+      var dangerzone = false;
+      creature.addEventListener('animationstart', function () {
+        dangerzone = true;
+        setTimeout(function () {
+          dangerzone = false;
+        }, 1000);
+      });
+
       pollPolitely(function (stop) {
+        if (dangerzone) {
+          return;
+        }
         var style = window.getComputedStyle(creature);
         var val = style.getPropertyValue('transform');
 
