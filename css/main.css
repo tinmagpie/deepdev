@@ -1590,11 +1590,6 @@ footer {
   opacity: 0 !important;
 }
 
-.animated .in-view.completed#d2600 .puzzle .lumi {
-  -webkit-animation: winking steps(1) infinite 500ms;
-          animation: winking steps(1) infinite 500ms;
-}
-
 #d2600 .puzzle {
   position: relative;
   height: 800px;
@@ -1865,6 +1860,11 @@ footer {
 .in-view .creature_bristlemouth:before {
   -webkit-animation: wriggle steps(1) 500ms infinite;
           animation: wriggle steps(1) 500ms infinite;
+}
+
+.animated .in-view.completed#d2600 .puzzle .lumi {
+  -webkit-animation: winking steps(1) infinite 500ms;
+          animation: winking steps(1) infinite 500ms;
 }
 
 #d5000 .puzzle {

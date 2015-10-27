@@ -1,7 +1,3 @@
-.animated .in-view.completed#d2600 .puzzle .lumi {
-    animation: winking steps(1) infinite duration(slow);
-}
-
 #d2600 {
     .puzzle {
         position: relative;
@@ -148,4 +144,8 @@
             animation: wriggle steps(1) duration(slow) infinite;
         }
     }
+}
+
+.animated .in-view.completed#d2600 .puzzle .lumi {
+    animation: winking steps(1) infinite duration(slow);
 }
