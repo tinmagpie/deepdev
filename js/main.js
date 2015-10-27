@@ -16,7 +16,7 @@
     $("#dashboard").find(".panel").removeClass("in-focus");
     $("#control-panel").removeAttr("style");
     $("html").removeClass("dashOpen");
-  }
+  };
 
   $("#tabs").on( "mouseenter mouseleave", ".tab", function(){
     $("#control-panel").toggleClass("hovered");
@@ -124,7 +124,11 @@
         var indicator = document.querySelector('.progress [data-creature="' + creature + '"]');
         if (indicator) {
           if (!indicator.classList.contains('visited')) {
-            audio.playCue('visit');
+            if (window.audio) {
+              audio.doneLoading(function () {
+                audio.playCue('visit');
+              });
+            }
           }
           indicator.classList.add('visited');
         }
@@ -154,7 +158,8 @@
 
   // Progress bar icons scroll to appropriate depth
   $("#progress_bar").find("a").each(function(a){
-    $(this).on("click", function(){
+    $(this).on("click", function(e){
+      e.preventDefault();
       var section = $(this).attr('href');
       var newDepth = section.slice(2);
       var time = Math.round(Math.abs((newDepth - currentDepth)));
@@ -249,7 +254,7 @@
 
     audio.addSounds(sounds, function () {
       var isMuted = true;
-      var audioButton = document.querySelector('#audio');
+      var audioButton = document.querySelector('#audio-toggle');
       audio.setBg(currentQuad);
       audioButton.addEventListener('click', function () {
         isMuted = !isMuted;
@@ -449,7 +454,10 @@
 
       pollPolitely(function (stop) {
         if (segment.classList.contains('in-view')) {
-          if (ocount1 === count1 || ocount2 === count2) {
+          if (count1 > 0 && count2 > 0 &&
+              count1 !== count2 &&
+              (ocount1 === count1 || ocount2 === count2)
+             ) {
             stop();
             cleanup();
             complete();
@@ -547,4 +555,4 @@ var moveDashboard = function(panel) {
   var $dashBoardHeight = $("#menu_options").get(0).offsetHeight + panel.get(0).offsetHeight;
   $("#control-panel").css({ transform: 'translateY(calc(100% - ' + $dashBoardHeight + 'px))'});
   $("html").addClass("dashOpen");
-}
+};

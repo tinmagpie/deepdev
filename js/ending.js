@@ -3,7 +3,7 @@
     var request = new XMLHttpRequest();
     request.open('GET', 'snippets/bloop.html');
     request.onload = function() {
-      var target = document.getElementById('d2200');
+      var target = document.getElementById('d2400');
       target.innerHTML = request.response;
     };
     request.onerror = function() {
