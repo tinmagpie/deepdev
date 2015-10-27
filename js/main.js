@@ -492,28 +492,28 @@
   });
 
 
-  GoalManager.addGoal({
-    name: 'jellyfish',
-    evaluate: function (complete) {
-      var creature = document.querySelector('#creature_alarm-jellyfish1');
-
-      pollPolitely(function (stop) {
-        var style = getComputedStyle(creature);
-        var fill = style.getPropertyValue('fill');
-        var color = style.getPropertyValue('color');
-        if (fill === 'rgb(0, 0, 0)', color !== 'transparent') {
-          stop();
-          complete();
-        }
-      });
-    },
-    success: function () {
-      var challenge = document.getElementById('d4400');
-      challenge.addEventListener('transitionend', missionAccomplished(challenge));
-      audio.playCue('discover');
-      document.querySelector('#challenge_alarm-jellyfish').classList.add('completed');
-    }
-  });
+  // GoalManager.addGoal({
+  //   name: 'jellyfish',
+  //   evaluate: function (complete) {
+  //     var creature = document.querySelector('#creature_alarm-jellyfish1');
+  //
+  //     pollPolitely(function (stop) {
+  //       var style = getComputedStyle(creature);
+  //       var fill = style.getPropertyValue('fill');
+  //       var color = style.getPropertyValue('color');
+  //       if (fill === 'rgb(0, 0, 0)', color !== 'transparent') {
+  //         stop();
+  //         complete();
+  //       }
+  //     });
+  //   },
+  //   success: function () {
+  //     var challenge = document.getElementById('d4400');
+  //     challenge.addEventListener('transitionend', missionAccomplished(challenge));
+  //     audio.playCue('discover');
+  //     document.querySelector('#challenge_alarm-jellyfish').classList.add('completed');
+  //   }
+  // });
 
 
   (function () {
