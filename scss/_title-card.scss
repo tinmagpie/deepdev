@@ -51,12 +51,13 @@ h1, .subtitle {
   opacity: 0;
   height: rhythm(15);
   position: absolute;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, 28%);
   left: 50%; bottom: 190px;
   z-index: 1;
+  transition: opacity ease(Out) duration(timely);
+  transition-delay: duration(months);
   .loaded & {
-    transition: opacity ease(Out) duration(timely) duration(months);
-    opacity: 1;
+    // opacity: 1;
   }
   .loaded.animated & {
     animation: letsGo infinite alternate duration(slow) ease(bounceOut);

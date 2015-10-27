@@ -10,6 +10,16 @@
   position: fixed;
 }
 
+.Merriweather400 .menu {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+}
+
+.menu {
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
 /* Loading Screen */
 .loading #title * {
   display: none;
@@ -28,6 +38,22 @@
   content: " ";
   display: block;
   padding-top: 18.4%;
+}
+
+.menu {
+  background: #000c1c;
+  box-sizing: border-box;
+  color: #c6f3c7;
+  max-height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%);
 }
 
 #surface {

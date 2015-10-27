@@ -45,7 +45,7 @@
   font-weight: 400;
 }
 
-.Merriweather400 h1, .Merriweather400 .subtitle, .Merriweather400 .menu, .Merriweather400 .challenge li p, .challenge li .Merriweather400 p, .Merriweather400 p, .Merriweather400 .followup {
+.Merriweather400 h1, .Merriweather400 .subtitle, .Merriweather400 .challenge li p, .challenge li .Merriweather400 p, .Merriweather400 p, .Merriweather400 .followup {
   font-family: "Merriweather", serif;
   font-weight: 400;
 }
@@ -61,7 +61,7 @@
   line-height: 1rem;
 }
 
-h1, .subtitle, .title-card_wrapper, .menu, .segment, .followup, .standalone p, cite, .version, .photophores figcaption strong {
+h1, .subtitle, .title-card_wrapper, .segment, .followup, .standalone p, cite, .version, .photophores figcaption strong {
   font-size: 1rem;
   line-height: 2rem;
 }
@@ -153,17 +153,16 @@ h1, .subtitle {
   opacity: 0;
   height: 5rem;
   position: absolute;
-  -webkit-transform: translate(-50%, 50%);
-      -ms-transform: translate(-50%, 50%);
-          transform: translate(-50%, 50%);
+  -webkit-transform: translate(-50%, 28%);
+      -ms-transform: translate(-50%, 28%);
+          transform: translate(-50%, 28%);
   left: 50%;
   bottom: 190px;
   z-index: 1;
-}
-.loaded .get-a-move-on {
-  -webkit-transition: opacity cubic-bezier(0.215, 0.61, 0.355, 1) 300ms 5.5s;
-          transition: opacity cubic-bezier(0.215, 0.61, 0.355, 1) 300ms 5.5s;
-  opacity: 1;
+  -webkit-transition: opacity cubic-bezier(0.215, 0.61, 0.355, 1) 300ms;
+          transition: opacity cubic-bezier(0.215, 0.61, 0.355, 1) 300ms;
+  -webkit-transition-delay: 5.5s;
+          transition-delay: 5.5s;
 }
 .loaded.animated .get-a-move-on {
   -webkit-animation: letsGo infinite alternate 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -251,21 +250,8 @@ h1, .subtitle {
 }
 
 .menu {
-  background: #000c1c;
-  box-sizing: border-box;
-  color: #c6f3c7;
-  max-height: 100vh;
-  overflow: hidden;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
   -webkit-transition: background-color cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms, -webkit-transform cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
           transition: background-color cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms, transform cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
-  -webkit-transform: translateY(calc(100% - 3.66667rem));
-      -ms-transform: translateY(calc(100% - 3.66667rem));
-          transform: translateY(calc(100% - 3.66667rem));
-  z-index: 30;
 }
 .menu.hovered {
   -webkit-transform: translateY(calc(100% - 4rem));
@@ -278,6 +264,11 @@ h1, .subtitle {
   background-repeat: no-repeat;
   background-position: 135% 0;
   background-size: auto 100%;
+}
+.loaded .menu {
+  -webkit-transform: translateY(calc(100% - 3.66667rem));
+      -ms-transform: translateY(calc(100% - 3.66667rem));
+          transform: translateY(calc(100% - 3.66667rem));
 }
 .bathypelagic .menu, .abyssal .menu {
   background: #007e84;
@@ -556,7 +547,7 @@ h1, .subtitle {
   left: -10%;
   width: 120%;
   height: 120%;
-  background: url('../img/svg/porthole.svg?1445931486') 0 0/100% 100%;
+  background: url('../img/svg/porthole.svg?1445933038') 0 0/100% 100%;
 }
 .crew .nautical, .crew .irl {
   -webkit-transition: opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -1855,202 +1846,6 @@ footer {
           animation: wriggle steps(1) 500ms infinite;
 }
 
-#d4400 .puzzle {
-  display: inline-block;
-  width: 100%;
-  padding: 2rem 0;
-  position: relative;
-  height: 181px;
-}
-#d4400 .creature, #d4400 .creature_humboldt-squid .darkening, .creature_humboldt-squid #d4400 .darkening {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
-
-@media (min-width: 54em) {
-  #d4400 .content {
-    -webkit-column-count: unset;
-       -moz-column-count: unset;
-            column-count: unset;
-    padding-right: calc(50% + 2rem);
-  }
-}
-@media (max-width: 1116px) {
-  #d4400 .content, #d4400 .challenge {
-    -webkit-column-count: unset;
-       -moz-column-count: unset;
-            column-count: unset;
-  }
-  #d4400 .content {
-    padding-right: 0;
-  }
-}
-.creature_alarm-jellyfish {
-  color: transparent;
-  -webkit-transform: translate(-100%, -50%);
-      -ms-transform: translate(-100%, -50%);
-          transform: translate(-100%, -50%);
-  width: 182px;
-  height: 182px;
-}
-.creature_alarm-jellyfish:before {
-  background-position: 44.97354% 1.85002%;
-  background-size: 307.69231% auto;
-  height: 100%;
-}
-@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .creature_alarm-jellyfish:before {
-    background-size: 307.69231% auto;
-    background-position: 44.97354% 1.85094%;
-  }
-}
-.creature_alarm-jellyfish:after {
-  background-position: 49.20635% 4.66206%;
-  background-size: 307.69231% auto;
-  content: " ";
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .creature_alarm-jellyfish:after {
-    background-size: 307.69231% auto;
-    background-position: 49.20635% 4.66436%;
-  }
-}
-.creature_alarm-jellyfish .lumi {
-  left: 3.2967%;
-  top: 17.85714%;
-  width: 48.07692%;
-}
-.creature_alarm-jellyfish .st1 {
-  fill: currentColor;
-}
-.in-view .creature_alarm-jellyfish {
-  -webkit-animation: alarmed 800ms infinite alternate cubic-bezier(0.645, 0.045, 0.355, 1);
-          animation: alarmed 800ms infinite alternate cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.creature_alarm-jellyfish:before, .creature_alarm-jellyfish:after, .creature_alarm-jellyfish .lumi {
-  pointer-events: none;
-}
-
-@-webkit-keyframes alarmed {
-  100% {
-    fill: #c6244b;
-  }
-}
-
-@keyframes alarmed {
-  100% {
-    fill: #c6244b;
-  }
-}
-.creature_fangtooth {
-  width: 144px;
-  height: 75px;
-  pointer-effects: none;
-  -webkit-transform: translate(-25%, 30%) rotate(20deg);
-      -ms-transform: translate(-25%, 30%) rotate(20deg);
-          transform: translate(-25%, 30%) rotate(20deg);
-  -webkit-transition: -webkit-transform 1.3s 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19), opacity 800ms 1.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-          transition: transform 1.3s 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19), opacity 800ms 1.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.creature_fangtooth:before {
-  background-position: 67.78846% 0;
-  background-size: 388.88889% auto;
-  height: 200%;
-}
-@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .creature_fangtooth:before {
-    background-size: 388.88889% auto;
-    background-position: 67.78846% 0;
-  }
-}
-.completed .creature_fangtooth {
-  opacity: 0;
-  -webkit-transform: translate(-325%, -70%) rotate(10deg);
-      -ms-transform: translate(-325%, -70%) rotate(10deg);
-          transform: translate(-325%, -70%) rotate(10deg);
-}
-.in-view .creature_fangtooth:before {
-  -webkit-animation: snappingJaws steps(1) 500ms infinite;
-          animation: snappingJaws steps(1) 500ms infinite;
-}
-
-@-webkit-keyframes snappingJaws {
-  50% {
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-  }
-}
-
-@keyframes snappingJaws {
-  50% {
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-  }
-}
-.creature_rattail {
-  width: 414px;
-  height: 214px;
-  -webkit-transform: translate(50%, 50%) rotate(30deg);
-      -ms-transform: translate(50%, 50%) rotate(30deg);
-          transform: translate(50%, 50%) rotate(30deg);
-  opacity: 0;
-  -webkit-transition: -webkit-transform 2.1s cubic-bezier(0.55, 0.055, 0.675, 0.19), opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-          transition: transform 2.1s cubic-bezier(0.55, 0.055, 0.675, 0.19), opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.creature_rattail:before {
-  background-position: 0 31.07345%;
-  background-size: 135.2657% auto;
-  height: 400%;
-}
-@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .creature_rattail:before {
-    background-size: 135.2657% auto;
-    background-position: 0 31.03634%;
-  }
-}
-.completed .creature_rattail {
-  -webkit-animation: comeWithMe 800ms 1.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
-          animation: comeWithMe 800ms 1.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
-  -webkit-transform: translate(-100%, -30%) rotate(5deg);
-      -ms-transform: translate(-100%, -30%) rotate(5deg);
-          transform: translate(-100%, -30%) rotate(5deg);
-  opacity: 1;
-}
-.in-view .creature_rattail:before {
-  -webkit-animation: whatSeemsToBeTheProblem steps(3) 1.3s alternate infinite;
-          animation: whatSeemsToBeTheProblem steps(3) 1.3s alternate infinite;
-}
-
-@-webkit-keyframes whatSeemsToBeTheProblem {
-  50% {
-    -webkit-transform: translateY(-75%);
-            transform: translateY(-75%);
-  }
-}
-
-@keyframes whatSeemsToBeTheProblem {
-  50% {
-    -webkit-transform: translateY(-75%);
-            transform: translateY(-75%);
-  }
-}
-@-webkit-keyframes comeWithMe {
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes comeWithMe {
-  100% {
-    opacity: 0;
-  }
-}
 #d5000 .puzzle {
   width: 300px;
   height: 270px;

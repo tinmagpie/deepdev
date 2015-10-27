@@ -334,7 +334,10 @@ small {
 @import "humboldt-squid";
 @import "orange-roughy";
 @import "disco";
-@import "alarm-jellyfish";
+// There was this really cool jellyfish we wanted to share, but....
+// https://bugzilla.mozilla.org/show_bug.cgi?id=978833
+// If you can help fix that bug, the jellyfish might make a glorious comeback ;)
+// @import "alarm-jellyfish";
 @import "vomiting-shrimp";
 @import "hagfish";
 

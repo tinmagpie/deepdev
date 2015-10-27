@@ -24,6 +24,21 @@
   }
 }
 
+.menu {
+  background: $abyss;
+  box-sizing: border-box;
+  @extend %fontMerriweather;
+  @extend %t-medium;
+  color: color(copy);
+  max-height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0; left: 0;
+  right: 0;
+  z-index: 30;
+  transform: translateY(100%);
+}
+
 #surface {
   background: color(sky);
   color: color(altCopy);

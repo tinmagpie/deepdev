@@ -32,7 +32,6 @@
 }
 
 .menu {
-  background: $abyss;
   &.hovered {
     transform: translateY(calc(100% - #{rhythm(12)}));
   }
@@ -43,21 +42,13 @@
     background-position: 135% 0;
     background-size: auto 100%;
   }
-  box-sizing: border-box;
-  @extend %fontMerriweather;
-  @extend %t-medium;
-  color: color(copy);
-  max-height: 100vh;
-  overflow: hidden;
-  position: fixed;
-  bottom: 0; left: 0;
-  right: 0;
+  .loaded & {
+    transform: translateY(calc(100% - #{rhythm(11)}));
+  }
   transition:
     background-color ease(In) duration(timely),
     transform ease(inOut) duration(slow)
   ;
-  transform: translateY(calc(100% - #{rhythm(11)}));
-  z-index: 30;
   .bathypelagic &, .abyssal & {
     background: $epipelagic;
   }
