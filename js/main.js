@@ -446,7 +446,10 @@
 
       pollPolitely(function (stop) {
         if (segment.classList.contains('in-view')) {
-          if (ocount1 === count1 || ocount2 === count2) {
+          if (count1 > 0 && count2 > 0 &&
+              count1 !== count2 &&
+              (ocount1 === count1 || ocount2 === count2)
+             ) {
             stop();
             cleanup();
             complete();
