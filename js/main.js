@@ -150,7 +150,8 @@
 
   // Progress bar icons scroll to appropriate depth
   $("#progress_bar").find("a").each(function(a){
-    $(this).on("click", function(){
+    $(this).on("click", function(e){
+      e.preventDefault();
       var section = $(this).attr('href');
       var newDepth = section.slice(2);
       var time = Math.round(Math.abs((newDepth - currentDepth)));
