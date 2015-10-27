@@ -37,7 +37,6 @@
 
 .dashOpen {
   overflow: hidden;
-  position: fixed;
 }
 
 .leagueSpartanRegular400 .tab, .leagueSpartanRegular400 .toggle, .leagueSpartanRegular400 .rewards a, .rewards .leagueSpartanRegular400 a, .leagueSpartanRegular400 .sound-off .name, .sound-off .leagueSpartanRegular400 .name, .leagueSpartanRegular400 .crew .name, .crew .leagueSpartanRegular400 .name, .leagueSpartanRegular400 .challenge li, .challenge .leagueSpartanRegular400 li, .leagueSpartanRegular400 h1, .leagueSpartanRegular400 h2, .leagueSpartanRegular400 h3, .leagueSpartanRegular400 .featured, .leagueSpartanRegular400 strong {

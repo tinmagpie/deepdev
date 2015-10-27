@@ -226,7 +226,6 @@ $howToHide: opacity duration(days) ease(Out);
 
 %noScroll {
   overflow: hidden;
-  position:fixed;
 }
 
 @function calc-em($px) {
