@@ -472,6 +472,7 @@
     },
     success: function () {
       var challenge = document.getElementById('d2600');
+      challenge.classList.add('completed');
       challenge.addEventListener('transitionend', missionAccomplished(challenge));
       document.querySelector('#challenge_anglerfish').classList.add('completed');
       audio.playCue('discover');
