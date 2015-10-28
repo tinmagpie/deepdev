@@ -199,7 +199,7 @@ h1, .subtitle {
     opacity: 1;
   }
 }
-@media (min-width: 54em) and (min-height: 570px) {
+@media (min-width: 54em) and (min-height: 580px) {
   #title {
     max-height: 110vh;
     min-height: 500px;
