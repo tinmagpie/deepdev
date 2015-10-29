@@ -394,7 +394,11 @@
     name: 'nautilus',
     evaluate: function (complete) {
       var creature = document.querySelector('#creature_nautilus1');
+      var segment = creature.parents('.segment');
       pollPolitely(function (stop) {
+        if (!segment.classList.contains('in-view')) {
+          return;
+        }
         var val = window.getComputedStyle(creature).getPropertyValue('animation-timing-function');
         // checking for negative values in a cubic bezier
         var hasNegative = val.search(/-\d/) >= 0;
@@ -418,7 +422,11 @@
     name: 'orange-roughy',
     evaluate: function (complete) {
       var creature = document.querySelector('#creature_orange-roughy1');
+      var segment = creature.parents('.segment');
       pollPolitely(function (stop) {
+        if (!segment.classList.contains('in-view')) {
+          return;
+        }
         var val = window.getComputedStyle(creature).getPropertyValue('filter');
         // checking for negative values in a cubic bezier
         if (val.indexOf('/img/blue-filter.svg#seafish') < 0) {
@@ -442,7 +450,11 @@
     name: 'disco-time',
     evaluate: function (complete) {
       var creature = document.querySelector('#creature_dragonfish1 .lumi path');
+      var segment = creature.parents('.segment');
       pollPolitely(function (stop) {
+        if (!segment.classList.contains('in-view')) {
+          return;
+        }
         var val = window.getComputedStyle(creature).getPropertyValue('fill');
         if (val === 'rgb(86, 253, 219)') {
           stop();
@@ -475,6 +487,9 @@
       });
 
       pollPolitely(function (stop) {
+        if (!segment.classList.contains('in-view')) {
+          return;
+        }
         if (dangerzone) {
           return;
         }
@@ -500,7 +515,11 @@
     name: 'hagfish',
     evaluate: function (complete) {
       var creature = document.querySelector('#creature_hagfish1');
+      var segment = creature.parents('.segment');
       pollPolitely(function (stop) {
+        if (!segment.classList.contains('in-view')) {
+          return;
+        }
         var val = window.getComputedStyle(creature).getPropertyValue('bottom');
         // checking for negative values in a cubic bezier
         if (parseInt(val) > 100) {
@@ -537,15 +556,16 @@
       }
 
       pollPolitely(function (stop) {
-        if (segment.classList.contains('in-view')) {
-          if (count1 > 0 && count2 > 0 &&
-              count1 !== count2 &&
-              (ocount1 === count1 || ocount2 === count2)
-             ) {
-            stop();
-            cleanup();
-            complete();
-          }
+        if (!segment.classList.contains('in-view')) {
+          return;
+        }
+        if (count1 > 0 && count2 > 0 &&
+            count1 !== count2 &&
+            (ocount1 === count1 || ocount2 === count2)
+           ) {
+          stop();
+          cleanup();
+          complete();
         }
         ocount1 = count1;
         ocount2 = count2;
