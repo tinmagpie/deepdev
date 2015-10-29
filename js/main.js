@@ -632,9 +632,54 @@
     var currentPosition = docEl.scrollTop;
     var pos;
 
+    var offsetReference = document.querySelector('.wrapper');
+    var currentOffset = currentPosition - offsetReference.offsetTop;
+
+    var calcRequest;
     window.addEventListener('scroll', function (e) {
       currentPosition = docEl.scrollTop;
+      currentOffset = currentPosition - offsetReference.offsetTop;
+      clearTimeout(calcRequest);
+      calcRequest = setTimeout(findPuzzlePosition, 100);
     });
+
+    function occlusion(top1, height1, top2, height2) {
+      var bottom1 = top1 + height1;
+      var bottom2 = top2 + height2;
+      if (top1 < top2 && bottom2 < bottom1) { // 1--2--2--1
+        return height1 - height2;
+      }
+      if (top2 < top1 && bottom1 < bottom2) { // 2--1--1--2
+        return height1;
+      }
+      if (top1 < top2 && top2 < bottom1 && bottom1 < bottom2) { // 1--2--1--2
+        return bottom1 - top2;
+      }
+      if (top2 < top1 && top1 < bottom2 && bottom2 < bottom1) { // 2--1--2--1
+        return bottom2 - top1;
+      }
+      return 0;
+    }
+
+    setInterval(findPuzzlePosition, 500);
+
+    function findPuzzlePosition() {
+      var mostOccluding;
+      var maxOcclusion = 0;
+      for (var i=0; i<segments.length; i++) {
+        var segment = segments[i];
+        if (segment.classList.contains('in-view')) {
+          var occ = occlusion(currentPosition, winHeight, segment.offsetTop, segment.offsetHeight);
+          if (occ > maxOcclusion) {
+            maxOcclusion = occ;
+            mostOccluding = segment;
+          }
+        }
+      }
+      if (mostOccluding) {
+        offsetReference = mostOccluding;
+      }
+    }
 
     window.addEventListener('load', function (e) {
       currentPosition = docEl.scrollTop;
@@ -642,11 +687,9 @@
       winHeight = window.innerHeight;
 
       window.addEventListener('resize', function (e) {
-        pos = currentPosition / (docHeight + winHeight);
         winHeight = window.innerHeight;
         docHeight = docEl.scrollHeight;
-        currentPosition = Math.round(pos * (docHeight + winHeight));
-        docEl.scrollTop = currentPosition;
+        docEl.scrollTop = offsetReference.offsetTop - currentOffset;
 
         if (dashboardOpen) {
           moveDashboard($("#dashboard").find(".in-focus"));
