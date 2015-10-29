@@ -386,13 +386,6 @@
       challenge.classList.add('completed');
       audio.playCue('discover');
       document.getElementById('challenge_flashlight-fish').classList.add('completed');
-      // GA complete
-      ga('send', {
-        hitType: 'event',
-        eventCategory: 'Complete',
-        eventAction: 'click',
-        eventLabel: 'Completed flashlight fish'
-      });
     }
   });
 
@@ -417,13 +410,6 @@
       challenge.classList.add('completed');
       audio.playCue('discover');
       document.querySelector('#challenge_nautilus').classList.add('completed');
-      // GA complete
-      ga('send', {
-        hitType: 'event',
-        eventCategory: 'Complete',
-        eventAction: 'click',
-        eventLabel: 'Completed nautilus'
-      });
     }
   });
 
@@ -448,13 +434,6 @@
       $('.orange-roughy-revelation').removeClass('orange-roughy-revelation');
       document.querySelector('#challenge_orange-roughy').classList.add('completed');
       audio.playCue('discover');
-      // GA complete
-      ga('send', {
-        hitType: 'event',
-        eventCategory: 'Complete',
-        eventAction: 'click',
-        eventLabel: 'Completed orange roughy'
-      });
     }
   });
 
@@ -477,13 +456,6 @@
       challenge.addEventListener('transitionend', missionAccomplished(challenge));
       document.querySelector('#challenge_anglerfish').classList.add('completed');
       audio.playCue('discover');
-      // GA complete
-      ga('send', {
-        hitType: 'event',
-        eventCategory: 'Complete',
-        eventAction: 'click',
-        eventLabel: 'Completed anglerfish'
-      });
     }
   });
 
@@ -521,13 +493,6 @@
       challenge.addEventListener('transitionend', missionAccomplished(challenge));
       audio.playCue('discover');
       document.querySelector('#challenge_vomiting-shrimp').classList.add('completed');
-      // GA complete
-      ga('send', {
-        hitType: 'event',
-        eventCategory: 'Complete',
-        eventAction: 'click',
-        eventLabel: 'Completed vomiting shrimp'
-      });
     }
   });
 
@@ -549,13 +514,6 @@
       challenge.addEventListener('transitionend', missionAccomplished(challenge));
       audio.playCue('discover');
       document.querySelector('#challenge_hagfish').classList.add('completed');
-      // GA complete
-      ga('send', {
-        hitType: 'event',
-        eventCategory: 'Complete',
-        eventAction: 'click',
-        eventLabel: 'Completed hagfish'
-      });
     }
   });
 
@@ -614,13 +572,6 @@
       challenge.classList.add('completed');
       audio.playCue('discover');
       document.querySelector('#challenge_humboldt-squid').classList.add('completed');
-      // GA complete
-      ga('send', {
-        hitType: 'event',
-        eventCategory: 'Complete',
-        eventAction: 'click',
-        eventLabel: 'Completed humboldt squid'
-      });
     }
   });
 
