@@ -394,7 +394,7 @@
     name: 'nautilus',
     evaluate: function (complete) {
       var creature = document.querySelector('#creature_nautilus1');
-      var segment = creature.parents('.segment');
+      var segment = $(creature).parents('.segment');
       pollPolitely(function (stop) {
         if (!segment.classList.contains('in-view')) {
           return;
@@ -422,7 +422,7 @@
     name: 'orange-roughy',
     evaluate: function (complete) {
       var creature = document.querySelector('#creature_orange-roughy1');
-      var segment = creature.parents('.segment');
+      var segment = $(creature).parents('.segment');
       pollPolitely(function (stop) {
         if (!segment.classList.contains('in-view')) {
           return;
@@ -450,7 +450,7 @@
     name: 'disco-time',
     evaluate: function (complete) {
       var creature = document.querySelector('#creature_dragonfish1 .lumi path');
-      var segment = creature.parents('.segment');
+      var segment = $(creature).parents('.segment');
       pollPolitely(function (stop) {
         if (!segment.classList.contains('in-view')) {
           return;
@@ -515,7 +515,7 @@
     name: 'hagfish',
     evaluate: function (complete) {
       var creature = document.querySelector('#creature_hagfish1');
-      var segment = creature.parents('.segment');
+      var segment = $(creature).parents('.segment');
       pollPolitely(function (stop) {
         if (!segment.classList.contains('in-view')) {
           return;
