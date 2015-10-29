@@ -36,14 +36,30 @@
     }
   });
 
-  // GA video click
-  $('video').click(function(e) {
+  var videos = document.getElementsByTagName('video');
+
+  var sendVideoGAEnd = function(video) {
     ga('send', {
       hitType: 'event',
-      eventCategory: 'Keyboard',
-      eventAction: 'click',
-      eventLabel: 'Video click activated'
+      eventCategory: 'Video Interactions',
+      eventAction: 'complete',
+      eventLabel: $(this).closest('.challenge').data('creature')
     });
+  };
+
+  var sendVideoGAPlay = function() {
+    ga('send', {
+      hitType: 'event',
+      eventCategory: 'Video Interactions',
+      eventAction: 'complete',
+      eventLabel: $(this).closest('.challenge').data('creature')
+    });
+  };
+
+  Array.prototype.forEach.call(videos, function(child) {
+    // GA video click
+    $(child)[0].addEventListener('play', sendVideoGAPlay.bind(child), false);
+    $(child)[0].addEventListener('ended', sendVideoGAEnd.bind(child), false);
   });
 
   // Detect Firefox 4x
@@ -150,9 +166,9 @@
     // GA toggle animation / audio
     ga('send', {
       hitType: 'event',
-      eventCategory: 'Toggle ' + this.id,
+      eventCategory: 'Toggle',
       eventAction: 'click',
-      eventLabel: 'Toggle ' + this.id
+      eventLabel: this.id
     });
   });
 
@@ -193,15 +209,7 @@
         // this.element.classList.add('viz-focus');
       },
       exit: function(direction) {
-        var creature = this.element.getAttribute('data-creature');
         // this.element.classList.remove('viz-focus');
-        // GA exit-view
-        ga('send', {
-          hitType: 'event',
-          eventCategory: 'Exit-view',
-          eventAction: 'click',
-          eventLabel: 'Exit challenge: ' + creature
-        });
       },
       exited: function(direction) {
       }
@@ -220,9 +228,9 @@
     // GA completed challenges
     ga('send', {
       hitType: 'event',
-      eventCategory: 'Complete',
+      eventCategory: 'Completed Challenges',
       eventAction: 'click',
-      eventLabel: 'Completed challenges'
+      eventLabel: $(challenge).find('.challenge').data('creature')
     });
   };
 
