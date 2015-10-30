@@ -637,11 +637,17 @@ h1, .subtitle {
   display: block;
   opacity: 1;
 }
-.progress .completed circle {
+.progress .in-view circle {
   fill: #fff;
 }
-.progress .completed path {
+.progress .in-view path {
   fill: #0b4a61;
+}
+.progress .completed circle {
+  fill: #39dbb4;
+}
+.progress .completed path {
+  fill: #000c1c;
 }
 .progress svg {
   color: #000c1c;

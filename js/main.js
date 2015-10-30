@@ -144,9 +144,14 @@
   Array.prototype.forEach.call(segments, function(child) {
     new Waypoint.Inview({
       element: child,
+      indicator: child.getAttribute("data-progress-item"),
       enter: function(direction) {
         this.element.classList.add('in-view');
         currentDepth = this.element.id.slice(1);
+        // lighting up the progress bar
+        if (this.options.indicator) {
+          document.getElementById(this.options.indicator).classList.add('in-view');
+        }
       },
       entered: function(direction) {
         // this.element.classList.add('viz-focus');
@@ -156,6 +161,10 @@
       },
       exited: function(direction) {
         this.element.classList.remove('in-view');
+        // lighting up the progress bar
+        if (this.options.indicator) {
+          document.getElementById(this.options.indicator).classList.remove('in-view');
+        }
       }
     });
   });
