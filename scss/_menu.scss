@@ -311,7 +311,7 @@
 .crew {
   h3 { @include margin-trailer(3); }
   a { text-decoration: none;}
-  picture {
+  .porthole {
     position: relative;
     display: block;
     img { border-radius: 100%; }

@@ -224,6 +224,11 @@ strong {
   @extend %fontSpartan;
 }
 
+code {
+  color: color(code);
+  font-weight: fontWeight(bold);
+}
+
 p {
   @extend %fontMerriweather;
   @include padding-trailer(3);
