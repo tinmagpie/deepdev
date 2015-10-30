@@ -97,6 +97,16 @@
       $panel.addClass("in-focus");
 
       moveDashboard($panel);
+
+      // Start listening for escape key!
+      document.addEventListener('keydown', function(evt) {
+        evt = evt || window.event;
+        if (evt.keyCode == 27 && dashboardOpen) {
+          closeDashboard();
+          document.removeEventListener('keydown');
+        }
+      });
+
     }
   });
 

@@ -25,7 +25,7 @@
   opacity: 0;
 }
 .loading .boat {
-  background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 92'%3E%3Cstyle%3Epath {fill:%23002351;}%3C/style%3E%3Cpath d='M67.6 59.8h15.7l9.2-22.1-9.2-21.1H33.1v23L57.3 46v31.7H0L1 46l25.2-6.9V9.2l64.4-.5 26.2 51.6h13.4L204.7 0H264l18.4 22.1h16.1v14.7L500 14l-78.7 78H83.7z'/%3E%3C/svg%3E");
+  background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 92'%3E%3Cstyle%3Epath {fill:%23002351;}%3C/style%3E%3Cpath d='M67.6 59.8h15.7l9.2-22.1-9.2-21.1H33.1v23L57.3 46v31.7H0L1 46l25.2-6.9V9.2l64.4-.5 26.2 51.6h13.4L204.7 0H264l18.4 22.1h16.1v14.7L500 14l-78.7 78H83.7z'/%3E%3C/svg%3E") no-repeat;
   width: 12.5%;
   position: absolute;
   left: 0;
