@@ -233,7 +233,8 @@
   // Things to do after the challenge is completed.
   var missionAccomplished = function(challenge) {
     $(challenge).find(".challenge").append('<p class="rediscover">Close</p>');
-    challenge.removeEventListener('transitionend', missionAccomplished);
+      challenge.addEventListener('transitionend', missionAccomplished(challenge));
+      challenge.removeEventListener('transitionend', missionAccomplished);
     // GA completed challenges
     ga('send', {
       hitType: 'event',
@@ -530,7 +531,7 @@
   GoalManager.addGoal({
     name: 'hagfish',
     evaluate: function (complete) {
-      var creature = document.querySelector('#creature_hagfish1');
+      var creature = document.getElementById('creature_hagfish1');
       var $segment = $(creature).parents('.segment');
       pollPolitely(function (stop) {
         if (!$segment.hasClass('in-view')) {
