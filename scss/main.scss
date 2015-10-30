@@ -50,16 +50,9 @@ a {
     margin: 0 auto;
   }
   @extend %t-medium;
-  // everything starts paused and transparent...
-  * {
-    animation-play-state: paused;
-  }
-  // ...until you scroll them into view
+  // everything starts transparent...
   &.in-view {
     @extend %content-revealed;
-    * {
-      animation-play-state: running;
-    }
   }
 }
 

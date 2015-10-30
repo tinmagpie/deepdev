@@ -3,7 +3,6 @@
 $single_col: (max-width 50em + 4em); // 50-60 characters are ideal reading length, + 2em on each side for padding
 $double_col: 50em + 4em; // 50-60 characters are ideal reading length, + 2em on each side for padding
 $super_wide: 2 * 50em + 4em + 2em;
-$double_col_tall: (min-width $double_col)(min-height 580px);
 
 $medium: 35em;
 

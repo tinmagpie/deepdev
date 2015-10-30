@@ -128,7 +128,6 @@ h1, .subtitle {
   box-sizing: border-box;
   padding-bottom: 190px;
   min-height: 100vh;
-  opacity: 1;
 }
 #title a:link {
   color: #0b4a61;
@@ -159,11 +158,6 @@ h1, .subtitle {
   left: 50%;
   bottom: 190px;
   z-index: 1;
-  -webkit-transition: opacity cubic-bezier(0.215, 0.61, 0.355, 1) 300ms;
-          transition: opacity cubic-bezier(0.215, 0.61, 0.355, 1) 300ms;
-}
-.loaded .get-a-move-on {
-  opacity: 1;
 }
 .loaded.animated .get-a-move-on {
   -webkit-animation: letsGo infinite alternate 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275), rightNow cubic-bezier(0.215, 0.61, 0.355, 1) 300ms 5.5s both;
@@ -199,7 +193,7 @@ h1, .subtitle {
     opacity: 1;
   }
 }
-@media (min-width: 54em) and (min-height: 580px) {
+@media (min-width: 54em) {
   #title {
     max-height: 110vh;
     min-height: 500px;
@@ -733,14 +727,6 @@ h1, .subtitle {
     max-width: 102rem;
     margin: 0 auto;
   }
-}
-.segment * {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
-}
-.segment.in-view * {
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
 }
 
 h3 + .content {

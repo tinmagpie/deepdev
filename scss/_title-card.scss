@@ -24,7 +24,7 @@ h1, .subtitle {
   box-sizing: border-box;
   padding-bottom: 190px;
   min-height: 100vh;
-  opacity: 1;
+  //opacity: 1;
   a {
     &:link { color: color(linkAlt) }
     &:visited { color: color(linkAltVisited) }
@@ -55,9 +55,9 @@ h1, .subtitle {
   transform: translate(-50%, 28%);
   left: 50%; bottom: 190px;
   z-index: 1;
-  transition: opacity ease(Out) duration(timely);
+  //transition: opacity ease(Out) duration(timely);
   .loaded & {
-    opacity: 1;
+    // opacity: 1;
   }
   .loaded.animated & {
     animation:
@@ -118,7 +118,7 @@ h1, .subtitle {
 //   }
 // }
 
-@include breakpoint($double_col_tall) {
+@include breakpoint($double_col) {
   #title {
     max-height: 110vh;
     min-height: 500px;
