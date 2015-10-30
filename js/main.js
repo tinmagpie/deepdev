@@ -235,13 +235,6 @@
     $(challenge).find(".challenge").append('<p class="rediscover">Close</p>');
     challenge.removeEventListener('transitionend', missionAccomplished);
     challenge.classList.add('completed');
-    // GA completed challenges
-    ga('send', {
-      hitType: 'event',
-      eventCategory: 'Completed Challenge',
-      eventAction: 'click',
-      eventLabel: $(challenge).find('.challenge').data('creature')
-    });
   };
 
 
