@@ -58,8 +58,8 @@
 
   Array.prototype.forEach.call(videos, function(child) {
     // GA video click
-    $(child)[0].addEventListener('play', sendVideoGAPlay.bind(child), false);
-    $(child)[0].addEventListener('ended', sendVideoGAEnd.bind(child), false);
+    child.addEventListener('play', sendVideoGAPlay.bind(child), false);
+    child.addEventListener('ended', sendVideoGAEnd.bind(child), false);
   });
 
   // Detect Firefox 4x
@@ -397,14 +397,13 @@
     }
   });
 
-
   GoalManager.addGoal({
     name: 'nautilus',
     evaluate: function (complete) {
-      var creature = document.querySelector('#creature_nautilus1');
-      var segment = $(creature).parents('.segment');
+      var creature = document.getElementById('creature_nautilus1');
+      var $segment = $(creature).parents('.segment');
       pollPolitely(function (stop) {
-        if (!segment.classList.contains('in-view')) {
+        if (!$segment.hasClass('in-view')) {
           return;
         }
         var val = window.getComputedStyle(creature).getPropertyValue('animation-timing-function');
@@ -430,9 +429,9 @@
     name: 'orange-roughy',
     evaluate: function (complete) {
       var creature = document.querySelector('#creature_orange-roughy1');
-      var segment = $(creature).parents('.segment');
+      var $segment = $(creature).parents('.segment');
       pollPolitely(function (stop) {
-        if (!segment.classList.contains('in-view')) {
+        if (!$segment.hasClass('in-view')) {
           return;
         }
         var val = window.getComputedStyle(creature).getPropertyValue('filter');
@@ -458,9 +457,9 @@
     name: 'disco-time',
     evaluate: function (complete) {
       var creature = document.querySelector('#creature_dragonfish1 .lumi path');
-      var segment = $(creature).parents('.segment');
+      var $segment = $(creature).parents('.segment');
       pollPolitely(function (stop) {
-        if (!segment.classList.contains('in-view')) {
+        if (!$segment.hasClass('in-view')) {
           return;
         }
         var val = window.getComputedStyle(creature).getPropertyValue('fill');
@@ -484,7 +483,7 @@
     name: 'shrimp',
     evaluate: function (complete) {
       var creature = document.querySelector('#creature_vomiting-shrimp1');
-      var segment = $(creature).parents('.segment')[0];
+      var $segment = $(creature).parents('.segment')[0];
 
       var dangerzone = false;
       creature.addEventListener('animationstart', function () {
@@ -495,7 +494,7 @@
       });
 
       pollPolitely(function (stop) {
-        if (!segment.classList.contains('in-view')) {
+        if (!$segment.classList.contains('in-view')) {
           return;
         }
         if (dangerzone) {
@@ -523,9 +522,9 @@
     name: 'hagfish',
     evaluate: function (complete) {
       var creature = document.querySelector('#creature_hagfish1');
-      var segment = $(creature).parents('.segment');
+      var $segment = $(creature).parents('.segment');
       pollPolitely(function (stop) {
-        if (!segment.classList.contains('in-view')) {
+        if (!$segment.hasClass('in-view')) {
           return;
         }
         var val = window.getComputedStyle(creature).getPropertyValue('bottom');
