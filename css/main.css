@@ -1896,6 +1896,7 @@ footer {
   width: 300px;
   height: 270px;
   position: relative;
+  margin: 0 auto;
 }
 
 .creature_vomiting-shrimp {
