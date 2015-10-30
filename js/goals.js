@@ -50,12 +50,6 @@ var GoalManager = (function() {
       if (self.state[name]) {
         return;
       }
-      ga('send', {
-        hitType: 'event',
-        eventCategory: 'Complete',
-        eventAction: 'click',
-        eventLabel: 'Completed Goal: ' + name
-      });
       self.state[name] = true;
       self.goalsCompleted++;
       success();

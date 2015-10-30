@@ -51,7 +51,7 @@
     ga('send', {
       hitType: 'event',
       eventCategory: 'Video Interactions',
-      eventAction: 'complete',
+      eventAction: 'play',
       eventLabel: $(this).closest('.challenge').data('creature')
     });
   };
@@ -238,7 +238,7 @@
     // GA completed challenges
     ga('send', {
       hitType: 'event',
-      eventCategory: 'Completed Challenges',
+      eventCategory: 'Completed Challenge',
       eventAction: 'click',
       eventLabel: $(challenge).find('.challenge').data('creature')
     });
