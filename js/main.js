@@ -233,8 +233,8 @@
   // Things to do after the challenge is completed.
   var missionAccomplished = function(challenge) {
     $(challenge).find(".challenge").append('<p class="rediscover">Close</p>');
-      challenge.addEventListener('transitionend', missionAccomplished(challenge));
-      challenge.removeEventListener('transitionend', missionAccomplished);
+    challenge.removeEventListener('transitionend', missionAccomplished);
+    challenge.classList.add('completed');
     // GA completed challenges
     ga('send', {
       hitType: 'event',
