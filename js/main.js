@@ -254,6 +254,14 @@
     });
   };
 
+  // Clicking prompt arrow scrolls to first frame
+  $("#start").on("click", function(e){
+      e.preventDefault();
+      var section = $(this).attr('href');
+      $('html, body').animate({
+        scrollTop: $(section).offset().top
+      }, 200);
+    });
 
   // Progress bar icons scroll to appropriate depth
   $("#progress_bar").find("a").each(function(a){
