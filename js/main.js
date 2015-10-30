@@ -51,7 +51,7 @@
     ga('send', {
       hitType: 'event',
       eventCategory: 'Video Interactions',
-      eventAction: 'complete',
+      eventAction: 'play',
       eventLabel: $(this).closest('.challenge').data('creature')
     });
   };
@@ -245,13 +245,6 @@
     $(challenge).find(".challenge").append('<p class="rediscover">Close</p>');
     challenge.removeEventListener('transitionend', missionAccomplished);
     challenge.classList.add('completed');
-    // GA completed challenges
-    ga('send', {
-      hitType: 'event',
-      eventCategory: 'Completed Challenges',
-      eventAction: 'click',
-      eventLabel: $(challenge).find('.challenge').data('creature')
-    });
   };
 
   // Clicking prompt arrow scrolls to first frame
