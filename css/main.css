@@ -1605,8 +1605,8 @@ footer {
 #d2600 .jump {
   padding-top: calc(226px + 8.33333rem );
 }
-#d2600 .puzzle .lumi path, #d2600 .specimen_dragonfish .lumi path {
-  fill: #12454b;
+#d2600 .creature .lumi, #d2600 .creature_humboldt-squid .darkening .lumi, .creature_humboldt-squid #d2600 .darkening .lumi {
+  pointer-events: none;
 }
 #d2600 .video {
   margin-bottom: 2rem;
@@ -1650,11 +1650,11 @@ footer {
   position: relative;
 }
 .photophores .pointer {
-  width: 151px;
-  height: 145px;
+  width: 172px;
+  height: 162px;
   position: absolute;
-  top: 44%;
-  left: 50%;
+  top: 41%;
+  left: 49%;
   -webkit-transform: translate(-50%, -18%);
       -ms-transform: translate(-50%, -18%);
           transform: translate(-50%, -18%);
@@ -1882,6 +1882,13 @@ footer {
 .animated .in-view.completed#d2600 .puzzle .lumi {
   -webkit-animation: winking steps(1) infinite 500ms;
           animation: winking steps(1) infinite 500ms;
+}
+
+#d2600 .puzzle .creature, #d2600 .puzzle .creature_humboldt-squid .darkening, .creature_humboldt-squid #d2600 .puzzle .darkening, #d2600 .dish_dragonfish {
+  color: #436c6f;
+}
+#d2600 .puzzle .creature path, #d2600 .puzzle .creature_humboldt-squid .darkening path, .creature_humboldt-squid #d2600 .puzzle .darkening path, #d2600 .dish_dragonfish path {
+  fill: currentColor;
 }
 
 #d5000 .puzzle {

@@ -12,10 +12,8 @@
     .jump {
         padding-top: calc(226px + #{rhythm(25)} );
     }
-    .puzzle .lumi, .specimen_dragonfish .lumi {
-        path {
-            fill: $greyDark;
-        }
+    .creature .lumi{
+        pointer-events: none;
     }
     .video {
         margin-bottom: rhythm(6);
@@ -65,9 +63,9 @@
         position:relative;
     }
     .pointer {
-        width: 151px; height: 145px;
+        width: 172px; height: 162px;
         position: absolute;
-        top: 44%; left: 50%;
+        top: 41%; left: 49%;
         transform: translate(-50%, -18%);
     }
 }
@@ -163,4 +161,13 @@
 
 .animated .in-view.completed#d2600 .puzzle .lumi {
     animation: winking steps(1) infinite duration(slow);
+}
+
+#d2600 {
+    .puzzle .creature, .dish_dragonfish {
+        color: $greyMedium;
+        path {
+            fill: currentColor;
+        }
+    }
 }

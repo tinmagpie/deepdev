@@ -483,7 +483,7 @@
         if (!$segment.hasClass('in-view')) {
           return;
         }
-        var val = window.getComputedStyle(creature).getPropertyValue('fill');
+        var val = window.getComputedStyle(creature).getPropertyValue('color');
         if (val === 'rgb(86, 253, 219)') {
           stop();
           complete();
