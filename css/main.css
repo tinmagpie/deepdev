@@ -631,17 +631,17 @@ h1, .subtitle {
   display: block;
   opacity: 1;
 }
+.progress .completed circle {
+  fill: #007e84;
+}
+.progress .completed path {
+  fill: #002351;
+}
 .progress .in-view circle {
   fill: #fff;
 }
 .progress .in-view path {
   fill: #0b4a61;
-}
-.progress .completed circle {
-  fill: #39dbb4;
-}
-.progress .completed path {
-  fill: #000c1c;
 }
 .progress svg {
   color: #000c1c;
@@ -1689,7 +1689,6 @@ footer {
   width: 40.48673%;
 }
 .dish_flashlight-fish .lumi {
-  fill: #56fddb;
   -webkit-transform: scaleX(-1);
       -ms-transform: scaleX(-1);
           transform: scaleX(-1);
@@ -1888,6 +1887,12 @@ footer {
   color: #436c6f;
 }
 #d2600 .puzzle .creature path, #d2600 .puzzle .creature_humboldt-squid .darkening path, .creature_humboldt-squid #d2600 .puzzle .darkening path, #d2600 .dish_dragonfish path {
+  fill: currentColor;
+}
+#d2600 .dish_flashlight-fish {
+  color: #56fddb;
+}
+#d2600 .dish_flashlight-fish path {
   fill: currentColor;
 }
 

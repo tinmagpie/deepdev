@@ -81,7 +81,6 @@
 .dish_flashlight-fish {
     @include make-creature(specimen_flashlight-fish, $lumiX: 84, $lumiY: 171, $lumiW: 183, $lumiH: 145, $keyframes: 1, $animation: false, $biolumi: true);
     .lumi {
-        fill: $biolumination;
         transform: scaleX(-1);
     }
     &:before {
@@ -169,5 +168,11 @@
         path {
             fill: currentColor;
         }
+    }
+    .dish_flashlight-fish {
+        color: $biolumination;
+        path {
+         fill: currentColor;
+       }
     }
 }

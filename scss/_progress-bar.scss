@@ -15,13 +15,13 @@
     display: block;
     opacity: 1;
   }
+  .completed {
+    circle { fill: $epipelagic; }
+    path { fill: $midnight; }
+  }
   .in-view {
     circle { fill: #fff; }
     path { fill: $twilight; }
-  }
-  .completed {
-    circle { fill: $surface; }
-    path { fill: $abyss; }
   }
   svg {
     color: $abyss;
