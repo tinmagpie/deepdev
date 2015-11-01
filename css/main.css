@@ -39,7 +39,7 @@
   overflow: hidden;
 }
 
-.leagueSpartanRegular400 .tab, .leagueSpartanRegular400 .toggle, .leagueSpartanRegular400 .rewards a, .rewards .leagueSpartanRegular400 a, .leagueSpartanRegular400 .sound-off .name, .sound-off .leagueSpartanRegular400 .name, .leagueSpartanRegular400 .crew .name, .crew .leagueSpartanRegular400 .name, .leagueSpartanRegular400 .challenge li, .challenge .leagueSpartanRegular400 li, .leagueSpartanRegular400 h1, .leagueSpartanRegular400 h2, .leagueSpartanRegular400 h3, .leagueSpartanRegular400 .featured, .leagueSpartanRegular400 strong {
+.leagueSpartanRegular400 .tab, .leagueSpartanRegular400 .toggle, .leagueSpartanRegular400 .rewards a, .rewards .leagueSpartanRegular400 a, .leagueSpartanRegular400 .sound-off .name, .sound-off .leagueSpartanRegular400 .name, .leagueSpartanRegular400 .crew .name, .crew .leagueSpartanRegular400 .name, .leagueSpartanRegular400 #dismiss-onboarding, .leagueSpartanRegular400 .challenge li, .challenge .leagueSpartanRegular400 li, .leagueSpartanRegular400 h1, .leagueSpartanRegular400 h2, .leagueSpartanRegular400 h3, .leagueSpartanRegular400 .featured, .leagueSpartanRegular400 strong {
   font-family: "leagueSpartanRegular", sans-serif;
   font-weight: 400;
 }
@@ -150,6 +150,7 @@ h1, .subtitle {
 
 .get-a-move-on {
   opacity: 0;
+  display: none;
   height: 5rem;
   position: absolute;
   -webkit-transform: translate(-50%, 28%);
@@ -157,9 +158,15 @@ h1, .subtitle {
           transform: translate(-50%, 28%);
   left: 50%;
   bottom: 190px;
+  -webkit-transition: opacity cubic-bezier(0.215, 0.61, 0.355, 1) 300ms 300ms;
+          transition: opacity cubic-bezier(0.215, 0.61, 0.355, 1) 300ms 300ms;
   z-index: 1;
 }
-.loaded.animated .get-a-move-on {
+.begin .get-a-move-on {
+  opacity: 1;
+  display: inline-block;
+}
+.loaded.animated .in-view .get-a-move-on {
   -webkit-animation: letsGo infinite alternate 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275), rightNow cubic-bezier(0.215, 0.61, 0.355, 1) 300ms 5.5s both;
           animation: letsGo infinite alternate 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275), rightNow cubic-bezier(0.215, 0.61, 0.355, 1) 300ms 5.5s both;
 }
@@ -236,7 +243,7 @@ h1, .subtitle {
 .panel {
   box-sizing: border-box;
   width: 100%;
-  max-height: calc(100vh - 11.66667rem);
+  max-height: calc(100vh - 11.66667rem + 8rem);
   opacity: 0;
   overflow: auto;
   padding: 4rem 4rem 4rem 2rem;
@@ -269,26 +276,29 @@ h1, .subtitle {
   -webkit-transition: background-color cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
           transition: background-color cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
 }
-.menu.hovered {
-  -webkit-transform: translateY(calc(100% - 4rem));
-      -ms-transform: translateY(calc(100% - 4rem));
-          transform: translateY(calc(100% - 4rem));
-}
 .won .menu {
-  background-image: url('../img/svg/bg_tentacles.svg?1445988425');
+  background-image: url('../img/svg/bg_tentacles.svg?1446372405');
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: 135% 0;
   background-size: auto 100%;
 }
-.loaded .menu {
+.intro-complete .menu {
   -webkit-transform: translateY(calc(100% - 3.66667rem));
       -ms-transform: translateY(calc(100% - 3.66667rem));
           transform: translateY(calc(100% - 3.66667rem));
 }
+.animated .menu.hovered {
+  -webkit-transform: translateY(calc(100% - 4rem));
+      -ms-transform: translateY(calc(100% - 4rem));
+          transform: translateY(calc(100% - 4rem));
+}
+.animated .menu.closeable {
+  margin-top: 0.33333rem;
+}
 .animated .menu {
-  -webkit-transition: background-color cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms, -webkit-transform cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
-          transition: background-color cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms, transform cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
+  -webkit-transition: background-color cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms, -webkit-transform cubic-bezier(0.645, 0.045, 0.355, 1) 500ms, margin-top cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
+          transition: background-color cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms, transform cubic-bezier(0.645, 0.045, 0.355, 1) 500ms, margin-top cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
 }
 .bathypelagic .menu, .abyssal .menu {
   background: #007e84;
@@ -371,6 +381,11 @@ h1, .subtitle {
   width: 1.33333rem;
   height: 1.33333rem;
 }
+@media (max-width: 67.46667em) {
+  .tab span {
+    display: none;
+  }
+}
 
 .share_tab path {
   stroke: currentColor;
@@ -384,6 +399,13 @@ h1, .subtitle {
 
 .toggle.activated {
   color: #4ed9f2;
+}
+
+.certificate_tab {
+  color: #fffc99;
+}
+.certificate_tab path {
+  fill: currentColor;
 }
 
 .toggle_bg {
@@ -567,7 +589,7 @@ h1, .subtitle {
   left: -10%;
   width: 120%;
   height: 120%;
-  background: url('../img/svg/porthole.svg?1445988425') 0 0/100% 100%;
+  background: url('../img/svg/porthole.svg?1446372405') 0 0/100% 100%;
 }
 .crew .nautical, .crew .irl {
   -webkit-transition: opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -609,6 +631,26 @@ h1, .subtitle {
 }
 .thanks .title {
   text-align: left;
+}
+
+#dismiss-onboarding {
+  cursor: pointer;
+  display: block;
+  padding: 1rem;
+  border-radius: 0.33333rem;
+  -webkit-transition: -webkit-transform 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19), background 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19), color 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          transition: transform 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19), background 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19), color 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  width: 13rem;
+  margin: 1rem auto;
+  background: #56fddb;
+  color: #007e84;
+}
+#dismiss-onboarding:hover, #dismiss-onboarding:active, #dismiss-onboarding:focus {
+  background: #4ed9f2;
+  color: #000c1c;
+  -webkit-transform: translate(1px, 1px);
+      -ms-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
 }
 
 .progress {

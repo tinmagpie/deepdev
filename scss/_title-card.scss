@@ -50,16 +50,18 @@ h1, .subtitle {
 
 .get-a-move-on {
   opacity: 0;
+  display: none;
   height: rhythm(15);
   position: absolute;
   transform: translate(-50%, 28%);
   left: 50%; bottom: 190px;
+  transition: opacity ease(Out) duration(timely) duration(timely);
   z-index: 1;
-  //transition: opacity ease(Out) duration(timely);
-  .loaded & {
-    // opacity: 1;
+  .begin & {
+    opacity: 1;
+    display: inline-block;
   }
-  .loaded.animated & {
+  .loaded.animated .in-view & {
     animation:
       letsGo infinite alternate duration(slow) ease(bounceOut),
       rightNow ease(Out) duration(timely) duration(months) both

@@ -599,24 +599,29 @@
 				</div>
 				<div id="tabs">
 					<span class="tab crew_tab" data-panel="crew_panel">
-						Crew
+						<span>Crew</span>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 23"><path d="M10 0C8.5 0 7.4 1.2 7.4 2.6c0 1 .6 2 1.6 2.4v2.3H1.8v1.4h7.1l-.2 9.2c0 .2 0 2.3-2.8.8-2.8-1.4-1.2-3.1-1-3.1-1.7-.5-3.2-2-4.4-3.4-1.2 2.6.9 5.4 1.1 5.8.3-.3.6-.2.9-.2 2.7 4.5 6.5 4 7.5 5.2 1-1.2 4.8-.7 7.7-5.2.2 0 .6-.1.9.2.1-.4 2.3-3.2 1.1-5.8-1.2 1.5-2.7 2.9-4.4 3.4.2 0 1.8 1.7-1 3.1-2.8 1.4-2.8-.6-2.8-.8l-.2-9.2h7.1V7.3h-7.1V5c.9-.4 1.6-1.3 1.6-2.4C12.6 1.2 11.5 0 10 0z"/></svg>
 					</span>
 					<span class="tab share_tab" data-panel="sharing_panel">
-						Share
+						<span>Share</span>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16 12v3.9c0 1.9-1.5 3.1-3.4 3.1H4.1C2.2 19 1 17.8 1 15.9V7.4C1 5.5 2.2 4 4.1 4H8m2-3h6.1C18 1 19 2 19 3.9V10M5.7 14.3L18.5 1.5"/></svg>
 					</span>
 					<span class="tab shh certificate_tab" id="congrats-tab" data-panel="ending_panel">
-						Acheivement Unlocked
+						<span>Achievement Unlocked</span>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="-24 16 20 20"><path d="M-12.7 17.8l2.3 4.6 5.1.7c1.2.2 1.7 1.7.8 2.5l-3.7 3.6.9 5.1c.2 1.2-1.1 2.1-2.1 1.6l-4.5-2.4-4.5 2.4c-1.1.6-2.4-.4-2.1-1.6l.9-5.1-3.7-3.6c-.9-.9-.4-2.3.8-2.5l5.1-.7 2.3-4.6c.3-1.1 1.9-1.1 2.4 0z"/></svg>
 					</span>
 				</div>
 			</menu>
 			<div id="dashboard">
-				<div class="panel" data-panel="feature_panel">
-					<h3>Attention!</h3>
-					<p>This dive is outfitted with sonar equipment best appreciated with the music turned on.</p>
-					<p>If you suffer from epilepsy or vestibular disorders, you can reduce animation to make the dive more comfortable.</p>
-					<p>You may turn these features on or off at any time using the ever present menu bar below. Thank you for your attention before departure.</p>
+				<div class="panel" id="onboarding" data-panel="onboarding_panel">
+					<h3>Before you dive in&hellip;</h3>
+					<div class="features">
+						<p class="sound">This dive is outfitted with sonar equipment best appreciated with the music turned on.</p>
+						<p class="sight">If you suffer from epilepsy or vestibular disorders, you can reduce animation to make the dive more comfortable.</p>
+					</div>
+					<p>You may turn these features on or off at any time using the switches above.</p>
+					<p>Thank you for your attention before departure.Enjoy your journey to the bottom of the ocean!</p>
+					<p class="button" id="dismiss-onboarding">Ok, got it!</p>
 				</div>
 				<div class="panel" data-panel="sharing_panel">
 					<div class="addthis_sharing_toolbox" data-url="http://mzl.la/devtoolschallenger" data-title="DevTools Challenger"></div>

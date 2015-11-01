@@ -9,7 +9,7 @@
   }
   box-sizing: border-box;
   width: 100%;
-  max-height: calc(100vh - #{rhythm(35)});
+  max-height: calc(100vh - #{rhythm(35)} + #{rhythm(24)});
   opacity: 0;
   overflow: auto;
   padding: rhythm(12) rhythm(12) rhythm(12) rhythm(6);
@@ -32,9 +32,6 @@
 }
 
 .menu {
-  &.hovered {
-    transform: translateY(calc(100% - #{rhythm(12)}));
-  }
   .won & {
     background-image: image-url("svg/bg_tentacles.svg");
     background-attachment: fixed;
@@ -42,8 +39,14 @@
     background-position: 135% 0;
     background-size: auto 100%;
   }
-  .loaded & {
+  .intro-complete & {
     transform: translateY(calc(100% - #{rhythm(11)}));
+  }
+  .animated &.hovered {
+    transform: translateY(calc(100% - #{rhythm(12)}));
+  }
+  .animated &.closeable {
+    margin-top: rhythm(1);
   }
   transition:
     background-color ease(In) duration(timely)
@@ -51,7 +54,8 @@
   .animated & {
     transition:
       background-color ease(In) duration(timely),
-      transform ease(inOut) duration(slow)
+      transform ease(inOut) duration(slow),
+      margin-top ease(inOut) duration(slow)
     ;
   }
   .bathypelagic &, .abyssal & {
@@ -138,6 +142,9 @@
   svg {
     width: rhythm(4); height: rhythm(4);
   }
+  @include breakpoint(max-width calc-em(1012)){
+    span {display: none;}
+  }
 }
 
 .share_tab path {
@@ -154,6 +161,11 @@
   &.activated {
     color: $skyMedium;
   }
+}
+
+.certificate_tab {
+  color: $gold;
+  path { fill: currentColor; }
 }
 
 .toggle_bg {
@@ -369,4 +381,25 @@
     margin: 0 rhythm(3);
   }
   .title { text-align: left;}
+}
+
+#dismiss-onboarding {
+  cursor: pointer;
+  display: block;
+  @extend %fontSpartan;
+  padding: rhythm(3);
+  border-radius: rhythm(1);
+  transition:
+    transform duration(timely) ease(In),
+    background duration(fast) ease(In),
+    color duration(fast) ease(In);
+  width: rhythm(39);
+  margin: rhythm(3) auto;
+  background: $biolumination;
+  color: $epipelagic;
+  &:hover, &:active, &:focus {
+    background: $skyMedium;
+    color: $abyss;
+    transform: translate(1px, 1px);
+  }
 }

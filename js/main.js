@@ -1,8 +1,29 @@
 (function(){
   'use strict';
 
+  var onBoardingPanel = document.getElementById("onboarding");
+  var onBoardingButton = document.getElementById("dismiss-onboarding");
+
+  // Loading
   $( document ).ready(function() {
-    $("html").addClass("loaded").delay(5000).removeClass("loading");
+
+    $("html").addClass("loaded").removeClass("loading");
+
+    setTimeout(function(){
+      // Open onboarding panel
+      $(onBoardingPanel).addClass("in-focus");
+      moveDashboard($(onBoardingPanel));
+      $("html").addClass("intro-complete");
+    }, 3000)
+  });
+
+  // Dismiss On-boarding panel
+  onBoardingButton.addEventListener("click", function(){
+    onBoardingPanel.classList.remove("in-focus");
+    closeDashboard();
+    this.removeEventListener("click");
+    // show hustle arrow
+      document.getElementById("start").classList.add("begin");
   });
 
   // GA download menu actions
@@ -67,7 +88,7 @@
     $('html').addClass('non-ff');
   }
 
-  var closeDashboard = function(){
+  function closeDashboard(){
     dashboardOpen = false;
     $("#tabs").children(".tab").removeClass("active");
     $("#dashboard").find(".panel").removeClass("in-focus");
@@ -75,8 +96,16 @@
     $("html").removeClass("dashOpen");
   };
 
-  $("#tabs").on( "mouseenter mouseleave", ".tab", function(){
+  $("#tabs").on( "mouseenter mouseleave", ".tab", function(e){
     $("#control-panel").toggleClass("hovered");
+  });
+
+  $("#tabs").on( "mouseenter", ".active", function(e){
+    setDashboardHeight($(".in-focus"), ".33rem");
+  });
+
+  $("#tabs").on( "mouseleave", ".active", function(e){
+    setDashboardHeight($(".in-focus"));
   });
 
   $("#tabs").on("click", ".tab", function(){
@@ -731,9 +760,17 @@ var dashboardOpen = false;
 // opening and closing panels in the dashboard
 // track open or closed
 
-var moveDashboard = function(panel) {
-  dashboardOpen = true;
+function setDashboardHeight(panel, offset) {
   var $dashBoardHeight = $("#menu_options").get(0).offsetHeight + panel.get(0).offsetHeight;
-  $("#control-panel").css({ transform: 'translateY(calc(100% - ' + $dashBoardHeight + 'px))'});
+  if (offset) {
+    $("#control-panel").css({ transform: 'translateY(calc(100% - ' + $dashBoardHeight + 'px + ' + offset + '))'});
+  } else {
+    $("#control-panel").css({ transform: 'translateY(calc(100% - ' + $dashBoardHeight + 'px))'});
+  }
+}
+
+function moveDashboard(panel) {
+  dashboardOpen = true;
+  setDashboardHeight(panel);
   $("html").addClass("dashOpen");
 };
