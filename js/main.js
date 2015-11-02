@@ -556,7 +556,7 @@
         var style = window.getComputedStyle(creature);
         var val = style.getPropertyValue('transform');
 
-        if (segment.classList.contains('in-view') && val === 'none') {
+        if (val === 'none') {
           stop();
           complete();
         }
@@ -603,7 +603,7 @@
       var creature1 = document.querySelector('#creature_humboldt-squid1');
       var creature2 = document.querySelector('#creature_humboldt-squid2');
 
-      var segment = $(creature1).parents('.segment')[0];
+      var segment = $(creature1).parents('.segment');
 
       var count1 = 0;
       var count2 = 0;
@@ -616,7 +616,7 @@
       }
 
       pollPolitely(function (stop) {
-        if (!segment.classList.contains('in-view')) {
+        if (!segment.hasClass('in-view')) {
           return;
         }
         if (count1 > 0 && count2 > 0 &&
