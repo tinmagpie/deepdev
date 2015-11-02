@@ -86,8 +86,9 @@
     child.addEventListener('ended', sendVideoGAEnd.bind(child), false);
   });
 
-  // Detect Firefox 4x
-  if (!window.navigator.userAgent.match(/Gecko\/\d+ Firefox\/4/i)) {
+  // Detect non-Firefox 44+
+  var match = window.navigator.userAgent.match(/Gecko\/\d+ Firefox\/(\d+)/i);
+  if (!match || parseInt(match[1]) < 44) {
     $('html').addClass('non-ff');
   }
 
