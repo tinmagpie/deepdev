@@ -7,23 +7,26 @@
   // Loading
   $( document ).ready(function() {
 
-    $("html").addClass("loaded").removeClass("loading");
+    $("#sound-on, #anim-off").on( "mouseenter mouseleave", function(){
+      var target = $(this).data('target');
+      $(document.getElementById(target)).toggleClass("highlighted");
+    });
 
-    setTimeout(function(){
-      // Open onboarding panel
-      $(onBoardingPanel).addClass("in-focus");
-      moveDashboard($(onBoardingPanel));
-      $("html").addClass("intro-complete");
-    }, 3000)
+    $("html").addClass("loaded").removeClass("loading");
+    // Open onboarding panel
+    $(onBoardingPanel).addClass("in-focus");
+    moveDashboard($(onBoardingPanel));
   });
 
   // Dismiss On-boarding panel
   onBoardingButton.addEventListener("click", function(){
     onBoardingPanel.classList.remove("in-focus");
     closeDashboard();
-    this.removeEventListener("click");
+    $("html").addClass("class-dismissed");
     // show hustle arrow
-      document.getElementById("start").classList.add("begin");
+    document.getElementById("start").classList.add("begin");
+    this.removeEventListener("click");
+    $("#sound-on, #anim-off").off( "mouseenter mouseleave");
   });
 
   // GA download menu actions

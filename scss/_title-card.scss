@@ -11,6 +11,43 @@ h1, .subtitle {
   @include padding-trailer(3);
 }
 
+h1, .sub, .title-wrapper, #start {
+  opacity: 0;
+  transition: opacity ease(Out) duration(slow) duration(timely);
+  .class-dismissed & {
+    opacity: 1;
+  }
+}
+
+.sub {
+  transition-delay: duration(slow);
+}
+
+.title-wrapper {
+  transition-delay: duration(slower);
+}
+
+#start {
+  z-index: 1;
+  transition-delay: duration(days);
+  width: rhythm(9);
+  position: absolute;
+  transform: translate(-50%, 28%);
+  left: 50%; bottom: 190px;
+  z-index: 1;
+}
+
+.get-a-move-on {
+  .loaded.animated .in-view & {
+    animation:
+      letsGo infinite alternate duration(slow) ease(bounceOut);
+  }
+}
+
+@keyframes letsGo {
+  100% { transform: translateY(25%); }
+}
+
 .subtitle em {
   @extend %t-large;
   color: $twilight;
@@ -24,7 +61,7 @@ h1, .subtitle {
   box-sizing: border-box;
   padding-bottom: 190px;
   min-height: 100vh;
-  //opacity: 1;
+  opacity: 1;
   a {
     &:link { color: color(linkAlt) }
     &:visited { color: color(linkAltVisited) }
@@ -35,47 +72,6 @@ h1, .subtitle {
 
 .title-card_wrapper {
   @extend %t-medium;
-}
-
-.for-browsers {
-  @extend %t-small;
-  @extend %fontMerriweatherItalic;
-  opacity: .8;
-  margin-bottom: rhythm(15);
-  display: none;
-  .non-ff & {
-    display: block;
-  }
-}
-
-.get-a-move-on {
-  opacity: 0;
-  display: none;
-  height: rhythm(15);
-  position: absolute;
-  transform: translate(-50%, 28%);
-  left: 50%; bottom: 190px;
-  transition: opacity ease(Out) duration(timely) duration(timely);
-  z-index: 1;
-  .begin & {
-    opacity: 1;
-    display: inline-block;
-  }
-  .loaded.animated .in-view & {
-    animation:
-      letsGo infinite alternate duration(slow) ease(bounceOut),
-      rightNow ease(Out) duration(timely) duration(months) both
-      ;
-  }
-}
-
-@keyframes letsGo {
-  100% { transform: translate(-50%, 25%); }
-}
-
-@keyframes rightNow {
-  0% { opacity: 1 }
-  100% { opacity: 1 }
 }
 
 // .for-browsers {

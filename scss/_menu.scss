@@ -3,7 +3,7 @@
 }
 
 .panel {
-  &:not(.crew) {
+  &:not(.psa) {
     position: absolute;
     top: 0; left: 0;
   }
@@ -23,6 +23,110 @@
   }
 }
 
+
+#highlight-toggles {
+  color: color(link);
+  &:hover, &:focus { color: color(linkHover) }
+}
+
+.toggle {
+  transition:
+    transform ease(bounceOut) duration(timely),
+    opacity ease(In) duration(timely);
+  transform: scale(1.2);
+  opacity: 0;
+  .loaded & {
+    opacity: 1;
+    transition-delay: duration(slower), duration(slow);
+    transform: scale(1);
+  }
+  &.highlighted {
+    animation: pop duration(timely) ease(In) 2 alternate;
+  }
+}
+
+@keyframes pop {
+  100% { transform: scale(1.2); }
+}
+
+.psa {
+  background: image-url("svg/arrow-up.svg") no-repeat center top / auto rhythm(24);
+  height: calc(100vh - #{rhythm(35)} + #{rhythm(24)});
+  text-align: center;
+  h3 {
+    display: inline-block;
+    position: relative;
+    margin-bottom: rhythm(3);
+    span {
+      &:first-child {
+        margin-left: -.25rem;
+        padding-right: 1rem;
+      }
+    }
+  }
+  p, h3 {
+    text-indent: 0 !important;
+    text-align: left;
+  }
+  .ff-download {
+    display: inline-block;
+    margin: rhythm(3) 0 rhythm(9);
+  }
+  .psa_wrapper {
+    background: $abyss;
+    .bathypelagic &, .abyssal & {
+      background: $epipelagic;
+    }
+    border: 4px solid #fff;
+    opacity: 0;
+    transition: opacity duration(slower) duration(slow) ease(Out);
+    .loaded & {
+      opacity: 1;
+    }
+    margin: rhythm(3) -(rhythm(3));
+    padding: 0 1rem;
+    strong { color: #fff;}
+  }
+  .features {
+    p {
+      display: flex;
+      align-items: center;
+    }
+    .illo {
+      flex: 1;
+      margin-right: rhythm(3);
+    }
+    .text { flex: 4}
+    svg {
+      width: 100%;
+    }
+    path, circle {
+      fill: rgba($surface, .5);
+    }
+  }
+  @include breakpoint($double_col){
+    .for-browsers {
+      margin: 0 10%;
+      p {padding: rhythm(2) }
+    }
+    .features {
+      display: flex;
+      p {
+        margin: 0 auto;
+        flex: 1;
+        text-align: left;
+        padding: rhythm(3);
+      }
+      p:nth-child(1) {
+        padding-left: 0;
+      }
+      p:nth-child(2) {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
 #dashboard {
   position: relative;
   @include breakpoint($double_col){
@@ -39,7 +143,7 @@
     background-position: 135% 0;
     background-size: auto 100%;
   }
-  .intro-complete & {
+  .loaded & {
     transform: translateY(calc(100% - #{rhythm(11)}));
   }
   .animated &.hovered {
@@ -98,18 +202,53 @@
   text-align: center;
   @extend %clearfix;
   .ff-download {
-    margin-top: rhythm(1);
-    float: left;
+    position: absolute;
+    left: rhythm(6); top: rhythm(1);
+    opacity: 0;
+    display: none;
+    .class-dismissed & {
+      transition: opacity ease(In) duration(fast);
+      opacity: 1;
+      display: block;
+    }
   }
 }
 
 .controls {
   display: inline-block;
   margin-top: rhythm(2);
+  position: relative;
 }
 
+// .use-this {
+//   height: rhythm(24);
+//   path, line {
+//     fill:none;
+//     stroke:#fff;
+//     stroke-width:4;
+//     stroke-miterlimit:10;
+//   }
+//   position: absolute;
+//   top: 0; left: 50%;
+//   opacity: 0;
+//   transform: translate(-50%, 15%);
+//   transition:
+//     transform ease(bounceIn) duration(slower) duration(slow),
+//     opacity ease(In) duration(slow) duration(slow);
+//   .intro-complete & {
+//     opacity: 1;
+//     transform: translate(-50%, 0);
+//   }
+//   .class-dismissed & {
+//     transition-duration: duration(fast), duration(fast);
+//     transition-delay: 0ms, 0ms;
+//     opacity: 0;
+//   }
+// }
+
 #tabs {
-  float: right;
+  position: absolute;
+  right: rhythm(9); top: rhythm(1);
 }
 
 .tab, .toggle {
@@ -124,14 +263,25 @@
   }
 }
 
+.toggle:first-child{
+  margin-left: 0;
+}
+
 .tab {
   letter-spacing: .1em;
   padding: rhythm(1) rhythm(3);
   border-radius: .25em;
   margin-top: rhythm(1);
+  display: none;
+  opacity: 0;
   transition:
     background duration(fast) ease(Out),
-    color duration(fast) ease(Out);
+    color duration(fast) ease(Out),
+    opacity duration(fast) ease(Out);
+  .class-dismissed & {
+    opacity: 1;
+    display: inline-block;
+  }
   &:hover, &:active, &:focus, &.active {
     background: rgba($abyss, .4);
     transition-timing-function: ease(In), ease(In);
@@ -389,17 +539,31 @@
   @extend %fontSpartan;
   padding: rhythm(3);
   border-radius: rhythm(1);
+  opacity: 0;
   transition:
     transform duration(timely) ease(In),
     background duration(fast) ease(In),
-    color duration(fast) ease(In);
+    color duration(fast) ease(In),
+    opacity duration(fast) ease(Out) duration(slowest);
   width: rhythm(39);
-  margin: rhythm(3) auto;
+  margin: -(rhythm(9)) auto rhythm(3);
   background: $biolumination;
   color: $epipelagic;
+  display: inline-block;
   &:hover, &:active, &:focus {
     background: $skyMedium;
     color: $abyss;
     transform: translate(1px, 1px);
+  }
+  .loaded &{
+    opacity: 1;
+  }
+}
+
+.for-browsers {
+  text-align: center;
+  display: none;
+  .non-ff & {
+    display: block;
   }
 }

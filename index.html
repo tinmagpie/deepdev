@@ -90,9 +90,6 @@
 
 						<div class="title-wrapper">
 							<h2 class="subtitle"><em>Explore the deepest secrets of the ocean</em> <span>with some of <a href="https://www.mozilla.org/en-US/firefox/developer/">Firefox Developer Edition 44’s</a> newest tools, designed to take the pain out of <abbr title="Cascading Stylesheet">CSS</abbr> animation.</span></h2>
-							<div class="for-browsers">
-								<p>This expedition showcases Firefox Developer Edition’s latest animation tools. It could be tricky down there without them. So <a href="https://www.mozilla.org/en-US/firefox/developer/">get your free copy</a> before you dive in!</p>
-							</div>
 						</div>
 					</div>
 					<a id="start" href="#d0">
@@ -576,23 +573,22 @@
 					</a>
 					<a class="download" href="https://www.mozilla.org/firefox/developer/">Free download »</a>
 				</div>
-				<div class="controls">
-					<div class="toggle activated" role="button" id="animation">
-						<div class="toggle_bg">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.7 23.5"><path d="M11.7 22.4H41c5.9 0 10.7-4.8 10.7-10.7C51.7 5.8 46.9 1 41 1H11.7C5.8 1.1 1 5.9 1 11.8c0 5.8 4.8 10.6 10.7 10.6z"/></svg>
-							<div class="toggle_button">
-								<svg class="nob" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle class="st0" cx="12" cy="12" r="11"/></svg>
-								<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle class="st0" cx="15.9" cy="12" r="3.1"/><path class="st0" d="M10.6 12.1H6.7c-.4 0-.7-.2-.7-.6s.3-.6.7-.6h3.9c.4 0 .7.2.7.6s-.3.6-.7.6zm0-2.4H5.5c-.4 0-.7-.2-.7-.6 0-.4.3-.6.7-.6h5.1c.4 0 .7.2.7.6 0 .4-.3.6-.7.6zm0 4.7H8.2c-.4 0-.7-.2-.7-.6s.3-.6.7-.6h2.5c.4 0 .7.2.7.6s-.4.6-.8.6z"/></svg>
-							</div>
-						</div>
-					</div>
-
+				<div class="controls" id="sensory-controls">
 					<div class="toggle" role="button" id="audio-toggle">
 						<div class="toggle_bg">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.7 23.5"><path d="M11.7 22.4H41c5.9 0 10.7-4.8 10.7-10.7C51.7 5.8 46.9 1 41 1H11.7C5.8 1.1 1 5.9 1 11.8c0 5.8 4.8 10.6 10.7 10.6z"/></svg>
 							<div class="toggle_button">
 								<svg class="nob" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11"/></svg>
 								<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.3 7.8c0-1-.7-1.4-1.4-1.4l-6 1.5c-.5.1-.7.5-.7 1v5.6s-.4-.1-.5-.1c-1.1 0-2 .9-2 2s.9 2 2 2c2.8 0 2.5-2.8 2.5-2.8v-6l4-1V13c-1 .1-1.8.9-1.8 1.9 0 1.1.9 2 1.9 2s2-.9 2-2c.1-.2 0-7.1 0-7.1z"/></svg>
+							</div>
+						</div>
+					</div>
+					<div class="toggle activated" role="button" id="animation">
+						<div class="toggle_bg">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.7 23.5"><path d="M11.7 22.4H41c5.9 0 10.7-4.8 10.7-10.7C51.7 5.8 46.9 1 41 1H11.7C5.8 1.1 1 5.9 1 11.8c0 5.8 4.8 10.6 10.7 10.6z"/></svg>
+							<div class="toggle_button">
+								<svg class="nob" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle class="st0" cx="12" cy="12" r="11"/></svg>
+								<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle class="st0" cx="15.9" cy="12" r="3.1"/><path class="st0" d="M10.6 12.1H6.7c-.4 0-.7-.2-.7-.6s.3-.6.7-.6h3.9c.4 0 .7.2.7.6s-.3.6-.7.6zm0-2.4H5.5c-.4 0-.7-.2-.7-.6 0-.4.3-.6.7-.6h5.1c.4 0 .7.2.7.6 0 .4-.3.6-.7.6zm0 4.7H8.2c-.4 0-.7-.2-.7-.6s.3-.6.7-.6h2.5c.4 0 .7.2.7.6s-.4.6-.8.6z"/></svg>
 							</div>
 						</div>
 					</div>
@@ -613,15 +609,34 @@
 				</div>
 			</menu>
 			<div id="dashboard">
-				<div class="panel" id="onboarding" data-panel="onboarding_panel">
-					<h3>Before you dive in&hellip;</h3>
-					<div class="features">
-						<p class="sound">This dive is outfitted with sonar equipment best appreciated with the music turned on.</p>
-						<p class="sight">If you suffer from epilepsy or vestibular disorders, you can reduce animation to make the dive more comfortable.</p>
+				<div class="panel psa" id="onboarding" data-panel="onboarding_panel">
+					<!-- <svg class="use-this" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 100"><path d="M1.4 10.7L7.1 5c4-4 8.2-4 12.2 0l5.7 5.7M13.2 98.2V1"/></svg> -->
+					<h3><span>Before you</span><span>dive in&hellip;</span></h3>
+					<div class="psa_wrapper">
+						<div class="features">
+							<p id="sound-on" data-target="audio-toggle">
+								<span class="illo">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="-16.3 20.4 15 15"><path d="M-4 23.3c0-1-.7-1.4-1.4-1.4l-6 1.5c-.5.1-.7.5-.7 1V30s-.4-.1-.5-.1c-1.1 0-2 .9-2 2s.9 2 2 2c2.8 0 2.5-2.8 2.5-2.8v-6l4-1v4.4c-1 .1-1.8.9-1.8 1.9 0 1.1.9 2 1.9 2s2-.9 2-2c.1-.2 0-7.1 0-7.1z"/></svg>
+								</span>
+								<span class="text"><strong>Activate audio.</strong> This dive is outfitted with sonar equipment best appreciated with the music switched on above.</span></p>
+							<p id="anim-off" data-target="animation">
+								<span class="illo">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="-17.2 22.5 15 15"><circle cx="-5.8" cy="30" r="3.1"/><path d="M-11.1 30.1H-15c-.4 0-.7-.2-.7-.6s.3-.6.7-.6h3.9c.4 0 .7.2.7.6s-.3.6-.7.6zm0-2.4h-5.1c-.4 0-.7-.2-.7-.6s.3-.6.7-.6h5.1c.4 0 .7.2.7.6s-.3.6-.7.6zm0 4.7h-2.4c-.4 0-.7-.2-.7-.6 0-.4.3-.6.7-.6h2.5c.4 0 .7.2.7.6 0 .4-.4.6-.8.6z"/></svg>
+								</span>
+								<span class="text">If you suffer from <strong>epilepsy or vestibular disorders,</strong> you can reduce animation with the toggle above to make the dive more comfortable.</span>
+							</p>
+						</div>
+						<div class="for-browsers">
+								<p>This expedition showcases Firefox Developer Edition’s latest animation tools. It could be tricky down there without them. So <a href="https://www.mozilla.org/en-US/firefox/developer/">get your free copy</a> before you dive in!</p>
+								<div class="ff-download">
+									<a href="https://www.mozilla.org/firefox/developer/">
+									<img class="logo" src="img/logo_dev-ed-white.png" srcset="img/logo_dev-ed-white2x.png 2x" alt="Firefox DevEdition">
+									</a>
+									<a class="download" href="https://www.mozilla.org/firefox/developer/">Get yours today »</a>
+								</div>
+							</div>
 					</div>
-					<p>You may turn these features on or off at any time using the switches above.</p>
-					<p>Thank you for your attention before departure.Enjoy your journey to the bottom of the ocean!</p>
-					<p class="button" id="dismiss-onboarding">Ok, got it!</p>
+					<div class="button" id="dismiss-onboarding">Ok, got it!</div>
 				</div>
 				<div class="panel" data-panel="sharing_panel">
 					<div class="addthis_sharing_toolbox" data-url="http://mzl.la/devtoolschallenger" data-title="DevTools Challenger"></div>
