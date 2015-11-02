@@ -108,7 +108,7 @@
 .wave-close {
   animation-duration: duration(weeks);
   &:before {
-    background: url("../img/wave-close.svg") repeat-x 100% 100%;
+    background: svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="-143 132 672 120"><style>.st0{fill:#39DBB4;}</style><path class="st0" d="M193 183.5c-137 .4-129 44.9-336 45.2V252h672v-23.3c-207-.3-199-44.8-336-45.2z"/></svg>') repeat-x 100% 100%;
     animation-duration: duration(days);
   }
 }
@@ -116,7 +116,7 @@
 .wave-near {
   animation-duration: duration(months);
   &:before {
-    background: url("../img/wave-near.svg") repeat-x 100% 100%;
+    background: svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="-278 121 403 120"><style>.st0{fill:#007E84;}</style><path class="st0" d="M-80.1 146c-82.2.2-73.8 20.6-197.9 20.7V241h403v-74.3C.9 166.6 2.1 146.2-80.1 146z"/></svg>') repeat-x 100% 100%;
     animation-duration: duration(weeks);
     transform: translateY(-10px);
   }
@@ -126,7 +126,7 @@
   background: $midnight;
   height: 130px;
   &:before {
-    background: url("../img/wave-mid.svg") repeat-x 0 10px;
+    background: svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="-143 -34 305 120"><path style="fill:#0B4A61" d="M9.5-34C-52.7-33.8-49-20.1-143-20V86h305V-20C68-20.1 71.7-33.8 9.5-34z"/></svg>') repeat-x 0 10px;
     background-size: 305px 120px;
     animation-duration: duration(months);
   }
