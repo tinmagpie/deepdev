@@ -366,13 +366,16 @@
     window.context = new AudioContext();
     window.audio = new AudioManager();
     audio.mute();
+    var isMuted = true;
 
     var activeZone = document.querySelector('.zone.in-view');
     var currentQuad = activeZone ? activeZone.getAttribute('data-audio') : null;
     onZoneChanged(function (zone) {
       currentQuad = zone.getAttribute('data-audio');
       audio.doneLoading(function () {
-        audio.setBg(currentQuad);
+        if (!isMuted) {
+          audio.setBg(currentQuad);
+        }
       });
     });
 
@@ -386,17 +389,17 @@
     ];
 
     audio.addSounds(sounds, function () {
-      var isMuted = true;
       var audioButton = document.querySelector('#audio-toggle');
-      audio.setBg(currentQuad);
+      if (!isMuted) {
+        audio.setBg(currentQuad);
+      }
       audioButton.addEventListener('click', function () {
         isMuted = !isMuted;
         if (isMuted) {
           audio.mute();
-          // audioButton.textContent = 'Mute the Deep';
         } else {
           audio.unmute();
-          // audioButton.textContent = 'Listen to the Deep';
+          audio.setBg(currentQuad);
         }
       });
     });
@@ -556,7 +559,7 @@
         var style = window.getComputedStyle(creature);
         var val = style.getPropertyValue('transform');
 
-        if (segment.classList.contains('in-view') && val === 'none') {
+        if (val === 'none') {
           stop();
           complete();
         }
@@ -603,7 +606,7 @@
       var creature1 = document.querySelector('#creature_humboldt-squid1');
       var creature2 = document.querySelector('#creature_humboldt-squid2');
 
-      var segment = $(creature1).parents('.segment')[0];
+      var segment = $(creature1).parents('.segment');
 
       var count1 = 0;
       var count2 = 0;
@@ -616,7 +619,7 @@
       }
 
       pollPolitely(function (stop) {
-        if (!segment.classList.contains('in-view')) {
+        if (!segment.hasClass('in-view')) {
           return;
         }
         if (count1 > 0 && count2 > 0 &&
@@ -689,15 +692,19 @@
     var docEl = document.documentElement;
     var docHeight = docEl.scrollHeight;
     var winHeight = window.innerHeight;
-    var currentPosition = docEl.scrollTop;
+    var currentPosition = getScrollTop();
     var pos;
+
+    function getScrollTop() {
+      return document.documentElement.scrollTop || document.body.scrollTop;
+    }
 
     var offsetReference = document.querySelector('.wrapper');
     var currentOffset = currentPosition - offsetReference.offsetTop;
 
     var calcRequest;
     window.addEventListener('scroll', function (e) {
-      currentPosition = docEl.scrollTop;
+      currentPosition = getScrollTop();
       currentOffset = currentPosition - offsetReference.offsetTop;
       clearTimeout(calcRequest);
       calcRequest = setTimeout(findPuzzlePosition, 100);
@@ -721,11 +728,14 @@
       return 0;
     }
 
-    setInterval(findPuzzlePosition, 500);
+    pollPolitely(findPuzzlePosition);
+
+    findPuzzlePosition();
 
     function findPuzzlePosition() {
       var mostOccluding;
       var maxOcclusion = 0;
+      currentPosition = getScrollTop();
       for (var i=0; i<segments.length; i++) {
         var segment = segments[i];
         if (segment.classList.contains('in-view')) {
@@ -738,18 +748,22 @@
       }
       if (mostOccluding) {
         offsetReference = mostOccluding;
+        currentOffset = currentPosition - offsetReference.offsetTop;
+      } else {
+        setTimeout(findPuzzlePosition, 500);
       }
     }
 
     window.addEventListener('load', function (e) {
-      currentPosition = docEl.scrollTop;
+      currentPosition = getScrollTop();
       docHeight = docEl.scrollHeight;
       winHeight = window.innerHeight;
+      findPuzzlePosition();
 
       window.addEventListener('resize', function (e) {
         winHeight = window.innerHeight;
         docHeight = docEl.scrollHeight;
-        docEl.scrollTop = offsetReference.offsetTop - currentOffset;
+        document.documentElement.scrollTop = document.body.scrollTop = offsetReference.offsetTop + currentOffset;
 
         if (dashboardOpen) {
           moveDashboard($("#dashboard").find(".in-focus"));
