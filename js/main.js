@@ -363,13 +363,16 @@
     window.context = new AudioContext();
     window.audio = new AudioManager();
     audio.mute();
+    var isMuted = true;
 
     var activeZone = document.querySelector('.zone.in-view');
     var currentQuad = activeZone ? activeZone.getAttribute('data-audio') : null;
     onZoneChanged(function (zone) {
       currentQuad = zone.getAttribute('data-audio');
       audio.doneLoading(function () {
-        audio.setBg(currentQuad);
+        if (!isMuted) {
+          audio.setBg(currentQuad);
+        }
       });
     });
 
@@ -383,17 +386,17 @@
     ];
 
     audio.addSounds(sounds, function () {
-      var isMuted = true;
       var audioButton = document.querySelector('#audio-toggle');
-      audio.setBg(currentQuad);
+      if (!isMuted) {
+        audio.setBg(currentQuad);
+      }
       audioButton.addEventListener('click', function () {
         isMuted = !isMuted;
         if (isMuted) {
           audio.mute();
-          // audioButton.textContent = 'Mute the Deep';
         } else {
           audio.unmute();
-          // audioButton.textContent = 'Listen to the Deep';
+          audio.setBg(currentQuad);
         }
       });
     });
