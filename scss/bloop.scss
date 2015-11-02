@@ -10,13 +10,13 @@ $bloopBody2x: $maxSegmentCharacters * $base-font-size * $maxBloopW * 2; // 4406.
 
 /* Props */
 $bloop2x-use-percentages: true;
-$bloop2x-spacing: 4px;
+$bloop2x-layout: smart;
 @import "bloop2x/*.png";
 $bloop2x-sprite-width: sprite_width($bloop2x-sprites);
 $bloop2x-sprite-height: sprite_height($bloop2x-sprites);
 
 $bloop-use-percentages: true;
-$bloop-spacing: 2px;
+$bloop-layout: smart;
 @import "bloop/*.png";
 $bloop-sprite-width: sprite_width($bloop-sprites);
 
@@ -54,12 +54,7 @@ $bloop-sprite-width: sprite_width($bloop-sprites);
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   width: percentage($maxBloopW); padding-top: percentage($bloopHeight/$bloopWidth * $maxBloopW);
-  // max-width: 7792px * .25;
   height: 0;
-  // max-height: 3866px * .25;
-  // .one-off & {
-  //   will-change: transform, opacity;
-  // }
   .in-view & {
     opacity: 1;
     animation:

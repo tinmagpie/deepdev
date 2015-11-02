@@ -1,12 +1,12 @@
 /* Animations */
 /* Props */
 .bloop2x-sprite {
-  background-image: url('../img/bloop2x-s4b60365d9b.png');
+  background-image: url('../img/bloop2x-s3e56bf6dfc.png');
   background-repeat: no-repeat;
 }
 
 .bloop-sprite, .bloop_body, .bloop_siphon, .bloop_eye, .bloop_tentacle1, .bloop_arm5, .bloop_arm7, .bloop_arm6, .bloop_arm8, .bloop_tentacle2, .bloop_arm3 {
-  background-image: url('../img/bloop-s3e7bcbcb08.png');
+  background-image: url('../img/bloop-s3db17e661f.png');
   background-repeat: no-repeat;
 }
 
@@ -87,19 +87,19 @@
 }
 
 .bloop_body {
-  width: 86.17059%;
-  height: 92.35105%;
-  background-position: 0 53.52349%;
+  width: 86.35214%;
+  height: 92.71698%;
+  background-position: 0 100%;
   background-size: 100% auto;
   top: 0;
   right: 0;
 }
 
 .bloop_siphon {
-  width: 3.85805%;
-  height: 10.56617%;
-  background-position: 0 70.83588%;
-  background-size: 2234.11765% auto;
+  width: 4.0396%;
+  height: 10.9321%;
+  background-position: 1.98456% 20.36082%;
+  background-size: 2138.20225% auto;
   top: 71.46922%;
   left: 42.44097%;
 }
@@ -123,10 +123,10 @@
   }
 }
 .bloop_eye {
-  width: 1.45244%;
-  height: 2.88168%;
-  background-position: 0 68.05473%;
-  background-size: 5934.375% auto;
+  width: 1.634%;
+  height: 3.24761%;
+  background-position: 0 19.65174%;
+  background-size: 5286.11111% auto;
   top: 66.76151%;
   left: 37.16632%;
 }
@@ -176,10 +176,10 @@
   }
 }
 .bloop_tentacle1 {
-  width: 23.69294%;
-  height: 48.66841%;
-  background-position: 0 85.25507%;
-  background-size: 363.7931% auto;
+  width: 23.87449%;
+  height: 49.03434%;
+  background-position: 52.14234% 24.79079%;
+  background-size: 361.78707% auto;
   top: 18.88257%;
   left: 21.70175%;
   -webkit-transform-origin: 50% 100%;
@@ -216,10 +216,10 @@
   }
 }
 .bloop_arm5 {
-  width: 20.12992%;
-  height: 42.99653%;
-  background-position: 0 4.54856%;
-  background-size: 427.7027% auto;
+  width: 20.31148%;
+  height: 43.36246%;
+  background-position: 0 0;
+  background-size: 424.77679% auto;
   top: 28.06518%;
   left: 8.94507%;
   -webkit-transform-origin: 100% 100%;
@@ -256,10 +256,10 @@
   }
 }
 .bloop_arm7 {
-  width: 28.36798%;
-  height: 21.13234%;
-  background-position: 0 28.23269%;
-  background-size: 303.84% auto;
+  width: 28.54954%;
+  height: 21.49826%;
+  background-position: 35.16484% 0;
+  background-size: 302.54372% auto;
   top: 55.04397%;
   left: 0%;
   -webkit-transform-origin: 100% 100%;
@@ -296,10 +296,10 @@
   }
 }
 .bloop_arm6 {
-  width: 23.98797%;
-  height: 26.1181%;
-  background-position: 0 19.46589%;
-  background-size: 358.97921% auto;
+  width: 24.16952%;
+  height: 26.48403%;
+  background-position: 78.61314% 0;
+  background-size: 357.03565% auto;
   top: 49.224%;
   left: 4.40195%;
   -webkit-transform-origin: 100% 100%;
@@ -336,19 +336,19 @@
   }
 }
 .bloop_arm8 {
-  width: 30.90975%;
-  height: 13.53933%;
-  background-position: 0 34.68885%;
-  background-size: 278.85463% auto;
+  width: 31.09131%;
+  height: 13.90526%;
+  background-position: 65.84565% 43.98955%;
+  background-size: 277.81022% auto;
   top: 65.13192%;
   left: 1.75821%;
 }
 
 .bloop_tentacle2 {
-  width: 36.22024%;
-  height: 38.42243%;
-  background-position: 0 100%;
-  background-size: 237.96992% auto;
+  width: 36.4018%;
+  height: 38.78836%;
+  background-position: 0 49.90119%;
+  background-size: 237.2818% auto;
   top: 61.5882%;
   left: 13.6807%;
   -webkit-transform-origin: 50% 100%;
@@ -385,17 +385,17 @@
   }
 }
 .bloop_arm3 {
-  width: 26.71129%;
-  height: 11.9384%;
-  background-position: 0 0;
-  background-size: 322.41087% auto;
+  width: 26.89285%;
+  height: 12.30433%;
+  background-position: 9.54198% 20.49287%;
+  background-size: 320.91062% auto;
   top: 65.05432%;
   left: 6.72485%;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 124.8dpi), only screen and (min-resolution: 1.3dppx) {
   .bloop_bits {
-    background-image: url('../img/bloop2x-s4b60365d9b.png');
+    background-image: url('../img/bloop2x-s3e56bf6dfc.png');
   }
 }
 /* For the control panel */
