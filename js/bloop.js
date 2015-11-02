@@ -19,13 +19,14 @@
   });
 
   var haveShownEnding = false;
-  bloopEl.addEventListener('animationend', function (e) {
+  bloopEl.addEventListener('animationstart', function (e) {
     if (e.animationName === 'swimOut' && !haveShownEnding) {
       haveShownEnding = true;
       $('#challenge_bloop').addClass('completed');
       $("#congrats-tab, #congrats-panel").removeClass("shh");
       $("#congrats-tab").addClass("active");
       $("#congrats-panel").addClass("in-focus");
+      $("#bonus-challenge-tab").addClass("shh");
       var dashboardOpen = true;
       moveDashboard($("#dashboard").find(".in-focus"));
     }
