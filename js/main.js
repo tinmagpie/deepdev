@@ -689,15 +689,19 @@
     var docEl = document.documentElement;
     var docHeight = docEl.scrollHeight;
     var winHeight = window.innerHeight;
-    var currentPosition = docEl.scrollTop;
+    var currentPosition = getScrollTop();
     var pos;
+
+    function getScrollTop() {
+      return document.documentElement.scrollTop || document.body.scrollTop;
+    }
 
     var offsetReference = document.querySelector('.wrapper');
     var currentOffset = currentPosition - offsetReference.offsetTop;
 
     var calcRequest;
     window.addEventListener('scroll', function (e) {
-      currentPosition = docEl.scrollTop;
+      currentPosition = getScrollTop();
       currentOffset = currentPosition - offsetReference.offsetTop;
       clearTimeout(calcRequest);
       calcRequest = setTimeout(findPuzzlePosition, 100);
@@ -721,11 +725,14 @@
       return 0;
     }
 
-    setInterval(findPuzzlePosition, 500);
+    pollPolitely(findPuzzlePosition);
+
+    findPuzzlePosition();
 
     function findPuzzlePosition() {
       var mostOccluding;
       var maxOcclusion = 0;
+      currentPosition = getScrollTop();
       for (var i=0; i<segments.length; i++) {
         var segment = segments[i];
         if (segment.classList.contains('in-view')) {
@@ -738,18 +745,22 @@
       }
       if (mostOccluding) {
         offsetReference = mostOccluding;
+        currentOffset = currentPosition - offsetReference.offsetTop;
+      } else {
+        setTimeout(findPuzzlePosition, 500);
       }
     }
 
     window.addEventListener('load', function (e) {
-      currentPosition = docEl.scrollTop;
+      currentPosition = getScrollTop();
       docHeight = docEl.scrollHeight;
       winHeight = window.innerHeight;
+      findPuzzlePosition();
 
       window.addEventListener('resize', function (e) {
         winHeight = window.innerHeight;
         docHeight = docEl.scrollHeight;
-        docEl.scrollTop = offsetReference.offsetTop - currentOffset;
+        document.documentElement.scrollTop = document.body.scrollTop = offsetReference.offsetTop + currentOffset;
 
         if (dashboardOpen) {
           moveDashboard($("#dashboard").find(".in-focus"));
