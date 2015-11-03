@@ -91,6 +91,11 @@ h3 + .content {
 .video {
   display: block;
   margin: 0 auto;
+  @include breakpoint($double_col){
+    .left & {
+      margin: 0;
+    }
+  }
   padding-top:rhythm(3);
   padding-bottom:rhythm(3);
   max-width: 100%;

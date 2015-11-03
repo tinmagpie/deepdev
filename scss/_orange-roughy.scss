@@ -5,16 +5,15 @@
         position: relative;
         height: 275px;
     }
-    .keeptogether {
+    .keep-together {
         display: inline-block;
-        width: 100%;
     }
 }
 
 @include breakpoint($double_col){
-    #d1600 .content {
+    #d1600 .bonus .content {
         column-count: unset;
-        padding-right: calc(50% + 2rem)
+        padding-left: calc(50% + 2rem)
     }
 }
 
@@ -23,14 +22,14 @@
         .content, .challenge {
             column-count: unset;
         }
-        .content { padding-right: 0;}
+        .bonus .content {
+            margin-top: 314px;
+            padding-left: 0;
+        }
     }
 }
 .creature_orange-roughy {
     @include make-creature(orange-roughy, $animation: true, $keyframes: 2);
-    position: absolute;
-    top: 0; left: 50%;
-    transform: translate(-50%, 0);
     .in-view & {
         animation: gentlyHovering ease(inOut) duration(months) infinite alternate;
         &:before {
@@ -40,7 +39,7 @@
 }
 
 @keyframes gentlyHovering {
-    100% { transform: translate(-50%, 15%)}
+    100% { transform: translateY(15%)}
 }
 
 @keyframes roughSwimming {
