@@ -77,7 +77,7 @@ h3 + .content {
   }
 }
 
-.content, .challenge {
+.content, .challenge:not(.left) {
   @include breakpoint($double_col){
     column-count: 2;
     column-gap: 2rem;
@@ -94,6 +94,10 @@ h3 + .content {
   padding-top:rhythm(3);
   max-width: 100%;
   height: auto;
+}
+
+.keep-together {
+  display: inline-block;
 }
 
 .challenge_wrapper {

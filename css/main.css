@@ -267,7 +267,7 @@ h3 + .content {
 }
 
 @media (min-width: 54em) {
-  .content, .challenge {
+  .content, .challenge:not(.left) {
     -webkit-column-count: 2;
        -moz-column-count: 2;
             column-count: 2;
@@ -275,7 +275,7 @@ h3 + .content {
        -moz-column-gap: 2rem;
             column-gap: 2rem;
   }
-  .content ul, .content ol, .challenge ul, .challenge ol {
+  .content ul, .content ol, .challenge:not(.left) ul, .challenge:not(.left) ol {
     page-break-inside: avoid;
     -webkit-column-break-inside: avoid;
             break-inside: avoid;
@@ -288,6 +288,10 @@ h3 + .content {
   padding-top: 1rem;
   max-width: 100%;
   height: auto;
+}
+
+.keep-together {
+  display: inline-block;
 }
 
 .challenge_wrapper {
@@ -826,7 +830,7 @@ footer {
   #d600 .puzzle {
     position: absolute;
     top: 0;
-    right: 50%;
+    right: 48%;
     -webkit-transform: translateX(40%);
         -ms-transform: translateX(40%);
             transform: translateX(40%);
