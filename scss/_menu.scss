@@ -220,32 +220,6 @@
   position: relative;
 }
 
-// .use-this {
-//   height: rhythm(24);
-//   path, line {
-//     fill:none;
-//     stroke:#fff;
-//     stroke-width:4;
-//     stroke-miterlimit:10;
-//   }
-//   position: absolute;
-//   top: 0; left: 50%;
-//   opacity: 0;
-//   transform: translate(-50%, 15%);
-//   transition:
-//     transform ease(bounceIn) duration(slower) duration(slow),
-//     opacity ease(In) duration(slow) duration(slow);
-//   .intro-complete & {
-//     opacity: 1;
-//     transform: translate(-50%, 0);
-//   }
-//   .class-dismissed & {
-//     transition-duration: duration(fast), duration(fast);
-//     transition-delay: 0ms, 0ms;
-//     opacity: 0;
-//   }
-// }
-
 #tabs {
   position: absolute;
   right: rhythm(9); top: rhythm(1);
@@ -476,7 +450,7 @@
   .porthole {
     position: relative;
     display: block;
-    img { border-radius: 100%; }
+    img, .captain-rachel { border-radius: 100%; }
     &:before {
       content: " ";
       display: block;
@@ -484,6 +458,29 @@
       top: -10%; left: -10%;
       width: 120%; height: 120%;
       background: image-url("svg/porthole.svg") 0 0 / 100% 100%;
+    }
+    &.captains-porthole:before {
+      background: image-url("svg/porthole_captains.svg") 0 0 / 100% 100%;
+      height: 128%;
+    }
+  }
+  .captain-rachel {
+    @include make-creature(captain-rachel, $animation: true, $divAnim: true, $keyframes: 2);
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+    div {
+      animation: comandeering-this-vessel steps(1) duration(fast) forwards paused;
+    }
+    @include non-retina {
+      div {
+        background-image: sprite-url($creatures-sprites);
+      }
+    }
+    @include retina {
+      div {
+        background-image: sprite-url($creatures2x-sprites);
+      }
     }
   }
   .nautical, .irl {
@@ -566,4 +563,8 @@
   .non-ff & {
     display: block;
   }
+}
+
+@keyframes comandeering-this-vessel {
+  100% { transform: translateY(-50%)}
 }

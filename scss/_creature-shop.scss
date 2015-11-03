@@ -39,21 +39,36 @@ $creatures-sprite-width: sprite_width($creatures-sprites);
 }
 
 // Make a creature
-@mixin make-creature($imgName, $secondImgName: none, $lumiX: 0, $lumiY: 0, $lumiW: 0, $lumiH: 0, $keyframes: 2, $biolumi: false, $animation:false, $double: false) {
+@mixin make-creature($imgName, $secondImgName: none, $lumiX: 0, $lumiY: 0, $lumiW: 0, $lumiH: 0, $keyframes: 2, $biolumi: false, $animation:false, $double: false, $divAnim: false) {
   $iWidth: image-width(sprite-file($creatures2x-sprites, #{$imgName}));
   width: $iWidth/2;
-
-  &:before {
-    background-position: sprite-position($creatures-sprites, #{$imgName}, $offset-x: 0, $offset-y: 0, $use-percentages: true);
-    @include set-bg-width($creatures-sprite-width, $creatures-sprites, #{$imgName});
-    @include retina {
-      @include set-bg-width($creatures2x-sprite-width, $creatures2x-sprites, #{$imgName});
-      background-position: sprite-position($creatures2x-sprites, #{$imgName}, $offset-x: 0, $offset-y: 0, $use-percentages: true);
+  @if $divAnim {
+    div {
+      background-position: sprite-position($creatures-sprites, #{$imgName}, $offset-x: 0, $offset-y: 0, $use-percentages: true);
+      @include set-bg-width($creatures-sprite-width, $creatures-sprites, #{$imgName});
+      @include retina {
+        @include set-bg-width($creatures2x-sprite-width, $creatures2x-sprites, #{$imgName});
+        background-position: sprite-position($creatures2x-sprites, #{$imgName}, $offset-x: 0, $offset-y: 0, $use-percentages: true);
+      }
+      @if $animation {
+        height: $keyframes * 100%;
+      } @else {
+        height: 100%
+      }
     }
-    @if $animation {
-      height: $keyframes * 100%;
-    } @else {
-      height: 100%
+  } @else {
+    &:before {
+      background-position: sprite-position($creatures-sprites, #{$imgName}, $offset-x: 0, $offset-y: 0, $use-percentages: true);
+      @include set-bg-width($creatures-sprite-width, $creatures-sprites, #{$imgName});
+      @include retina {
+        @include set-bg-width($creatures2x-sprite-width, $creatures2x-sprites, #{$imgName});
+        background-position: sprite-position($creatures2x-sprites, #{$imgName}, $offset-x: 0, $offset-y: 0, $use-percentages: true);
+      }
+      @if $animation {
+        height: $keyframes * 100%;
+      } @else {
+        height: 100%
+      }
     }
   }
   @if $double {

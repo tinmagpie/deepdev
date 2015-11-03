@@ -31,15 +31,6 @@ a {
 
 @import "title-card";
 
-/* UI */
-@import "menu";
-@import "progress-bar";
-
-.addthis_sharing_toolbox {
-  display: inline-block;
-  margin: 0 auto;
-}
-
 .segment {
   // min-height: $heightScreen;
   // padding: rhythm(12) rhythm(12) rhythm(12) rhythm(6);
@@ -339,7 +330,9 @@ small {
 @import "vomiting-shrimp";
 @import "hagfish";
 
-
+/* UI */
+@import "menu";
+@import "progress-bar";
 
 #d1200 em {
   @extend %t-large;
