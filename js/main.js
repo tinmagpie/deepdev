@@ -304,7 +304,7 @@
 
   // Listen for anomoly link
   $("#dashboard").on("click", "a", function(e){
-    if ($(this).parents(".alarm")) {
+    if ($(this).parents(".alarm").length) {
       e.preventDefault();
       var section = $(this).attr('href');
       var newDepth = section.slice(2);
