@@ -30,7 +30,7 @@
   });
 
   // GA download menu actions
-  $('#menu_options .download').click(function() {
+  $('.non-ff').click(function() {
     ga('send', {
       hitType: 'event',
       eventCategory: 'Firefox Download',
