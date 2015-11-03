@@ -16,6 +16,29 @@
     // Open onboarding panel
     $(onBoardingPanel).addClass("in-focus");
     moveDashboard($(onBoardingPanel));
+
+    // GA download menu actions
+    $('.non-ff .ff-download a, .non-ff a.download').each(function(idx, link) {
+      $(link).click(function() {
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'Firefox Download',
+          eventAction: 'click',
+          eventLabel: 'Download Firefox from non-Firefox browser'
+        });
+      });
+    });
+
+    $('.ff .ff-download a, .ff a.download').each(function(idx, link) {
+      $(link).click(function() {
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'Firefox Download',
+          eventAction: 'click',
+          eventLabel: 'Download Firefox from Firefox browser'
+        });
+      });
+    });
   });
 
   // Dismiss On-boarding panel
@@ -27,25 +50,6 @@
     document.getElementById("start").classList.add("begin");
     this.removeEventListener("click");
     $("#sound-on, #anim-off").off( "mouseenter mouseleave");
-  });
-
-  // GA download menu actions
-  $('.non-ff').click(function() {
-    ga('send', {
-      hitType: 'event',
-      eventCategory: 'Firefox Download',
-      eventAction: 'click',
-      eventLabel: 'Download Firefox from non-Firefox browser'
-    });
-  });
-
-  $('#menu_options .ff-download a').click(function() {
-    ga('send', {
-      hitType: 'event',
-      eventCategory: 'Firefox Download',
-      eventAction: 'click',
-      eventLabel: 'Download Firefox from Firefox browser'
-    });
   });
 
   // GA right click
@@ -90,6 +94,8 @@
   var match = window.navigator.userAgent.match(/Gecko\/\d+ Firefox\/(\d+)/i);
   if (!match || parseInt(match[1]) < 44) {
     $('html').addClass('non-ff');
+  } else {
+    $('html').addClass('ff');
   }
 
   function closeDashboard(){
