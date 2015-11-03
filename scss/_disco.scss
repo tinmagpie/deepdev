@@ -10,7 +10,7 @@
         }
     }
     .jump {
-        padding-top: calc(226px + #{rhythm(25)} );
+        padding-top: calc(226px + #{rhythm(31)} );
     }
     .creature .lumi{
         pointer-events: none;
@@ -64,6 +64,7 @@
     }
     .pointer {
         width: 172px; height: 162px;
+        pointer-events: none;
         position: absolute;
         top: 41%; left: 49%;
         transform: translate(-50%, -18%);

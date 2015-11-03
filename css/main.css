@@ -286,6 +286,7 @@ h3 + .content {
   display: block;
   margin: 0 auto;
   padding-top: 1rem;
+  padding-bottom: 1rem;
   max-width: 100%;
   height: auto;
 }
@@ -520,19 +521,35 @@ footer {
 }
 
 #creature_flashlight-fish1 {
-  -webkit-animation: swimmyFlashy 5.5s -0.75s linear infinite paused;
-          animation: swimmyFlashy 5.5s -0.75s linear infinite paused;
-  margin: 1rem auto;
+  margin: 1rem 0;
+  pointer-events: none;
 }
 #creature_flashlight-fish1 .lumi {
   pointer-events: none;
 }
 
+.lost-fish {
+  -webkit-animation: swimmyFlashy 3.4s -3s linear infinite paused;
+          animation: swimmyFlashy 3.4s -3s linear infinite paused;
+}
+@media (min-width: 54em) {
+  .lost-fish {
+    -webkit-animation-duration: 5.5s;
+            animation-duration: 5.5s;
+    -webkit-animation-delay: -3.5s;
+            animation-delay: -3.5s;
+    width: calc(200% + 2rem);
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
 @-webkit-keyframes swimmyFlashy {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
   10% {
     opacity: 1;
@@ -542,16 +559,16 @@ footer {
   }
   100% {
     opacity: 0;
-    -webkit-transform: translateX(400%);
-            transform: translateX(400%);
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
   }
 }
 
 @keyframes swimmyFlashy {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
   10% {
     opacity: 1;
@@ -561,8 +578,8 @@ footer {
   }
   100% {
     opacity: 0;
-    -webkit-transform: translateX(400%);
-            transform: translateX(400%);
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
   }
 }
 .school_flashlight-fish {
@@ -1115,7 +1132,7 @@ footer {
   position: absolute;
 }
 #d2600 .jump {
-  padding-top: calc(226px + 8.33333rem );
+  padding-top: calc(226px + 10.33333rem );
 }
 #d2600 .creature .lumi, #d2600 .creature_humboldt-squid .darkening .lumi, .creature_humboldt-squid #d2600 .darkening .lumi {
   pointer-events: none;
@@ -1164,6 +1181,7 @@ footer {
 .photophores .pointer {
   width: 172px;
   height: 162px;
+  pointer-events: none;
   position: absolute;
   top: 41%;
   left: 49%;
@@ -1724,6 +1742,7 @@ footer {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 1rem 0;
 }
 .psa .features .illo {
   -webkit-box-flex: 1;

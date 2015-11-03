@@ -3,15 +3,25 @@
 }
 
 #creature_flashlight-fish1 {
-    animation: swimmyFlashy duration(months) -.75s linear infinite paused;
-    margin: rhythm(3) auto;
+    margin: rhythm(3) 0;
+    pointer-events: none;
     .lumi { pointer-events: none; }
+}
+
+.lost-fish {
+    animation: swimmyFlashy duration(weeks) -3s linear infinite paused;
+    @include breakpoint($double_col){
+        animation-duration: duration(months);
+        animation-delay: -3.5s;
+        width: calc(200% + 2rem);
+        transform: translateX(-50%)
+    }
 }
 
 @keyframes swimmyFlashy {
     0% {
         opacity: 0;
-        transform: translateX(-100%);
+        transform: translateX(-50%);
     }
     10% {
         opacity: 1;
@@ -21,7 +31,7 @@
     }
     100% {
         opacity: 0;
-        transform: translateX(400%);
+        transform: translateX(50%);
     }
 }
 

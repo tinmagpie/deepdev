@@ -444,7 +444,7 @@
   GoalManager.addGoal({
     name: 'flashlight-fish',
     evaluate: function (complete) {
-      var creature = document.querySelector('#creature_flashlight-fish1');
+      var creature = document.querySelector('#help-fish');
       function handler(e) {
         complete();
         creature.removeEventListener('animationiteration', handler);
