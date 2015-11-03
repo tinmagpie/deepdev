@@ -1846,7 +1846,7 @@ footer {
 #menu_options .ff-download {
   position: absolute;
   left: 2rem;
-  top: 0.33333rem;
+  top: 0.66667rem;
   opacity: 0;
   display: none;
 }

@@ -203,7 +203,7 @@
   @extend %clearfix;
   .ff-download {
     position: absolute;
-    left: rhythm(6); top: rhythm(1);
+    left: rhythm(6); top: rhythm(2);
     opacity: 0;
     display: none;
     .class-dismissed & {
