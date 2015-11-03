@@ -50,13 +50,14 @@
 }
 
 .psa {
-  background: image-url("svg/arrow-up.svg") no-repeat center top / auto rhythm(24);
+  background: image-url("svg/arrow-up.svg") no-repeat calc(50% - #{rhythm(3)}) 0 / auto rhythm(24);
   height: calc(100vh - #{rhythm(35)} + #{rhythm(24)});
   text-align: center;
   h3 {
     display: inline-block;
     position: relative;
     margin-bottom: rhythm(3);
+    margin-left: -(rhythm(6));
     span {
       &:first-child {
         margin-left: -.25rem;

@@ -1671,7 +1671,7 @@ footer {
   }
 }
 .psa {
-  background: url('../img/svg/arrow-up.svg?1446508962') no-repeat center top/auto 8rem;
+  background: url('../img/svg/arrow-up.svg?1446508962') no-repeat calc(50% - 1rem) 0/auto 8rem;
   height: calc(100vh - 11.66667rem + 8rem);
   text-align: center;
 }
@@ -1679,6 +1679,7 @@ footer {
   display: inline-block;
   position: relative;
   margin-bottom: 1rem;
+  margin-left: -2rem;
 }
 .psa h3 span:first-child {
   margin-left: -.25rem;
