@@ -465,12 +465,12 @@ footer {
 /* Challenges */
 /* Props */
 .creatures2x-sprite {
-  background-image: url('../img/creatures2x-s711fee3592.png');
+  background-image: url('../img/creatures2x-s3d68c31f5f.png');
   background-repeat: no-repeat;
 }
 
 .creatures-sprite {
-  background-image: url('../img/creatures-s2415afd555.png');
+  background-image: url('../img/creatures-s2f813f5aea.png');
   background-repeat: no-repeat;
 }
 
@@ -480,12 +480,12 @@ footer {
 
 @media (max-device-pixel-ratio: 1), (-webkit-max-device-pixel-ratio: 2), (max-resolution: 192dpi) {
   .creature:before, .creature_humboldt-squid .darkening:before, .creature:after, .creature_humboldt-squid .darkening:after {
-    background-image: url('../img/creatures-s2415afd555.png');
+    background-image: url('../img/creatures-s2f813f5aea.png');
   }
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature:before, .creature_humboldt-squid .darkening:before, .creature:after, .creature_humboldt-squid .darkening:after {
-    background-image: url('../img/creatures2x-s711fee3592.png');
+    background-image: url('../img/creatures2x-s3d68c31f5f.png');
   }
 }
 /* Props */
@@ -509,14 +509,14 @@ footer {
   height: 96px;
 }
 .creature_flashlight-fish:before {
-  background-position: 0 5.28613%;
+  background-position: 0 3.12673%;
   background-size: 301.07527% auto;
   height: 100%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_flashlight-fish:before {
     background-size: 301.07527% auto;
-    background-position: 0 5.28613%;
+    background-position: 0 3.12673%;
   }
 }
 .creature_flashlight-fish .lumi {
@@ -869,14 +869,14 @@ footer {
   height: 210px;
 }
 .creature_nautilus:before {
-  background-position: 63.09524% 17.59213%;
+  background-position: 63.09524% 40.20857%;
   background-size: 250% auto;
   height: 200%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_nautilus:before {
     background-size: 250% auto;
-    background-position: 63.09524% 17.59213%;
+    background-position: 63.09524% 40.20857%;
   }
 }
 
@@ -956,14 +956,14 @@ footer {
   height: 516px;
 }
 .creature_humboldt-squid:before {
-  background-position: 0 100%;
+  background-position: 0 60.76046%;
   background-size: 100% auto;
   height: 400%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_humboldt-squid:before {
     background-size: 100% auto;
-    background-position: 0 100%;
+    background-position: 0 60.76046%;
   }
 }
 
@@ -977,14 +977,14 @@ footer {
   left: 0;
 }
 .creature_humboldt-squid .darkening:before {
-  background-position: 0 67.13376%;
+  background-position: 0 100%;
   background-size: 100% auto;
   height: 400%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_humboldt-squid .darkening:before {
     background-size: 100% auto;
-    background-position: 0 67.13376%;
+    background-position: 0 100%;
   }
 }
 .animated .in-view .creature_humboldt-squid .darkening {
@@ -1072,14 +1072,14 @@ footer {
   height: 275px;
 }
 .creature_orange-roughy:before {
-  background-position: 0 23.27431%;
+  background-position: 0 32.86094%;
   background-size: 112.0% auto;
   height: 200%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_orange-roughy:before {
     background-size: 112.0% auto;
-    background-position: 0 23.27431%;
+    background-position: 0 32.86094%;
   }
 }
 .in-view .creature_orange-roughy {
@@ -1202,14 +1202,14 @@ footer {
   height: 226px;
 }
 .dish_flashlight-fish:before {
-  background-position: 67.66467% 10.24883%;
+  background-position: 61.07784% 0;
   background-size: 247.78761% auto;
   height: 100%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .dish_flashlight-fish:before {
     background-size: 247.78761% auto;
-    background-position: 67.66467% 10.24883%;
+    background-position: 61.07784% 0;
   }
 }
 .dish_flashlight-fish .lumi {
@@ -1233,14 +1233,14 @@ footer {
   height: 226px;
 }
 .dish_dragonfish:before {
-  background-position: 0 10.24883%;
+  background-position: 55.68862% 3.184%;
   background-size: 247.78761% auto;
   height: 100%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .dish_dragonfish:before {
     background-size: 247.78761% auto;
-    background-position: 0 10.24883%;
+    background-position: 55.68862% 3.184%;
   }
 }
 .dish_dragonfish .lumi {
@@ -1260,14 +1260,14 @@ footer {
   left: -20%;
 }
 .creature_viperfish:before {
-  background-position: 0 7.60148%;
+  background-position: 0 6.35724%;
   background-size: 129.62963% auto;
   height: 100%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_viperfish:before {
     background-size: 129.62963% auto;
-    background-position: 0 7.60148%;
+    background-position: 0 6.35724%;
   }
 }
 .creature_viperfish .lumi {
@@ -1283,14 +1283,14 @@ footer {
   top: 0;
 }
 .creature_gulper-eel:before {
-  background-position: 0 43.82145%;
+  background-position: 0 19.43742%;
   background-size: 198.58156% auto;
   height: 200%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_gulper-eel:before {
     background-size: 198.58156% auto;
-    background-position: 0 43.82145%;
+    background-position: 0 19.43742%;
   }
 }
 .creature_gulper-eel .lumi {
@@ -1314,14 +1314,14 @@ footer {
   top: -81px;
 }
 .creature_dragonfish:before {
-  background-position: 0 13.21179%;
+  background-position: 0 12.79336%;
   background-size: 116.18257% auto;
   height: 200%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_dragonfish:before {
     background-size: 116.18257% auto;
-    background-position: 0 13.21179%;
+    background-position: 0 12.79336%;
   }
 }
 .creature_dragonfish .lumi {
@@ -1345,14 +1345,14 @@ footer {
   z-index: 1;
 }
 .creature_anglerfish:before {
-  background-position: 0 17.53018%;
+  background-position: 0 40.04616%;
   background-size: 264.15094% auto;
   height: 200%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_anglerfish:before {
     background-size: 264.15094% auto;
-    background-position: 0 17.53018%;
+    background-position: 0 40.04616%;
   }
 }
 .creature_anglerfish .lumi {
@@ -1383,14 +1383,14 @@ footer {
   left: 10%;
 }
 .creature_bristlemouth:before {
-  background-position: 0 0;
+  background-position: 0 9.25%;
   background-size: 198.58156% auto;
   height: 200%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_bristlemouth:before {
     background-size: 198.58156% auto;
-    background-position: 0 0;
+    background-position: 0 9.25%;
   }
 }
 .creature_bristlemouth .lumi {
@@ -1437,14 +1437,14 @@ footer {
   height: 114px;
 }
 .creature_vomiting-shrimp:before {
-  background-position: 0 2.56284%;
+  background-position: 72.30769% 9.38557%;
   background-size: 329.41176% auto;
   height: 200%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_vomiting-shrimp:before {
     background-size: 329.41176% auto;
-    background-position: 0 2.56284%;
+    background-position: 72.30769% 9.38557%;
   }
 }
 
@@ -1548,14 +1548,14 @@ footer {
   z-index: 1;
 }
 .creature_hagfish:before {
-  background-position: 79.21348% 39.43179%;
+  background-position: 0 0;
   background-size: 274.5098% auto;
   height: 200%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .creature_hagfish:before {
     background-size: 274.5098% auto;
-    background-position: 79.21348% 39.43179%;
+    background-position: 0 0;
   }
 }
 .in-view .creature_hagfish {
@@ -2160,14 +2160,14 @@ footer {
   z-index: -1;
 }
 .crew .captain-rachel div {
-  background-position: 93.42105% 0;
+  background-position: 94.73684% 6.35188%;
   background-size: 538.46154% auto;
   height: 200%;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .crew .captain-rachel div {
     background-size: 538.46154% auto;
-    background-position: 93.42105% 0;
+    background-position: 94.73684% 6.35188%;
   }
 }
 .crew .captain-rachel div {
@@ -2176,12 +2176,12 @@ footer {
 }
 @media (max-device-pixel-ratio: 1), (-webkit-max-device-pixel-ratio: 2), (max-resolution: 192dpi) {
   .crew .captain-rachel div {
-    background-image: url('../img/creatures-s2415afd555.png');
+    background-image: url('../img/creatures-s2f813f5aea.png');
   }
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .crew .captain-rachel div {
-    background-image: url('../img/creatures2x-s711fee3592.png');
+    background-image: url('../img/creatures2x-s3d68c31f5f.png');
   }
 }
 .crew .nautical, .crew .irl {
