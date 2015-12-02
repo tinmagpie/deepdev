@@ -29,6 +29,14 @@ a {
   &:hover, &:active, &:focus { color: color(linkHover) }
 }
 
+.dogear {
+  position: absolute;
+  top: 0; right: 0;
+  display: block;
+  width: 125px; height: 125px;
+  z-index: 20;
+}
+
 @import "title-card";
 
 .segment {

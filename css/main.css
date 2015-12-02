@@ -106,6 +106,16 @@ a:hover, a:active, a:focus {
   color: #A9DDF2;
 }
 
+.dogear {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 125px;
+  height: 125px;
+  z-index: 20;
+}
+
 /* Heading stuff. */
 .sub {
   max-width: calc(100% + 3rem);
