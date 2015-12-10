@@ -29,12 +29,16 @@ a {
   &:hover, &:active, &:focus { color: color(linkHover) }
 }
 
-.dogear {
+.award {
   position: absolute;
   top: 0; right: 0;
   display: block;
-  width: 125px; height: 125px;
+  width: 80px; height: 96px;
   z-index: 20;
+  transition: transform ease(In) duration(timely);
+  &:hover, &:active, &:focus {
+    transform: translateX(5%);
+  }
 }
 
 @import "title-card";

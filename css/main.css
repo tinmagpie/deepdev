@@ -106,14 +106,21 @@ a:hover, a:active, a:focus {
   color: #A9DDF2;
 }
 
-.dogear {
+.award {
   position: absolute;
   top: 0;
   right: 0;
   display: block;
-  width: 125px;
-  height: 125px;
+  width: 80px;
+  height: 96px;
   z-index: 20;
+  -webkit-transition: -webkit-transform cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
+          transition: transform cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
+}
+.award:hover, .award:active, .award:focus {
+  -webkit-transform: translateX(5%);
+      -ms-transform: translateX(5%);
+          transform: translateX(5%);
 }
 
 /* Heading stuff. */
