@@ -519,7 +519,7 @@
   GoalManager.addGoal({
     name: 'disco-time',
     evaluate: function (complete) {
-      var creature = document.querySelector('#creature_dragonfish1 .lumi path');
+      var creature = document.querySelector('#creature_dragonfish1');
       var $segment = $(creature).parents('.segment');
       pollPolitely(function (stop) {
         if (!$segment.hasClass('in-view')) {

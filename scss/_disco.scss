@@ -114,7 +114,7 @@
 }
 
 .creature_dragonfish {
-    @include make-creature(dragonfish, $lumiX: 80, $lumiY: 17, $lumiW: 809, $lumiH: 254, $keyframes: 2, $animation: true, $biolumi: true);
+    @include make-creature(dragonfish, $lumiX: 80, $lumiY: 0, $lumiW: 809, $lumiH: 254, $keyframes: 2, $animation: true, $biolumi: true);
     left: 10%; top: -81px;
     &:before {
         .in-view & {
@@ -166,14 +166,10 @@
 #d2600 {
     .puzzle .creature, .dish_dragonfish {
         color: $greyMedium;
-        path {
-            fill: currentColor;
-        }
+        fill: currentColor;
     }
     .dish_flashlight-fish {
         color: $biolumination;
-        path {
-         fill: currentColor;
-       }
+        fill: currentColor;
     }
 }
