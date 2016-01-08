@@ -14,4 +14,15 @@
     checkFont('Merriweather', 400);
     checkFont('Merriweather', 700);
     checkFont('leagueSpartanRegular', 400);
+
+    var ajax = new XMLHttpRequest();
+    ajax.open("GET", "/img/svg/sprite.svg", true);
+    ajax.send();
+    ajax.onload = function(e) {
+      var div = document.createElement("div");
+      div.setAttribute("id","svg-sprite");
+      div.innerHTML = ajax.responseText;
+      document.body.insertBefore(div, document.body.childNodes[0]);
+    }
+
 })();

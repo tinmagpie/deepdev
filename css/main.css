@@ -96,6 +96,10 @@ body, h1, h2, h3, h4, p, ul {
   overflow: hidden;
 }
 
+#svg-sprite {
+  display: none;
+}
+
 a:link {
   color: #56fddb;
 }
