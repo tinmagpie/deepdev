@@ -2332,9 +2332,6 @@ footer {
   -webkit-transition: fill cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms, color cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
           transition: fill cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms, color cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
 }
-.progress svg path {
-  fill: currentColor;
-}
 .progress a {
   display: block;
   paddng: .25rem;
