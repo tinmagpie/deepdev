@@ -16,12 +16,12 @@
     opacity: 1;
   }
   .completed {
-    circle { fill: $epipelagic; }
-    path { fill: $midnight; }
+    fill: $epipelagic;
+    color: $midnight;
   }
   .in-view {
-    circle { fill: #fff; }
-    path { fill: $twilight; }
+    fill: #fff;
+    color: $twilight;
   }
   svg {
     color: $abyss;
@@ -30,10 +30,11 @@
     width: 2rem;
     position: relative;
     z-index: 2;
-    circle {
-      fill: color(link);
-      transition: fill ease(In) duration(timely);
-    }
+    fill: color(link);
+    transition:
+      fill ease(In) duration(timely),
+      color ease(In) duration(timely)
+    ;
     path {
       fill: currentColor
     }

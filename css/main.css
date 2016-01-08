@@ -2313,17 +2313,13 @@ footer {
   display: block;
   opacity: 1;
 }
-.progress .completed circle {
+.progress .completed {
   fill: #007e84;
+  color: #002351;
 }
-.progress .completed path {
-  fill: #002351;
-}
-.progress .in-view circle {
+.progress .in-view {
   fill: #fff;
-}
-.progress .in-view path {
-  fill: #0b4a61;
+  color: #0b4a61;
 }
 .progress svg {
   color: #000c1c;
@@ -2332,11 +2328,9 @@ footer {
   width: 2rem;
   position: relative;
   z-index: 2;
-}
-.progress svg circle {
   fill: #56fddb;
-  -webkit-transition: fill cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
-          transition: fill cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
+  -webkit-transition: fill cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms, color cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
+          transition: fill cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms, color cubic-bezier(0.55, 0.055, 0.675, 0.19) 300ms;
 }
 .progress svg path {
   fill: currentColor;
