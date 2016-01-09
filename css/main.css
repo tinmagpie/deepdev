@@ -1782,8 +1782,6 @@ footer {
 }
 .psa .features svg {
   width: 100%;
-}
-.psa .features path, .psa .features circle {
   fill: rgba(57, 219, 180, 0.5);
 }
 @media (min-width: 54em) {
@@ -1963,7 +1961,7 @@ footer {
   }
 }
 
-.share_tab path {
+.share_tab svg {
   stroke: currentColor;
   stroke-width: 2;
   fill: none;
@@ -1974,7 +1972,7 @@ footer {
   padding: 1rem 4rem 1rem 2rem;
 }
 
-.crew_tab path {
+.crew_tab svg {
   fill: currentColor;
 }
 
@@ -1985,7 +1983,7 @@ footer {
 .certificate_tab {
   color: #fffc99;
 }
-.certificate_tab path {
+.certificate_tab svg {
   fill: currentColor;
 }
 
@@ -1993,6 +1991,9 @@ footer {
   position: relative;
   width: 53px;
   height: 24px;
+  fill: rgba(0, 12, 28, 0.4);
+  stroke: currentColor;
+  stroke-width: 2;
 }
 .toggle_bg:before, .toggle_bg:after {
   font-size: 10px;
@@ -2005,6 +2006,10 @@ footer {
   -webkit-transition: opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
           transition: opacity 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
+.toggle_bg .toggle_backdrop {
+  width: 53px;
+  height: 24px;
+}
 .toggle_bg:before {
   content: "off";
   left: 26px;
@@ -2013,11 +2018,6 @@ footer {
   content: "on";
   left: 8px;
   opacity: 0;
-}
-.toggle_bg path, .toggle_bg circle {
-  fill: rgba(0, 12, 28, 0.4);
-  stroke: currentColor;
-  stroke-width: 2;
 }
 .activated .toggle_bg:before {
   opacity: 0;
@@ -2049,11 +2049,11 @@ footer {
   -webkit-transition: -webkit-transform 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
           transition: transform 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
-.toggle_button .nob circle {
-  stroke: #A9DDF2;
+.toggle_button .nob {
+  color: #A9DDF2;
 }
-.toggle_button .icon path, .toggle_button .icon circle {
-  fill: #A9DDF2;
+.toggle_button .icon {
+  fill: currentColor;
   stroke: none;
 }
 

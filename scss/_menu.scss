@@ -101,8 +101,6 @@
     .text { flex: 4}
     svg {
       width: 100%;
-    }
-    path, circle {
       fill: rgba($surface, .5);
     }
   }
@@ -273,7 +271,7 @@
   }
 }
 
-.share_tab path {
+.share_tab svg {
   stroke: currentColor;
   stroke-width:2;
   fill: none;
@@ -284,7 +282,7 @@
   padding: rhythm(3) rhythm(12) rhythm(3) rhythm(6);
 }
 
-.crew_tab path {
+.crew_tab svg {
   fill: currentColor;
 }
 
@@ -296,7 +294,7 @@
 
 .certificate_tab {
   color: $gold;
-  path { fill: currentColor; }
+  svg { fill: currentColor; }
 }
 
 .toggle_bg {
@@ -311,6 +309,11 @@
     }
   }
 
+  .toggle_backdrop {
+    width: 53px;
+    height: 24px;
+  }
+
   &:before {
     content: "off";
     left: 26px;
@@ -322,11 +325,9 @@
   }
   position: relative;
   width: 53px; height: 24px;
-  path, circle {
-    fill: rgba($abyss, .4);
-    stroke: currentColor;
-    stroke-width:2;
-  }
+  fill: rgba($abyss, .4);
+  stroke: currentColor;
+  stroke-width:2;
   .activated & {
     &:before {
       opacity: 0;
@@ -349,14 +350,12 @@
   .animated & {
     transition: transform duration(timely) ease(In);
   }
-  .nob circle {
-    stroke: $skyLight;
+  .nob {
+    color: $skyLight;
   }
   .icon {
-    path, circle {
-      fill: $skyLight;
-      stroke: none;
-    }
+    fill: currentColor;
+    stroke: none;
   }
 }
 
