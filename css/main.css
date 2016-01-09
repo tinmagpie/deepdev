@@ -2317,11 +2317,11 @@ footer {
   display: block;
   opacity: 1;
 }
-.progress .completed {
+.progress .completed svg {
   fill: #007e84;
   color: #002351;
 }
-.progress .in-view {
+.progress .in-view svg {
   fill: #fff;
   color: #0b4a61;
 }
@@ -2397,6 +2397,10 @@ footer {
 
 #challenge_orange-roughy svg {
   color: #c6244b;
+}
+
+#challenge_orange-roughy.completed svg {
+  color: currentColor;
 }
 
 #d1200 em {
