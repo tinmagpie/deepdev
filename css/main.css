@@ -544,6 +544,7 @@ footer {
   left: 82.25806%;
   top: 63.54167%;
   width: 12.63441%;
+  height: 19.27083%;
 }
 
 #creature_flashlight-fish1 {
@@ -1237,6 +1238,7 @@ footer {
   left: 19.46903%;
   top: 38.71681%;
   width: 40.48673%;
+  height: 32.07965%;
 }
 .dish_flashlight-fish .lumi {
   -webkit-transform: scaleX(-1);
@@ -1268,6 +1270,7 @@ footer {
   left: 56.63717%;
   top: 44.69027%;
   width: 19.9115%;
+  height: 8.40708%;
 }
 .dish_dragonfish:before {
   left: -2px;
@@ -1293,8 +1296,9 @@ footer {
 }
 .creature_viperfish .lumi {
   left: 16.55093%;
-  top: 1.40187%;
+  top: 0.93458%;
   width: 70.83333%;
+  height: 92.75701%;
 }
 
 .creature_gulper-eel {
@@ -1318,6 +1322,7 @@ footer {
   left: 5.31915%;
   top: 49.6988%;
   width: 20.39007%;
+  height: 8.73494%;
 }
 .creature_gulper-eel .lumi {
   -webkit-animation-delay: 300ms !important;
@@ -1347,8 +1352,9 @@ footer {
 }
 .creature_dragonfish .lumi {
   left: 8.71369%;
-  top: 1.19048%;
+  top: 6.25%;
   width: 83.92116%;
+  height: 75.59524%;
 }
 .in-view .creature_dragonfish:before {
   -webkit-animation: wriggle steps(1) 500ms infinite;
@@ -1418,6 +1424,7 @@ footer {
   left: 2.83688%;
   top: 43.54839%;
   width: 65.24823%;
+  height: 40.32258%;
 }
 .creature_bristlemouth .lumi {
   -webkit-animation-delay: 200ms !important;

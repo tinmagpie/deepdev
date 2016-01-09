@@ -98,7 +98,7 @@
 }
 
 .creature_viperfish {
-    @include make-creature(viperfish, $lumiX: 139, $lumiY: 2, $lumiW: 612, $lumiH: 397, $keyframes: 1, $animation: false, $biolumi: true);
+    @include make-creature(viperfish, $lumiX: 139, $lumiY: 0, $lumiW: 612, $lumiH: 397, $keyframes: 1, $animation: false, $biolumi: true);
     top: 450px; left: -20%;
 }
 
@@ -114,7 +114,7 @@
 }
 
 .creature_dragonfish {
-    @include make-creature(dragonfish, $lumiX: 80, $lumiY: 0, $lumiW: 809, $lumiH: 254, $keyframes: 2, $animation: true, $biolumi: true);
+    @include make-creature(dragonfish, $lumiX: 80, $lumiY: 17, $lumiW: 809, $lumiH: 254, $keyframes: 2, $animation: true, $biolumi: true);
     left: 10%; top: -81px;
     &:before {
         .in-view & {

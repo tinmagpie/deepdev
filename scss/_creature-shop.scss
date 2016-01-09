@@ -96,6 +96,7 @@ $creatures-sprite-width: sprite_width($creatures-sprites);
         left: percentage(($lumiX + 4px)/$iWidth);
         top: percentage(($lumiY + 4px)/$iHeight);
         width: percentage(($lumiW * 1px)/$iWidth);
+        height: percentage(($lumiH * 1px)/$iHeight);
       }
     }
   } @else {
@@ -106,6 +107,7 @@ $creatures-sprite-width: sprite_width($creatures-sprites);
         left: percentage(($lumiX + 4px)/$iWidth);
         top: percentage(($lumiY + 4px)/$iHeight);
         width: percentage(($lumiW * 1px)/$iWidth);
+        height: percentage(($lumiH * 1px)/$iHeight);
       }
     }
   }
