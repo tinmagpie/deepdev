@@ -381,7 +381,7 @@
     display: inline-block;
     @extend %clearfix;
     @extend %fontSpartan;
-    path {fill: currentColor;}
+    svg {fill: currentColor;}
     padding: rhythm(3);
     border-radius: rhythm(1);
     text-align: left;
@@ -393,6 +393,7 @@
     margin: 0 rhythm(3) rhythm(3);
     svg {
       width: rhythm(9);
+      height: rhythm(9);
       float: left;
     }
     span {

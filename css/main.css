@@ -2078,11 +2078,12 @@ footer {
   width: 13rem;
   margin: 0 1rem 1rem;
 }
-.rewards a path {
+.rewards a svg {
   fill: currentColor;
 }
 .rewards a svg {
   width: 3rem;
+  height: 3rem;
   float: left;
 }
 .rewards a span {
